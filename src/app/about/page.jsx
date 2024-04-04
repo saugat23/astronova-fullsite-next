@@ -1,5 +1,9 @@
 import React from "react";
 import ValuesContainer from "../../components/UI/ValuesContainer";
+import BoardMember from "../../components/UI/BoardMember";
+import Experts from "../../components/UI/Experts";
+import TeamMembers from "../../components/UI/TeamMembers";
+import TestimonialsDiv from "../../components/UI/TestimonialsDiv";
 
 const page = () => {
   return (
@@ -20,46 +24,13 @@ const page = () => {
           </p>
           <div className="self-end flex justify-center items-center space-x-6">
             <button>
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M35 17.6074C35 7.8818 27.1644 -0.00195312 17.5 -0.00195312C7.83123 0.000234375 -0.00439453 7.8818 -0.00439453 17.6096C-0.00439453 26.3968 6.39623 33.6812 14.7612 35.0024V22.6977H10.3206V17.6096H14.7656V13.7268C14.7656 9.31461 17.3797 6.87773 21.3762 6.87773C23.2925 6.87773 25.294 7.22117 25.294 7.22117V11.5524H23.0869C20.9147 11.5524 20.2365 12.9109 20.2365 14.3043V17.6074H25.0884L24.314 22.6955H20.2344V35.0002C28.5994 33.679 35 26.3946 35 17.6074Z"
-                  fill="white"
-                />
-              </svg>
+              <img src="/assets/facebook.svg" alt="Facebook Icon" />
             </button>
             <button>
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.5 0C27.175 0 35 7.825 35 17.5C35 27.175 27.175 35 17.5 35C7.825 35 0 27.175 0 17.5C0 7.825 7.825 0 17.5 0ZM14.3 26.725C22.05 26.725 26.3 20.3 26.3 14.725V14.175C27.125 13.575 27.85 12.825 28.4 11.975C27.65 12.3 26.825 12.525 25.975 12.65C26.85 12.125 27.525 11.3 27.825 10.325C27 10.8 26.1 11.15 25.15 11.35C24.375 10.525 23.275 10.025 22.075 10.025C19.75 10.025 17.85 11.925 17.85 14.25C17.85 14.575 17.875 14.9 17.975 15.2C14.475 15.025 11.35 13.35 9.275 10.8C8.925 11.425 8.7 12.15 8.7 12.925C8.7 14.375 9.45 15.675 10.575 16.425C9.875 16.425 9.225 16.225 8.675 15.9V15.95C8.675 18 10.125 19.7 12.05 20.1C11.7 20.2 11.325 20.25 10.95 20.25C10.675 20.25 10.425 20.225 10.15 20.175C10.675 21.85 12.25 23.075 14.075 23.1C12.625 24.225 10.8 24.9 8.825 24.9C8.475 24.9 8.15 24.9 7.825 24.85C9.675 26.05 11.9 26.75 14.275 26.75"
-                  fill="white"
-                />
-              </svg>
+              <img src="/assets/twitter.svg" alt="Twitter Icon" />
             </button>
             <button>
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.7083 4.375C28.4819 4.375 29.2237 4.68229 29.7707 5.22927C30.3177 5.77625 30.625 6.51812 30.625 7.29167V27.7083C30.625 28.4819 30.3177 29.2237 29.7707 29.7707C29.2237 30.3177 28.4819 30.625 27.7083 30.625H7.29167C6.51812 30.625 5.77625 30.3177 5.22927 29.7707C4.68229 29.2237 4.375 28.4819 4.375 27.7083V7.29167C4.375 6.51812 4.68229 5.77625 5.22927 5.22927C5.77625 4.68229 6.51812 4.375 7.29167 4.375H27.7083ZM26.9792 26.9792V19.25C26.9792 17.9891 26.4783 16.7799 25.5867 15.8883C24.6951 14.9967 23.4859 14.4958 22.225 14.4958C20.9854 14.4958 19.5417 15.2542 18.8417 16.3917V14.7729H14.7729V26.9792H18.8417V19.7896C18.8417 18.6667 19.7458 17.7479 20.8688 17.7479C21.4102 17.7479 21.9295 17.963 22.3124 18.3459C22.6953 18.7288 22.9104 19.2481 22.9104 19.7896V26.9792H26.9792ZM10.0333 12.4833C10.6831 12.4833 11.3063 12.2252 11.7657 11.7657C12.2252 11.3063 12.4833 10.6831 12.4833 10.0333C12.4833 8.67708 11.3896 7.56875 10.0333 7.56875C9.37969 7.56875 8.75281 7.82841 8.29061 8.29061C7.82841 8.75281 7.56875 9.37969 7.56875 10.0333C7.56875 11.3896 8.67708 12.4833 10.0333 12.4833ZM12.0604 26.9792V14.7729H8.02083V26.9792H12.0604Z"
-                  fill="white"
-                />
-              </svg>
+              <img src="/assets/linkedin.svg" alt="LinkedIn Icon" />
             </button>
           </div>
         </div>
@@ -105,8 +76,8 @@ const page = () => {
           mindset. To develop mindset, we have to work from school level. And
           importantly, the mindset can be developed by external factor by
           creating a different learning environment. Therefore, our main
-          objective is to work in the field of Science, Information Technology
-          , Research, Innovation and Entrepreneurship to change the mindset of
+          objective is to work in the field of Science, Information Technology ,
+          Research, Innovation and Entrepreneurship to change the mindset of
           students from their early ages. In short, we are a group of believers
           willing to work together to provide various opportunities to explore
           and unleash students’ potential in national and international level.
@@ -137,6 +108,279 @@ const page = () => {
             title="Transparency"
             desc="Ultimately, our vision is to plug students’ energy in production and services so that they can ."
           />
+        </div>
+      </div>
+      <div className="h-auto overflow-hidden">
+        <div className="bg-[url(/board.png)] flex flex-col justify-center items-center space-y-4 shadow-xl lg:py-12 lg:px-12 w-full">
+          <div className="flex justify-center items-center">
+            <h3 className="font-montserrat font-extrabold lg:text-[2.5rem] text-justify text-[#0052A0]">
+              BOARD OF DIRECTORS
+            </h3>
+          </div>
+          <div className="w-full flex justify-around items-center">
+            <BoardMember
+              imgSrc="/founder.png"
+              name="Mr. Kishan Bastola"
+              position="Fpunder & President"
+            />
+          </div>
+          <div className="w-full flex justify-around items-center">
+            <BoardMember
+              imgSrc="cofounder.png"
+              name="Mr. Kishan Bastola"
+              position="Co-Founder"
+            />
+            <BoardMember
+              imgSrc="chiefsecretary.png"
+              name="Mr. Kishan Bastola"
+              position="Chief Secretary"
+            />
+          </div>
+          <div className="w-full flex justify-around items-center">
+            <BoardMember
+              imgSrc="treasurer.png"
+              name="Mr. Kishan Bastola"
+              position="Treasurer"
+            />
+            <BoardMember
+              imgSrc="boardmember1.png"
+              name="Mr. Sandip Dahal"
+              position="Board Member"
+            />
+            <BoardMember
+              imgSrc="boardmember2.png"
+              name="Ms. Rojina Bastola"
+              position="Board Member"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="h-auto overflow-hidden mt-4 bg-blue-50">
+        <div className="flex justify-center items-center py-8">
+          <h3 className="font-montserrat font-extrabold lg:text-[2.5rem] text-[#0052A0]">
+            MEET OUR EXPERTS
+          </h3>
+        </div>
+        <div className="shadow-lg bg-white lg:py-12 lg:px-12 grid grid-cols-3 grid-rows-2 gap-x-4 gap-y-4">
+          <Experts
+            imgSrc="/kapilpaudel.png"
+            name="Kapil Paudel"
+            profession="Scientist"
+          />
+          <Experts
+            imgSrc="/babatundeayoola.png"
+            name="Mr. Babatunde Ayoola"
+            profession="Child Psychologist"
+          />
+          <Experts
+            imgSrc="/yogeshchandna.png"
+            name="Dr. Yogesh Chandna"
+            profession="Author,Vedic Mathematics International Trainer"
+          />
+          <Experts
+            imgSrc="/chhabiadhikari.png"
+            name="Mr. Chhabi Adhikari"
+            profession="NLP Trainer"
+          />
+          <Experts
+            imgSrc="/akashdeo.png"
+            name="Mr. Aakash Deo"
+            profession="Scientist & Researcher"
+          />
+        </div>
+      </div>
+      <div className="h-auto overflow-hidden mt-4 bg-blue-50">
+        <div className="flex justify-center items-center py-8">
+          <h3 className="font-montserrat font-extrabold lg:text-[2.5rem] text-[#0052A0]">
+            OUR TEAM MEMBERS
+          </h3>
+        </div>
+        <div className="shadow-lg bg-white lg:py-12 lg:px-12 grid grid-cols-4 grid-rows-3 gap-x-4 gap-y-4">
+          <TeamMembers
+            imgSrc="/babatundeayoola.png"
+            name="Mr. Babatunde Ayoola"
+            position="Child Psychologist, Educationist"
+          />
+          <TeamMembers
+            imgSrc="/aayushbasnet.png"
+            name="Er. Aayush Basnet"
+            position="Program Director"
+          />
+          <TeamMembers
+            imgSrc="/dikshyakharel.png"
+            name="Mrs. Dikshya Kharel"
+            position="Finance Officer"
+          />
+          <TeamMembers
+            imgSrc="/anmolpant.png"
+            name="Mr. Anmol Pant"
+            position="Project Coordinator"
+          />
+          <TeamMembers
+            imgSrc="/ishanacharya.png"
+            name="Mr. Ishan Acharya"
+            position="Event Manger, Podcast Host"
+          />
+          <TeamMembers
+            imgSrc="/anujadhikari.png"
+            name="Mr. Anuj Adhikari"
+            position="Reserch Coordinator Intern"
+          />
+          <TeamMembers
+            imgSrc="/aayushnepal.png"
+            name="Mr. Aayush Nepal"
+            position="Astrophysics Research Intern"
+          />
+          <TeamMembers
+            imgSrc="/namratabartaula.png"
+            name="Ms. Namrata Bartaula"
+            position="Stone Art & Crafting Intern"
+          />
+          <TeamMembers
+            imgSrc="/rabinpariyar.png"
+            name="Mr. Rabin Pariyar"
+            position="Graphics Designer"
+          />
+          <TeamMembers
+            imgSrc="/rajuraut.png"
+            name="Mr. Raju Raut"
+            position="Student Coordinator"
+          />
+          <TeamMembers
+            imgSrc="/maheshmoktan.png"
+            name="Mr. Mahesh Moktan"
+            position="Web Developer Intern"
+          />
+        </div>
+      </div>
+      <div className="h-auto lg:py-12 lg:px-12 bg-[#0052A0DE] mt-4 overflow-hidden relative flex justify-between items-center">
+        <div className="flex flex-col justify-center items-center w-[75%] space-y-4">
+          <h3 className="font-montserrat font-bold text-[2.5rem] text-white">
+            Meet Our International Ambassador
+          </h3>
+          <p className="font-montserrat font-medium text-xl text-white">
+            Mr.Tunde is a qualified and dynamic teacher with Master&apos;s
+            Degree in Education Science, M.Ed (Sci.), Bachelor&apos;s Degree in
+            Education Chemistry, B.sc(Ed) Chemistry from the Lagos State
+            University and a member of the Teachers Registration Council of
+            Nigeria. He has been trained by Florence Academy UK and Reeds, UK
+            with over twenty certification courses and over thirteen
+            certifications with TES(myeducare) he has two (2) years
+            international teaching experience in China on work permit, work visa
+            and residence permit. he had taught in Zhouyue experimental school
+            attached to Beijing Normal University, Dayawan District, Huizhou
+            city, Guangdong Province and Uncle Sam kids English School, Jiange
+            county, Guangyuan city, Sichuan province, China. he has taught in
+            several other schools with over fourteen years teaching experience
+            as ESL, Science, Chemistry, Maths and music teacher which include
+            Greensprings School, Newhall international school, delightsomeland
+            School, Victoria Island , Ronik international School amongst others.
+            he is a Global Professional member of TESOL with TESOL Leadership
+            development certification, 120 hours American TESOL Advanced
+            certificate, TEFL certification, IGCSE certifications, Diploma in
+            Music. he appointed as a international ambassador for Nigeria in
+            year of 2023.
+          </p>
+          <p className="font-montserrat font-bold text-xl text-justify self-end text-[#F28459]">
+            - Mr. Babatunde Ayoola
+          </p>
+          <p className="font-montserrat font-semibold text-xs self-end text-white">
+            (International Ambassador,Nigeria)
+          </p>
+          <div className="self-end flex justify-center items-center space-x-4">
+            <a href="#">
+              <img
+                src="/assets/gmail.svg"
+                alt="Gmail Icon"
+                className="w-8 h-8"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="/assets/linkedin.svg"
+                alt="Linkedin Icon"
+                className="w-8 h-8"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="/assets/facebook.svg"
+                alt="Facebook Icon"
+                className="w-8 h-8"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="h-full">
+          <div className="absolute top-[8%] right-[6%] bg-white w-80 h-80 rounded-full"></div>
+          <div className="absolute top-[10%] -right-8 h-full">
+            <img
+              src="/babatundeayoola.png"
+              alt="Babatunde Ayoola Image"
+              className="h-full"
+            />
+          </div>
+        </div>
+        <div className="w-28 h-28 rounded-full bg-[#FFEAEA5E] absolute top-8 -left-16"></div>
+        <div className="w-16 h-16 rounded-full bg-[#FFEAEA14] absolute bottom-[12%] -left-4"></div>
+        <div className="w-16 h-16 rounded-full bg-[#FFEAEA14] absolute bottom-0 left-6"></div>
+      </div>
+      <div className="h-auto overflow-hidden flex justify-evenly space-x-20 lg:py-12 lg:px-12">
+        <div className="self-start">
+          <svg
+            width="108"
+            height="97"
+            viewBox="0 0 108 97"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M97 97C99.8511 97 102.585 95.8674 104.601 93.8514C106.617 91.8354 107.75 89.1011 107.75 86.25V59.9985C107.75 57.1474 106.617 54.4131 104.601 52.3971C102.585 50.3811 99.8511 49.2485 97 49.2485H82.079C82.079 45.4717 82.3012 41.6948 82.7455 37.918C83.412 33.919 84.5228 30.3643 86.078 27.254C87.6332 24.1437 89.6363 21.6962 92.0873 19.9118C94.5239 17.9123 97.6343 16.9125 101.418 16.9125V0.25C95.1976 0.25 89.7509 1.583 85.0783 4.249C80.4379 6.8814 76.4511 10.5265 73.4145 14.913C70.3573 19.7414 68.1062 25.035 66.7495 30.5865C65.3776 36.7112 64.7068 42.9721 64.75 49.2485V86.25C64.75 89.1011 65.8826 91.8354 67.8986 93.8514C69.9146 95.8674 72.6489 97 75.5 97H97ZM32.5 97C35.3511 97 38.0854 95.8674 40.1014 93.8514C42.1174 91.8354 43.25 89.1011 43.25 86.25V59.9985C43.25 57.1474 42.1174 54.4131 40.1014 52.3971C38.0854 50.3811 35.3511 49.2485 32.5 49.2485H17.579C17.579 45.4717 17.8012 41.6948 18.2455 37.918C18.9192 33.919 20.03 30.3643 21.578 27.254C23.1332 24.1437 25.1363 21.6962 27.5873 19.9118C30.0239 17.9123 33.1343 16.9125 36.9183 16.9125V0.25C30.6976 0.25 25.2509 1.583 20.5783 4.249C15.9379 6.8814 11.9511 10.5265 8.91451 14.913C5.85732 19.7414 3.60624 25.035 2.24951 30.5865C0.87763 36.7112 0.206818 42.9721 0.250007 49.2485V86.25C0.250007 89.1011 1.38259 91.8354 3.39861 93.8514C5.41462 95.8674 8.14893 97 11 97H32.5Z"
+              fill="#1F67AB"
+              fill-opacity="0.19"
+            />
+          </svg>
+        </div>
+        <div className="flex flex-col self-start justify-between items-center space-y-4">
+          <h4 className="font-montserrat font-semibold text-3xl text-[#0052A0]">
+            Testimonials
+          </h4>
+          <div className="flex justify-center items-center space-x-12">
+            <TestimonialsDiv
+              imgSrc="/aayushnepal2.png"
+              name="Aayush Nepal"
+              position="Astrophysics & Research Enthusiast"
+              desc="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
+              Don't be capped, learn to adapt.”"
+            />
+            <TestimonialsDiv
+              imgSrc="/anujadhikari.png"
+              name="Anuj Adhikari"
+              position="Research Enthusiast"
+              desc="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
+            />
+            <TestimonialsDiv
+              imgSrc="/riteshprajapati.png"
+              name="Ritesh Prajapati"
+              position="Video Editor Intern"
+              desc="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
+            />
+          </div>
+        </div>
+        <div className="self-end">
+          <svg
+            width="108"
+            height="97"
+            viewBox="0 0 108 97"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 0C8.14892 0 5.41461 1.13259 3.3986 3.14861C1.38258 5.16462 0.249992 7.89893 0.249992 10.75V37.0015C0.249992 39.8526 1.38258 42.5869 3.3986 44.6029C5.41461 46.6189 8.14892 47.7515 11 47.7515H25.921C25.921 51.5283 25.6988 55.3052 25.2545 59.082C24.588 63.081 23.4772 66.6357 21.922 69.746C20.3668 72.8563 18.3637 75.3038 15.9127 77.0882C13.4761 79.0877 10.3657 80.0875 6.58174 80.0875V96.75C12.8024 96.75 18.2491 95.417 22.9217 92.751C27.5621 90.1186 31.5489 86.4735 34.5855 82.087C37.6427 77.2586 39.8938 71.965 41.2505 66.4135C42.6224 60.2888 43.2932 54.0279 43.25 47.7515V10.75C43.25 7.89893 42.1174 5.16462 40.1014 3.14861C38.0854 1.13259 35.3511 0 32.5 0L11 0ZM75.5 0C72.6489 0 69.9146 1.13259 67.8986 3.14861C65.8826 5.16462 64.75 7.89893 64.75 10.75L64.75 37.0015C64.75 39.8526 65.8826 42.5869 67.8986 44.6029C69.9146 46.6189 72.6489 47.7515 75.5 47.7515H90.421C90.421 51.5283 90.1988 55.3052 89.7545 59.082C89.0808 63.081 87.97 66.6357 86.422 69.746C84.8668 72.8563 82.8637 75.3038 80.4127 77.0882C77.9761 79.0877 74.8657 80.0875 71.0817 80.0875V96.75C77.3024 96.75 82.7491 95.417 87.4217 92.751C92.0621 90.1186 96.0489 86.4735 99.0855 82.087C102.143 77.2586 104.394 71.965 105.75 66.4135C107.122 60.2888 107.793 54.0279 107.75 47.7515V10.75C107.75 7.89893 106.617 5.16462 104.601 3.14861C102.585 1.13259 99.8511 0 97 0L75.5 0Z"
+              fill="#1F67AB"
+              fill-opacity="0.19"
+            />
+          </svg>
         </div>
       </div>
     </section>

@@ -19,6 +19,7 @@ module.exports = {
         "inter" : ["var(--font-inter)"],
         "opensans" : ["var(--font-opensans)"],
         "montserrat" : ["var(--font-montserrat)"],
+        "lato" : ["var(--font-lato)"],
       }
     },
     screens: {
