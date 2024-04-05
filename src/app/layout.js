@@ -1,10 +1,11 @@
-import { Inter, Open_Sans, Montserrat, Lato } from "next/font/google";
+import { Inter, Open_Sans, Montserrat, Lato, IBM_Plex_Sans_Thai_Looped } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-opensans", });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", });
 const lato = Lato({ weight: ['400', '700'], subsets: ["latin"], variable: "--font-lato", });
+const ibmPlex = IBM_Plex_Sans_Thai_Looped({ weight: ['400', '600', '700'], subsets: ["latin"], variable: "--font-ibmplex", })
 
 export const metadata = {
   title: "Astronova Foundation",
@@ -14,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable}`}>
+      <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable}`}>
         {children}
       </body>
     </html>

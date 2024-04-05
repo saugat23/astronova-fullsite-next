@@ -20,6 +20,7 @@ module.exports = {
         "opensans" : ["var(--font-opensans)"],
         "montserrat" : ["var(--font-montserrat)"],
         "lato" : ["var(--font-lato)"],
+        "ibmplex" : ["var(--font-ibmplex)"],
       }
     },
     screens: {

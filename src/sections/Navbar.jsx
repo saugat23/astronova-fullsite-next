@@ -4,34 +4,33 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <header className="h-auto bg-[#1A1728] py-2 px-4 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:px-8">
-      <nav className="grid grid-cols-8 gap-x-4 md:gap-x-6 lg:gap-x-8">
-        <div className="col-span-2 flex justify-center items-center">
+    <header className="h-auto bg-[#048FB7] py-2 px-4 sm:py-3 sm:px-4 md:py-4 md:px-8 lg:px-12 lg:pt-12">
+      <nav className="w-full flex justify-between items-center">
+        <div className="flex justify-center items-center">
           <Link href="/">
             <Image
-              src="/navbarlogo.png"
+              src="/assets/navbarlogo.svg"
               alt="Navbar Logo"
-              width={72}
-              height={48}
+              width={200}
+              height={92}
               className="cursor-pointer"
             />
           </Link>
         </div>
-        <div className="lg:col-span-4 hidden lg:flex lg:items-center lg:justify-evenly lg:w-full">
-          <ul className="flex justify-evenly items-center space-x-8 text-white">
+        <div className="hidden lg:flex lg:items-center lg:justify-end lg:w-full">
+          <ul className="flex justify-evenly items-center space-x-8 text-white font-ibmplex font-semibold text-xl uppercase leading-[25.2px]">
             <li>Home</li>
             <li>About Us</li>
-            <li>Our Works</li>
-            <li>Join Our Team</li>
-            <li>Our Campaign</li>
+            <li>Our Project</li>
+            <li>Science Expo</li>
             <li>Opportunity</li>
             <li>Blogs & News</li>
+            <div className="flex justify-center items-center">
+              <button className="bg-[#F2CE24] rounded-lg px-12 py-4 text-black font-ibmplex font-semibold text-2xl leading-[25.2px]">
+                SUPPORT US
+              </button>
+            </div>
           </ul>
-        </div>
-        <div className="col-span-2 flex justify-center items-center">
-          <button className="bg-[#F36523] border border-white rounded-full px-12 py-3 text-white">
-            Contact Us
-          </button>
         </div>
         <div className="flex lg:hidden">
           <svg
