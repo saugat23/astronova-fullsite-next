@@ -1,10 +1,12 @@
 import React from "react";
+import Image from "next/image";
+import "aos/dist/aos.css";
 
 const Hero = () => {
   return (
     <>
-      <section className="h-auto max-w-screen overflow-hidden">
-        <div className="h-full w-full lg:px-12 bg-gradient-to-t from-white via-[#69BCD4] to-[#048FB7] flex justify-between items-center">
+      <section data-aos="fade-down" data-aos-duration="700" className="h-auto max-w-screen overflow-hidden">
+        <div className="h-full w-full lg:px-8 bg-gradient-to-t from-white via-[#69BCD4] to-[#048FB7] flex justify-between items-center">
           <div className="w-3/4 flex flex-col justify-center items-center space-y-2">
             <div>
               <img src="/herobrain.png" alt="Hero Brain Image" className="" />
@@ -21,17 +23,20 @@ const Hero = () => {
             <div className="">
               <button
                 type="button"
-                className="px-4 py-3 bg-[#AE0D19] font-inter font-extrabold text-2xl text-white"
+                className="px-4 py-3 bg-[#AE0D19] font-inter font-extrabold text-2xl text-white hover:bg-[#57070d] hover:shadow-xl hover:scale-105"
               >
                 Apply Student Startup Fund
               </button>
             </div>
           </div>
           <div className="w-auto h-full self-end">
-            <img
-              src="heroimage.png"
+            <Image
+              src="/heroimage.png"
               alt="Hero Image"
+              width={200}
+              height={100}
               className="w-[50vw] h-[72vh]"
+              priority
             />
           </div>
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
-import ValuesContainer from "../../components/UI/ValuesContainer";
-import BoardMember from "../../components/UI/BoardMember";
-import Experts from "../../components/UI/Experts";
-import TeamMembers from "../../components/UI/TeamMembers";
-import TestimonialsDiv from "../../components/UI/TestimonialsDiv";
+import ValuesContainer from "../../../components/UI/ValuesContainer";
+import BoardMember from "../../../components/UI/BoardMember";
+import Experts from "../../../components/UI/Experts";
+import TeamMembers from "../../../components/UI/TeamMembers";
+import TestimonialsDiv from "../../../components/UI/TestimonialsDiv";
 
 const page = () => {
   return (
@@ -87,7 +87,7 @@ const page = () => {
         <h3 className="font-montserrat font-semibold text-3xl text-white lg:px-6">
           <span className="py-2 border-b-2 border-white">OUR VALUES</span>
         </h3>
-        <div className="flex justify-center items-center space-x-4 mt-8 py-4 h-[30vh]">
+        <div className="flex justify-center items-center space-x-4 mt-8 py-4 h-auto">
           <ValuesContainer
             svg="assets/collaboration.svg"
             title="Collaboration"
@@ -121,7 +121,7 @@ const page = () => {
             <BoardMember
               imgSrc="/founder.png"
               name="Mr. Kishan Bastola"
-              position="Fpunder & President"
+              position="Founder & President"
             />
           </div>
           <div className="w-full flex justify-around items-center">

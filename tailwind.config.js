@@ -21,6 +21,7 @@ module.exports = {
         "montserrat" : ["var(--font-montserrat)"],
         "lato" : ["var(--font-lato)"],
         "ibmplex" : ["var(--font-ibmplex)"],
+        "poppins" : ["var(--font-poppins)"],
       }
     },
     screens: {
