@@ -1,8 +1,10 @@
-import { Inter, Open_Sans, Montserrat, Lato, IBM_Plex_Sans_Thai_Looped, Poppins } from "next/font/google";
+import { Inter, Open_Sans, Montserrat, Lato, IBM_Plex_Sans_Thai_Looped, Poppins, Kumbh_Sans } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-opensans", });
+const kumbhSans = Kumbh_Sans({ subsets: ["latin"], variable: "--font-kumbhsans", });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", });
 const lato = Lato({ weight: ['400', '700'], subsets: ["latin"], variable: "--font-lato", });
 const ibmPlex = IBM_Plex_Sans_Thai_Looped({ weight: ['400', '600', '700'], subsets: ["latin"], variable: "--font-ibmplex", });
@@ -16,8 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable}`}>
+      <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable}`}>
+        <Providers>
         {children}
+        </Providers>
       </body>
     </html>
   );

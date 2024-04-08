@@ -1,9 +1,11 @@
 import React from "react";
+import SupportStudent from "../components/UI/SupportStudent";
+import { Progress } from "@nextui-org/react";
 
 const About = () => {
   return (
-    <section className='h-auto max-w-screen overflo bg-[url("/aboutsection.png")] bg-cover xl:py-12 xl:px-12'>
-      <div className="xl:px-12 flex flex-col justify-center space-y-4 items-start">
+    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover xl:py-12 xl:px-12'>
+      <div data-aos="fade-up" data-aos-duration="700" className="xl:px-12 flex flex-col justify-center space-y-4 items-start">
         <h3 className="font-inter font-bold md:text-2xl lg:text-3xl xl:text-4xl text-[#33A4C6]">
           About Us
         </h3>
@@ -28,8 +30,8 @@ const About = () => {
           resources and moves ahead accordingly.
         </p>
       </div>
-      <div className="flex justify-between items-center mt-8 xl:py-8">
-        <div className="w-1/4 flex flex-col justify-evenly items-center space-y-6">
+      <div data-aos="fade-up" data-aos-duration="700" className="flex justify-between items-center mt-8 xl:py-8">
+        <div className="w-1/3 flex flex-col justify-evenly items-center space-y-6">
           <h3 className="font-opensans font-bold text-5xl text-[#0B77A5] tracking-tight">
             OUR MAJOR WORKING AREA
           </h3>
@@ -38,26 +40,59 @@ const About = () => {
             focusing working area are as below.
           </p>
         </div>
-        <div className="grow"></div>
+        <div className="grow">
+          <img src="/workingarea.png" alt="Working Area Image" />
+        </div>
       </div>
       <div className="flex flex-col justify-between items-center space-y-12 mt-8">
         <h3 className="font-montserrat font-extrabold lg:text-[2rem] xl:text-[2.5rem] text-justify text-[#0052A0]">
           SUPPORT FOR STUDENTS
         </h3>
-        <div className="flex justify-evenly items-center">
-          <div className="p-2 flex flex-col justify-center items-center xl:space-y-6">
-            <div>
-              <img src="/supportstudents.png" alt="Support Students" />
-            </div>
-            <h3 className="font-poppins font-bold lg:text-base xl:text-lg text-black">
-              Tinkering Labs Project
-            </h3>
-            <p className="font-poppins font-normal xl:text-xs lg:text-[10px] text-[#1F1F1F]">
-              Step into the world of Tinkering Labs, where creativity knows no
+        <div className="flex justify-evenly items-center xl:space-x-6 lg:space-x-4">
+          <SupportStudent
+          data-aos="fade-right" data-aos-duration="500"
+            imgSrc="/supportbroadcast.png"
+            project="Broadcast"
+            desc="Explore the latest trends shaping our world and discover 
+              how these transformations will impact our future. Join us for 
+              insightful discussions on technological advancements..."
+            progressValue="80"
+            achieved="$40000000"
+            target="$80000000"
+          />
+          <SupportStudent
+          data-aos="fade-right" data-aos-duration="700"
+            imgSrc="/supportstudents.png"
+            project="Tinkering Labs Project"
+            desc="Step into the world of Tinkering Labs, where creativity knows no
               bounds! Our tinkering spaces are designed to ignite curiosity,
-              foster innovation, and unleash the imagination of...{" "}
-            </p>
-          </div>
+              foster innovation, and unleash the imagination of..."
+            progressValue="25"
+            achieved="$14000000"
+            target="$41000000"
+          />
+          <SupportStudent
+          data-aos="fade-right" data-aos-duration="900"
+            imgSrc="/supportplanterium.png"
+            project="Planterium Labs"
+            desc="Embark on a cosmic adventure with Planetorium Labs! Our 
+            cutting-edge facilities bring the wonders of the universe to 
+            life through state-of-the-art technology. Join us for an..."
+            progressValue="10"
+            achieved="$56000"
+            target="$560000000"
+          />
+          <SupportStudent
+          data-aos="fade-right" data-aos-duration="1100"
+            imgSrc="/supportplanterium.png"
+            project="Planterium Labs"
+            desc="Embark on a cosmic adventure with Planetorium Labs! Our 
+            cutting-edge facilities bring the wonders of the universe to 
+            life through state-of-the-art technology. Join us for an..."
+            progressValue="10"
+            achieved="$56000"
+            target="$560000000"
+          />
         </div>
       </div>
     </section>
