@@ -7,9 +7,10 @@ import Media from "../sections/Media";
 import Impact from "../sections/Impact";
 import Partners from "../sections/Partners";
 import Footer from "../sections/Footer";
+import Home from "../sections/Home";
 import { useEffect } from "react";
 
-export default function Home() {
+export default function Page() {
   useEffect(() => {
     import("aos").then((AOS) => {
       AOS.init();
@@ -18,13 +19,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Media />
-      <Impact />
-      <Partners />
-      <Footer />
+      <Home />
     </>
   );
 }

@@ -14,6 +14,10 @@ html{
   background: linear-gradient(7.03deg, #0052A0 5.76%, rgba(0, 30, 58, 0) 55.22%);
 }
 
+.popup-donation{
+  background: radial-gradient(50% 50% at 50% 50%, #2496D7 0%, #134F71 100%) !important;
+}
+
 .rfm-marquee > .rfm-marquee{
   display: flex;
   justify-content: space-around;

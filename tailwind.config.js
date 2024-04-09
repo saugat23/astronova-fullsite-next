@@ -92,6 +92,8 @@ module.exports = {
         "ibmplex" : ["var(--font-ibmplex)"],
         "poppins" : ["var(--font-poppins)"],
         "kumbhsans" : ["var(--font-kumbhsans)"],
+        "roboto" : ["var(--font-roboto)"],
+        "tinos" : ["var(--font-tinos)"],
       },
     },
     screens: {
