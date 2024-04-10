@@ -56,11 +56,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Providers
-        className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}
-      >
-        <body>{children}</body>
+        <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}>
+      <Providers>
+          {children}
       </Providers>
+        </body>
     </html>
   );
 }
