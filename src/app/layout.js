@@ -20,8 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}>
-        <Providers>
+      <body>
+        <Providers className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}>
         {children}
         </Providers>
       </body>

@@ -143,16 +143,16 @@ const Impact = () => {
                 <path
                   d="M29.0625 16.6875C27.9375 22.3125 23.6962 27.609 17.745 28.7925C14.8425 29.3705 11.8316 29.0181 9.14099 27.7854C6.45043 26.5526 4.21736 24.5025 2.75975 21.9268C1.30214 19.3511 0.694303 16.3812 1.02278 13.44C1.35126 10.4988 2.59932 7.73614 4.58924 5.54548C8.67074 1.04998 15.5625 -0.187519 21.1875 2.06248"
                   stroke="#DE5B3B"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M9.9375 14.4375L15.5625 20.0625L29.0625 5.4375"
                   stroke="#DE5B3B"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>

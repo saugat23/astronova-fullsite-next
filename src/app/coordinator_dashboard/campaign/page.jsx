@@ -10,26 +10,101 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
+import Link from "next/link";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Checkbox,
+  Input,
+  Label,
+  Select,
+  SelectItem,
+  Textarea,
+} from "@nextui-org/react";
+import { FaUser } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
+  const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 
   return (
     <section className="overflow-visible h-auto p-4">
       <div className="bg-white py-8 px-4 w-full">
         <div className="flex justify-between w-full items-center">
           <div className="flex justify-center items-center lg:space-x-6">
-            <button
+            <Button
               type="button"
               className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
             >
-              Add Campaign
-            </button>
-            <button
+              <Link href="campaign/add_campaign">Add Campaign</Link>
+            </Button>
+            <Button
               type="button"
               className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+              onPress={onOpen}
             >
               Add Testimonial
-            </button>
+            </Button>
+            <Modal
+              isOpen={isOpen}
+              onClose={onClose}
+              onOpenChange={onOpenChange}
+            >
+              <ModalContent>
+                {(onClose) => (
+                  <>
+                    <ModalHeader className="flex flex-col gap-1">
+                      Add Testimonial
+                    </ModalHeader>
+                    <ModalBody>
+                      <Input type="file" className="hidden" accept="image/*" id="inputFile" name="inputFile"/>
+                      <label htmlFor="inputFile" className="max-w-md w-40 h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-contain mx-auto cursor-pointer"></label>
+                      <Input
+                        autoFocus
+                        labelPlacement="outside"
+                        startContent={<FaUser />}
+                        label="Full Name"
+                        placeholder="Enter your Full Name"
+                        variant="faded"
+                        className="font-poppins my-4"
+                      />
+                      <Select
+                        labelPlacement="outside"
+                        label="Campaign Name"
+                        placeholder="Choose an Option"
+                        variant="faded"
+                        className="my-4"
+                      >
+                        <SelectItem value="Tinkering Labs Project">
+                          Tinkering Labs Project
+                        </SelectItem>
+                        <SelectItem value="Planetorium Labs">
+                          Planetorium Labs
+                        </SelectItem>
+                        <SelectItem value="Astronova Foundation's Tinkering Labs">
+                          Astronova Foundation&apos;s Tinkering Lab
+                        </SelectItem>
+                      </Select>
+                      <Textarea
+                        labelPlacement="outside"
+                        label="Description"
+                        placeholder="Enter your description"
+                        className="max-w-md w-full my-4"
+                      />
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="success" variant="flat" onPress={onClose}>
+                        Submit Testimonial
+                      </Button>
+                    </ModalFooter>
+                  </>
+                )}
+              </ModalContent>
+            </Modal>
           </div>
           <div>
             <input
@@ -154,4 +229,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

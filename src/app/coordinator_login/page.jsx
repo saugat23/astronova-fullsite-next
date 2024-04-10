@@ -1,8 +1,14 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 
-const page = () => {
+const Page = () => {
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
   return (
     <section className="h-screeen max-w-screen overflow-hidden flex flex-col justify-start items-center xl:py-24 lg:py-20 md:18 xs:py-12 sm:py-16">
       <div className="">
@@ -24,6 +30,8 @@ const page = () => {
           id="email"
           placeholder="Email or User ID"
           className="bg-[#ECECEC] p-5 outline-none font-roboto font-medium focus:border focus:border-[#134affcc] rounded-xl w-96"
+          onChange={(e) => setFormData({email: e.target.value})}
+          value={formData.email}
         />
       </div>
       <div className="lg:mt-6">
@@ -33,6 +41,8 @@ const page = () => {
           id="password"
           placeholder="Password"
           className="bg-[#ECECEC] p-5 outline-none font-roboto font-medium focus:border focus:border-[#134affcc] rounded-xl w-96"
+          // onChange={(e) => setFormData(password: e.target.value)}
+          // value={formData.email}
         />
       </div>
       <div className="w-96 mt-6"><button type="submit" className="w-full h-14 p-4 bg-[#3042BA] font-poppins font-medium text-base text-white rounded-xl hover:bg-[#1d2870]">SignIn</button></div>
@@ -40,4 +50,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

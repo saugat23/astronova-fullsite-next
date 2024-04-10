@@ -67,7 +67,7 @@ const Home = () => {
         >
           <ModalContent>
             {(onClose) => (
-              <>
+              <div>
                 <ModalBody className="flex justify-evenly items-center">
                   <div className="lg:px-6 lg:py-6 border-r-3 border-white flex justify-center items-center">
                     <h2 className="font-opensans font-extrabold xl:text-8xl lg:text-7xl tracking-tighter">
@@ -79,11 +79,8 @@ const Home = () => {
                   <Button color="danger" variant="light" onPress={onClose}>
                     Close
                   </Button>
-                  <Button color="primary" onPress={onClose}>
-                    Action
-                  </Button>
                 </ModalFooter>
-              </>
+                </div>
             )}
           </ModalContent>
         </Modal>
