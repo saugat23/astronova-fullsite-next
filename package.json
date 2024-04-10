@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
-    "@radix-ui/react-progress": "^1.0.3",
     "aos": "^2.3.4",
     "apexcharts": "^3.48.0",
     "class-variance-authority": "^0.7.0",
