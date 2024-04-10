@@ -2,7 +2,6 @@ import React from "react";
 import ChartDonut from "../../../components/UI/Charts/ChartDonut";
 import ChartGraph from "../../../components/UI/Charts/ChartGraph";
 import SupportStudent from "../../../components/UI/SupportStudent";
-import Map from "../../../components/UI/Maps/Map";
 
 const page = () => {
   return (
