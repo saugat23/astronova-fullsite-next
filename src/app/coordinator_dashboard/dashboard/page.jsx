@@ -1,9 +1,10 @@
-import React from "react";
+"use client"
+import React, {useState} from "react";
 import ChartDonut from "../../../components/UI/Charts/ChartDonut";
 import ChartGraph from "../../../components/UI/Charts/ChartGraph";
 import SupportStudent from "../../../components/UI/SupportStudent";
 
-const page = () => {
+const Page = () => {
   return (
     <section className="overflow-visible h-auto py-4">
       <div className="w-[80%] lg:py-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-2 xl:grid-cols-4 px-6">
