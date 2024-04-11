@@ -1,10 +1,8 @@
 "use client"
 import React from "react";
-import Link from "next/link";
 import { Input, Textarea } from "@nextui-org/react";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { HiMiniCurrencyRupee } from "react-icons/hi2";
-import { FaCalendarAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
@@ -93,42 +91,8 @@ const Page = () => {
             <div className="border-dashed border-[#e0d8ff99] w-80 h-60 py-6">
               <label
                 htmlFor="fundingFileInput"
-                className="max-w-md w-80 h-60 mx-auto cursor-pointer"
-              >
-                <svg
-                  width="600"
-                  height="150"
-                  viewBox="10 0 480 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect
-                    y="0.0947266"
-                    width="320.098"
-                    height="100.806"
-                    fill="url(#pattern0)"
-                  />
-                  <defs>
-                    <pattern
-                      id="pattern0"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use
-                        xlinkHref="#image0_30_2525"
-                        transform="matrix(0.003779 0 0 0.0111111 0.329945 0)"
-                      />
-                    </pattern>
-                    <image
-                      id="image0_30_2525"
-                      width="180"
-                      height="120"
-                      xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACCUlEQVR4nO2cO05DMRBFXQFLIIQlEmiSF3yb7I5PBSwFhYbqIguQEKIgyYs9Ts6R3FCND3fGT7HklAAAAAAAAAAAIK1WPsvZNzn7UfKbZB/oepP8IPl6NvNp1X/9MPhS8ksACa68nsveqyX5SCX7W3aVZJdxEWCzbrly9qyG6McIm1Vb0fc1RK9bb1TtRa/3Lrr1JhVkIVqIdusUkmi1F8foUHupzGghevQE5ex3yQvJk7Jy9vD1NxI9sujhj0/NJaLHT9rkt+j53OeIrnT4iNGB6J2IliAFq2c0om1MwepBtBBtEt1BqypYPYwOIdokuoNWVbB6GB1CtEl0B62qYPUwOoRok+gRWvXnzUgKxi43NRFFDyk429zU1Chq04NjkoKzzU3N3ovatKDFwhcpOJKn3YsubZmCk7Nvuxf9ddAsIya71FRqO4jDcKyVOqkH0UK0SXQHrapg9TA6hGiT6A5aVcHqYXQI0SbRHbSqgtXD6BCiTaI7aFUFq4fRIUSbRAdq1cUfv2dvczPC6NDmNzXb3IwgWv+/qdnlZgTR6msd7FeHgi1EC9FunUISrfbiGB060hnNc2wun5qvNUTzwGCu8MBgeXW2dduq/brau+jyAGp5CDXAZt1i5eyn1conqeKzxs/HKFnyNNWkJLu8Olvm1SEfkPlzb3dlXFRLMgAAAAAAAABAis0HtRflCFEv9CQAAAAASUVORK5CYII="
-                    />
-                  </defs>
-                </svg>
+                className="max-w-md w-80 h-60 mx-auto cursor-pointer bg-[url('/assets/inputfile.svg')] bg-cover bg-no-repeat"
+              >           
               </label>
               <input
                 type="file"
