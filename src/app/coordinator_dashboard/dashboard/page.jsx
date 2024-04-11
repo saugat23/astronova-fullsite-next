@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import { Progress } from "@nextui-org/react";
+// import { Progress } from "@nextui-org/react";
 
 const options = {
   chart: {
@@ -428,13 +428,13 @@ const Page = () => {
               bounds! Our tinkering spaces are designed to ignite curiosity,
               foster innovation, and unleash the imagination of...
               </p>
-              <Progress
+              {/* <Progress
                 size="md"
                 aria-label="Loading..."
                 color="success"
                 value={25}
                 className="w-full"
-              />
+              /> */}
               <div className="w-full flex justify-between items-center">
                 <div className="flex flex-col justify-center items-start space-y-3">
                   <p className="font-poppins font-semibold lg:text-xl xl:text-2xl text-[#7926ED]">
