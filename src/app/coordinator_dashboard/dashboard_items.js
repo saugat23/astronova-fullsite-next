@@ -8,7 +8,7 @@ import { LiaBlogSolid } from "react-icons/lia";
 import { FaMicroblog } from "react-icons/fa6";
 import { MdEvent } from "react-icons/md";
 
-const dashboard_items = [
+export const dashboard_items = [
     {
         title: "Dashboard",
         icon: <MdDashboard />,
@@ -60,5 +60,3 @@ const dashboard_items = [
         link: "/coordinator_dashboard/events",
     },
 ];
-
-export default dashboard_items;
