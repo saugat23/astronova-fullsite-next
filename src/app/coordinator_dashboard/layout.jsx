@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex">
-      <div className="flex-[0.6] lg:py-6 shadow-2xl min-h-screen bg-white z-40">
+      <div className="flex-[0.6] dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
         <div className="lg:py-4 border-b border-[#e0d8ff99]">
           <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
             <div className="flex justify-center items-center">
@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
           </ul>
         </div>
       </div>
-      <div className="flex-[4] bg-[#FAFAFA]">
+      <div className="flex-[4] bg-[#FAFAFA] dashboard-navbar">
         <div className="flex justify-between w-full px-4 py-6 shadow-2xl bg-white">
           <div className="flex flex-col justify-center items-start">
             <h3 className="font-poppins font-medium xl:text-base text-[#2A2A2A]">

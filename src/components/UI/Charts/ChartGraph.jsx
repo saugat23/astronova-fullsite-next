@@ -1,7 +1,10 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const options = {
   legend: {
@@ -84,11 +87,7 @@ const options = {
   },
   xaxis: {
     type: "category",
-    categories: [
-      "25.00",
-      "10.00",
-      "0.00"
-    ],
+    categories: ["25.00", "10.00", "0.00"],
     axisBorder: {
       show: false,
     },
@@ -106,7 +105,6 @@ const options = {
     max: 30,
   },
 };
-
 
 const ChartGraph = () => {
   const [state, setState] = useState({
@@ -131,7 +129,9 @@ const ChartGraph = () => {
         <div className="flex w-full flex-wrap gap-3 sm:gap-5 mt-4">
           <div className="flex min-w-47.5">
             <div className="w-full">
-              <p className="font-semibold text-xl font-montserrat">Statistics</p>
+              <p className="font-semibold text-xl font-montserrat">
+                Statistics
+              </p>
             </div>
           </div>
         </div>
@@ -139,13 +139,15 @@ const ChartGraph = () => {
 
       <div>
         <div id="chartOne" className="-ml-5">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="area"
-            height={250}
-            width={"100%"}
-          />
+          {typeof window !== "undefined" && (
+            <ReactApexChart
+              options={options}
+              series={state.series}
+              type="area"
+              height={250}
+              width={"100%"}
+            />
+          )}
         </div>
       </div>
     </div>

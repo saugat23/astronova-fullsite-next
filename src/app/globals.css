@@ -28,3 +28,7 @@ html{
 #inputFile::-webkit-file-upload-button {
   visibility: hidden;
 }
+
+.dashboard-sidebar{
+
+}

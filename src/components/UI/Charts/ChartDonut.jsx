@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const options = {
   chart: {
@@ -76,11 +79,11 @@ const ChartDonut = () => {
 
       <div className="mb-2">
         <div id="chartThree" className="mx-auto flex justify-center">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="donut"
-          />
+            <ReactApexChart
+              options={options}
+              series={state.series}
+              type="donut"
+            />
         </div>
       </div>
 
