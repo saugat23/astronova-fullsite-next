@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "aos/dist/aos.css";
 import {
   Modal,
   ModalContent,
@@ -89,7 +90,10 @@ const Navbar = () => {
               </Link>
             </li>
             <div className="flex justify-center items-center">
-              <Button type="button" className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-6 2xl:py-7 text-black font-ibmplex font-semibold text-lg lg:text-xl 2xl:text-2xl leading-[25.2px] hover:shadow-2xl hover:scale-105">
+              <Button
+                type="button"
+                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-6 2xl:py-7 text-black font-ibmplex font-semibold text-lg lg:text-xl 2xl:text-2xl leading-[25.2px] hover:shadow-2xl hover:scale-105"
+              >
                 SUPPORT US
               </Button>
             </div>

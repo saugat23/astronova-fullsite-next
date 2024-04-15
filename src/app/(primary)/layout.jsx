@@ -1,6 +1,18 @@
+"use client"
 import React from 'react'
-import Navbar from "../../sections/Navbar";
-import Footer from "../../sections/Footer";
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(
+  () => import("../../sections/Navbar"),
+  {
+    ssr: false,
+  }
+);
+const Footer = dynamic(
+  () => import("../../sections/Footer"),
+  {
+    ssr: false,
+  }
+);
 
 const layout = ({children}) => {
   return (
