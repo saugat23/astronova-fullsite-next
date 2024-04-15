@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
@@ -23,51 +23,51 @@ const SupportStudent = dynamic(
 
 const page = () => {
   return (
-    <section className="overflow-visible h-auto py-4">
-      <div className="w-[80%] lg:py-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-2 xl:grid-cols-4 px-6">
-        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#7a7affcc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
-          <h4 className="font-montserrat font-normal text-sm text-white">
+    <section className="overflow-hidden h-auto py-4">
+      <div className="w-full lg:py-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-2 xl:grid-cols-4 px-6">
+        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#7a7affcc] py-4 px-2 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
+          <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Total Donations
           </h4>
-          <h4 className="font-montserrat font-semibold text-[2.5rem] text-white">
+          <h4 className="font-montserrat font-semibold md:text-4xl xl:text-[2.5rem] text-white">
             135035500K
           </h4>
         </div>
         <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#ffbc13cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
-          <h4 className="font-montserrat font-normal text-sm text-white">
+          <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Number Of Donation
           </h4>
-          <h4 className="font-montserrat font-semibold text-[2.5rem] text-white">
+          <h4 className="font-montserrat font-semibold md:text-4xl xl:text-[2.5rem] text-white">
             67
           </h4>
         </div>
         <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#ff9013cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
-          <h4 className="font-montserrat font-normal text-sm text-white">
+          <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Average Donation
           </h4>
-          <h4 className="font-montserrat font-semibold text-[2.5rem] text-white">
+          <h4 className="font-montserrat font-semibold md:text-4xl xl:text-[2.5rem] text-white">
             22222K
           </h4>
         </div>
         <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#2438b8cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
-          <h4 className="font-montserrat font-normal text-sm text-white">
+          <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Total Implementation
           </h4>
-          <h4 className="font-montserrat font-semibold text-[2.5rem] text-white">
+          <h4 className="font-montserrat font-semibold md:text-4xl xl:text-[2.5rem] text-white">
             100K
           </h4>
         </div>
       </div>
-      <div className="w-full mt-2 flex justify-center items-start gap-x-4 gap-y-2 lg:px-6 h-[75vh]">
+      <div className="w-full mt-4 flex justify-center items-start gap-x-4 gap-y-2 lg:px-6 h-[75vh]">
         <div className="grow flex flex-col justify-center items-start space-y-4 h-full">
-          <div className="w-full flex justify-center items-start space-x-4 lg:h-1/2">
+          <div className="w-full flex justify-center items-start space-x-4 h-1/2">
             {typeof window !== "undefined" && <ChartDonut />}
             {typeof window !== "undefined" && <ChartGraph />}
           </div>
           <div className="w-full flex justify-center items-start space-x-4 lg:h-1/2">
             <div className="grow rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 lg:h-full">
               <div className="flex justify-start items-center mt-4">
-                <h3 className="px-6 font-semibold font-montserrat text-xl">
+                <h3 className="px-6 font-semibold font-montserrat xs:text-base md:text-lg xl:text-xl">
                   Donation Implemented Location
                 </h3>
               </div>
@@ -97,7 +97,7 @@ const page = () => {
             </div>
             <div className="rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 lg:h-full lg:w-[30%]">
               <div className="flex justify-start items-center mt-4">
-                <h3 className="px-2 font-semibold font-montserrat text-xl">
+                <h3 className="px-2 font-semibold font-montserrat xs:text-sm md:text-base xl:text-xl">
                   Recent Donors
                 </h3>
               </div>
@@ -136,7 +136,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="w-[30%] rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-3 xl:col-start-9 xl:col-end-12 h-auto">
+        <div className="hidden xl:block xl:w-[30%] rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-3 xl:col-start-9 xl:col-end-12 h-auto">
           <div className="flex justify-start items-center mt-4">
             <h3 className="px-2 font-semibold font-montserrat text-xl">
               Campaign for you

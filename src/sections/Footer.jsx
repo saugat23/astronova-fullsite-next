@@ -102,35 +102,35 @@ const Footer = () => {
                 <img
                   src="/assets/facebook.svg"
                   alt="Facebook SVG"
-                  className="p-2 border-2 border-[#DB8114] rounded-full lg:h-14"
+                  className="p-2 border-2 border-[#DB8114] rounded-full lg:h-14 lg:w-14"
                 />
               </div>
               <div>
                 <img
                   src="/assets/web.svg"
                   alt="Web SVG"
-                  className="p-2 border-2 border-[#2496D7] rounded-full lg:h-14"
+                  className="p-2 border-2 border-[#2496D7] rounded-full lg:h-14 lg:w-14"
                 />
               </div>
               <div>
                 <img
                   src="/assets/instagram.svg"
                   alt="Instagram SVG"
-                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14"
+                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14"
                 />
               </div>
               <div>
                 <img
                   src="/assets/linkedin.svg"
                   alt="Linkedin SVG"
-                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14"
+                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14"
                 />
               </div>
               <div>
                 <img
                   src="/assets/gmail.svg"
                   alt="Gmail SVG"
-                  className="p-2 border-2 border-[#AF1B1C] rounded-full lg:h-14"
+                  className="p-2 border-2 border-[#AF1B1C] rounded-full lg:h-14 lg:w-14"
                 />
               </div>
             </div>

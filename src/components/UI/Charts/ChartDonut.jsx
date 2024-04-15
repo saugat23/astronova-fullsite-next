@@ -37,18 +37,34 @@ const options = {
   },
   responsive: [
     {
-      breakpoint: 2600,
+      breakpoint: 320,
       options: {
         chart: {
-          width: 200,
+          height: "40%",
         },
       },
     },
     {
-      breakpoint: 640,
+      breakpoint: 800,
       options: {
         chart: {
-          width: 100,
+          height: "40%",
+        },
+      },
+    },
+    {
+      breakpoint: 1024,
+      options: {
+        chart: {
+          height: "40%",
+        },
+      },
+    },
+    {
+      breakpoint: 1366,
+      options: {
+        chart: {
+          height: "40%",
         },
       },
     },
@@ -68,21 +84,22 @@ const ChartDonut = () => {
   handleReset;
 
   return (
-    <div className="w-[60%] rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 lg:h-full">
+    <div className="w-[60%] rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 h-full">
       <div className="mb-3 justify-between gap-4 sm:flex">
         <div>
-          <h5 className="text-xl font-semibold font-montserrat text-black dark:text-white mt-4">
+          <h5 className="xs:text-base md:text-lg xl:text-xl font-semibold font-montserrat text-black dark:text-white mt-4">
             Campaign Type
           </h5>
         </div>
       </div>
 
-      <div className="mb-2">
-        <div id="chartThree" className="mx-auto flex justify-center">
+      <div className="mb-2 h-full">
+        <div id="chartThree" className="mx-auto flex justify-center h-full">
             <ReactApexChart
               options={options}
               series={state.series}
               type="donut"
+              height={"40%"}
             />
         </div>
       </div>

@@ -32,10 +32,26 @@ const options = {
   },
   responsive: [
     {
+      breakpoint: 320,
+      options: {
+        chart: {
+          height: "90%",
+        },
+      },
+    },
+    {
+      breakpoint: 800,
+      options: {
+        chart: {
+          height: "90%",
+        },
+      },
+    },
+    {
       breakpoint: 1024,
       options: {
         chart: {
-          height: 100,
+          height: "90%",
         },
       },
     },
@@ -43,7 +59,7 @@ const options = {
       breakpoint: 1366,
       options: {
         chart: {
-          height: 150,
+          height: "90%",
         },
       },
     },
@@ -124,12 +140,12 @@ const ChartGraph = () => {
   handleReset;
 
   return (
-    <div className="w-[40%] rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 lg:h-full">
+    <div className="w-[40%] rounded-sm border border-stroke bg-white px-4 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 h-full">
       <div className="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap">
         <div className="flex w-full flex-wrap gap-3 sm:gap-5 mt-4">
           <div className="flex min-w-47.5">
             <div className="w-full">
-              <p className="font-semibold text-xl font-montserrat">
+              <p className="font-semibold xs:text-base md:text-lg xl:text-xl font-montserrat">
                 Statistics
               </p>
             </div>
@@ -137,14 +153,14 @@ const ChartGraph = () => {
         </div>
       </div>
 
-      <div>
-        <div id="chartOne" className="-ml-5">
+      <div className="h-full">
+        <div id="chartOne" className="-ml-5 h-full">
           {typeof window !== "undefined" && (
             <ReactApexChart
               options={options}
               series={state.series}
               type="area"
-              height={250}
+              height={"100%"}
               width={"100%"}
             />
           )}

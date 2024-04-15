@@ -10,16 +10,20 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex">
-      <div className="flex-[0.6] dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
-        <div className="lg:py-4 border-b border-[#e0d8ff99]">
+      <div className="hidden md:w-56 md:block md:sticky dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
+        <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">
           <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
             <div className="flex justify-center items-center">
-              <img src="/logo.png" alt="Logo" />
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="h-20 md:h-24 xl:h-28"
+              />
             </div>
-            <h2 className="font-inter font-semibold lg:text-sm text-[#1F1F1F] tracking-[0.2em]">
+            <h2 className="font-inter font-semibold text-xs xl:text-sm text-[#1F1F1F] tracking-[0.2em]">
               ASTRONOVA
             </h2>
-            <h2 className="font-poppins font-light lg:text-[10px] text-[#1F1F1F] tracking-[0.4em]">
+            <h2 className="font-poppins font-light text-[8px] xl:text-[10px] text-[#1F1F1F] tracking-[0.4em]">
               Foundation Nepal
             </h2>
           </div>
@@ -30,7 +34,7 @@ const Layout = ({ children }) => {
               return (
                 <li
                   key={key}
-                  className={`w-full flex justify-start items-center lg:py-5 lg:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${
+                  className={`w-full flex justify-start items-center md:py-5 md:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${
                     pathname === item.link && "bg-[#ececec]"
                   }`}
                 >
@@ -49,7 +53,7 @@ const Layout = ({ children }) => {
           </ul>
         </div>
       </div>
-      <div className="flex-[4] bg-[#FAFAFA] dashboard-navbar">
+      <div className="flex-[4] bg-[#FAFAFA] dashboard-navbar w-screen">
         <div className="flex justify-between w-full px-4 py-6 shadow-2xl bg-white">
           <div className="flex flex-col justify-center items-start">
             <h3 className="font-poppins font-medium xl:text-base text-[#2A2A2A]">

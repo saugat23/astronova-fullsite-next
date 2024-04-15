@@ -7,7 +7,7 @@ const Page = () => {
 
   return (
     <section className="overflow-visible h-auto p-4">
-      <div className="bg-white py-8 px-4 w-full flex flex-col justify-center items-start lg:space-y-4">
+      <div className="bg-white py-8 px-4 w-full flex flex-col justify-center items-start space-y-4">
         <div className="w-full flex justify-between items-center">
           <div className="flex justify-center items-start">
             <h3 className="font-poppins font-semibold lg:text-xl">

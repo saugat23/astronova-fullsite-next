@@ -46,7 +46,7 @@ const Page = () => {
   const router = useRouter();
   return (
     <section className="p-6 h-auto overflow-hidden">
-      <div className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg">
+      <div className="bg-white w-full flex md:flex-row flex-col-reverse items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg">
         <div className="w-[20%] justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
           <div>
             <h3 className="font-poppins font-semibold lg:text-xl">
@@ -123,12 +123,25 @@ const Page = () => {
             <h3 className="font-poppins font-semibold lg:text-xl">
               Funding Information
             </h3>
+            <div className="w-[10%] flex flex-col justify-start items-center justify-self-end">
+              <div className="h-40">
+                <button
+                  type="button"
+                  className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                  onClick={() => router.back()}
+                >
+                  Go Back
+                </button>
+              </div>
+            </div>
           </div>
           <div className="w-full flex flex-col justify-center items-start space-y-4">
             <div className="w-[80%] flex justify-between items-start">
               <div className="w-full flex flex-col justify-center items-start space-y-4">
                 <div className="w-full flex flex-col justify-center items-start space-y-3">
-                    <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">Blog Featured Image</h4>
+                  <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">
+                    Blog Featured Image
+                  </h4>
                   <label
                     htmlFor="blogImage"
                     className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-48 bg-cover bg-[top_50%] bg-no-repeat flex justify-center items-center"
@@ -173,17 +186,6 @@ const Page = () => {
                 Submit
               </button>
             </div>
-          </div>
-        </div>
-        <div className="w-[10%] flex flex-col justify-start items-center justify-self-end">
-          <div className="h-40">
-            <button
-              type="button"
-              className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              onClick={() => router.back()}
-            >
-              Go Back
-            </button>
           </div>
         </div>
       </div>

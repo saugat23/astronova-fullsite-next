@@ -2,23 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-.hero-container-about{
-  background: linear-gradient(11.59deg, #0052A0 8.92%, rgba(0, 30, 58, 0) 83.16%);
+.hero-container-about {
+  background: linear-gradient(
+    11.59deg,
+    #0052a0 8.92%,
+    rgba(0, 30, 58, 0) 83.16%
+  );
 }
 
-.hero-container-aboutsecond{
-  background: linear-gradient(7.03deg, #0052A0 5.76%, rgba(0, 30, 58, 0) 55.22%);
+.hero-container-aboutsecond {
+  background: linear-gradient(
+    7.03deg,
+    #0052a0 5.76%,
+    rgba(0, 30, 58, 0) 55.22%
+  );
 }
 
-.popup-donation{
-  background: radial-gradient(50% 50% at 50% 50%, #2496D7 0%, #134F71 100%) !important;
+.popup-donation {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #2496d7 0%,
+    #134f71 100%
+  ) !important;
 }
 
-.rfm-marquee > .rfm-marquee{
+.rfm-marquee > .rfm-marquee {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -29,6 +41,10 @@ html{
   visibility: hidden;
 }
 
-.dashboard-sidebar{
-
+.dashboard-sidebar {
+  position: sticky;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Impact = () => {
@@ -5,23 +6,22 @@ const Impact = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden xl:py-12 xl:px-12 lg:py-8 lg:px-8 relative"
+      className="h-auto max-w-screen overflow-hidden xl:py-12 xl:px-12 lg:py-8 lg:px-8 relative py-4"
     >
       <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4 xl:px-4">
-        <h3 className="font-inter font-bold xl:text-[3.2rem] lg:text-[2.7rem] text-[#639A1B] tracking-tight relative after:bg-[#639A1B] after:absolute after:h-[4px] after:w-0 after:-bottom-[1px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
+        <h3 className="font-opensans font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-[#0B77A5] tracking-tight relative after:bg-[#639A1B] after:absolute after:h-[4px] after:w-0 after:-bottom-[1px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
           OUR IMPACT
         </h3>
-        <div className="flex justify-center items-center lg:space-x-6">
+        <div className="flex md:flex-row flex-col justify-center items-center lg:space-x-6 md:space-x-4 space-y-4 py-4">
           <div
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-duration="1300"
             data-aos-easing="ease-in-sine"
-            className="lg:py-20 lg:px-12 flex flex-col justify-center items-center space-y-4 bg-[#BDB809] shadow-md"
+            className="lg:py-20 lg:px-12 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#BDB809] shadow-md"
           >
             <div>
               <svg
-                width="58"
-                height="57"
+                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
                 viewBox="0 0 58 57"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,27 +32,26 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold xl:text-5xl lg:text-4xl text-white">
+            <h4 className="font-inter font-bold 2xl:text-5xl lg:text-4xl md:text-2xl text-xl text-white">
               100K +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight xl:text-4xl lg:text-3xl text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-xl text-base text-white">
               STUDENT REACHED
             </h3>
-            <p className="font-inter font-normal xl:text-lg lg:text-base text-white">
+            <p className="font-inter font-normal 2xl:text-lg lg:text-base md:text-sm text-xs text-white">
               Through various workshops, seminars, STEAM camps, trainings &
               programs.
             </p>
           </div>
           <div
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-duration="1100"
             data-aos-easing="ease-in-sine"
-            className="lg:py-20 lg:px-12 flex flex-col justify-center items-center space-y-4 bg-[#AE0D19] shadow-md"
+            className="lg:py-20 lg:px-12 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#AE0D19] shadow-md"
           >
             <div>
               <svg
-                width="54"
-                height="54"
+                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
                 viewBox="0 0 54 54"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,37 +62,40 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold xl:text-5xl lg:text-4xl text-white">
+            <h4 className="font-inter font-bold 2xl:text-5xl lg:text-4xl md:text-2xl text-xl text-white">
               5M +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight xl:text-4xl lg:text-3xl text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-xl text-base text-white">
               FUND INVESTED
             </h3>
-            <p className="font-inter font-normal xl:text-lg lg:text-base text-white">
+            <p className="font-inter font-normal 2xl:text-lg lg:text-base md:text-sm text-xs text-white">
               To build IT Lab, Podcast Hall, Resource Allocation, Student
-              Grants, Human Resource and scholarship
+              Grants, Human Resource.
             </p>
           </div>
           <div
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-duration="900"
             data-aos-easing="ease-in-sine"
-            className="lg:py-20 lg:px-12 flex flex-col justify-center items-center space-y-4 bg-[#2496D7] shadow-md"
+            className="lg:py-20 lg:px-12 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#2496D7] shadow-md"
           >
             <div>
-              <img
+              <Image
                 src="/assets/workshop.svg"
                 alt="Workshop SVG"
-                loading="lazy"
+                priority
+                width={58}
+                height={47}
+                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
               />
             </div>
-            <h4 className="font-inter font-bold xl:text-5xl lg:text-4xl text-white">
+            <h4 className="font-inter font-bold 2xl:text-5xl lg:text-4xl md:text-2xl text-xl text-white">
               100 +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight xl:text-4xl lg:text-3xl text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-xl text-base text-white">
               FREE WORKSHOPS
             </h3>
-            <p className="font-inter font-normal xl:text-lg lg:text-base text-white">
+            <p className="font-inter font-normal 2xl:text-lg lg:text-base md:text-sm text-xs text-white">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>

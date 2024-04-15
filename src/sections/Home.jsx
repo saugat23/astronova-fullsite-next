@@ -21,23 +21,8 @@ import Footer from "../sections/Footer";
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [size, setSize] = React.useState("full");
-
-  const sizes = [
-    "xs",
-    "sm",
-    "md",
-    "lg",
-    "xl",
-    "2xl",
-    "3xl",
-    "4xl",
-    "5xl",
-    "full",
-  ];
 
   const handleOpen = (size) => {
-    setSize(size);
     onOpen();
   };
 
@@ -47,7 +32,7 @@ const Home = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  },);
+  }, []);
 
   return (
     <>
@@ -60,7 +45,6 @@ const Home = () => {
       <Footer />
       {showPopup && (
         <Modal
-          size={size}
           isOpen={isOpen}
           onClose={onClose}
           className="popup-donation"

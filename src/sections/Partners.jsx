@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 const Partners = () => {
   return (
@@ -108,22 +109,22 @@ const Partners = () => {
       </Swiper>
 
       <div className="xl:mt-20 lg:mt-18 flex flex-col justify-center items-center xl:space-y-12 lg:space-y-10">
-        <h3 className="font-inter font-bold xl:text-5xl lg:text-4xl text-[#2496D7D4] relative after:bg-[#2496D7D4] after:absolute after:h-[4px] after:w-0 after:-bottom-4 after:left-0 hover:after:w-full after:transition-all after:duration-300">
+        <h3 className="font-opensans font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-[#0B77A5] tracking-tight relative after:bg-[#2496D7D4] after:absolute after:h-[4px] after:w-0 after:-bottom-4 after:left-0 hover:after:w-full after:transition-all after:duration-300">
           OUR PARTNERS IN CHARGE
         </h3>
-        <div className="bg-[#00000005] xl:py-20 xl:px-12 lg:py-18 lg:px-10 xl:-mx-12 lg:-mx-8 w-full">
+        <div className="bg-[#00000005] xl:py-20 xl:px-12 lg:py-18 lg:px-10 xl:-mx-12 lg:-mx-8 w-full md:py-8 py-6">
           <Marquee className="flex justify-around items-center xl:space-x-10 lg:space-x-8">
             <div className="flex justify-center items-center mx-12">
-              <img src="/triontech.png" alt="Trion Tech Image" />
+              <Image src="/triontech.png" alt="Trion Tech Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
             </div>
             <div className="flex justify-center items-center mx-12">
-              <img src="/neo.png" alt="NEO Image" />
+              <Image src="/neo.png" alt="NEO Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
             </div>
             <div className="flex justify-center items-center mx-12">
-              <img src="/creativecafe.png" alt="Creative Cafe Image" />
+              <Image src="/creativecafe.png" alt="Creative Cafe Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
             </div>
             <div className="flex justify-center items-center mx-12">
-              <img src="/man.png" alt="MAN Image" />
+              <Image src="/man.png" alt="MAN Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
             </div>
             <div className="flex justify-center items-center mx-12">
               <h2 className="font-inter font-bold text-2xl text-black">
@@ -131,7 +132,7 @@ const Partners = () => {
               </h2>
             </div>
             <div className="flex justify-center items-center">
-              <img src="/dursikshya.png" alt="Dursikshya Image" />
+              <Image src="/dursikshya.png" alt="Dursikshya Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
             </div>
           </Marquee>
         </div>
@@ -146,9 +147,9 @@ const Partners = () => {
             Be the change you want to see
           </h3>
         </div>
-        <div data-aos="fade-up" data-aos-duration="700" className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 flex flex-col justify-center items-center space-y-6">
+        <div data-aos="fade-up" data-aos-duration="700" className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6">
           <div className="w-[80%] mx-auto">
-            <p className="font-opensans font-normal xl:text-2xl lg:text-xl text-white text-center">
+            <p className="font-opensans font-normal 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm text-white text-center py-2">
               We are working to create an environment where students can receive
               support, mentorship, guidance and access to tools and facilities
               to explore their curiosity so that they could be able to develop
@@ -158,22 +159,22 @@ const Partners = () => {
               let’s make a community of change makers.
             </p>
           </div>
-          <div className="w-[80%] mx-auto flex justify-around items-center text-white">
-            <button data-aos="fade-right" data-aos-duration="900"
+          <div className="w-full xl:w-[80%] mx-auto flex md:flex-row flex-col space-y-4 justify-around items-center text-white">
+            <button data-aos="fade-up" data-aos-duration="900"
               type="button"
-              className="bg-[#0012FF] p-4 font-opensans font-extrabold tracking-tighter xl:text-3xl lg:text-2xl"
+              className="bg-[#0012FF] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
             >
               JOIN AS VOLUNTEER
             </button>
-            <button data-aos="fade-right" data-aos-duration="1100"
+            <button data-aos="fade-up" data-aos-duration="1100"
               type="button"
-              className="bg-[#EC008C] p-4 font-opensans font-extrabold tracking-tighter xl:text-3xl lg:text-2xl"
+              className="bg-[#EC008C] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
             >
               BECOME A TEAM MEMBER
             </button>
-            <button data-aos="fade-right" data-aos-duration="1300"
+            <button data-aos="fade-up" data-aos-duration="1300"
               type="button"
-              className="bg-[#F26522] p-4 font-opensans font-extrabold tracking-tighter xl:text-3xl lg:text-2xl"
+              className="bg-[#F26522] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
             >
               MAKE A DONATION
             </button>
@@ -182,15 +183,15 @@ const Partners = () => {
       </div>
 
       <div data-aos="fade-up" data-aos-duration="700" className="w-full flex justify-between items-center">
-        <div className="w-1/2">
+        <div className="hidden md:block md:w-1/2">
           <img src="/childrens.png" alt="Childrens Image" className="h-full w-full" />
         </div>
-        <div className="w-1/2 xl:p-10 lg:p-8 bg-[#575504C9] flex flex-col justify-center items-center">
-          <h3 className="font-opensans tracking-tighter font-extrabold xl:text-6xl lg:text-5xl text-[#AE0D19EB] text-center">
+        <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 bg-[#575504C9] flex flex-col justify-center items-center">
+          <h3 className="font-opensans tracking-tighter font-extrabold xl:text-6xl lg:text-5xl text-white text-center">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
           <div>
-            <img src="/mail.png" alt="Mail Image" />
+            <Image src="/mail.png" alt="Mail Image" width={120} height={80} className="w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48 2xl:w-56"/>
           </div>
           <h3 className="font-opensans tracking-tighter font-extrabold xl:text-3xl lg:text-2xl text-white">
             REACH OUT TO US

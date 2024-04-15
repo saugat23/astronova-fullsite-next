@@ -2,7 +2,6 @@ import { MdDashboard, MdCampaign } from "react-icons/md";
 import { GiDonerKebab } from "react-icons/gi";
 import { FaUserAlt } from "react-icons/fa";
 import { FaFileInvoice } from "react-icons/fa";
-import { IoIosSettings } from "react-icons/io";
 import { MdSettingsApplications } from "react-icons/md";
 import { LiaBlogSolid } from "react-icons/lia";
 import { FaMicroblog } from "react-icons/fa6";
@@ -35,11 +34,6 @@ const dashboard_items = [
         link: "/coordinator_dashboard/invoice",
     },
     {
-        title: "Settings",
-        icon: <IoIosSettings />,
-        link: "/coordinator_dashboard/settings",
-    },
-    {
         title: "Applications",
         icon: <MdSettingsApplications />,
         link: "/coordinator_dashboard/applications",
@@ -50,9 +44,9 @@ const dashboard_items = [
         link: "/coordinator_dashboard/blogs",
     },
     {
-        title: "New Blog",
+        title: "News Blog",
         icon: <FaMicroblog />,
-        link: "/coordinator_dashboard/new_blogs",
+        link: "/coordinator_dashboard/news_blogs",
     },
     {
         title: "Up Events",

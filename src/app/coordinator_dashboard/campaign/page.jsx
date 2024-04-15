@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FaEye, FaPen, FaRunning } from "react-icons/fa";
 import { Progress } from "@nextui-org/react";
 import {
@@ -26,14 +26,43 @@ import {
 } from "@nextui-org/react";
 import { FaUser } from "react-icons/fa";
 
+const campaign_items = [
+  {
+    title: "Astronova Foundation's Tinkering Lab",
+    status: 80,
+    target: "6,264,695,36",
+    achieved: "0",
+    pleased: "0",
+    peopleDonated: "7",
+  },
+  {
+    title: "Planetorium Lab",
+    status: 50,
+    target: "560,000,000",
+    achieved: "56,000",
+    pleased: "0",
+    peopleDonated: "4",
+  },
+  {
+    title: "Tinkering Labs Project",
+    status: 20,
+    target: "14,000,000",
+    achieved: "1,00,000",
+    pleased: "6",
+    peopleDonated: "2",
+  },
+];
+
 const Page = () => {
+  const [items, setItems] = useState(campaign_items);
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+  const [search, setSearch] = useState("");
 
   return (
-    <section className="overflow-visible h-auto p-4">
+    <section className="overflow-hidden h-auto p-4">
       <div className="bg-white py-8 px-4 w-full">
-        <div className="flex justify-between w-full items-center">
-          <div className="flex justify-center items-center lg:space-x-6">
+        <div className="flex flex-col md:flex-row justify-start md:justify-between w-full items-start md:items-center space-y-3 md:space-y-0">
+          <div className="flex justify-center items-center space-x-6">
             <Button
               type="button"
               className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
@@ -59,8 +88,17 @@ const Page = () => {
                       Add Testimonial
                     </ModalHeader>
                     <ModalBody>
-                      <Input type="file" className="hidden" accept="image/*" id="inputFile" name="inputFile"/>
-                      <label htmlFor="inputFile" className="max-w-md w-40 h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-contain mx-auto cursor-pointer"></label>
+                      <Input
+                        type="file"
+                        className="hidden"
+                        accept="image/*"
+                        id="inputFile"
+                        name="inputFile"
+                      />
+                      <label
+                        htmlFor="inputFile"
+                        className="max-w-md w-40 h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-contain mx-auto cursor-pointer"
+                      ></label>
                       <Input
                         autoFocus
                         labelPlacement="outside"
@@ -104,13 +142,14 @@ const Page = () => {
               </ModalContent>
             </Modal>
           </div>
-          <div>
+          <div className="block md:inline">
             <input
               type="text"
-              id="donorSearch"
-              name="donorSearch"
-              className="p-3 bg-transparent w-80 font-montserrat text-base font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+              id="campaignSearch"
+              name="campaignSearch"
+              className="p-3 bg-transparent w-80 font-montserrat text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg block md:inline-block"
               placeholder="Search by Campaign name"
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
@@ -129,96 +168,48 @@ const Page = () => {
               <TableColumn>People Donated</TableColumn>
             </TableHeader>
             <TableBody emptyContent={"No rows to display."}>
-              <TableRow key="1">
-                <TableCell>
-                  <FaEye className="cursor-pointer" />
-                </TableCell>
-                <TableCell>
-                  <FaPen className="cursor-pointer" />
-                </TableCell>
-                <TableCell>Astronova Foundation&apos;s Tinkering Lab</TableCell>
-                <TableCell className="flex justify-start items-center space-x-2 w-full">
-                  <div>
-                    <FaRunning />
-                  </div>
-                  <div className="flex flex-col justify-center items-start w-full">
-                    <h4>Running</h4>
-                    <h4 className="w-3/4">
-                      <Progress
-                        size="md"
-                        aria-label="Loading..."
-                        color="success"
-                        value={80}
-                        className="w-full"
-                      />
-                    </h4>
-                  </div>
-                </TableCell>
-                <TableCell>रु 6,264,695.36</TableCell>
-                <TableCell>रु 0</TableCell>
-                <TableCell>0%</TableCell>
-                <TableCell>7</TableCell>
-              </TableRow>
-              <TableRow key="2">
-                <TableCell>
-                  <FaEye className="cursor-pointer" />
-                </TableCell>
-                <TableCell>
-                  <FaPen className="cursor-pointer" />
-                </TableCell>
-                <TableCell>Planetorium&apos;s Lab</TableCell>
-                <TableCell className="flex justify-start items-center space-x-2 w-full">
-                  <div>
-                    <FaRunning />
-                  </div>
-                  <div className="flex flex-col justify-center items-start w-full">
-                    <h4>Running</h4>
-                    <h4 className="w-3/4">
-                      <Progress
-                        size="md"
-                        aria-label="Loading..."
-                        color="success"
-                        value={60}
-                        className="w-full"
-                      />
-                    </h4>
-                  </div>
-                </TableCell>
-                <TableCell>रु 6,264,695.36</TableCell>
-                <TableCell>रु 0</TableCell>
-                <TableCell>0%</TableCell>
-                <TableCell>7</TableCell>
-              </TableRow>
-              <TableRow key="3">
-                <TableCell>
-                  <FaEye className="cursor-pointer" />
-                </TableCell>
-                <TableCell>
-                  <FaPen className="cursor-pointer" />
-                </TableCell>
-                <TableCell>Planetorium&apos;s Lab</TableCell>
-                <TableCell className="flex justify-start items-center space-x-2 w-full">
-                  <div>
-                    <FaRunning />
-                  </div>
-                  <div className="flex flex-col justify-center items-start w-full">
-                    <h4>Running</h4>
-                    <h4 className="w-3/4">
-                      <Progress
-                        size="md"
-                        aria-label="Loading..."
-                        color="success"
-                        value={60}
-                        className="w-full"
-                      />
-                    </h4>
-                  </div>
-                </TableCell>
-                <TableCell>रु 6,264,695.36</TableCell>
-                <TableCell>रु 0</TableCell>
-                <TableCell>0%</TableCell>
-                <TableCell>7</TableCell>
-              </TableRow>
+              {items
+                .filter((item) => {
+                  if (search.toLowerCase() === "") {
+                    return item;
+                  } else {
+                    return item.title.toLowerCase().includes(search);
+                  }
+                })
+                .map((item) => {
+                  return (
+                    <TableRow key={item.title}>
+                      <TableCell>
+                        <FaEye className="cursor-pointer" />
+                      </TableCell>
+                      <TableCell>
+                        <FaPen className="cursor-pointer" />
+                      </TableCell>
+                      <TableCell>{item.title}</TableCell>
+                      <TableCell className="flex justify-start items-center space-x-2 w-full">
+                        <div>
+                          <FaRunning />
+                        </div>
+                        <div className="flex flex-col justify-center items-start w-full">
+                          <h4>Running</h4>
+                          <h4 className="w-3/4">
+                            <Progress
+                              size="md"
+                              aria-label="Loading..."
+                              color="success"
+                              value={item.status}
+                              className="w-full"
+                            />
+                          </h4>
+                        </div>
+                      </TableCell>
+                      <TableCell>रु {item.target}</TableCell>
+                      <TableCell>रु {item.achieved}</TableCell>
+                      <TableCell>{item.pleased}%</TableCell>
+                      <TableCell>{item.peopleDonated}</TableCell>
+                    </TableRow>
+                  );
+                })}
             </TableBody>
           </Table>
         </div>
