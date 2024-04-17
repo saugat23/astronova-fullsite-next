@@ -35,7 +35,7 @@ const Navbar = () => {
     <header
       data-aos="fade-down"
       data-aos-duration="500"
-      className="h-auto bg-[#048FB7]"
+      className="h-auto bg-[#048FB7] sticky"
     >
       <nav className="w-full flex justify-between items-center py-4 px-4 lg:px-4 xl:px-8 2xl:px-12 2xl:pt-4">
         <div className="flex justify-center items-center">
@@ -103,7 +103,7 @@ const Navbar = () => {
             <div className="flex justify-center items-center">
               <Button
                 type="button"
-                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-6 2xl:py-7 text-black font-ibmplex font-semibold text-lg lg:text-xl 2xl:text-2xl leading-[25.2px] hover:shadow-2xl hover:scale-105"
+                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-4 2xl:py-6 text-black font-ibmplex font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
                 onPress={onOpen}
               >
                 SUPPORT US

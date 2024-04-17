@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <section data-aos="fade-down" data-aos-duration="700" className="h-auto max-w-screen overflow-hidden">
         <div className="h-full w-full lg:px-8 bg-gradient-to-t from-white via-[#69BCD4] to-[#048FB7] flex justify-between items-center">
-          <div className="w-full md:w-3/4 flex flex-col justify-center items-center space-y-2">
+          <div className="w-full md:w-[70%] flex flex-col justify-center items-center space-y-2">
             <div>
               <Image src="/herobrain.png" alt="Hero Brain Image" priority width={180} height={180} className="md:w-52 lg:w-60 xl:w-64 2xl:w-72" />
             </div>
@@ -28,7 +28,7 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="hidden md:block w-1/4 h-full self-end">
+          <div className="hidden md:block md:w-[30%] w-0 h-full self-end">
             <Image
               src="/heroimage.svg"
               alt="Hero Image"
