@@ -159,22 +159,22 @@ const Partners = () => {
               let’s make a community of change makers.
             </p>
           </div>
-          <div className="w-full xl:w-[80%] mx-auto flex md:flex-row flex-col space-y-4 justify-around items-center text-white">
+          <div className="w-full xl:w-[80%] mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white">
             <button data-aos="fade-up" data-aos-duration="900"
               type="button"
-              className="bg-[#0012FF] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
+              className="bg-[#0012FF] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#0012FF] hover:duration-200"
             >
               JOIN AS VOLUNTEER
             </button>
             <button data-aos="fade-up" data-aos-duration="1100"
               type="button"
-              className="bg-[#EC008C] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
+              className="bg-[#EC008C] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#EC008C] hover:duration-200"
             >
               BECOME A TEAM MEMBER
             </button>
             <button data-aos="fade-up" data-aos-duration="1300"
               type="button"
-              className="bg-[#F26522] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer"
+              className="bg-[#F26522] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
             >
               MAKE A DONATION
             </button>
@@ -182,16 +182,16 @@ const Partners = () => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="700" className="w-full flex justify-between items-center">
+      <div data-aos="fade-up" data-aos-duration="700" className="w-full flex justify-between items-center bg-gradient-to-br from-yellow-400 to-green-900">
         <div className="hidden md:block md:w-1/2">
           <img src="/childrens.png" alt="Childrens Image" className="h-full w-full" />
         </div>
-        <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 bg-[#575504C9] flex flex-col justify-center items-center">
-          <h3 className="font-opensans tracking-tighter font-extrabold xl:text-6xl lg:text-5xl text-white text-center">
+        <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 flex flex-col justify-center items-center">
+          <h3 className="font-opensans tracking-tighter font-extrabold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-white text-center">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
           <div>
-            <Image src="/mail.png" alt="Mail Image" width={120} height={80} className="w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48 2xl:w-56"/>
+            <Image src="/mail.svg" alt="Mail Image" width={180} height={120} className="sm:w-72 md:w-80 lg:w-96 xl:w-[30rem] 2xl:w-[34rem]"/>
           </div>
           <h3 className="font-opensans tracking-tighter font-extrabold xl:text-3xl lg:text-2xl text-white">
             REACH OUT TO US

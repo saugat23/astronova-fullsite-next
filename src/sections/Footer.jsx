@@ -97,40 +97,40 @@ const Footer = () => {
                 Rights & Permissions | Privacy Policy
               </h4>
             </div>
-            <div className="flex justify-center items-center space-x-4">
+            <div className="flex justify-center items-center space-x-4 text-white fill-white">
               <div>
                 <img
                   src="/assets/facebook.svg"
                   alt="Facebook SVG"
-                  className="p-2 border-2 border-[#DB8114] rounded-full lg:h-14 lg:w-14"
+                  className="p-2 border-2 border-[#DB8114] rounded-full text-white fill-white lg:h-14 lg:w-14 w-8 h-8"
                 />
               </div>
               <div>
                 <img
                   src="/assets/web.svg"
                   alt="Web SVG"
-                  className="p-2 border-2 border-[#2496D7] rounded-full lg:h-14 lg:w-14"
+                  className="p-2 border-2 border-[#2496D7] rounded-full lg:h-14 lg:w-14 w-8 h-8"
                 />
               </div>
               <div>
                 <img
                   src="/assets/instagram.svg"
                   alt="Instagram SVG"
-                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14"
+                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14 w-8 h-8"
                 />
               </div>
               <div>
                 <img
                   src="/assets/linkedin.svg"
                   alt="Linkedin SVG"
-                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14"
+                  className="p-2 border-2 border-[#77AB33] rounded-full lg:h-14 lg:w-14 w-8 h-8"
                 />
               </div>
               <div>
                 <img
                   src="/assets/gmail.svg"
                   alt="Gmail SVG"
-                  className="p-2 border-2 border-[#AF1B1C] rounded-full lg:h-14 lg:w-14"
+                  className="p-2 border-2 border-[#AF1B1C] rounded-full lg:h-14 lg:w-14 w-8 h-8"
                 />
               </div>
             </div>

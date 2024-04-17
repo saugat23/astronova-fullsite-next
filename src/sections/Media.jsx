@@ -20,30 +20,22 @@ const Media = () => {
         <div className="flex justify-center items-center lg:space-x-3 xl:space-x-4">
           <Swiper
             spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            centeredSlides={true}
+            modules={[Navigation]}
+            navigation={true}
             breakpoints={{
               310: {
                 slidesPerView: 1,
                 centeredSlides: true,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 centeredSlides: true,
               },
               1024: {
                 slidesPerView: 3,
-                centeredSlides: true,
-              },
-              1280: {
-                slidesPerView: 4,
-                centeredSlides: false,
               },
             }}
-            className="w-screen flex justify-center items-center"
+            className="w-screen flex justify-start items-center"
           >
             <SwiperSlide className="py-4">
               <Publications
@@ -56,7 +48,7 @@ const Media = () => {
             <SwiperSlide className="py-4">
               <Publications
                 imgSrc="/kathmandupost.png"
-                logoSrc="/nepallogo.png"
+                logoSrc="/kathmandupostlogo.png"
                 title="lorem ipsum dolor sit amet, consectetur adipiscing"
                 article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
               />

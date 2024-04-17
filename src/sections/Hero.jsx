@@ -16,7 +16,7 @@ const Hero = () => {
             <h3 className="font-inter font-semibold xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-justify text-black">
               Nurture the student&apos;s
             </h3>
-            <h4 className="font-inter font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-7xl 2xl:text-[5rem] text-[#BDB809]">
+            <h4 className="font-inter font-extrabold text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-[#BDB809]">
               Talents And Curiosities
             </h4>
             <div className="">
@@ -28,13 +28,13 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="hidden md:block w-auto h-full self-end">
+          <div className="hidden md:block w-1/4 h-full self-end">
             <Image
-              src="/heroimage.png"
+              src="/heroimage.svg"
               alt="Hero Image"
-              width={200}
-              height={100}
-              className="w-[50vw] h-[72vh]"
+              width={800}
+              height={400}
+              className="w-[60vw] h-[72vh]"
               priority
             />
           </div>

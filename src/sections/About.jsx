@@ -6,10 +6,11 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { TrendingUpIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover py-4 px-4 lg:px-4 xl:px-8 2xl:px-12'>
+    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover py-4 px-4 lg:px-4 xl:px-8 2xl:px-12 md:mt-8 mt-4'>
       <div
         data-aos="fade-up"
         data-aos-duration="700"
@@ -67,35 +68,30 @@ const About = () => {
         <h3 className="font-opensans font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-[#0B77A5] tracking-tight">
           SUPPORT FOR STUDENTS
         </h3>
-        <div className="mt-4">
+        <div className="mt-4 w-full flex justify-center items-center">
           <Swiper
             spaceBetween={20}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            centeredSlides={true}
+            modules={[Navigation]}
+            navigation={true}
             breakpoints={{
               310: {
                 slidesPerView: 1,
                 centeredSlides: true,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 centeredSlides: true,
               },
               1024: {
                 slidesPerView: 3,
-                centeredSlides: true,
               },
               1280: {
                 slidesPerView: 4,
-                centeredSlides: false,
-              },
+              }
             }}
-            className="w-screen flex justify-center items-center"
+            className="w-screen flex justify-evenly items-center"
           >
-            <SwiperSlide className="sm:ml-[30%] md:ml-[8%] xl:ml-12 py-4">
+            <SwiperSlide className="py-4">
               <SupportStudent
                 data-aos="fade-right"
                 data-aos-duration="500"

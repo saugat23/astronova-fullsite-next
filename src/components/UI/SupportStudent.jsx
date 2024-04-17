@@ -25,7 +25,7 @@ const SupportStudent = ({
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-auto w-80 shadow-2xl"
+        className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-auto w-auto shadow-2xl"
       >
         <div>
           <img src={imgSrc} alt={project} />
