@@ -113,46 +113,46 @@ const Partners = () => {
           OUR PARTNERS IN CHARGE
         </h3>
         <div className="bg-[#00000005] xl:py-20 xl:px-12 lg:py-18 lg:px-10 xl:-mx-12 lg:-mx-8 w-full md:py-8 py-6">
-          <div className="marquee">
+          <div className="marquee py-2 flex items-center">
             <div className="track">
-              <div className="content">
-                <img
-                  src="/triontech.png"
+              <div className="content flex">
+                <Image
+                  src="/triontech.svg"
                   alt="Trion Tech Image"
                   width={40}
                   height={30}
-                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
                 />
-                <img
-                  src="/neo.png"
+                <Image
+                  src="/neo.svg"
                   alt="NEO Image"
                   width={40}
                   height={30}
-                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
                 />
-                <img
-                  src="/creativecafe.png"
+                <Image
+                  src="/creativecafe.svg"
                   alt="Creative Cafe Image"
                   width={40}
                   height={30}
-                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
                 />
-                <img
-                  src="/man.png"
+                <Image
+                  src="/man.svg"
                   alt="MAN Image"
                   width={40}
                   height={30}
-                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
                 />
-                {/* <h2 className="font-inter font-bold text-2xl text-black">
+                <h2 className="font-inter font-bold text-2xl text-black transform scale-100 hover:scale-110 transition-transform">
                   EduCompass
-                </h2> */}
-                <img
-                  src="/dursikshya.png"
+                </h2>
+                <Image
+                  src="/dur.svg"
                   alt="Dursikshya Image"
                   width={40}
                   height={30}
-                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
                 />
               </div>
             </div>

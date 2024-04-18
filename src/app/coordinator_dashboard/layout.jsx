@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex">
-      <div className="hidden md:w-56 md:block md:sticky dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
+      <div className="hidden min-w-flex-[0.5] md:w-56 md:block md:sticky dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
         <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">
           <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
             <div className="flex justify-center items-center">

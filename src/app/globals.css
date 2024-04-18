@@ -60,12 +60,26 @@ html {
 
 .track {
   position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 5s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 30s linear infinite;
+    animation-delay: 3s;
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+.content {
+  gap: 12rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width:500px){
+  .content {
+    gap: 0rem;
+    
+  }
 }

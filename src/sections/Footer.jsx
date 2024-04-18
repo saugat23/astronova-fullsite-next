@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { TbWorldWww } from "react-icons/tb";
+import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -193,24 +196,18 @@ const Footer = () => {
           </div>
           <div className="flex justify-center items-center space-x-4">
             <div>
-              <img
-                src="/assets/facebook.svg"
-                alt="Facebook SVG"
-                className="p-1 border-2 border-[#DB8114] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
+              <FaFacebook
+                className="p-1 border-2 border-[#DB8114] text-white rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
               />
             </div>
             <div>
-              <img
-                src="/assets/web.svg"
-                alt="Web SVG"
-                className="p-1 border-2 border-[#2496D7] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
+              <TbWorldWww
+                className="text-white p-1 border-2 border-[#2496D7] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
               />
             </div>
             <div>
-              <img
-                src="/assets/instagram.svg"
-                alt="Instagram SVG"
-                className="p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
+              <FaInstagram
+                className="text-white p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
               />
             </div>
             <div>
@@ -221,10 +218,8 @@ const Footer = () => {
               />
             </div>
             <div>
-              <img
-                src="/assets/gmail.svg"
-                alt="Gmail SVG"
-                className="p-1 border-2 border-[#AF1B1C] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
+              <SiGmail
+                className="text-white p-1 border-2 border-[#AF1B1C] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
               />
             </div>
           </div>

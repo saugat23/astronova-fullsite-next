@@ -70,6 +70,14 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                href="/team"
+                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+              >
+                Our Team
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="#"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
               >
@@ -90,14 +98,6 @@ const Navbar = () => {
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
               >
                 Opportunity
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
-              >
-                Blogs & News
               </Link>
             </li>
             <div className="flex justify-center items-center">
@@ -169,6 +169,12 @@ const Navbar = () => {
               </Link>
             
               <Link
+                href="/team"
+                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+              >
+                Our Team
+              </Link>
+              <Link
                 href="#"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
               >
@@ -189,12 +195,6 @@ const Navbar = () => {
                 Opportunity
               </Link>
             
-              <Link
-                href="#"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
-              >
-                Blogs & News
-              </Link>
           </motion.div>
         )}
       </AnimatePresence>
