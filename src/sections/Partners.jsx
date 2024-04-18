@@ -113,32 +113,58 @@ const Partners = () => {
           OUR PARTNERS IN CHARGE
         </h3>
         <div className="bg-[#00000005] xl:py-20 xl:px-12 lg:py-18 lg:px-10 xl:-mx-12 lg:-mx-8 w-full md:py-8 py-6">
-          <Marquee className="flex justify-around items-center xl:space-x-10 lg:space-x-8">
-            <div className="flex justify-center items-center mx-12">
-              <Image src="/triontech.png" alt="Trion Tech Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
+          <div className="marquee">
+            <div className="track">
+              <div className="content">
+                <img
+                  src="/triontech.png"
+                  alt="Trion Tech Image"
+                  width={40}
+                  height={30}
+                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+                <img
+                  src="/neo.png"
+                  alt="NEO Image"
+                  width={40}
+                  height={30}
+                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+                <img
+                  src="/creativecafe.png"
+                  alt="Creative Cafe Image"
+                  width={40}
+                  height={30}
+                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+                <img
+                  src="/man.png"
+                  alt="MAN Image"
+                  width={40}
+                  height={30}
+                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+                {/* <h2 className="font-inter font-bold text-2xl text-black">
+                  EduCompass
+                </h2> */}
+                <img
+                  src="/dursikshya.png"
+                  alt="Dursikshya Image"
+                  width={40}
+                  height={30}
+                  className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+              </div>
             </div>
-            <div className="flex justify-center items-center mx-12">
-              <Image src="/neo.png" alt="NEO Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
-            </div>
-            <div className="flex justify-center items-center mx-12">
-              <Image src="/creativecafe.png" alt="Creative Cafe Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
-            </div>
-            <div className="flex justify-center items-center mx-12">
-              <Image src="/man.png" alt="MAN Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
-            </div>
-            <div className="flex justify-center items-center mx-12">
-              <h2 className="font-inter font-bold text-2xl text-black">
-                EduCompass
-              </h2>
-            </div>
-            <div className="flex justify-center items-center">
-              <Image src="/dursikshya.png" alt="Dursikshya Image" width={40} height={30} className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"/>
-            </div>
-          </Marquee>
+          </div>
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="700" className="xl:mt-10 lg:mt-8 flex flex-col justify-center items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="xl:mt-10 lg:mt-8 flex flex-col justify-center items-center"
+      >
         <div className="bg-[url('/joinbg.png')] bg-cover flex flex-col justify-start items-center w-full p-6 h-[75vh]">
           <h3 className="font-opensans tracking-tighter text-[#EC008C] font-bold xl:text-6xl lg:text-5xl">
             JOIN THE JOURNEY
@@ -147,7 +173,11 @@ const Partners = () => {
             Be the change you want to see
           </h3>
         </div>
-        <div data-aos="fade-up" data-aos-duration="700" className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6"
+        >
           <div className="w-[80%] mx-auto">
             <p className="font-opensans font-normal 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm text-white text-center py-2">
               We are working to create an environment where students can receive
@@ -160,19 +190,25 @@ const Partners = () => {
             </p>
           </div>
           <div className="w-full xl:w-[80%] mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white">
-            <button data-aos="fade-up" data-aos-duration="900"
+            <button
+              data-aos="fade-up"
+              data-aos-duration="900"
               type="button"
               className="bg-[#0012FF] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#0012FF] hover:duration-200"
             >
               JOIN AS VOLUNTEER
             </button>
-            <button data-aos="fade-up" data-aos-duration="1100"
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1100"
               type="button"
               className="bg-[#EC008C] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#EC008C] hover:duration-200"
             >
               BECOME A TEAM MEMBER
             </button>
-            <button data-aos="fade-up" data-aos-duration="1300"
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1300"
               type="button"
               className="bg-[#F26522] hover:scale-105 p-4 font-opensans font-extrabold tracking-tighter rounded-lg xl:text-3xl lg:text-2xl cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
             >
@@ -182,16 +218,30 @@ const Partners = () => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="700" className="w-full flex justify-between items-center bg-gradient-to-br from-yellow-400 to-green-900">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="w-full flex justify-between items-center bg-gradient-to-br from-yellow-400 to-green-900"
+      >
         <div className="hidden md:block md:w-1/2">
-          <img src="/childrens.png" alt="Childrens Image" className="h-full w-full" />
+          <img
+            src="/childrens.png"
+            alt="Childrens Image"
+            className="h-full w-full"
+          />
         </div>
         <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 flex flex-col justify-center items-center">
           <h3 className="font-opensans tracking-tighter font-extrabold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-white text-center">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
           <div>
-            <Image src="/mail.svg" alt="Mail Image" width={180} height={120} className="sm:w-72 md:w-80 lg:w-96 xl:w-[30rem] 2xl:w-[34rem]"/>
+            <Image
+              src="/mail.svg"
+              alt="Mail Image"
+              width={180}
+              height={120}
+              className="sm:w-72 md:w-80 lg:w-96 xl:w-[30rem] 2xl:w-[34rem]"
+            />
           </div>
           <h3 className="font-opensans tracking-tighter font-extrabold xl:text-3xl lg:text-2xl text-white">
             REACH OUT TO US

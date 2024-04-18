@@ -4,7 +4,7 @@ import React from "react";
 import BoardMember from "../../../components/UI/BoardMember";
 import Experts from "../../../components/UI/Experts";
 import TeamMembers from "../../../components/UI/TeamMembers";
-import TestimonialsDiv from "../../../components/UI/TestimonialsDiv";
+import PartnersTestimonial from "../../../components/UI/PartnersTestimonial";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -283,7 +283,74 @@ const page = () => {
               OUR TEAM MEMBERS
             </h3>
           </div>
-          <div className="shadow-lg bg-transparent lg:py-12 lg:px-12 grid grid-cols-4 gap-x-4 gap-y-6">
+          <div className="hidden shadow-lg bg-transparent lg:py-12 lg:px-12 lg:grid grid-cols-4 gap-x-4 gap-y-6">
+            <TeamMembers
+              imgSrc="/aayushbasnet.png"
+              name="Er. Aayush Basnet"
+              position="Program Director"
+            />
+            <TeamMembers
+              imgSrc="/anmolpant.png"
+              name="Mr. Anmol Pant"
+              position="Project Coordinator"
+            />
+            <TeamMembers
+              imgSrc="/dikshyakharel.png"
+              name="Mrs. Dikshya Kharel"
+              position="Finance Officer"
+            />
+            <TeamMembers
+              imgSrc="/ishanacharya.png"
+              name="Mr. Ishan Acharya"
+              position="Event Manger, Podcast Host"
+            />
+            <TeamMembers
+              imgSrc="/aayushnepal.png"
+              name="Mr. Aayush Nepal"
+              position="Astrophysics Research Intern"
+            />
+            <TeamMembers
+              imgSrc="/anujadhikari.png"
+              name="Mr. Anuj Adhikari"
+              position="Reserch Coordinator Intern"
+            />
+            <TeamMembers
+              imgSrc="/namratabartaula.png"
+              name="Ms. Namrata Bartaula"
+              position="Stone Art & Crafting Intern"
+            />
+            <TeamMembers
+              imgSrc="/rojinabastola.png"
+              name="Ms. Rojina Bastola"
+              position="Finance Coordinator"
+            />
+            <TeamMembers
+              imgSrc="/rabinpariyar.png"
+              name="Mr. Rabin Pariyar"
+              position="Graphics Designer"
+            />
+            <TeamMembers
+              imgSrc="/riteshprajapati.png"
+              name="Mr. Ritesh Prajapati"
+              position="Video Editor Intern"
+            />
+            <TeamMembers
+              imgSrc="/riteshprajapati.png"
+              name="Mr. Ritesh Prajapati"
+              position="Student Ambassador"
+            />
+            <TeamMembers
+              imgSrc="/nishantsah.png"
+              name="Mr. Nishant Shah"
+              position="Web Developer Intern"
+            />
+            <TeamMembers
+              imgSrc="/rajuraut.png"
+              name="Mr. Raju Raut"
+              position="Student Coordinator"
+            />
+          </div>
+          <div className="shadow-lg bg-transparent py-2 block lg:hidden">
             <Swiper
               spaceBetween={30}
               modules={[Navigation]}
@@ -398,22 +465,6 @@ const page = () => {
         </div>
       </div>
       <div className="h-auto w-full overflow-hidden flex justify-center md:justify-evenly 2xl:space-x-20 xl:space-x-16 md:space-x-12 sm:space-x-10 space-x-6 2xl:py-12 lg:py-8 py-4 2xl:px-12 lg:px-8 md:px-6 px-2 bg-[#2496D72E]">
-        <div className="hidden md:block self-start">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 108 97"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="sm:w-10 md:w-12 lg:w-14 xl:w-16 2xl:w-20"
-          >
-            <path
-              d="M97 97C99.8511 97 102.585 95.8674 104.601 93.8514C106.617 91.8354 107.75 89.1011 107.75 86.25V59.9985C107.75 57.1474 106.617 54.4131 104.601 52.3971C102.585 50.3811 99.8511 49.2485 97 49.2485H82.079C82.079 45.4717 82.3012 41.6948 82.7455 37.918C83.412 33.919 84.5228 30.3643 86.078 27.254C87.6332 24.1437 89.6363 21.6962 92.0873 19.9118C94.5239 17.9123 97.6343 16.9125 101.418 16.9125V0.25C95.1976 0.25 89.7509 1.583 85.0783 4.249C80.4379 6.8814 76.4511 10.5265 73.4145 14.913C70.3573 19.7414 68.1062 25.035 66.7495 30.5865C65.3776 36.7112 64.7068 42.9721 64.75 49.2485V86.25C64.75 89.1011 65.8826 91.8354 67.8986 93.8514C69.9146 95.8674 72.6489 97 75.5 97H97ZM32.5 97C35.3511 97 38.0854 95.8674 40.1014 93.8514C42.1174 91.8354 43.25 89.1011 43.25 86.25V59.9985C43.25 57.1474 42.1174 54.4131 40.1014 52.3971C38.0854 50.3811 35.3511 49.2485 32.5 49.2485H17.579C17.579 45.4717 17.8012 41.6948 18.2455 37.918C18.9192 33.919 20.03 30.3643 21.578 27.254C23.1332 24.1437 25.1363 21.6962 27.5873 19.9118C30.0239 17.9123 33.1343 16.9125 36.9183 16.9125V0.25C30.6976 0.25 25.2509 1.583 20.5783 4.249C15.9379 6.8814 11.9511 10.5265 8.91451 14.913C5.85732 19.7414 3.60624 25.035 2.24951 30.5865C0.87763 36.7112 0.206818 42.9721 0.250007 49.2485V86.25C0.250007 89.1011 1.38259 91.8354 3.39861 93.8514C5.41462 95.8674 8.14893 97 11 97H32.5Z"
-              fill="#1F67AB"
-              fillOpacity="0.19"
-            />
-          </svg>
-        </div>
         <div className="flex flex-col self-start justify- items-center space-y-4">
           <h4 className="w-full font-opensans tracking-tighter font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-center text-[#0052A0]">
             Testimonials
@@ -429,57 +480,56 @@ const page = () => {
                   centeredSlides: true,
                 },
                 768: {
-                  slidesPerView: 2,
-                },
-                1024: {
                   slidesPerView: 3,
                 },
               }}
               className="w-screen flex justify-start items-center"
             >
               <SwiperSlide>
-                <TestimonialsDiv
-                  imgSrc="/aayushnepal2.png"
-                  name="Aayush Nepal"
-                  position="Astrophysics & Research Enthusiast"
-                  desc="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
-              Don't be capped, learn to adapt.”"
+                <PartnersTestimonial
+                  imgSrc="/pushpajimee.png"
+                  testimonial="When I ask my students about their dreams and what they want to become in the future, most of them tell me they want to become a teacher like me. Knowing that I am their ideal teacher is something that I am most proud of and this is what inspires me to give my best every day."
+                  name="Pushpa Jimee"
+                  position="Community Teacher, UWS Kharang"
                 />
               </SwiperSlide>
               <SwiperSlide>
-                <TestimonialsDiv
-                  imgSrc="/anujadhikari.png"
-                  name="Anuj Adhikari"
-                  position="Research Enthusiast"
-                  desc="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
+                <PartnersTestimonial
+                  imgSrc="/uws.png"
+                  testimonial="The pad-making training I received from
+        UWS Nepal has been incredibly
+        impactful. I have been using the pad
+        myself, which is better than the
+        household pad I used to use. Beyond just
+        the pads, the training expanded my
+        understanding of menstrual hygiene and
+        highlighted the essential role of a
+        balanced diet during menstruation."
+                  name="Mala"
+                  position="Mothers’ Group member, UWS Jaisithok"
                 />
               </SwiperSlide>
               <SwiperSlide>
-                <TestimonialsDiv
-                  imgSrc="/riteshprajapati.png"
-                  name="Ritesh Prajapati"
-                  position="Video Editor Intern"
-                  desc="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
+                <PartnersTestimonial
+                  imgSrc="/dilkumarisubba.png"
+                  testimonial="I believe encouraging children to express
+        and discover their creativity beyond the
+        pages of books, we remove the limits
+        confining their growth."
+                  name="Dil Kumari Subba"
+                  position="Head Teacher- UWS Setikanya"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <PartnersTestimonial
+                  imgSrc="/pushpajimee.png"
+                  testimonial="When I ask my students about their dreams and what they want to become in the future, most of them tell me they want to become a teacher like me. Knowing that I am their ideal teacher is something that I am most proud of and this is what inspires me to give my best every day."
+                  name="Pushpa Jimee"
+                  position="Community Teacher, UWS Kharang"
                 />
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
-        <div className="hidden md:block self-end">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 108 97"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="sm:w-10 md:w-12 lg:w-14 xl:w-16 2xl:w-20"
-          >
-            <path
-              d="M11 0C8.14892 0 5.41461 1.13259 3.3986 3.14861C1.38258 5.16462 0.249992 7.89893 0.249992 10.75V37.0015C0.249992 39.8526 1.38258 42.5869 3.3986 44.6029C5.41461 46.6189 8.14892 47.7515 11 47.7515H25.921C25.921 51.5283 25.6988 55.3052 25.2545 59.082C24.588 63.081 23.4772 66.6357 21.922 69.746C20.3668 72.8563 18.3637 75.3038 15.9127 77.0882C13.4761 79.0877 10.3657 80.0875 6.58174 80.0875V96.75C12.8024 96.75 18.2491 95.417 22.9217 92.751C27.5621 90.1186 31.5489 86.4735 34.5855 82.087C37.6427 77.2586 39.8938 71.965 41.2505 66.4135C42.6224 60.2888 43.2932 54.0279 43.25 47.7515V10.75C43.25 7.89893 42.1174 5.16462 40.1014 3.14861C38.0854 1.13259 35.3511 0 32.5 0L11 0ZM75.5 0C72.6489 0 69.9146 1.13259 67.8986 3.14861C65.8826 5.16462 64.75 7.89893 64.75 10.75L64.75 37.0015C64.75 39.8526 65.8826 42.5869 67.8986 44.6029C69.9146 46.6189 72.6489 47.7515 75.5 47.7515H90.421C90.421 51.5283 90.1988 55.3052 89.7545 59.082C89.0808 63.081 87.97 66.6357 86.422 69.746C84.8668 72.8563 82.8637 75.3038 80.4127 77.0882C77.9761 79.0877 74.8657 80.0875 71.0817 80.0875V96.75C77.3024 96.75 82.7491 95.417 87.4217 92.751C92.0621 90.1186 96.0489 86.4735 99.0855 82.087C102.143 77.2586 104.394 71.965 105.75 66.4135C107.122 60.2888 107.793 54.0279 107.75 47.7515V10.75C107.75 7.89893 106.617 5.16462 104.601 3.14861C102.585 1.13259 99.8511 0 97 0L75.5 0Z"
-              fill="#1F67AB"
-              fillOpacity="0.19"
-            />
-          </svg>
         </div>
       </div>
     </section>
