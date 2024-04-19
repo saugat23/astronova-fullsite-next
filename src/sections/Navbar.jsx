@@ -78,7 +78,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/projects"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
               >
                 Our Project
@@ -86,18 +86,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/blogs"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
               >
-                Science Expo
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
-              >
-                Opportunity
+                Blogs & News
               </Link>
             </li>
             <div className="flex justify-center items-center">
@@ -132,7 +124,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-0 h-[60vh] overflow-hidden w-screen bg-[#048FB7] flex flex-col justify-evenly items-center px-12 z-30 sm:px-14 md:px-16 py-6 sm:py-8 lg:hidden font-opensans font-semibold text-sm text-white"
+            className="absolute top-0 h-[60vh] overflow-hidden w-screen bg-[#048FB7] flex flex-col justify-evenly items-center px-12 sm:px-14 md:px-16 py-6 sm:py-8 lg:hidden font-opensans font-semibold text-sm text-white z-50"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.25 }}
@@ -157,6 +149,7 @@ const Navbar = () => {
             <Link
                 href="/"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                onClick={handleListClick}
               >
                 Home
               </Link>
@@ -164,6 +157,8 @@ const Navbar = () => {
               <Link
                 href="/about"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                onClick={handleListClick}
+
               >
                 About Us
               </Link>
@@ -171,28 +166,27 @@ const Navbar = () => {
               <Link
                 href="/team"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                onClick={handleListClick}
+
               >
                 Our Team
               </Link>
               <Link
-                href="#"
+                href="/projects"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                onClick={handleListClick}
+
               >
                 Our Project
               </Link>
             
               <Link
-                href="#"
+                href="/blogs"
                 className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                onClick={handleListClick}
+
               >
-                Science Expo
-              </Link>
-            
-              <Link
-                href="#"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
-              >
-                Opportunity
+                Blogs & News
               </Link>
             
           </motion.div>

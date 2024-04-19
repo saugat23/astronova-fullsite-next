@@ -56,7 +56,7 @@ const About = () => {
         </div>
         <div className="grow">
           <Image
-            src="/workingarea.png"
+            src="/workingarea.svg"
             alt="Working Area Image"
             width={260}
             height={140}

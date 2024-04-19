@@ -83,3 +83,13 @@ html {
     
   }
 }
+
+.swiper-pagination-bullet{
+  cursor: pointer;
+  background-color: white !important;
+}
+
+.swiper-pagination-bullet-active{
+  width: 6rem !important;
+  border-radius: 2rem !important;
+}

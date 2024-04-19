@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 const page = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className="bg-[#77AB33] flex justify-center items-center py-4 px-4">
+      <div className="bg-[#77AB33] flex justify-center items-center 2xl:py-10 lg:py-8 md:py-6 py-4 px-4">
         <h2 className="font-opensans font-bold tracking-tighter 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-white">
           OUR TEAM
         </h2>
