@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 const ChartDonut = dynamic(
   () => import("../../../components/UI/Charts/ChartDonut"),
@@ -25,7 +25,7 @@ const page = () => {
   return (
     <section className="overflow-hidden h-auto py-4">
       <div className="w-full lg:py-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-2 xl:grid-cols-4 px-6">
-        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#7a7affcc] py-4 px-2 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
+        <div className="flex flex-col justify-start items-start h-40 w-auto bg-[#7a7affcc] py-4 px-2 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
           <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Total Donations
           </h4>
@@ -33,7 +33,7 @@ const page = () => {
             135035500K
           </h4>
         </div>
-        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#ffbc13cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
+        <div className="flex flex-col justify-start items-start h-40 w-auto bg-[#ffbc13cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
           <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Number Of Donation
           </h4>
@@ -41,7 +41,7 @@ const page = () => {
             67
           </h4>
         </div>
-        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#ff9013cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
+        <div className="flex flex-col justify-start items-start h-40 w-auto bg-[#ff9013cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
           <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Average Donation
           </h4>
@@ -49,7 +49,7 @@ const page = () => {
             22222K
           </h4>
         </div>
-        <div className="flex flex-col justify-start items-start h-40 w-72 bg-[#2438b8cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
+        <div className="flex flex-col justify-start items-start h-40 w-auto bg-[#2438b8cc] py-4 px-6 rounded-2xl hover:scale-105 hover:transition-all hover:duration-200">
           <h4 className="font-montserrat font-normal md:text-xs xl:text-sm text-white">
             Total Implementation
           </h4>

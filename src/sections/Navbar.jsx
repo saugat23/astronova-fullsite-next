@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import {
   Modal,
   ModalContent,
@@ -20,6 +21,7 @@ import {
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+  const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -51,11 +53,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden lg:flex lg:items-center lg:justify-end lg:w-full">
-          <ul className="flex justify-evenly items-center lg:space-x-4 2xl:space-x-8 text-white font-ibmplex font-semibold text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl uppercase leading-[25.2px]">
+          <ul className="flex justify-evenly items-center lg:space-x-4 2xl:space-x-8 text-white font-poppins font-semibold text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl uppercase leading-[25.2px]">
             <li>
               <Link
                 href="/"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/" && "text-[#F2CE24]"
+                }`}
               >
                 Home
               </Link>
@@ -63,7 +67,9 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                pathname === "/about" && "text-[#F2CE24]"
+              }`}
               >
                 About Us
               </Link>
@@ -71,7 +77,9 @@ const Navbar = () => {
             <li>
               <Link
                 href="/team"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/team" && "text-[#F2CE24]"
+                }`}
               >
                 Our Team
               </Link>
@@ -79,7 +87,9 @@ const Navbar = () => {
             <li>
               <Link
                 href="/projects"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/projects" && "text-[#F2CE24]"
+                }`}
               >
                 Our Project
               </Link>
@@ -87,7 +97,9 @@ const Navbar = () => {
             <li>
               <Link
                 href="/blogs"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/blogs" && "text-[#F2CE24]"
+                }`}
               >
                 Blogs & News
               </Link>
@@ -124,7 +136,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-0 h-[60vh] overflow-hidden w-screen bg-[#048FB7] flex flex-col justify-evenly items-center px-12 sm:px-14 md:px-16 py-6 sm:py-8 lg:hidden font-opensans font-semibold text-sm text-white z-50"
+            className="absolute top-0 h-[60vh] overflow-hidden w-screen bg-[#048FB7] flex flex-col justify-evenly items-center px-12 sm:px-14 md:px-16 py-6 sm:py-8 lg:hidden font-poppins font-semibold text-sm text-white z-50"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.25 }}
@@ -148,7 +160,9 @@ const Navbar = () => {
             </a>
             <Link
                 href="/"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/" && "text-[#F2CE24]"
+                }`}
                 onClick={handleListClick}
               >
                 Home
@@ -156,7 +170,9 @@ const Navbar = () => {
             
               <Link
                 href="/about"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/about" && "text-[#F2CE24]"
+                }`}
                 onClick={handleListClick}
 
               >
@@ -165,7 +181,9 @@ const Navbar = () => {
             
               <Link
                 href="/team"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/team" && "text-[#F2CE24]"
+                }`}
                 onClick={handleListClick}
 
               >
@@ -173,7 +191,9 @@ const Navbar = () => {
               </Link>
               <Link
                 href="/projects"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/projects" && "text-[#F2CE24]"
+                }`}
                 onClick={handleListClick}
 
               >
@@ -182,7 +202,9 @@ const Navbar = () => {
             
               <Link
                 href="/blogs"
-                className="relative after:bg-white after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/blogs" && "text-[#F2CE24]"
+                }`}
                 onClick={handleListClick}
 
               >

@@ -101,8 +101,8 @@ const Impact = () => {
       </div>
       {/* <div className="absolute bg-[url('/impactbg.png')] -top-[18%] -right-1/2 w-full h-full bg-no-repeat z-40 bg-transparent"></div> */}
       <div className="xl:mt-16 lg:mt-12 w-full">
-        <div className="w-full mx-auto flex md:flex-row flex-col space-y-6 justify-evenly items-center">
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-[40%]">
+        <div className="w-full grid grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
+          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/careers.png" alt="Careers Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
             </div>
@@ -142,8 +142,8 @@ const Impact = () => {
               </span>
             </button>
           </div>
-          <div className="w-8 h-[1px] bg-black"></div>
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-[40%]">
+          {/* <div className="w-8 h-[1px] bg-black"></div> */}
+          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/funding.png" alt="Funding Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
             </div>
@@ -173,8 +173,8 @@ const Impact = () => {
               </span>
             </button>
           </div>
-          <div className="w-8 h-[1px] bg-black"></div>
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-[40%]">
+          {/* <div className="w-8 h-[1px] bg-black"></div> */}
+          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/project.png" alt="Project Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
             </div>
@@ -205,8 +205,8 @@ const Impact = () => {
               </span>
             </button>
           </div>
-          <div className="w-8 h-[1px] bg-black"></div>
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-[40%]">
+          {/* <div className="w-8 h-[1px] bg-black"></div> */}
+          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/resource.png" alt="Resource Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
             </div>

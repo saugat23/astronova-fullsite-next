@@ -34,13 +34,13 @@ const Layout = ({ children }) => {
               return (
                 <li
                   key={key}
-                  className={`w-full flex justify-start items-center md:py-5 md:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${
+                  className={`w-full flex justify-start items-center md:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${
                     pathname === item.link && "bg-[#ececec]"
                   }`}
                 >
                   <Link
                     href={item.link}
-                    className="flex justify-start items-center space-x-2"
+                    className="flex justify-start items-center space-x-2 w-full h-full py-4"
                   >
                     <span className="inline-block">{item.icon}</span>{" "}
                     <span className="font-poppins font-medium text-base text-[#091747]">
