@@ -11,13 +11,13 @@ const Media = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden xl:py-12 xl:px-12 lg:py-8 lg:px-8"
+      className="h-auto max-w-screen overflow-hidden mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4"
     >
       <div className="flex flex-col justify-center items-center space-y-6">
-        <h3 className="font-opensans font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-[#0B77A5] tracking-tight">
+        <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
           MEDIA PUBLICATION
         </h3>
-        <div className="flex justify-center items-center lg:space-x-3 xl:space-x-4">
+        <div className="w-full flex justify-center items-center lg:space-x-3 xl:space-x-4">
           <Swiper
             spaceBetween={30}
             modules={[Navigation]}
@@ -35,7 +35,7 @@ const Media = () => {
                 slidesPerView: 3,
               },
             }}
-            className="w-screen flex justify-start items-center"
+            className="w-full flex justify-start items-center"
           >
             <SwiperSlide className="py-4">
               <Publications

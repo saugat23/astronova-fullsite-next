@@ -37,7 +37,7 @@ const Navbar = () => {
     <header
       data-aos="fade-down"
       data-aos-duration="500"
-      className="h-auto bg-[#048FB7] sticky"
+      className="h-auto bg-[#048FB7] fixed w-full z-50"
     >
       <nav className="w-full flex justify-between items-center py-4 px-4 lg:px-4 xl:px-8 2xl:px-12 2xl:pt-4">
         <div className="flex justify-center items-center">
@@ -53,7 +53,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden lg:flex lg:items-center lg:justify-end lg:w-full">
-          <ul className="flex justify-evenly items-center lg:space-x-4 2xl:space-x-8 text-white font-poppins font-semibold text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl uppercase leading-[25.2px]">
+          <ul className="flex justify-evenly items-center lg:space-x-4 2xl:space-x-8 text-white font-poppins font-semibold text-[10px] md:text-xs lg:text-sm xl:text-base 2xl:text-lg uppercase leading-[25.2px]">
             <li>
               <Link
                 href="/"

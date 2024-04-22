@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Publications = ({ imgSrc, logoSrc, title, article }) => {
   return (
@@ -12,12 +13,13 @@ const Publications = ({ imgSrc, logoSrc, title, article }) => {
           <div>
             <Image src={logoSrc} alt={title} priority width={200} height={150} />
           </div>
-          <h3 className="font-montserrat font-bold 2xl:text-4xl lg:text-3xl">
+          <h3 className="font-montserrat font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             {title}
           </h3>
-          <p className="font-roboto font-normal 2xl:text-2xl lg:text-xl text-[#6E6E6E]">
+          <p className="font-roboto font-normal 2xl:text-lg lg:text-base md:text-sm text-xs text-[#6E6E6E]">
             {article}
           </p>
+          <Link href="#" className="text-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs text-red-700">Read More</Link>
         </div>
       </div>
     </>

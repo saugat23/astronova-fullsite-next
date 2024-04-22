@@ -6,21 +6,21 @@ const Impact = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden xl:py-12 xl:px-12 lg:py-8 lg:px-8 relative py-4"
+      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4"
     >
       <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4 xl:px-4">
-        <h3 className="font-opensans font-bold text-xl md:text-2xl xl:text-3xl 2xl:text-4xl text-[#0B77A5] tracking-tight relative after:bg-[#639A1B] after:absolute after:h-[4px] after:w-0 after:-bottom-[1px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
+        <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight relative after:bg-[#0B77A5] after:absolute after:h-[4px] after:w-0 after:-bottom-[2px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
           OUR IMPACT
         </h3>
-        <div className="flex md:flex-row flex-col justify-center items-center lg:space-x-6 md:space-x-4 space-y-4 py-4">
+        <div className="flex md:flex-row flex-col justify-center items-center lg:space-x-6 space-x-0 md:space-x-4 space-y-4 md:space-y-0 py-4">
           <div
             data-aos="fade-up"
             data-aos-duration="1300"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#BDB809] cursor-pointer shadow-md hover:scale-105 hover:duration-300"
+            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#BDB809] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
           >
             <div>
               <svg
-                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
+                className="w-[30px] md:w-[36px] lg:[42px] xl:w-[50px]"
                 viewBox="0 0 58 57"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,13 +31,13 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-white">
+            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
               100K +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-3xl lg:text-2xl md:text-lg text-sm text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               STUDENT REACHED
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-white">
+            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-white text-center">
               Through various workshops, seminars, STEAM camps, trainings &
               programs.
             </p>
@@ -45,11 +45,11 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="1100"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#AE0D19] cursor-pointer shadow-md hover:scale-105 hover:duration-300"
+            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#AE0D19] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
           >
             <div>
               <svg
-                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
+                className="w-[30px] md:w-[36px] lg:[42px] xl:w-[50px]"
                 viewBox="0 0 54 54"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,13 +60,13 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-white">
+            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
               5M +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-3xl lg:text-2xl md:text-lg text-sm text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               FUND INVESTED
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-white">
+            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white">
               To build IT Lab, Podcast Hall, Resource Allocation, Student
               Grants, Human Resource.
             </p>
@@ -74,25 +74,25 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="900"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 z-40 inset-0 bg-[#2496D7] cursor-pointer shadow-md hover:scale-105 hover:duration-300"
+            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 z-40 bg-[#2496D7] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
           >
             <div>
               <Image
                 src="/assets/workshop.svg"
                 alt="Workshop SVG"
                 priority
-                width={58}
-                height={47}
+                width={42}
+                height={38}
                 className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
               />
             </div>
-            <h4 className="font-inter font-bold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-white">
+            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
               100 +
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-3xl lg:text-2xl md:text-lg text-sm text-white">
+            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               FREE WORKSHOPS
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-white">
+            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>
@@ -102,24 +102,24 @@ const Impact = () => {
       {/* <div className="absolute bg-[url('/impactbg.png')] -top-[18%] -right-1/2 w-full h-full bg-no-repeat z-40 bg-transparent"></div> */}
       <div className="xl:mt-16 lg:mt-12 w-full">
         <div className="w-full grid grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
+          <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/careers.png" alt="Careers Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
+              <Image src="/careers.svg" alt="Careers Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-[#77AB33]">
+            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Careers
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-justify">
+            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               We’re always looking for talented, driven individuals to join our
               mission. Come help us build a better future for students
             </p>
-            <button className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-base text-xs text-[#DA441F] flex items-center">
+            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] text-center flex items-center">
               Apply Today
               <span className="inline-block"> 
                 <svg
                   width="16"
                   height="16"
-                  viewBox="0 0 30 30"
+                  viewBox="80 0 30 30"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="md:w-20 lg:w-24 2xl:w-28"
@@ -143,24 +143,24 @@ const Impact = () => {
             </button>
           </div>
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
+          <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/funding.png" alt="Funding Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
+              <Image src="/funding.svg" alt="Funding Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-[#77AB33]">
+            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Funding
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-justify">
+            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               We provide Seed money and Venture money to the innovative business
               idea. Come join us and work on your idea.
             </p>
-            <button className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-base text-xs text-[#DA441F] flex items-center">
-              Register your Idea{" "}
+            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+              Register your Idea
               <span className="inline-block ">
                 <svg
                   width="16"
                   height="16"
-                  viewBox="0 0 38 28"
+                  viewBox="60 0 38 28"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="md:w-20 lg:w-24 2xl:w-28"
@@ -176,23 +176,23 @@ const Impact = () => {
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/project.png" alt="Project Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
+              <Image src="/project.svg" alt="Project Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-[#77AB33]">
+            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Project
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-justify">
+            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               let’s see what we have done in past to promote science and
               innovation among the students. Check out our project with this
               button Click.
             </p>
-            <button className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-base text-xs text-[#DA441F] flex items-center">
-              Learn More{" "}
+            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+              Learn More
               <span className="inline-block ">
                 <svg
                   width="16"
                   height="16"
-                  viewBox="0 0 18 23"
+                  viewBox="60 0 18 23"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="md:w-20 lg:w-24 2xl:w-28"
@@ -208,22 +208,22 @@ const Impact = () => {
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/resource.png" alt="Resource Logo" className="sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32" width={60} height={60}/>
+              <Image src="/resource.svg" alt="Resource Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-4xl lg:text-3xl md:text-xl text-lg text-[#77AB33]">
+            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Resource
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black">
+            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               We are prepare useful resources to make you clear about our
               mission and goals. Click to see the Resources.
             </p>
-            <button className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-base text-xs text-[#DA441F] flex items-center">
-              Download Brochure{" "}
+            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+              Download Brochure
               <span className="inline-block ">
                 <svg
                   width="16"
                   height="16"
-                  viewBox="0 0 34 34"
+                  viewBox="60 0 34 34"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="md:w-20 lg:w-24 2xl:w-28"

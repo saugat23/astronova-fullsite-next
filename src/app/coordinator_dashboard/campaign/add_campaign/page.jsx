@@ -1,13 +1,167 @@
-"use client"
-import React from "react";
+"use client";
+import React, {useState, useEffect} from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { HiMiniCurrencyRupee } from "react-icons/hi2";
 import { useRouter } from "next/navigation";
+import { createCampaign } from "../../../services/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+// import { storage } from "@/app/firebase";
+import Link from "next/link";
 
 const Page = () => {
 
-    const router = useRouter();
+  const [imagefeatureUpload, setImagefeatureUpload] = useState(null);
+    const [imagegalleryUpload1, setImagegalleryUpload1] = useState(null);
+    const [imagegalleryUpload2, setImagegalleryUpload2] = useState(null);
+    const [imagegalleryUpload3, setImagegalleryUpload3] = useState(null);
+    const [imagegalleryUpload4, setImagegalleryUpload4] = useState(null);
+    const [videoUpload, setVideoUpload] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const [formData, setFormData] = useState({
+      coordinator_id: 12,
+      title: '',
+      short_description: '',
+      department: '',
+      target_fund_dollars: null,
+      target_fund_rupees: null,
+      start_date: '',
+      end_date: '',
+      long_description: '',
+      featured_image: '',
+      gallery_images: [],
+      video: '', 
+  });
+
+  useEffect(() => {
+    const uploadFile = async (file, fileType) => {
+      if (!file) return;
+
+      const fileRef = ref(storage, `campaign/${file.name}`);
+
+      try {
+        await uploadBytes(fileRef, file);
+        const url = await getDownloadURL(fileRef);
+
+        setFormData((prevData) => ({
+          ...prevData,
+          [fileType]: url,
+        }));
+      } catch (error) {
+        console.error("Error uploading file:", error);
+      }
+    };
+
+    uploadFile(imagefeatureUpload, "featured_image");
+    uploadFile(videoUpload, "video");
+  }, [imagefeatureUpload, videoUpload]);
+
+  const uploadFilegallery1 = (e) => {
+    e.preventDefault();
+    if (!imagegalleryUpload1) return;
+
+    const imageRef = ref(storage, `campaign/${imagegalleryUpload1.name}`);
+
+    uploadBytes(imageRef, imagegalleryUpload1).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        console.log(url);
+        setFormData((prevData) => ({
+          ...prevData,
+          gallery_images: [...prevData.gallery_images, url],
+        }));
+      });
+    });
+  };
+  const uploadFilegallery2 = (e) => {
+    e.preventDefault();
+    if (!imagegalleryUpload2) return;
+
+    const imageRef = ref(storage, `campaign/${imagegalleryUpload2.name}`);
+
+    uploadBytes(imageRef, imagegalleryUpload2).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        console.log(url);
+        setFormData((prevData) => ({
+          ...prevData,
+          gallery_images: [...prevData.gallery_images, url],
+        }));
+      });
+    });
+  };
+  const uploadFilegallery3 = (e) => {
+    e.preventDefault();
+    if (!imagegalleryUpload3) return;
+
+    const imageRef = ref(storage, `campaign/${imagegalleryUpload3.name}`);
+
+    uploadBytes(imageRef, imagegalleryUpload3).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        console.log(url);
+        setFormData((prevData) => ({
+          ...prevData,
+          gallery_images: [...prevData.gallery_images, url],
+        }));
+      });
+    });
+  };
+  const uploadFilegallery4 = (e) => {
+    e.preventDefault();
+    if (!imagegalleryUpload4) return;
+
+    // const imageRef = ref(storage, `campaign/${imagegalleryUpload4.name}`);
+
+    // uploadBytes(imageRef, imagegalleryUpload4).then((snapshot) => {
+    //   getDownloadURL(snapshot.ref).then((url) => {
+    //     console.log(url);
+    //     setFormData((prevData) => ({
+    //       ...prevData,
+    //       gallery_images: [...prevData.gallery_images, url],
+    //     }));
+    //   });
+    // });
+  };
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      console.log(formData);
+      const response = await createCampaign(formData);
+      console.log("response", response);
+
+      toast.success("Campaign created successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+      });
+      setTimeout(() => {
+        window.history.back();
+      }, 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Error creating campaign. Please try again!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const router = useRouter();
   return (
     <section className="p-6 h-auto">
       <div className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg">
@@ -88,33 +242,106 @@ const Page = () => {
             </h3>
           </div>
           <div className="w-[80%] flex flex-col justify-center items-start space-y-4">
-            <div className="border-dashed border-[#e0d8ff99] w-80 h-60 py-6">
+            <div className="border-dashed border-[#e0d8ff99] w-full h-60 py-6">
               <label
-                htmlFor="fundingFileInput"
-                className="max-w-md w-80 h-60 mx-auto cursor-pointer bg-[url('/assets/inputfile.svg')] bg-cover bg-no-repeat"
-              >           
+                htmlFor="campaignFeaturePhoto"
+                className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
+              >
+                <button
+                  type="button"
+                  className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                >
+                  Add Featured Image
+                </button>
               </label>
               <input
                 type="file"
-                id="fundingFileInput"
-                name="fundingFileInput"
-                accept="image/*"
-                className="hidden"
+                name="campaignFeaturePhoto"
+                id="campaignFeaturePhoto"
+                className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                placeholder=""
               />
             </div>
             <div className="w-full flex justify-center items-center space-x-6 border-dashed border-[#e0d8ff99]">
-              <div>
+              <div className="w-1/4">
+                <label
+                  htmlFor="campaignGallery1"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
+                >
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                  >
+                    Image 1
+                  </button>
+                </label>
                 <input
                   type="file"
-                  className="hidden"
-                  accept="image/*"
-                  id="inputFile"
-                  name="inputFile"
+                  name="campaignGallery1"
+                  id="campaignGallery1"
+                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                  placeholder=""
                 />
+              </div>
+              <div className="w-1/4">
                 <label
-                  htmlFor="inputFile"
-                  className="max-w-md w-40 h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-contain mx-auto cursor-pointer"
-                ></label>
+                  htmlFor="campaignGallery2"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
+                >
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                  >
+                    Image 2
+                  </button>
+                </label>
+                <input
+                  type="file"
+                  name="campaignGallery2"
+                  id="campaignGallery2"
+                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                  placeholder=""
+                />
+              </div>
+              <div className="w-1/4">
+                <label
+                  htmlFor="campaignGallery3"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
+                >
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                  >
+                    Image 3
+                  </button>
+                </label>
+                <input
+                  type="file"
+                  name="campaignGallery3"
+                  id="campaignGallery3"
+                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                  placeholder=""
+                />
+              </div>
+              <div className="w-1/4">
+                <label
+                  htmlFor="campaignGallery4"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
+                >
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                  >
+                    Image 4
+                  </button>
+                </label>
+                <input
+                  type="file"
+                  name="campaignGallery4"
+                  id="campaignGallery4"
+                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                  placeholder=""
+                />
               </div>
             </div>
             <div className="w-full flex justify-between items-start">
@@ -205,7 +432,12 @@ const Page = () => {
               />
             </div>
             <div className="flex justify-start items-center">
-                <button type="submit" className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold">Submit</button>
+              <button
+                type="submit"
+                className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
@@ -215,7 +447,8 @@ const Page = () => {
               type="button"
               className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
               onClick={() => router.back()}
-            >Go Back
+            >
+              Go Back
             </button>
           </div>
         </div>
