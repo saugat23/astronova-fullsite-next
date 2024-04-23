@@ -69,7 +69,7 @@ const Works = () => {
                   <TableColumn>Event Title</TableColumn>
                   <TableColumn>Short Description</TableColumn>
                 </TableHeader>
-                <TableBody>
+                <TableBody emptyContent={"No rows to display."}>
                   {
                   (search === "" ? events : filteredEvents) 
                     .map((event) => {

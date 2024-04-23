@@ -1,15 +1,17 @@
 import { Progress } from "@nextui-org/react";
 import React from "react";
+import Link from "next/link";
 
 const SupportStudent = ({
+  id,
   imgSrc,
   project,
   desc,
-  progressValue,
   achieved,
   target,
 }) => {
   var color = "";
+  var progressValue = achieved === null ? 0 : (achieved / target) * 100;
   if (progressValue < 25) {
     color = "danger";
   } else if (progressValue >= 25 && progressValue <= 50) {
@@ -25,10 +27,10 @@ const SupportStudent = ({
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-auto w-auto shadow-2xl"
+        className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-[40rem] w-auto shadow-2xl"
       >
-        <div>
-          <img src={imgSrc} alt={project} />
+        <div className="h-1/2">
+          <img src={imgSrc} alt={project} className="h-full"/>
         </div>
         <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black text-center">
           {project}
@@ -66,7 +68,7 @@ const SupportStudent = ({
             type="button"
             className="bg-white border-2 border-[#7926ED] py-2 px-8 font-poppins font-semibold lg:text-sm xl:text-base text-black tracking-wider hover:bg-[#7926ED] hover:text-white hover:shadow-2xl"
           >
-            DONATE
+            <Link href={`/donation_campaign_page/${id}`} target="_blank">DONATE</Link>
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
-import React, { useCallback, useRef } from "react";
+"use client"
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import SupportStudent from "../components/UI/SupportStudent";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,10 +7,12 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { TrendingUpIcon } from "lucide-react";
+import Link from "next/link";
+import { getAllCampaign } from "../app/services/api";
 
 const About = () => {
   const sliderRef = useRef(null);
+  const [campaigns, setCampaigns] = useState([]);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -21,11 +24,29 @@ const About = () => {
     sliderRef.current.swiper.slideNext();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getAllCampaign();
+        setCampaigns(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
-    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4'>
-      <div className="w-full flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0">
+    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 '>
+      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4">
         <div className="h-auto flex flex-col justify-center items-center xl:pr-8 xl:border-r-4 border-[#DB8114] md:w-full">
-          <Image src="/assets/logo.png" alt="" width={100} height={80} className="py-4 md:w-full h-auto"/>
+          <Image
+            src="/assets/logo.png"
+            alt=""
+            width={100}
+            height={80}
+            className="py-4 md:w-full h-auto"
+          />
         </div>
         <div
           data-aos="fade-up"
@@ -60,28 +81,108 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="flex md:flex-row flex-col justify-between items-center mt-8 xl:py-8"
+        className="xl:py-8 bg-[#D9D9D9] md:mt-8 mt-4"
       >
-        <div className="w-full md:w-1/3 flex flex-col justify-evenly items-start space-y-6">
-          <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
-            OUR MAJOR WORKING AREA
-          </h3>
-          <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-black text-start">
-            We are actively involving various working area. However, our major
-            focusing working area are as below.
-          </p>
-        </div>
-        <div className="grow p-4">
-          <Image
+        <div className="flex md:flex-row flex-col justify-between items-center bg-[#D9D9D94D] mx-auto w-full md:w-[90%] xl:w-[80%]">
+          <div className="w-full md:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-4 border-[#DB8114]">
+            <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+              OUR MAJOR WORKING AREA
+            </h3>
+            <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-black text-center">
+              We are actively involving various working area. However, our major
+              focusing working area are as below.
+            </p>
+          </div>
+          <div className="grow p-4 h-[70vh] flex justify-center items-center">
+            {/* <Image
             src="/workingarea.svg"
             alt="Working Area Image"
             width={260}
             height={140}
             className="md:w-[36rem] lg:w-[48rem] xl:w-[60rem] xl:h-[40rem]"
-          />
+          /> */}
+            <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-[55%] z-20 my-auto flex justify-center items-center">
+              <div className="w-[45%] h-1/2 rounded-full bg-white flex justify-center items-center">
+                <h3 className="font-opensans font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm w-3/4 mx-auto text-center">
+                  OUR MAJOR WORKING AREA
+                </h3>
+              </div>
+              <Link
+                href="#"
+                className="absolute -top-[45%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/afterschool.svg"
+                  alt=""
+                  width="120"
+                  height="120"
+                />
+                AFTER SCHOOL PROGRAM
+              </Link>
+              <Link
+                href="#"
+                className="absolute -top-1/4 translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/startup.svg"
+                  alt=""
+                  width="100"
+                  height="100"
+                />
+                STARTUP & INNOVATION
+              </Link>
+              <Link
+                href="#"
+                className="absolute -top-1/4 translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/scienceexpo.svg"
+                  alt=""
+                  width="120"
+                  height="120"
+                />
+                SCIENCE EXPO
+              </Link>
+              <Link
+                href="#"
+                className="absolute bottom-[40%] translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/steam.svg"
+                  alt=""
+                  width="120"
+                  height="160"
+                />
+              </Link>
+              <Link
+                href="#"
+                className="absolute bottom-[40%] translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/research.svg"
+                  alt=""
+                  width="80"
+                  height="80"
+                />
+                RESEARCH & INNOVATION
+              </Link>
+              <Link
+                href="#"
+                className="absolute -bottom-4 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+              >
+                <Image
+                  src="/assets/teachers.svg"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                TEACHERS PRO DEVELOPMENT, SKILL DEVELOPMENT & SOCIAL SKILLS
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="w-full h-full flex flex-col justify-between items-center space-y-12 mt-8">
+      <div className="h-full flex flex-col justify-between items-center space-y-12 mt-8 mx-auto w-full md:w-[90%] xl:w-[80%]">
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
           SUPPORT FOR STUDENTS
         </h3>
@@ -107,62 +208,22 @@ const About = () => {
             className="w-full flex justify-evenly items-center space-x-4"
           >
             <div className="swiper-button-prev" onClick={handlePrev}></div>
-            <SwiperSlide className="py-4">
-              <SupportStudent
+            {campaigns.map((campaign) => {
+              return (
+                <SwiperSlide className="py-4" key={campaign.campaign_id}>
+                  <SupportStudent
                 data-aos="fade-right"
                 data-aos-duration="500"
-                imgSrc="/supportbroadcast.png"
-                project="Broadcast"
-                desc="Explore the latest trends shaping our world and discover 
-              how these transformations will impact our future. Join us for 
-              insightful discussions on technological advancements..."
-                progressValue="80"
-                achieved="$40000000"
-                target="$80000000"
+                id={campaign.campaign_id}
+                imgSrc={campaign.featured_image}
+                project={campaign.title}
+                desc={campaign.short_description.substr(0, 60) + " ..."}
+                achieved={campaign.achieved_fund}
+                target={campaign.target_fund_dollars}
               />
-            </SwiperSlide>
-            <SwiperSlide className="">
-              <SupportStudent
-                data-aos="fade-right"
-                data-aos-duration="700"
-                imgSrc="/supportstudents.png"
-                project="Tinkering Labs Project"
-                desc="Step into the world of Tinkering Labs, where creativity knows no
-              bounds! Our tinkering spaces are designed to ignite curiosity,
-              foster innovation, and unleash the imagination of..."
-                progressValue="25"
-                achieved="$14000000"
-                target="$41000000"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="">
-              <SupportStudent
-                data-aos="fade-right"
-                data-aos-duration="900"
-                imgSrc="/supportplanterium.png"
-                project="Planterium Labs"
-                desc="Embark on a cosmic adventure with Planetorium Labs! Our 
-            cutting-edge facilities bring the wonders of the universe to 
-            life through state-of-the-art technology. Join us for an..."
-                progressValue="10"
-                achieved="$56000"
-                target="$560000000"
-              />
-            </SwiperSlide>
-            <SwiperSlide className="">
-              <SupportStudent
-                data-aos="fade-right"
-                data-aos-duration="1100"
-                imgSrc="/supportplanterium.png"
-                project="Planterium Labs"
-                desc="Embark on a cosmic adventure with Planetorium Labs! Our 
-            cutting-edge facilities bring the wonders of the universe to 
-            life through state-of-the-art technology. Join us for an..."
-                progressValue="10"
-                achieved="$56000"
-                target="$560000000"
-              />
-            </SwiperSlide>
+                </SwiperSlide>
+              )
+            })}
             <div className="swiper-button-next" onClick={handleNext}></div>
           </Swiper>
         </div>

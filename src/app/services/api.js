@@ -37,3 +37,23 @@ export const getAllEvents = async () => {
     throw error;
   }
 }
+
+export const createTestimonial = async (userData) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/testimonial/testimonialCreate`, userData);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getCampaignById = async ({ id }) => {
+  try {
+      const response = await axios.get(`${API_BASE_URL}/campaign/${id}`);
+      return response.data;
+    } catch (error) { 
+      throw error;
+    }
+};
+
+

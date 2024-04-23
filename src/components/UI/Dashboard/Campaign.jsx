@@ -1,8 +1,13 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+// import { storage } from '@/app/firebase';
 import { FaEye, FaPen, FaRunning } from "react-icons/fa";
-import { getAllCampaign } from "../../../app/services/api";
+import { getAllCampaign, createTestimonial } from "../../../app/services/api";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Progress } from "@nextui-org/react";
 import {
   Table,
@@ -28,9 +33,71 @@ import {
 import { FaUser } from "react-icons/fa";
 
 const Campaign = () => {
-    const [campaign, setCampaign] = useState([]);
+  // const [imagefeatureUpload, setImagefeatureUpload] = useState(null);
+  const [campaign, setCampaign] = useState([]);
     const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
     const [search, setSearch] = useState("");
+
+    // const [formData, setFormData] = useState({
+    //     coordinator_id: 12,
+    //     name: '',
+    //     campaign_name: '',
+    //     description: '',
+    //     image_url: '',
+    //   });
+
+    //   useEffect(() => {
+    //     const uploadFile = async (file, fileType) => {
+    //       if (!file) return;
+    
+    //       const fileRef = ref(storage, `testimonial/${file.name}`);
+    
+    //       try {
+    //         await uploadBytes(fileRef, file);
+    //         const url = await getDownloadURL(fileRef);
+    
+    //         setFormData((prevData) => ({
+    //           ...prevData,
+    //           [fileType]: url,
+    //         }));
+    //       } catch (error) {
+    //         console.error('Error uploading file:', error);
+    //       }
+    //     };
+    
+    //     uploadFile(imagefeatureUpload, 'image_url');
+    //   }, [imagefeatureUpload]);
+
+    //   const handleInputChange = (e) => {
+    //     e.preventDefault();
+    //     const { name, value } = e.target;
+    //     setFormData((prevData) => ({
+    //       ...prevData,
+    //       [name]: value,
+    //     }));
+    //   };
+
+    //   const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setLoading(true);
+    //     try {
+    //       console.log(formData);
+    //       const response = await createTestimonial(formData);
+    //       console.log("response", response);
+    //       toast.success('Testimonial created successfully!', {
+    //         position: toast.POSITION.TOP_RIGHT,
+    //         autoClose: 5000,
+    //         hideProgressBar: false,
+    //     });
+    //     } catch (error) {
+    //       console.error('Error:', error);
+    //       toast.error('Error creating Testimonial. Please try again!', {
+    //         position: toast.POSITION.TOP_RIGHT,
+    //         autoClose: 5000, 
+    //         hideProgressBar: false,
+    //     });
+    //     }
+    //   };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -79,6 +146,9 @@ const Campaign = () => {
                         Add Testimonial
                       </ModalHeader>
                       <ModalBody>
+                        <form 
+                        // onSubmit={handleSubmit}
+                        >
                         <Input
                           type="file"
                           className="hidden"
@@ -122,12 +192,12 @@ const Campaign = () => {
                           placeholder="Enter your description"
                           className="max-w-md w-full my-4"
                         />
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button color="success" variant="flat" onPress={onClose}>
+                        </form>
+                        <Button color="success" variant="flat" onPress={onClose} type='submit'>
                           Submit Testimonial
                         </Button>
-                      </ModalFooter>
+                      </ModalBody>
+
                     </>
                   )}
                 </ModalContent>

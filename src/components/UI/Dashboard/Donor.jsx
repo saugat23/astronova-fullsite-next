@@ -85,7 +85,7 @@ const Donor = () => {
                 <TableColumn>Status</TableColumn>
                 <TableColumn>No of Transactions</TableColumn>
               </TableHeader>
-              <TableBody>
+              <TableBody emptyContent={"No rows to display."}>
                 {(search === "" ? donors : filteredDonors).map((donor) => {
                   return (
                     <TableRow key={donor.user_id}>
