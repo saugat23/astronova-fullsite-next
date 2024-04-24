@@ -13,10 +13,6 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  Input,
-  Select,
-  SelectItem,
-  Textarea,
 } from "@nextui-org/react";
 
 const Navbar = () => {
@@ -96,6 +92,16 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                href="/works"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/works" && "text-[#F2CE24]"
+                }`}
+              >
+                Our Works
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/blogs"
                 className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
                   pathname === "/blogs" && "text-[#F2CE24]"
@@ -107,7 +113,7 @@ const Navbar = () => {
             <div className="flex justify-center items-center">
               <Button
                 type="button"
-                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-4 2xl:py-6 text-black font-ibmplex font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
+                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-4 2xl:py-6 text-black font-poppins font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
                 onPress={onOpen}
               >
                 SUPPORT US
@@ -199,6 +205,16 @@ const Navbar = () => {
               >
                 Our Project
               </Link>
+              <Link
+                href="/works"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/works" && "text-[#F2CE24]"
+                }`}
+                onClick={handleListClick}
+
+              >
+                Our Works
+              </Link>
             
               <Link
                 href="/blogs"
@@ -215,22 +231,13 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <Modal isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} className="w-screen h-1/2">
         <ModalContent>
           {(onClose) => (
             <div>
-              <ModalBody className="flex justify-evenly items-center">
-                <div className="lg:px-6 lg:py-6 border-r-3 border-white flex justify-center items-center">
-                  <h2 className="font-opensans font-extrabold xl:text-8xl lg:text-7xl tracking-tighter">
-                    MAKE A DONATION TOWARDS STUDENT’S INNOVATION
-                  </h2>
-                </div>
+              <ModalBody className="flex w-[70vw] h-full justify-center items-center">
+                <img src="/supportmodal.png" alt="Support Modal" className="w-full h-full" />
               </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
             </div>
           )}
         </ModalContent>

@@ -94,13 +94,6 @@ const About = () => {
             </p>
           </div>
           <div className="grow p-4 h-[70vh] flex justify-center items-center">
-            {/* <Image
-            src="/workingarea.svg"
-            alt="Working Area Image"
-            width={260}
-            height={140}
-            className="md:w-[36rem] lg:w-[48rem] xl:w-[60rem] xl:h-[40rem]"
-          /> */}
             <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-[55%] z-20 my-auto flex justify-center items-center">
               <div className="w-[45%] h-1/2 rounded-full bg-white flex justify-center items-center">
                 <h3 className="font-opensans font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm w-3/4 mx-auto text-center">
@@ -108,7 +101,7 @@ const About = () => {
                 </h3>
               </div>
               <Link
-                href="#"
+                href={{ pathname: "/working_area"}}
                 className="absolute -top-[45%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -120,7 +113,7 @@ const About = () => {
                 AFTER SCHOOL PROGRAM
               </Link>
               <Link
-                href="#"
+                href={{ pathname: "/working_area", query: {field: 'startup'}}}
                 className="absolute -top-1/4 translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -132,7 +125,7 @@ const About = () => {
                 STARTUP & INNOVATION
               </Link>
               <Link
-                href="#"
+                href={{ pathname: "/working_area", query: {field: 'science_expo'}}}
                 className="absolute -top-1/4 translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -144,7 +137,7 @@ const About = () => {
                 SCIENCE EXPO
               </Link>
               <Link
-                href="#"
+                href={{ pathname: "/working_area", query: {field: 'steam'}}}
                 className="absolute bottom-[40%] translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -155,7 +148,7 @@ const About = () => {
                 />
               </Link>
               <Link
-                href="#"
+                href={{ pathname: "/working_area", query: {field: 'research'}}}
                 className="absolute bottom-[40%] translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image

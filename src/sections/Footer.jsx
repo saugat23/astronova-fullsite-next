@@ -225,7 +225,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:py-6 self-center flex justify-center items-center">
-          <img src="support.png" alt="Support Image" />
+          <img src="/assets/support.svg" alt="Support Image" />
         </div>
       </div>
     </section>

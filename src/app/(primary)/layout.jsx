@@ -1,16 +1,16 @@
-"use client"
 import React from 'react'
 import dynamic from 'next/dynamic';
+
 const Navbar = dynamic(
   () => import("../../sections/Navbar"),
   {
-    ssr: false,
+    loading: () => <p> </p>
   }
 );
 const Footer = dynamic(
   () => import("../../sections/Footer"),
   {
-    ssr: false,
+    loading: () => <p> </p>
   }
 );
 
