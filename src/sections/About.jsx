@@ -113,7 +113,7 @@ const About = () => {
                 AFTER SCHOOL PROGRAM
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: {field: 'startup'}}}
+                href={{ pathname: "/working_area3"}}
                 className="absolute -top-1/4 translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -125,7 +125,7 @@ const About = () => {
                 STARTUP & INNOVATION
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: {field: 'science_expo'}}}
+                href={{ pathname: "/working_area2"}}
                 className="absolute -top-1/4 translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
