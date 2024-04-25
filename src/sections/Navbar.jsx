@@ -251,12 +251,17 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <Modal isOpen={isOpen} onClose={onClose} onOpenChange={onOpenChange} className="w-screen h-1/2">
+      <Modal 
+      size="5xl"
+      isOpen={isOpen} 
+      onClose={onClose}
+       onOpenChange={onOpenChange} 
+       className="">
         <ModalContent>
           {(onClose) => (
             <div>
-              <ModalBody className="flex w-[70vw] h-full justify-center items-center">
-                <img src="/supportmodal.png" alt="Support Modal" className="w-full h-full" />
+              <ModalBody className="flex w-auto h-auto justify-center items-center">
+                <img src="/supportmodal.png" alt="Support Modal" className="w-full h-auto bg-cover object-cover" />
               </ModalBody>
             </div>
           )}

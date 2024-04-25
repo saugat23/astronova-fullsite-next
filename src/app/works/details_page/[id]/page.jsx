@@ -8,11 +8,11 @@ const WorkById = dynamic(
   }
 );
 
-const Navbar = dynamic(() => import("../../sections/Navbar"), {
+const Navbar = dynamic(() => import("../../../../sections/Navbar"), {
   loading: () => <p> </p>,
 });
 
-const Footer = dynamic(() => import("../../sections/Footer"), {
+const Footer = dynamic(() => import("../../../../sections/Footer"), {
   loading: () => <p> </p>,
 });
 

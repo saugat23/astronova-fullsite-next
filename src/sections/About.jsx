@@ -9,8 +9,67 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 import { getAllCampaign } from "../app/services/api";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+function SupportNextArrow({className, onClick}) {
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+    />
+  );
+}
+
+function SupportPrevArrow({className, onClick}) {
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+    />
+  );
+}
 
 const About = () => {
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 3,
+    nextArrow: <SupportNextArrow className="bg-red-600 "/>,
+    prevArrow: <SupportPrevArrow className="bg-blue-500"/>,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      }
+    ]
+  };
+
   const sliderRef = useRef(null);
   const [campaigns, setCampaigns] = useState([]);
 
@@ -179,8 +238,8 @@ const About = () => {
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
           SUPPORT FOR STUDENTS
         </h3>
-        <div className="mt-4 w-full flex justify-center items-center">
-          <Swiper
+        {/* <div className="mt-4 w-full flex justify-center items-center"> */}
+          {/* <Swiper
             spaceBetween={20}
             modules={[Navigation]}
             navigation={true}
@@ -218,8 +277,26 @@ const About = () => {
               )
             })}
             <div className="swiper-button-next" onClick={handleNext}></div>
-          </Swiper>
-        </div>
+          </Swiper> */}
+          <Slider {...settings}>
+          {campaigns.map((campaign) => {
+              return (
+                <div className="py-4" key={campaign.campaign_id}>
+                  <SupportStudent
+                data-aos="fade-right"
+                data-aos-duration="500"
+                id={campaign.campaign_id}
+                imgSrc={campaign.featured_image}
+                project={campaign.title}
+                desc={campaign.short_description.substr(0, 60) + " ..."}
+                achieved={campaign.achieved_fund}
+                target={campaign.target_fund_dollars}
+              />
+                </div>
+              )
+            })}
+          </Slider>
+        {/* </div> */}
       </div>
     </section>
   );

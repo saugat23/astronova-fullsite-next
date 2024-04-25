@@ -26,8 +26,27 @@ const Works = () => {
 
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className='relative w-full h-[50vh] bg-[url("/works/bg.svg")] bg-cover bg-no-repeat'>
-        <div className="h-auto w-96 absolute top-[30rem] left-[46%] -translate-y-1/2 translate-x-1/2 flex flex-col justify-center items-center rounded-xl z-30">
+      <div className='relative w-full lg:h-auto h-[50vh]'>
+        <img src="/works/bg.svg" alt="Works Background" className="h-full bg-cover bg-no-repeat w-full" />
+        {/* absolute top-[36rem] left-[46%] -translate-y-1/2 translate-x-1/2 */}
+      </div>
+      <div className="mx-auto px-4 sm:px-6 md:px-0 w-full md:w-3/5 max-w-6xl xl:py-12 mt-4 flex lg:flex-row flex-col justify-center items-center lg:items-start xl:space-x-16 lg:space-x-4 space-x-0 space-y-4 lg:space-y-0">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-5">
+          <h3 className="font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
+            Our Work
+          </h3>
+          <p className="font-opensans self-start font-normal xl:text-lg md:text-base sm:text-sm text-xs text-black">
+            At Astronova, we are dedicated to fostering education and driving
+            innovation across various domains. Our multifaceted approach
+            encompasses a wide range of initiatives that empower individuals and
+            communities to thrive in the ever-evolving landscape of Astro
+            E-commerce, E-Learning, Startups, Science & Technology, Research and
+            development, Startups and Entrepreneurship, Ventures and Seed Money
+            IT Labs, Science Museum, Old Age School, Incubation and Startups,
+            Observatory, Knowledge Park and Workshops.
+          </p>
+        </div>
+        <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 md:flex flex-col justify-center items-center rounded-xl z-30">
           <div className="w-full bg-white flex flex-col justify-center items-center py-6 px-12 rounded-t-xl drop-shadow-[0_0_0.75rem_white]">
             <div className="w-1/2 h-auto">
               <img src="/logo.png" alt="Logo" className="w-full h-full" />
@@ -47,23 +66,6 @@ const Works = () => {
               and communities to thrive in the ever-evolving landscape of Astr
             </p>
           </div>
-        </div>
-      </div>
-      <div className="mx-auto xl:w-3/5 md:w-3/4 w-4/5 xl:py-12 mt-4">
-        <div className=" w-1/2 flex flex-col justify-center items-start space-y-5">
-          <h3 className="font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-black">
-            Our Work
-          </h3>
-          <p className="font-opensans self-start font-normal xl:text-lg md:text-sm sm:text-xs text-[10px] text-black">
-            At Astronova, we are dedicated to fostering education and driving
-            innovation across various domains. Our multifaceted approach
-            encompasses a wide range of initiatives that empower individuals and
-            communities to thrive in the ever-evolving landscape of Astro
-            E-commerce, E-Learning, Startups, Science & Technology, Research and
-            development, Startups and Entrepreneurship, Ventures and Seed Money
-            IT Labs, Science Museum, Old Age School, Incubation and Startups,
-            Observatory, Knowledge Park and Workshops.
-          </p>
         </div>
       </div>
       <div className="w-full xl:py-12 mt-4 bg-[#f8f8f8]">
