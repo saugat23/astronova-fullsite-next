@@ -2,20 +2,24 @@
 import React from 'react';
 import Image from 'next/image';
 import ValuesContainer from '../ValuesContainer';
+import "aos/dist/aos.css";
 
 const About = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] w-full">
+      <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] w-full">
         <div className="hero-container-about h-full w-full flex flex-col justify-end items-center lg:space-y-6 py-12 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
-          <h4 className="font-opensans tracking-tighter font-bold 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-justify text-white">
-            WHO ARE WE
+          <h4 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-justify text-white">
+            WHO ARE WE?
+          </h4>
+          <h4 className="w-2/5 font-opensans tracking-tighter font-bold 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-center text-[#F28459]">
+            A Nonprofit Committed to Education and Innovation
           </h4>
           <div>
             <svg
-              width="24"
+              width="80"
               height="42"
-              viewBox="0 0 31 46"
+              viewBox="0 0 80 46"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -25,20 +29,9 @@ const About = () => {
               />
             </svg>
           </div>
-          <div className="w-full self-end flex justify-end items-center xl:space-x-6 space-x-4">
-            <button>
-              <img src="/assets/facebook.svg" alt="Facebook Icon" className="w-5 md:w-7 lg:w-8 2xl:w-10"/>
-            </button>
-            <button>
-              <img src="/assets/twitter.svg" alt="Twitter Icon" className="w-5 md:w-7 lg:w-8 2xl:w-10"/>
-            </button>
-            <button>
-              <img src="/assets/linkedin.svg" alt="LinkedIn Icon" className="w-5 md:w-7 lg:w-8 2xl:w-10"/>
-            </button>
-          </div>
         </div>
       </div>
-      <div className="h-auto py-12 2xl:px-12 lg:px-8 md:px-6 sm:px-4 px-2">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto py-12 2xl:px-12 lg:px-8 md:px-6 sm:px-4 px-2">
         <h2 className="font-opensans text-[#0052A0D4] font-normal text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
           Who <span className="font-bold">Are We?</span>
         </h2>
@@ -67,7 +60,7 @@ const About = () => {
           and unleash students’ potential in national and international level.
         </p>
       </div>
-      <div className="bg-[url('/abouthero2.png')] bg-cover lg:h-[70vh] w-full">
+      <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero2.png')] bg-cover lg:h-[70vh] w-full">
         <div className="hero-container-aboutsecond h-full w-full flex flex-col justify-end items-center lg:space-y-10 py-12 2xl:px-32 lg:px-28 md:px-20 sm:px-16 px-12">
           <div className="font-montserrat w-[60%] self-start text-white flex flex-col items-start space-y-4">
             <h4 className="text-[#FF9013] text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Our <span className="font-extrabold text-white tracking-tighter">Vision</span></h4>
@@ -89,7 +82,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="h-auto 2xl:py-12 lg:py-8 md:py-6 py-4 2xl:px-12 lg:px-8 md:px-6 px-4 bg-[#0758A4]">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto 2xl:py-12 lg:py-8 md:py-6 py-4 2xl:px-12 lg:px-8 md:px-6 px-4 bg-[#0758A4]">
         <h3 className="font-opensans font-semibold tracking-tighter text-3xl text-white lg:px-6 text-center">
           <span className="py-2 border-b-2 border-white">OUR VALUES</span>
         </h3>
@@ -120,7 +113,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="h-auto w-full 2xl:py-12 2xl:px-12 px-12 py-6 bg-blue-50">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto w-full 2xl:py-12 2xl:px-12 px-12 py-6 bg-blue-50">
         <div className="mx-auto w-[80%] py-6 flex flex-col md:flex-row justify-evenly items-start">
         <div>
           <Image src="/givingeducation.png" alt="Giving Education" width={240} height={240} className="sm:w-64 md:w-72 lg:w-80 2xl:w-96"/>

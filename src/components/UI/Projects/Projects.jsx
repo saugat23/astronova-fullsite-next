@@ -7,16 +7,17 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "aos/dist/aos.css";
 
 const Projects = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className="w-full flex justify-center items-center 2xl:py-10 lg:py-8 md:py-6 py-4 bg-[#2D68A0]">
+      <div data-aos="fade-up" data-aos-duration="400" className="w-full flex justify-center items-center 2xl:py-10 lg:py-8 md:py-6 py-4 bg-[#2D68A0] mt-20">
         <h3 className="font-opensans font-bold tracking-tighter 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-white">
           Our Projects
         </h3>
       </div>
-      <div className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
         <div className="flex flex-col justify-center items-start space-y-4">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
             Short-Term Projects
@@ -87,7 +88,7 @@ const Projects = () => {
           </p>
         </div>
       </div>
-      <div className="mx-auto w-[80%] flex flex-col justify-center items-start space-y-6 max-w-[80%] py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] flex flex-col justify-center items-start space-y-6 max-w-[80%] py-4 md:py-6 lg:py-8 2xl:py-10">
         <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
           Past Work and Achievements
         </h3>
@@ -141,7 +142,7 @@ const Projects = () => {
         </Swiper>
         {/* </div> */}
       </div>
-      <div className="mx-auto w-[80%] max-w-[80%] py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] py-4 md:py-6 lg:py-8 2xl:py-10">
         <Swiper
           pagination={true}
           modules={[Pagination, Autoplay]}

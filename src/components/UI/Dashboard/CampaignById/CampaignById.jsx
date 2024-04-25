@@ -34,7 +34,7 @@ const CampaignById = ({ id }) => {
   console.log(campaign);
   return (
     <section className="h-auto max-w-screen overflow-hidden xl:pt-12 lg:pt-10 pt-8 mx-auto w-[70%]">
-      <div className="flex flex-col justify-center items-start space-y-4 2xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:py-8 py-6">
+      <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-4 2xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:py-8 py-6">
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           {/* {campaign.title} */}
           Tinkering Labs Project
@@ -48,7 +48,7 @@ const CampaignById = ({ id }) => {
         </p>
       </div>
 
-      <div className="flex justify-around items-start xl:space-x-12 py-4 mx-auto w-[90%] h-auto">
+      <div data-aos="fade-up" data-aos-duration="400" className="flex justify-around items-start xl:space-x-12 py-4 mx-auto w-[90%] h-auto">
         <div className="flex flex-col justify-center items-start space-y-6 w-3/4 h-auto">
           <div className="w-full flex justify-center items-center">
             <Image
@@ -121,7 +121,7 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div className="xl:py-8 flex flex-col justify-center items-start space-y-8">
+      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-start space-y-8">
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Why This Campaign?
         </h3>
@@ -163,7 +163,7 @@ const CampaignById = ({ id }) => {
         </button>
       </div>
 
-      <div className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Watch this Story
         </h3>
@@ -180,7 +180,7 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Donate and get Rewards!
         </h3>
@@ -216,7 +216,7 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div className="xl:py-8 w-full flex justify-between items-start space-x-4">
+      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 w-full flex justify-between items-start space-x-4">
         <div className="w-1/2 flex flex-col justify-center items-center space-y-6">
           <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
             Organizer
@@ -277,7 +277,7 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
         <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           What our Donor Says
         </h3>

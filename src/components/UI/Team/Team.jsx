@@ -1,5 +1,5 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 import BoardMember from "../BoardMember";
 import Experts from "../Experts";
 import TeamMembers from "../TeamMembers";
@@ -13,36 +13,36 @@ import "swiper/css/navigation";
 const Team = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className="bg-[#77AB33] flex justify-center items-center 2xl:py-10 lg:py-8 md:py-6 py-4 px-4">
-        <h2 className="font-opensans font-bold tracking-tighter 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-white">
-          OUR TEAM
-        </h2>
+      <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero.png')] bg-cover h-[50vh] mt-20">
+        <div className="hero-container-team w-full h-full flex justify-center items-center 2xl:py-10 lg:py-8 md:py-6 py-4 px-4">
+          <h2 className="font-opensans font-bold tracking-tighter 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-white">
+            OUR TEAM
+          </h2>
+        </div>
       </div>
-      <div className="flex flex-col justify-center items-start space-y-8 xl:px-10 2xl:px-12 md:px-8 px-6 py-6">
-        <h3 className="font-opensans font-bold tracking-tighter 2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-[#2496D7]">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto max-w-7xl flex flex-col justify-center items-start space-y-28 xl:px-10 2xl:px-12 md:px-8 px-6 py-6">
+        <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#2496D7]">
           Our Leadership
         </h3>
         <div
-          className={`xl:mx-auto xl:w-[80%] w-full flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4`}
+          className={`w-full flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
-          <div className={`border-l-[24px] border-[#77AB33] w-1/2`}>
-            <Image
+          <div className={`border-l-[30px] border-[#77AB33] w-1/3 h-full`}>
+            <img
               src="/kishanbastola.png"
               alt="kishanbastola"
-              width={200}
-              height={200}
-              priority
-              className={`2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-56 border-2 border-[#AE0D19]`}
+              loading="lazy"
+              className={`w-full h-full border-2 border-[#AE0D19]`}
             />
           </div>
-          <div className="flex-col justify-center items-start w-full md:w-1/2 space-y-4">
-            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-center">
+          <div className="w-full flex-col justify-center items-start md:w-1/2 space-y-4">
+            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-center">
               KISHAN BASTOLA
             </h4>
-            <h4 className="font-opensans tracking-tighter font-bold text-[#77AB33] 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-center">
+            <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
               FOUNDER AND PRESIDENT
             </h4>
-            <p className="font-montserrat font-medium 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-[#042038] text-center">
+            <p className="font-montserrat font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -91,26 +91,24 @@ const Team = () => {
           </div>
         </div>
         <div
-          className={`xl:mx-auto xl:w-[80%] flex flex-col md:flex-row-reverse justify-between items-center space-y-4`}
+          className={`mt-12 flex flex-col md:flex-row-reverse justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
-          <div className={`border-r-[24px] border-[#77AB33] md:w-1/2`}>
-            <Image
+          <div className={`border-r-[24px] border-[#77AB33] w-1/3 h-full`}>
+            <img
               src="/babatundeayoola.png"
               alt="Babatundeayoola"
-              width={200}
-              height={200}
-              priority
-              className={`2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 sm:w-56 border-2 border-[#AE0D19] ml-auto`}
+              loading="lazy"
+              className={`w-full h-full border-2 border-[#AE0D19]`}
             />
           </div>
-          <div className="flex-col justify-center items-start md:w-1/2 space-y-4">
-            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-center">
+          <div className="w-full flex-col justify-center items-start md:w-1/2 space-y-4">
+            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-center">
               BABATUNDE AYOOLA
             </h4>
-            <h4 className="font-opensans tracking-tighter font-bold text-[#77AB33] 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-center">
+            <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
               GLOBAL AMBASSADOR
             </h4>
-            <p className="font-montserrat font-medium 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-[#042038] text-center">
+            <p className="font-montserrat font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -159,14 +157,14 @@ const Team = () => {
           </div>
         </div>
       </div>
-      <div className="h-auto overflow-hidden">
-        <div className="flex flex-col justify-center items-center space-y-8 shadow-xl lg:py-12 lg:px-12 w-full">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto overflow-hidden max-w-7xl mx-auto">
+        <div className="flex flex-col justify-center items-center space-y-28 shadow-xl lg:py-12 lg:px-12 w-full">
           <div className="flex justify-center items-center">
-            <h3 className="font-opensans tracking-tighter font-extrabold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-justify text-[#0052A0]">
-              OUR BOARD OF DIRECTORS
+            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+              OUR BOARD OF <br /> DIRECTORS
             </h3>
           </div>
-          <div className="md:w-[60%] w-full mx-auto flex md:flex-row flex-col space-y-3 md:space-y-0 justify-around items-center">
+          <div className="w-full mx-auto flex md:flex-row flex-col space-y-3 md:space-y-0 justify-evenly items-center">
             <BoardMember
               imgSrc="cofounder.png"
               name="Mr. Kishan Bastola"
@@ -174,14 +172,14 @@ const Team = () => {
             />
             <BoardMember
               imgSrc="chiefsecretary.png"
-              name="Mr. Kishan Bastola"
+              name="Mr. Chreenjeevi Lamichhane"
               position="Chief Secretary"
             />
           </div>
           <div className="md:w-[80%] w-full mx-auto flex md:flex-row flex-col space-y-3 md:space-y-0 justify-around items-center">
             <BoardMember
               imgSrc="treasurer.png"
-              name="Mr. Kishan Bastola"
+              name="Er. Aayush Basnet"
               position="Treasurer"
             />
             <BoardMember
@@ -197,13 +195,13 @@ const Team = () => {
           </div>
         </div>
       </div>
-      <div className="h-auto overflow-hidden mt-4">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto overflow-hidden mt-4 mx-auto max-w-7xl">
         <div className="flex justify-center items-center py-8">
-          <h3 className="font-opensans tracking-tighter font-extrabold lg:text-[2.5rem] text-justify text-[#0052A0]">
-            EXPERT MENTORS
+          <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+            MEET OUR EXPERT MENTORS
           </h3>
         </div>
-        <div className="shadow-lg bg-white lg:py-12 lg:px-12 grid grid-cols-4 grid-rows-1 gap-x-4">
+        <div className="shadow-lg bg-white lg:py-12">
           <Swiper
             spaceBetween={30}
             modules={[Navigation]}
@@ -220,13 +218,13 @@ const Team = () => {
                 slidesPerView: 4,
               },
             }}
-            className="w-screen flex justify-start items-center"
+            className="w-full flex justify-evenly items-center"
           >
             <SwiperSlide className="py-4">
               <Experts
                 imgSrc="/expert1.png"
                 name="Dr. Yogesh Chandna"
-                profession="Author,Vedic Mathematics"
+                profession="Author,Vedic Mathematics, International Trainer, INDIA"
               />
             </SwiperSlide>
             <SwiperSlide className="py-4">
@@ -238,25 +236,27 @@ const Team = () => {
             </SwiperSlide>
             <SwiperSlide className="py-4">
               <Experts
-                imgSrc="/kapilpaudel.png"
-                name="Kapil Paudel"
-                profession="Scientist"
+                imgSrc="/assets/teamaakashdeo.svg"
+                name="Mr. Akash Deo"
+                profession="Scientist and Researcher"
               />
             </SwiperSlide>
             <SwiperSlide className="py-4">
               <Experts
-                imgSrc="/chhabiadhikari.png"
-                name="Mr. Chhabi Adhikari"
-                profession="NLP Trainer"
+                imgSrc="/assets/teampramodghimire.svg"
+                name="Mr. Pramod Ghimire"
+                profession="Assistant Professor
+                Agriculture and Forestry University
+                Faculty of Forestry, Hetauda, Nepal"
               />
             </SwiperSlide>
           </Swiper>
         </div>
       </div>
-      <div className="h-auto overflow-hidden mt-4">
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto overflow-hidden mt-4 mx-auto max-w-7xl">
         <div className="bg-[url('/teammemberbg.svg')] bg-[center_bottom_4rem]">
           <div className="flex justify-center items-center py-8">
-            <h3 className="font-opensans tracking-tighter font-extrabold lg:text-[2.5rem] text-justify text-[#0052A0]">
+            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
               LEGAL ADVISOR
             </h3>
           </div>
@@ -278,7 +278,7 @@ const Team = () => {
             </div>
           </div>
           <div className="flex justify-center items-center py-8">
-            <h3 className="font-opensans tracking-tighter font-extrabold lg:text-[2.5rem] text-justify text-[#0052A0]">
+            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
               OUR TEAM MEMBERS
             </h3>
           </div>
@@ -321,7 +321,7 @@ const Team = () => {
             <TeamMembers
               imgSrc="/rojinabastola.png"
               name="Ms. Rojina Bastola"
-              position="Finance Coordinator"
+              position="Board Member"
             />
             <TeamMembers
               imgSrc="/rabinpariyar.png"
@@ -329,24 +329,29 @@ const Team = () => {
               position="Graphics Designer"
             />
             <TeamMembers
+              imgSrc="/rajuraut.png"
+              name="Mr. Raju Raut"
+              position="Student Coordinator"
+            />
+            <TeamMembers
               imgSrc="/riteshprajapati.png"
               name="Mr. Ritesh Prajapati"
               position="Video Editor Intern"
             />
             <TeamMembers
-              imgSrc="/riteshprajapati.png"
-              name="Mr. Ritesh Prajapati"
+              imgSrc="/dinupbalami.png"
+              name="Mr. Dinup Balami"
+              position="Campus Ambassador, KU"
+            />
+            <TeamMembers
+              imgSrc="/saugatbartaula.png"
+              name="Mr. Saugat Bartaula"
               position="Student Ambassador"
             />
             <TeamMembers
               imgSrc="/nishantsah.png"
               name="Mr. Nishant Shah"
               position="Web Developer Intern"
-            />
-            <TeamMembers
-              imgSrc="/rajuraut.png"
-              name="Mr. Raju Raut"
-              position="Student Coordinator"
             />
           </div>
           <div className="shadow-lg bg-transparent py-2 block lg:hidden">
@@ -463,76 +468,95 @@ const Team = () => {
           </div>
         </div>
       </div>
-      <div className="h-auto w-full overflow-hidden flex justify-center md:justify-evenly 2xl:space-x-20 xl:space-x-16 md:space-x-12 sm:space-x-10 space-x-6 2xl:py-12 lg:py-8 py-4 2xl:px-12 lg:px-8 md:px-6 px-2 bg-[#2496D72E]">
-        <div className="flex flex-col self-start justify- items-center space-y-4">
-          <h4 className="w-full font-opensans tracking-tighter font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-center text-[#0052A0]">
-            Testimonials
+      <div data-aos="fade-up" data-aos-duration="400" className="h-auto w-full overflow-hidden mx-auto max-w-7xl flex justify-center md:justify-evenly 2xl:py-12 lg:py-8 py-4">
+        <div className="w-full flex flex-col justify-center items-center space-y-4">
+          <h4 className="w-full font-opensans font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-center text-[#0052A0]">
+            Ground Stories
           </h4>
-          <div className="flex justify-center items-center 2xl:space-x-12 lg:space-x-8 md:space-x-6 space-x-4">
+          <div className="w-full flex justify-center items-center space-x-4">
             <Swiper
-              spaceBetween={30}
-              modules={[Navigation]}
-              navigation={true}
+              spaceBetween={50}
+              navigation={{
+                nextEl: ".testimonial-next-slide",
+                prevEl: ".testimonial-prev-slide",
+              }}
               breakpoints={{
-                310: {
+                240: {
                   slidesPerView: 1,
-                  centeredSlides: true,
                 },
                 768: {
+                  slidesPerView: 1,
+                },
+                1024: {
                   slidesPerView: 3,
                 },
               }}
-              className="w-screen flex justify-start items-center"
+              modules={[Navigation]}
+              className="xl:mt-12 mt-4 mx-auto w-full"
             >
-              <SwiperSlide>
-                <PartnersTestimonial
-                  imgSrc="/pushpajimee.png"
-                  testimonial="When I ask my students about their dreams and what they want to become in the future, most of them tell me they want to become a teacher like me. Knowing that I am their ideal teacher is something that I am most proud of and this is what inspires me to give my best every day."
-                  name="Pushpa Jimee"
-                  position="Community Teacher, UWS Kharang"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <PartnersTestimonial
-                  imgSrc="/uws.png"
-                  testimonial="The pad-making training I received from
-        UWS Nepal has been incredibly
-        impactful. I have been using the pad
-        myself, which is better than the
-        household pad I used to use. Beyond just
-        the pads, the training expanded my
-        understanding of menstrual hygiene and
-        highlighted the essential role of a
-        balanced diet during menstruation."
-                  name="Mala"
-                  position="Mothers’ Group member, UWS Jaisithok"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <PartnersTestimonial
-                  imgSrc="/dilkumarisubba.png"
-                  testimonial="I believe encouraging children to express
-        and discover their creativity beyond the
-        pages of books, we remove the limits
-        confining their growth."
-                  name="Dil Kumari Subba"
-                  position="Head Teacher- UWS Setikanya"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <PartnersTestimonial
-                  imgSrc="/pushpajimee.png"
-                  testimonial="When I ask my students about their dreams and what they want to become in the future, most of them tell me they want to become a teacher like me. Knowing that I am their ideal teacher is something that I am most proud of and this is what inspires me to give my best every day."
-                  name="Pushpa Jimee"
-                  position="Community Teacher, UWS Kharang"
-                />
-              </SwiperSlide>
+                <div className=".testimonial-prev-slide">
+                  <button
+                    type="button"
+                    className="p-2 rounded-full border border-white text-[#B01B1C]"
+                  >
+                    &larr;
+                  </button>
+                </div>
+                  <SwiperSlide>
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialaayushnepal.svg"
+                      testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
+                  Don't be capped, learn to adapt.”"
+                      name="Aayush Nepal"
+                      position="Astrophysics & Research Enthusiast"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialanujadhikari.svg"
+                      testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
+                      name="Anuj Adhikari"
+                      position="Research Enthusiast"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialriteshprajapati.svg"
+                      testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
+                      name="Ritesh Prajapati"
+                      position="Video Editor Intern"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <PartnersTestimonial
+                      imgSrc="/testimonialdinupbalami.png"
+                      testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
+                      name="Dinup Balami"
+                      position="Campus Ambassador,Mechanical Engineering Student,KU"
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <PartnersTestimonial
+                      imgSrc="/testimonialnamratabartaula.png"
+                      testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
+                      name="Namrata Bartaula"
+                      position="Stone Art and Crafting Intern"
+                    />
+                  </SwiperSlide>
+                <div className=".testimonial-next-slide">
+                  <button
+                    type="button"
+                    className="p-2 rounded-full border border-white text-[#B01B1C]"
+                  >
+                    &rarr;
+                  </button>
+                </div>
             </Swiper>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

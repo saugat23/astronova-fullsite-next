@@ -4,15 +4,17 @@ const TeamMembers = ({imgSrc, name, position}) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center space-y-2 h-auto">
-        <div className="relative h-full rounded-md">
-          <img src={imgSrc} alt={name} className=" h-[98%] border border-[#AE0D19]" />
+        <div className="relative w-3/4 rounded-md">
+          <img src={imgSrc} alt={name} className="w-full border border-[#AE0D19]" />
         </div>
-        <h4 className="font-montserrat font-semibold text-xl text-[#1A1728]">
+        <div className="flex flex-col justify-center items-center space-y-1">
+        <h4 className="font-montserrat font-semibold text-xl text-[#0052a0]">
           {name}
         </h4>
-        <h4 className="font-montserrat font-semibold text-sm text-[#1A1728B5]">
+        <h4 className="font-montserrat font-semibold text-sm text-[#0052a0]">
           {position}
         </h4>
+        </div>
       </div>
     </>
   );

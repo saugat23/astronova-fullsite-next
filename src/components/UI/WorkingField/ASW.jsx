@@ -4,7 +4,7 @@ import React from "react";
 const ASW = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div className='h-[60vh] bg-[url("/working_area/asw.png")] bg-cover flex flex-col space-y-4 justify-center items-center'>
+      <div data-aos="fade-up" data-aos-duration="400" className='h-[60vh] bg-[url("/working_area/asw.png")] bg-cover flex flex-col space-y-4 justify-center items-center'>
         <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
           AFTER SCHOOL
         </h3>
@@ -16,7 +16,7 @@ const ASW = () => {
         </h3>
       </div>
       <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4">
-        <div className="flex flex-col justify-center items-start space-y-6">
+        <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Introduction:
           </h4>
@@ -61,7 +61,7 @@ const ASW = () => {
             through education.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-start space-y-6">
+        <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Our Offerings for Students:
           </h4>
@@ -92,7 +92,7 @@ const ASW = () => {
             survey.
           </div>
         </div>
-        <div className="flex flex-col justify-center items-start space-y-6">
+        <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Our Offerings for Students:
           </h4>
@@ -109,7 +109,7 @@ const ASW = () => {
             P6).
           </p>
         </div>
-        <div className="flex flex-col justify-center items-start space-y-6">
+        <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             ASWP mainly focuses on:
           </h4>
@@ -128,7 +128,7 @@ const ASW = () => {
             <li>Whole-Child approach</li>
           </ul>
         </div>
-        <div className="flex flex-col justify-center items-start space-y-6">
+        <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             BENEFITS OF AFTER SCHOOL WORKSHOP PROGRAMS:
           </h4>

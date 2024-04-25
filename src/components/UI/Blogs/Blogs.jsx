@@ -12,6 +12,7 @@ const Blogs = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden bg-[#F6F2FF]">
       <Swiper
+      data-aos="fade-up" data-aos-duration="400"
         pagination={true}
         modules={[Pagination, Autoplay]}
         breakpoints={{
@@ -88,7 +89,7 @@ const Blogs = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
         <div className="flex flex-col justify-center items-start space-y-4">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black py-4">
             Blogs & News
@@ -102,7 +103,7 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
         <div className="flex flex-col justify-center items-start space-y-4">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black py-4">
             Trending Now
