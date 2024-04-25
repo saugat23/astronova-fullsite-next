@@ -110,10 +110,20 @@ const Navbar = () => {
                 Blogs & News
               </Link>
             </li>
+            <li>
+              <Link
+                href="/careers"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/careers" && "text-[#F2CE24]"
+                }`}
+              >
+                Careers
+              </Link>
+            </li>
             <div className="flex justify-center items-center">
               <Button
                 type="button"
-                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-12 xl:px-8 md:px-4 md:py-4 2xl:py-6 text-black font-poppins font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
+                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-8 xl:px-6 md:px-4 md:py-4 2xl:py-6 text-black font-poppins font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
                 onPress={onOpen}
               >
                 SUPPORT US
@@ -225,6 +235,16 @@ const Navbar = () => {
 
               >
                 Blogs & News
+              </Link>
+              <Link
+                href="/careers"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/careers" && "text-[#F2CE24]"
+                }`}
+                onClick={handleListClick}
+
+              >
+                Careers
               </Link>
             
           </motion.div>
