@@ -102,8 +102,8 @@ const About = () => {
           <Image
             src="/assets/logo.png"
             alt=""
-            width={100}
-            height={80}
+            width={160}
+            height={120}
             className="py-4 md:w-full h-auto"
           />
         </div>
@@ -112,10 +112,10 @@ const About = () => {
           data-aos-duration="700"
           className="flex flex-col justify-center space-y-4 items-start"
         >
-          <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#33A4C6] tracking-tight">
+          <h3 className="px-4 lg:px-0 font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#33A4C6] tracking-tight">
             About Us
           </h3>
-          <p className="font-opensans text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-normal">
+          <p className="font-opensans text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-normal px-4 lg:px-0">
             The{" "}
             <span className="text-[#BDB809] font-bold">
               Astronova Foundation Nepal
@@ -140,7 +140,7 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="xl:py-8 bg-[#D9D9D9] md:mt-8 mt-4"
+        className="xl:py-8 bg-[#D9D9D9] md:mt-8 mt-4 py-4"
       >
         <div className="flex md:flex-row flex-col justify-between items-center bg-[#D9D9D94D] mx-auto w-full md:w-[90%] xl:w-[80%]">
           <div className="w-full md:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-4 border-[#DB8114]">
@@ -152,16 +152,16 @@ const About = () => {
               focusing working area are as below.
             </p>
           </div>
-          <div className="grow p-4 h-[70vh] flex justify-center items-center">
-            <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-[55%] z-20 my-auto flex justify-center items-center">
-              <div className="w-[45%] h-1/2 rounded-full bg-white flex justify-center items-center">
+          <div className="w-full lg:w-auto grow p-4 h-[70vh] flex justify-center items-center">
+            <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-full lg:w-[55%] z-20 my-auto flex justify-center items-center">
+              <div className="w-[50%] lg:w-[45%] h-1/2 rounded-full bg-white flex justify-center items-center">
                 <h3 className="font-opensans font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm w-3/4 mx-auto text-center">
                   OUR MAJOR WORKING AREA
                 </h3>
               </div>
               <Link
                 href={{ pathname: "/working_area"}}
-                className="absolute -top-[45%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:-top-[45%] -top-[35%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/afterschool.svg"
@@ -173,7 +173,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area3"}}
-                className="absolute -top-1/4 translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute -top-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/startup.svg"
@@ -185,7 +185,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area2"}}
-                className="absolute -top-1/4 translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute -top-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/scienceexpo.svg"
@@ -197,7 +197,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: {field: 'steam'}}}
-                className="absolute bottom-[40%] translate-y-1/2 left-0 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/steam.svg"
@@ -208,7 +208,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: {field: 'research'}}}
-                className="absolute bottom-[40%] translate-y-1/2 left-full -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/research.svg"
@@ -220,7 +220,7 @@ const About = () => {
               </Link>
               <Link
                 href="#"
-                className="absolute -bottom-4 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:-bottom-4 bottom-2 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/teachers.svg"
