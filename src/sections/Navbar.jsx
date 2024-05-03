@@ -6,6 +6,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../components/ui/hover-card";
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -87,14 +92,46 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href="/projects"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/projects" && "text-[#F2CE24]"
-                }`}
-              >
-                Our Project
-              </Link>
+              <HoverCard>
+                <HoverCardTrigger>
+                  <Link
+                    href="/projects"
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                      pathname === "/projects" && "text-[#F2CE24]"
+                    }`}
+                  >
+                    Our Project
+                  </Link>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <ul className="flex flex-col justify-center items-start space-y-4 xl:text-base text-sm">
+                    <li>
+                      <Link
+                        href="/short_term_projects"
+                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                      >
+                        Short Term Projects{" >"}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/middle_term_projects"
+                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                      >
+                        Middle Term Projects{" >"}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/long_term_projects"
+                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                      >
+                        Long Term Projects{" >"}
+                      </Link>
+                    </li>
+                  </ul>
+                </HoverCardContent>
+              </HoverCard>
             </li>
             <li>
               <Link
@@ -377,8 +414,7 @@ const Navbar = () => {
                     </Link>
                     <Link href="#" className="px-6 md:px-10 py-1">
                       <li classname="font-poppins font-semibold text-sm text-white z-50">
-                      Establishing Workshop Laboratory
-
+                        Establishing Workshop Laboratory
                       </li>
                     </Link>
                     <Link href="#" className="px-6 md:px-10 py-1">
@@ -388,7 +424,7 @@ const Navbar = () => {
                     </Link>
                     <Link href="#" className="px-6 md:px-10 py-1">
                       <li classname="font-poppins font-semibold text-sm text-white z-50">
-                      Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+                        Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </li>
                     </Link>
                     <Link
@@ -401,17 +437,17 @@ const Navbar = () => {
                     </Link>
                     <Link href="#" className="px-6 md:px-10  py-2">
                       <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
-                      Establishing Workshop Laboratory
+                        Establishing Workshop Laboratory
                       </li>
                     </Link>
                     <Link href="#" className="px-6 md:px-10 py-1">
                       <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
-                      Creative Cafe
+                        Creative Cafe
                       </li>
                     </Link>
                     <Link href="#" className="px-6 md:px-10  py-2">
                       <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
-                      Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+                        Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </li>
                     </Link>
                   </ul>

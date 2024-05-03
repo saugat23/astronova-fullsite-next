@@ -1,12 +1,9 @@
-"use client";
+"use server"
 
-import React from "react";
+import { redirect } from 'next/navigation';
 
-const Page = () => {
-  return (
-    <section className="h-auto max-w-screen overflow-hidden">
-    </section>
-  );
-};
+async function page() {
+  redirect('/coordinator_dashboard/dashboard');
+}
 
-export default Page;
+export default page;
