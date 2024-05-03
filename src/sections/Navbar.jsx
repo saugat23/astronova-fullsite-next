@@ -1,10 +1,16 @@
 "use client";
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../components/ui/accordion";
 import {
   Modal,
   ModalContent,
@@ -63,9 +69,9 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                pathname === "/about" && "text-[#F2CE24]"
-              }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                  pathname === "/about" && "text-[#F2CE24]"
+                }`}
               >
                 About Us
               </Link>
@@ -152,13 +158,17 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-0 h-[60vh] overflow-hidden w-screen bg-[#048FB7] flex flex-col justify-evenly items-center px-12 sm:px-14 md:px-16 py-6 sm:py-8 lg:hidden font-poppins font-semibold text-sm text-white z-50"
+            className="absolute top-0 h-auto overflow-hidden w-screen bg-[#048FB7]/70 flex flex-col justify-center space-y-6 items-start py-6 sm:py-8 lg:hidden font-poppins font-semibold text-sm text-white z-50"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.25 }}
             exit={{ y: -250, opacity: 0 }}
           >
-            <a to="#" onClick={handleToggleMenu} className="self-end">
+            <a
+              to="#"
+              onClick={handleToggleMenu}
+              className="self-end px-6 md:px-10"
+            >
               <button>
                 <svg
                   width="20"
@@ -175,93 +185,287 @@ const Navbar = () => {
               </button>
             </a>
             <Link
-                href="/"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
-              >
-                Home
-              </Link>
-            
-              <Link
-                href="/about"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/about" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
+              href="/"
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
+                pathname === "/" && "text-[#F2CE24]"
+              }`}
+              onClick={handleListClick}
+            >
+              Home
+            </Link>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="px-6 md:px-10">
+                  <Link
+                    href="/about"
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                      pathname === "/about" && "text-[#F2CE24]"
+                    }`}
+                    onClick={handleListClick}
+                  >
+                    About Us
+                  </Link>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="flex flex-col justify-center items-start space-y-4 bg-[#0052A0] py-4 mt-4">
+                    <Link href="#" className="px-6 md:px-10">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        Vision and Mission
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        History
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        CVS
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        Organization Governance
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        Financial Transparency
+                      </li>
+                    </Link>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
 
-              >
-                About Us
-              </Link>
-            
-              <Link
-                href="/team"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/team" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="px-6 md:px-10">
+                  <Link
+                    href="/team"
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                      pathname === "/team" && "text-[#F2CE24]"
+                    }`}
+                    onClick={handleListClick}
+                  >
+                    Our Team
+                  </Link>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
+                    <Link
+                      href="#"
+                      className="px-6 md:px-10 pb-4 text-[#FF9013]"
+                    >
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        SUBSCIDIARIES
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        Astro E-commerce
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                        E-Learning
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                        Startups
+                      </li>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="px-6 md:px-10 py-4 text-[#FF9013]"
+                    >
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        INNOVATION
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10  py-2">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Science and Technology
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Research and Developement
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10  py-2">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Startups and Enterpreneurship
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10  py-2">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Ventures and Seed Money
+                      </li>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="px-6 md:px-10 py-4 text-[#FF9013]"
+                    >
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2">
+                        INFRASTRUCTURE
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        IT Labs
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Science Museum
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Old Age School
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Inucbation and Startups
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Observatory
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Knowledge Park
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        Workshop
+                      </li>
+                    </Link>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
 
-              >
-                Our Team
-              </Link>
-              <Link
-                href="/projects"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/projects" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="px-6 md:px-10">
+                  <Link
+                    href="/projects"
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
+                      pathname === "/projects" && "text-[#F2CE24]"
+                    }`}
+                    onClick={handleListClick}
+                  >
+                    Our Project
+                  </Link>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
+                    <Link
+                      href="#"
+                      className="px-6 md:px-10 pb-4 text-[#FF9013]"
+                    >
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        SHORT TERM PROJECTS
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      Establishing Workshop Laboratory
 
-              >
-                Our Project
-              </Link>
-              <Link
-                href="/works"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/works" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                        Creative Cafe
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+                      </li>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="px-6 md:px-10 py-4 text-[#FF9013]"
+                    >
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        MIDDLE TERM PROJECTS
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10  py-2">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      Establishing Workshop Laboratory
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10 py-1">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      Creative Cafe
+                      </li>
+                    </Link>
+                    <Link href="#" className="px-6 md:px-10  py-2">
+                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+                      </li>
+                    </Link>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Link
+              href="/works"
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
+                pathname === "/works" && "text-[#F2CE24]"
+              }`}
+              onClick={handleListClick}
+            >
+              Our Works
+            </Link>
 
-              >
-                Our Works
-              </Link>
-            
-              <Link
-                href="/blogs"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/blogs" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
-
-              >
-                Blogs & News
-              </Link>
-              <Link
-                href="/careers"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/careers" && "text-[#F2CE24]"
-                }`}
-                onClick={handleListClick}
-
-              >
-                Careers
-              </Link>
-            
+            <Link
+              href="/blogs"
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
+                pathname === "/blogs" && "text-[#F2CE24]"
+              }`}
+              onClick={handleListClick}
+            >
+              Blogs & News
+            </Link>
+            <Link
+              href="/careers"
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
+                pathname === "/careers" && "text-[#F2CE24]"
+              }`}
+              onClick={handleListClick}
+            >
+              Careers
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <Modal 
-      size="5xl"
-      isOpen={isOpen} 
-      onClose={onClose}
-       onOpenChange={onOpenChange} 
-       className="">
+      <Modal
+        size="5xl"
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpenChange={onOpenChange}
+        className=""
+      >
         <ModalContent>
           {(onClose) => (
             <div>
               <ModalBody className="flex w-auto h-auto justify-center items-center">
-                <img src="/supportmodal.png" alt="Support Modal" className="w-full h-auto bg-cover object-cover" />
+                <img
+                  src="/supportmodal.png"
+                  alt="Support Modal"
+                  className="w-full h-auto bg-cover object-cover"
+                />
               </ModalBody>
             </div>
           )}

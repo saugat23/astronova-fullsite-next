@@ -4,8 +4,8 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <>
-      <section data-aos="fade-down" data-aos-duration="700" className="h-[80vh] md:h-[90vh] xl:h-[95vh] max-w-screen overflow-hidden">
-        <div className="h-full w-full lg:px-8 bg-gradient-to-t from-white via-[#69BCD4] to-[#048FB7] flex justify-between items-center">
+      <section data-aos="fade-down" data-aos-duration="700" className="h-[85vh] md:h-[90vh] xl:h-[95vh] max-w-screen overflow-hidden">
+        <div className="h-full w-full lg:px-8 bg-gradient-to-t from-white via-[#69BCD4] to-[#048FB7] flex justify-between items-center pt-8 md:pt-4 lg:pt-0">
           <div className="w-full md:w-[70%] flex flex-col justify-center items-center space-y-6">
             <div>
               <Image src="/herobrain.png" alt="Hero Brain Image" priority width={180} height={180} className="md:w-52 lg:w-60 xl:w-64 2xl:w-72" />
