@@ -245,31 +245,31 @@ const Navbar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start space-y-4 bg-[#0052A0] py-4 mt-4">
-                    <Link href="#" className="px-6 md:px-10">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                    <li className="px-6 md:px-10">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Vision and Mission
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         History
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         CVS
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Organization Governance
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Financial Transparency
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -290,100 +290,98 @@ const Navbar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <Link
-                      href="#"
+                    <li
                       className="px-6 md:px-10 pb-4 text-[#FF9013]"
                     >
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                      href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         SUBSCIDIARIES
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Astro E-commerce
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50 py-2">
                         E-Learning
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Startups
-                      </li>
-                    </Link>
-                    <Link
-                      href="#"
+                      </Link>
+                    </li>
+                    <li
                       className="px-6 md:px-10 py-4 text-[#FF9013]"
                     >
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         INNOVATION
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10  py-2">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li href="#" className="px-6 md:px-10  py-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Science and Technology
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Research and Developement
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10  py-2">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10  py-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Startups and Enterpreneurship
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10  py-2">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10  py-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Ventures and Seed Money
-                      </li>
-                    </Link>
-                    <Link
-                      href="#"
+                      </Link>
+                    </li>
+                    <li
                       className="px-6 md:px-10 py-4 text-[#FF9013]"
                     >
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2">
                         INFRASTRUCTURE
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         IT Labs
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Science Museum
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Old Age School
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Inucbation and Startups
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Observatory
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Knowledge Park
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Workshop
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -404,52 +402,50 @@ const Navbar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <Link
-                      href="#"
+                    <li
                       className="px-6 md:px-10 pb-4 text-[#FF9013]"
                     >
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         SHORT TERM PROJECTS
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Establishing Workshop Laboratory
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50 py-2">
                         Creative Cafe
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-white z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
                         Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
-                      </li>
-                    </Link>
-                    <Link
-                      href="#"
+                      </Link>
+                    </li>
+                    <li
                       className="px-6 md:px-10 py-4 text-[#FF9013]"
                     >
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         MIDDLE TERM PROJECTS
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10  py-2">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10  py-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Establishing Workshop Laboratory
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10 py-1">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10 py-1">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Creative Cafe
-                      </li>
-                    </Link>
-                    <Link href="#" className="px-6 md:px-10  py-2">
-                      <li classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      </Link>
+                    </li>
+                    <li className="px-6 md:px-10  py-2">
+                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>

@@ -3,6 +3,7 @@
 import Home from "../sections/Home";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Toaster } from "sonner"
 
 export default function Page() {
   useEffect(() => {
@@ -13,6 +14,7 @@ export default function Page() {
 
   return (
     <>
+      <Toaster richColors position="top-right"/>
       <Home />
     </>
   );

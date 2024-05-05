@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const Partners = () => {
   return (
@@ -253,6 +254,7 @@ const Partners = () => {
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
           <div>
+            <Link href="mailto:info@astronovafoundation@gmail.com">
             <Image
               src="/mail.svg"
               alt="Mail Image"
@@ -260,6 +262,7 @@ const Partners = () => {
               height={120}
               className="sm:w-72 md:w-80 lg:w-96 xl:w-[30rem] 2xl:w-[34rem]"
             />
+            </Link>
           </div>
           <h3 className="font-opensans tracking-tighter font-extrabold xl:text-3xl lg:text-2xl text-white">
             REACH OUT TO US
