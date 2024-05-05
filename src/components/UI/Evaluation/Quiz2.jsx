@@ -1,6 +1,5 @@
 "use client";
 import React, {useState, useEffect} from "react";
-import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import {Toaster, toast} from "sonner";
 import Cookies from "js-cookie";
@@ -8,13 +7,7 @@ import { useRouter } from "next/navigation";
 
 function Quiz2() {
 
-  const router = useRouter();
-
-    const quiz1Token = Cookies.get('token_quiz1');
-
-    if(!quiz1Token){
-        router.push("/evaluation/quiz1");
-    }   
+  const router = useRouter();  
 
   const[formData, setFormData] = useState({
     quiz2q1: "",
@@ -22,11 +15,14 @@ function Quiz2() {
     quiz2q3: "",
   });
   
-  // if (process.browser) {
-    
-  // }
 
   useEffect(() => {
+    const quiz1Token = Cookies.get('token_quiz1');
+
+    if(!quiz1Token){
+        router.push("/evaluation/quiz1");
+    } 
+    
     const video2 = document.getElementById("quizVideo2");
     const quiz2 = document.getElementById("quiz2");
     video2 &&
