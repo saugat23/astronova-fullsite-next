@@ -124,10 +124,7 @@ const Partners = () => {
       </h3>
       <Swiper
         spaceBetween={100}
-        navigation={{
-          nextEl: ".testimonial-next-slide",
-          prevEl: ".testimonial-prev-slide",
-        }}
+        navigation={true}
         breakpoints={{
           240: {
             slidesPerView: 1,
@@ -167,14 +164,14 @@ const Partners = () => {
               </button>
             </div>
           </div> */}
-          <div className=".testimonial-prev-slide">
+          {/* <div className=".testimonial-prev-slide">
             <button
               type="button"
               className="p-2 rounded-full border border-white text-[#B01B1C]"
             >
               &larr;
             </button>
-          </div>
+          </div> */}
           <div>
             <SwiperSlide>
               <PartnersTestimonial
@@ -226,14 +223,14 @@ const Partners = () => {
               />
             </SwiperSlide>
           </div>
-          <div className=".testimonial-next-slide">
+          {/* <div className=".testimonial-next-slide">
             <button
               type="button"
               className="p-2 rounded-full border border-white text-[#B01B1C]"
             >
               &rarr;
             </button>
-          </div>
+          </div> */}
         </div>
       </Swiper>
 

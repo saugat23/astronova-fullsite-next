@@ -54,9 +54,8 @@ const Hero = () => {
           pagination={true}
           modules={[Pagination, Autoplay]}
           breakpoints={{
-            310: {
+            220: {
               slidesPerView: 1,
-              centeredSlides: true,
             },
           }}
           autoplay={{
