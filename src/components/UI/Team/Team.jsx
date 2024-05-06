@@ -20,14 +20,14 @@ const Team = () => {
           </h2>
         </div>
       </div>
-      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto max-w-7xl flex flex-col justify-center items-start space-y-28 xl:px-10 2xl:px-12 md:px-8 px-6 py-6">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto max-w-7xl flex flex-col justify-center items-start lg:space-y-28 space-y-12 xl:px-10 2xl:px-12 md:px-8 px-6 py-6">
         <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#2496D7]">
           Our Leadership
         </h3>
         <div
           className={`w-full flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
-          <div className={`border-l-[30px] border-[#77AB33] w-1/3 h-full`}>
+          <div className={`border-l-[12px] lg:border-l-[30px] border-[#77AB33] w-1/3 h-full`}>
             <img
               src="/kishanbastola.png"
               alt="kishanbastola"
@@ -93,7 +93,7 @@ const Team = () => {
         <div
           className={`mt-12 flex flex-col md:flex-row-reverse justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
-          <div className={`border-r-[24px] border-[#77AB33] w-1/3 h-full`}>
+          <div className={`border-r-[12px] lg:border-r-[30px] border-[#77AB33] w-1/3 h-full`}>
             <img
               src="/babatundeayoola.png"
               alt="Babatundeayoola"

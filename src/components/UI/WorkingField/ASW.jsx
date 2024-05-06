@@ -15,7 +15,7 @@ const ASW = () => {
           (AWSP)
         </h3>
       </div>
-      <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4">
+      <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4 px-2">
         <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-6">
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Introduction:

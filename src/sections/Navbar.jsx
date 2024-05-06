@@ -405,7 +405,7 @@ const Navbar = () => {
                     <li
                       className="px-6 md:px-10 pb-4 text-[#FF9013]"
                     >
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link href="/short_term_projects" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         SHORT TERM PROJECTS
                       </Link>
                     </li>
@@ -427,7 +427,7 @@ const Navbar = () => {
                     <li
                       className="px-6 md:px-10 py-4 text-[#FF9013]"
                     >
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link href="/middle_term_projects" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
                         MIDDLE TERM PROJECTS
                       </Link>
                     </li>

@@ -3,20 +3,21 @@ import React from 'react';
 import Image from 'next/image';
 import ValuesContainer from '../ValuesContainer';
 import "aos/dist/aos.css";
+import { FaArrowDown} from "react-icons/fa"
 
 const About = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] w-full">
+      <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] w-full mt-12">
         <div className="hero-container-about h-full w-full flex flex-col justify-end items-center lg:space-y-6 py-12 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
           <h4 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-justify text-white">
             WHO ARE WE?
           </h4>
-          <h4 className="w-2/5 font-opensans tracking-tighter font-bold 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-center text-[#F28459]">
+          <h4 className="w-4/5 lg:w-2/5 font-opensans tracking-tighter font-bold 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-center text-[#F28459]">
             A Nonprofit Committed to Education and Innovation
           </h4>
-          <div>
-            <svg
+          <div className=''>
+            {/* <svg
               width="80"
               height="42"
               viewBox="0 0 80 46"
@@ -27,7 +28,8 @@ const About = () => {
                 d="M16.944 45.2829L29.9066 31.5714C30.3129 31.171 30.5128 30.6739 30.5063 30.08C30.4998 29.4861 30.289 28.9858 29.8739 28.5792C29.4587 28.1725 28.9725 27.9723 28.4152 27.9784C27.8579 27.9845 27.3761 28.1877 26.9698 28.5881L17.4874 38.6521L17.0902 2.37965C17.0839 1.801 16.8804 1.30065 16.4798 0.878607C16.0791 0.456567 15.5928 0.248678 15.0209 0.25494C14.4489 0.261203 13.9672 0.472076 13.5757 0.88756C13.1842 1.30304 12.9918 1.81534 12.9985 2.42445L13.3956 38.6969L3.65118 28.8435C3.26554 28.4517 2.79406 28.2589 2.23676 28.265C1.67946 28.2711 1.19774 28.482 0.791604 28.8976C0.385463 29.3133 0.185561 29.8104 0.191897 30.3891C0.198233 30.9677 0.409056 31.468 0.824366 31.8899L14.0401 45.3147C14.4555 45.7366 14.9491 45.9444 15.5211 45.9381C16.093 45.9318 16.5673 45.7134 16.944 45.2829Z"
                 fill="white"
               />
-            </svg>
+            </svg> */}
+            <FaArrowDown className='fill-white'/>
           </div>
         </div>
       </div>
@@ -61,8 +63,8 @@ const About = () => {
         </p>
       </div>
       <div data-aos="fade-up" data-aos-duration="400" className="bg-[url('/abouthero2.png')] bg-cover lg:h-[70vh] w-full">
-        <div className="hero-container-aboutsecond h-full w-full flex flex-col justify-end items-center lg:space-y-10 py-12 2xl:px-32 lg:px-28 md:px-20 sm:px-16 px-12">
-          <div className="font-montserrat w-[60%] self-start text-white flex flex-col items-start space-y-4">
+        <div className="hero-container-aboutsecond h-full w-full flex flex-col justify-end items-center lg:space-y-10 py-12 2xl:px-32 lg:px-28 md:px-16 sm:px-8 px-4">
+          <div className="font-montserrat w-4/5 lg:w-[60%] self-start text-white flex flex-col items-start space-y-4">
             <h4 className="text-[#FF9013] text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Our <span className="font-extrabold text-white tracking-tighter">Vision</span></h4>
             <p className="font-medium text-justify text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">Our Mission and Goal is to establish a well-equipped laboratories as
             a ‘
@@ -72,7 +74,7 @@ const About = () => {
             ’ where students can join various After-School STEAMESIR Workshops.</p>
             
           </div>
-          <div className="font-montserrat w-[60%] self-end text-white flex flex-col items-end space-y-4">
+          <div className="font-montserrat w-4/5 lg:w-[60%] self-end text-white flex flex-col items-end space-y-4">
             <h4 className="text-[#FF9013] text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">Our <span className="font-extrabold text-white tracking-tighter">Mission</span></h4>
             <p className="font-medium text-justify text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">Astronova Science Foundation is on a mission to revolutionize
             education by deploying

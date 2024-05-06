@@ -25,7 +25,7 @@ const Blogs = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        className="w-full"
+        className="w-full mt-12"
       >
         <SwiperSlide>
           <div className="2xl:h-[70vh] xl:h-[60vh] lg:h-[50vh] md:h-[40vh] h-[30vh] w-full bg-[url('/blogs/page1.svg')] bg-cover bg-no-repeat xl:bg-[center_top_-6rem] flex flex-col justify-center items-start space-y-4">
