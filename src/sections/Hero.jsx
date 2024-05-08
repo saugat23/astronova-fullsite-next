@@ -5,8 +5,28 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Hero = () => {
+  const responsiveCarousel = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+
   return (
     <>
       <section
@@ -14,24 +34,26 @@ const Hero = () => {
         data-aos-duration="700"
         className="h-screen max-w-screen overflow-hidden"
       >
-        <Swiper
+        <Carousel
           data-aos="fade-up"
           data-aos-duration="400"
-          pagination={true}
-          modules={[Pagination, Autoplay]}
-          breakpoints={{
-            220: {
-              slidesPerView: 1,
-            },
-          }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          className="mt-12 w-full h-full"
+          swipeable={true}
+          draggable={false}
+          showDots={true}
+          responsive={responsiveCarousel}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          arrows={false}
+          keyBoardControl={false}
+          customTransition="transform 500ms ease-in-out"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          className="mt-4 h-full"
         >
-          <SwiperSlide className="w-full">
-            <div className="slidetwobackground h-auto w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
+          <div className="h-full w-screen">
+            <div className="slidetwobackground h-[90%] w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
               <div className="w-full flex lg:justify-start justify-center items-center pt-10 z-40">
                 <div>
                   <img src="/slide2nric.svg" alt="NRIC Image" />
@@ -88,8 +110,8 @@ const Hero = () => {
             <div className="h-auto flex justify-center items-center lg:p-6 py-10 px-2 font-poppins font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-xs bg-[#6960E1] text-white">
               JOIN US TO ESTABLISH HETAUDA RESEARCH & INNOVATION CENTER
             </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
+          </div>
+          <div className="h-full w-screen">
             <div className="h-full w-full flex lg:flex-row flex-col lg:justify-center justify-start items-start overflow-hidden">
               <div className="w-full lg:w-1/2 h-2/5 lg:h-full flex flex-col justify-center items-center space-y-0">
                 <div className="h-full lg:h-[55%] w-full">
@@ -138,8 +160,8 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
-        </Swiper>
+          </div>
+        </Carousel>
       </section>
     </>
   );
