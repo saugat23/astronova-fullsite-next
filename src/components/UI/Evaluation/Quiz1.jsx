@@ -42,6 +42,9 @@ function Quiz1() {
       },2000)
     } else {
       toast.error('Quiz Failed!!! Please Try Again!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     }
   }
 

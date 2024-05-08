@@ -46,6 +46,9 @@ function Quiz2() {
       Cookies.set('token_quiz1', '', { expires: yesterday });  // removing the token by setting expiry date to past date
     } else {
       toast.error('Quiz Failed!!! Please Try Again!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     }
   }
 

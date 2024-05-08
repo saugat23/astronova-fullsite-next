@@ -28,7 +28,7 @@ const Hero = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          className="w-full h-full"
+          className="mt-12 w-full h-full"
         >
           <SwiperSlide>
             <div className="slidetwobackground h-auto w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
@@ -91,7 +91,7 @@ const Hero = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="h-full w-full flex lg:flex-row flex-col lg:justify-center justify-start items-start overflow-hidden">
-              <div className="w-full lg:w-1/2 h-full flex flex-col justify-center items-center space-y-0">
+              <div className="w-full lg:w-1/2 h-1/3 lg:h-full flex flex-col justify-center items-center space-y-0">
                 <div className="h-full lg:h-[55%] w-full">
                   <img
                     src="/slide1childimage.png"
@@ -104,29 +104,36 @@ const Hero = () => {
                     HAMRO VABISHYA
                   </h1>
                   <h1 className="font-poppins font-bold text-white w-1/2 text-center 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg mt-3">
-                      हाम्रो भबिष्य 
+                    हाम्रो भबिष्य
                   </h1>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 h-full flex flex-col justify-center items-center space-y-0">
-                <div className="h-[45%] w-full bg-[#25A6D9] flex flex-col justify-center items-center p-4">
+              <div className="w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center items-center space-y-0">
+                <div className="h-1/2 lg:h-[45%] w-full bg-[#25A6D9] flex flex-col justify-center items-center p-4">
                   <h1 className="font-poppins font-bold text-white w-1/2 text-center 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl">
                     HAMRA VIDYARTHI
                   </h1>
                   <h1 className="font-poppins font-bold text-white w-1/2 text-center 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg mt-3">
-                      हाम्रा विद्यार्थी
+                    हाम्रा विद्यार्थी
                   </h1>
                 </div>
-                <div className="h-[55%] w-full relative">
+                <div className="h-1/2 lg:h-[55%] w-full relative">
                   <img
                     src="/slide1child-support.png"
                     alt="Children Image"
                     className="h-full w-full"
                   />
                   <div className="absolute bottom-0 -right-[28rem] w-full h-80 bg-white -rotate-45 flex flex-col space-y-3">
-                    <h2 className="font-poppins font-semibold xl:text-2xl md:text-xl text-lg text-[#25A6D9] text-center rotate-45 mt-12 mr-28">Support Us</h2>
-                    <h2 className="font-poppins font-normal xl:text-sm text-xs text-[#25A6D9] text-center rotate-45 mt-16 mr-28">To Establish</h2>
-                    <h2 className="font-poppins font-semibold xl:text-xl md:text-lg text-base text-[#F46803] text-center rotate-45 mt-12 mr-40">Hetauda Research & <br />Innovation Center</h2>
+                    <h2 className="font-poppins font-semibold xl:text-2xl md:text-xl text-lg text-[#25A6D9] text-center rotate-45 mt-12 mr-28">
+                      Support Us
+                    </h2>
+                    <h2 className="font-poppins font-normal xl:text-sm text-xs text-[#25A6D9] text-center rotate-45 mt-16 mr-28">
+                      To Establish
+                    </h2>
+                    <h2 className="font-poppins font-semibold xl:text-xl md:text-lg text-base text-[#F46803] text-center rotate-45 mt-12 mr-40">
+                      Hetauda Research & <br />
+                      Innovation Center
+                    </h2>
                   </div>
                 </div>
               </div>
