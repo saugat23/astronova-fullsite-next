@@ -30,7 +30,7 @@ const Hero = () => {
           }}
           className="mt-12 w-full h-full"
         >
-          <SwiperSlide>
+          <SwiperSlide className="w-full">
             <div className="slidetwobackground h-auto w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
               <div className="w-full flex lg:justify-start justify-center items-center pt-10 z-40">
                 <div>
@@ -89,9 +89,9 @@ const Hero = () => {
               JOIN US TO ESTABLISH HETAUDA RESEARCH & INNOVATION CENTER
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className="w-full">
             <div className="h-full w-full flex lg:flex-row flex-col lg:justify-center justify-start items-start overflow-hidden">
-              <div className="w-full lg:w-1/2 h-1/3 lg:h-full flex flex-col justify-center items-center space-y-0">
+              <div className="w-full lg:w-1/2 h-2/5 lg:h-full flex flex-col justify-center items-center space-y-0">
                 <div className="h-full lg:h-[55%] w-full">
                   <img
                     src="/slide1childimage.png"
@@ -108,8 +108,8 @@ const Hero = () => {
                   </h1>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center items-center space-y-0">
-                <div className="h-1/2 lg:h-[45%] w-full bg-[#25A6D9] flex flex-col justify-center items-center p-4">
+              <div className="w-full lg:w-1/2 h-3/5 lg:h-full flex flex-col justify-center items-center space-y-0">
+                <div className="h-1/3 lg:h-[45%] w-full bg-[#25A6D9] flex flex-col justify-center items-center p-4">
                   <h1 className="font-poppins font-bold text-white w-1/2 text-center 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl">
                     HAMRA VIDYARTHI
                   </h1>
@@ -117,7 +117,7 @@ const Hero = () => {
                     हाम्रा विद्यार्थी
                   </h1>
                 </div>
-                <div className="h-1/2 lg:h-[55%] w-full relative">
+                <div className="h-2/3 lg:h-[55%] w-full relative">
                   <img
                     src="/slide1child-support.png"
                     alt="Children Image"
