@@ -11,6 +11,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-opensans" });
@@ -57,9 +58,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
         <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}>
+          <Suspense>
       <Providers>
           {children}
       </Providers>
+      </Suspense>
         </body>
     </html>
   );
