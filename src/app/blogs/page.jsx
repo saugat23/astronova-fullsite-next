@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 
 const Blogs = dynamic(() => import("../../components/UI/Blogs/Blogs"),{
   loading: () => <p> </p>,
+  ssr: false,
 });
 
 const Navbar = dynamic(() => import("../../sections/Navbar"),{
