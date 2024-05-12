@@ -15,7 +15,7 @@ const Experts = ({ imgSrc, name, profession}) => {
         <h3 className="font-inter font-semibold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#0052A0] leading-tight">
           {name}
         </h3>
-        <h3 className="font-inter tracking-tighter text-center font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#0052A0]">
+        <h3 className="font-inter tracking-tighter text-center font-medium 2xl:text-base lg:text-sm md:text-xs text-[10px] text-[#0052A0]">
           {profession}
         </h3>
         </div>

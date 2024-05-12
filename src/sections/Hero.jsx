@@ -32,7 +32,7 @@ const Hero = () => {
       <section
         data-aos="fade-down"
         data-aos-duration="700"
-        className="h-screen max-w-screen overflow-hidden"
+        className="h-[120vh] md:h-[110vh] lg:h-screen max-w-screen overflow-hidden"
       >
         <Carousel
           data-aos="fade-up"

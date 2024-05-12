@@ -3,6 +3,8 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdDashboard } from "react-icons/md";
+import Logo from "../../../public/logo.png";
+import Image from "next/image";
 
 function Page({ children }) {
 const pathname = usePathname();
@@ -13,8 +15,8 @@ const pathname = usePathname();
         <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">
           <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
             <div className="flex justify-center items-center">
-              <img
-                src="/logo.png"
+              <Image
+                src={Logo}
                 alt="Logo"
                 className="h-20 md:h-24 xl:h-28"
               />

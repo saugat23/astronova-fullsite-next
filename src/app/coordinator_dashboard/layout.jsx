@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import dashboard_items from "./dashboard_items";
 import { usePathname } from "next/navigation";
+import logo from "../../../public/logo.png"
+import Image from "next/image";
 
 const Layout = ({ children }) => {
   const pathname = usePathname();
@@ -14,8 +16,8 @@ const Layout = ({ children }) => {
         <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">
           <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
             <div className="flex justify-center items-center">
-              <img
-                src="/logo.png"
+              <Image
+                src={logo}
                 alt="Logo"
                 className="h-20 md:h-24 xl:h-28"
               />
@@ -65,8 +67,8 @@ const Layout = ({ children }) => {
           </div>
           <div className="flex justify-center items-center space-x-3">
             <div>
-              <img
-                src="/logo.png"
+              <Image
+                src={logo}
                 alt="Logo"
                 className="w-12 p-1 rounded-full border-2 border-[#5C74FF]"
               />

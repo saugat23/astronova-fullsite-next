@@ -6,7 +6,7 @@ const PartnersTestimonial = ({imgSrc, testimonial, name, position}) => {
     <>
       <div className="flex flex-col justify-around items-center lg:space-y-5 xl:p-6 lg:p-4 px-2 space-y-3">
         <div className="flex justify-center items-center relative">
-          <Image src={imgSrc} alt={`${name} Image`} width={80} height={80}/>
+          <img src={imgSrc} alt={`${name} Image`} width={80} height={80}/>
           <Image
             src="/assets/testimonialicon.svg"
             alt="Testimonial Icon SVG"

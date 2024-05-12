@@ -7,6 +7,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import BlogCard from "./BlogCard";
 import BlogTrendingCard from "./BlogTrendingCard";
+import CardImage from "../../../../public/blogs/cardimage.svg";
+import TrendingImage from "../../../../public/blogs/trending.svg";
+import BlogAuthorImage from "../../../../public/blogs/blogauthor.svg";
 
 const Blogs = () => {
   return (
@@ -89,33 +92,33 @@ const Blogs = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto max-w-7xl px-4 flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
         <div className="flex flex-col justify-center items-start space-y-4">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black py-4">
             Blogs & News
           </h3>
         </div>
         <div className="h-auto grid md:grid-cols-2 gap-x-6 gap-y-6">
-            <BlogCard imgSrc="/blogs/cardimage.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogCard imgSrc="/blogs/cardimage.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogCard imgSrc="/blogs/cardimage.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogCard imgSrc="/blogs/cardimage.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogCard imgSrc={CardImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogCard imgSrc={CardImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogCard imgSrc={CardImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogCard imgSrc={CardImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
+      <div data-aos="fade-up" data-aos-duration="400" className="mx-auto max-w-7xl px-4 flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10">
         <div className="flex flex-col justify-center items-start space-y-4">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black py-4">
             Trending Now
           </h3>
         </div>
         <div className="h-auto grid md:grid-cols-3 gap-x-6 gap-y-6">
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
-            <BlogTrendingCard imgSrc="/blogs/trending.svg" title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc="/blogs/blogauthor.svg" author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
+            <BlogTrendingCard imgSrc={TrendingImage} title="Lorem ipsum dolor sit amet" desc="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young scientists, researchers, and tech-savvy entrepreneurs worldwide." authorImgSrc={BlogAuthorImage} author="John Doe" time="24th April 2024, 12:40 PM" />
         </div>
         <div className="w-full flex justify-center items-center py-4 mt-4">
           <button type="button" className="font-roboto font-medium 2xl:text-lg lg:text-base md:text-sm text-xs bg-white border border-[#E0D8FF] py-4 px-12 shadow-lg">Load More</button>

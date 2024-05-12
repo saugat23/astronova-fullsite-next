@@ -1,6 +1,8 @@
 "use client";
 
 import React, {useState} from "react";
+import Logo from "../../../public/logo.png"
+import Image from "next/image";
 
 const Page = () => {
 
@@ -12,7 +14,7 @@ const Page = () => {
   return (
     <section className="h-screeen max-w-screen overflow-hidden flex flex-col justify-start items-center xl:py-24 lg:py-20 md:18 xs:py-12 sm:py-16">
       <div className="">
-        <img src="/logo.png" alt="Astronova Foundation" loading="lazy" />
+        <Image src={Logo} alt="Astronova Foundation" priority />
       </div>
       <h2 className="font-tinos font-bold lg:text-2xl text-black tracking-[0.2em] leading-loose">
         ASTRONOVA

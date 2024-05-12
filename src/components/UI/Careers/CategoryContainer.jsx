@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const CategoryContainer = ({imgSrc, title, description}) => {
@@ -6,7 +7,7 @@ const CategoryContainer = ({imgSrc, title, description}) => {
     <div className='h-auto w-auto flex flex-col justify-center items-start space-y-2'>
         <div className='flex justify-start items-center space-x-3'>
             <div className='w-20 h-20 p-4 bg-[#77AB33] rounded-full'>
-                <img src={imgSrc} alt={title} className='w-full h-full' />
+                <Image src={imgSrc} alt={title} className='w-full h-full' />
             </div>
             <h3 className='text-[#77AB33] font-opensans font-bold xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm tracking-tight'>{title}</h3>
         </div>

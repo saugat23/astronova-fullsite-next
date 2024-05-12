@@ -6,7 +6,7 @@ const Impact = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4"
+      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full max-w-7xl md:mt-8 mt-4"
     >
       <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4 xl:px-4">
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight relative after:bg-[#0B77A5] after:absolute after:h-[4px] after:w-0 after:-bottom-[2px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
@@ -74,7 +74,7 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="900"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 z-40 bg-[#2496D7] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
+            className="lg:py-16 lg:px-6 py-4 px-2 flex flex-col justify-center items-center space-y-4 z-40 bg-[#2496D7] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
           >
             <div>
               <Image
@@ -92,7 +92,7 @@ const Impact = () => {
             <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               FREE WORKSHOPS
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white">
+            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white w-full">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>
@@ -113,8 +113,8 @@ const Impact = () => {
               We’re always looking for talented, driven individuals to join our
               mission. Come help us build a better future for students
             </p>
-            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] text-center flex items-center">
-              Apply Today
+            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
+              Apply Today{" "}
               <span className="inline-block"> 
                 <svg
                   width="16"
@@ -142,7 +142,6 @@ const Impact = () => {
               </span>
             </button>
           </div>
-          {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/funding.svg" alt="Funding Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
@@ -152,9 +151,9 @@ const Impact = () => {
             </h3>
             <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               We provide Seed money and Venture money to the innovative business
-              idea. Come join us and work on your idea.
+              idea. Come and join us and work on your idea.
             </p>
-            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Register your Idea
               <span className="inline-block ">
                 <svg
@@ -173,7 +172,6 @@ const Impact = () => {
               </span>
             </button>
           </div>
-          {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image src="/project.svg" alt="Project Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
@@ -186,7 +184,7 @@ const Impact = () => {
               innovation among the students. Check out our project with this
               button Click.
             </p>
-            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Learn More
               <span className="inline-block ">
                 <svg
@@ -214,10 +212,10 @@ const Impact = () => {
               Resource
             </h3>
             <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
-              We are prepare useful resources to make you clear about our
-              mission and goals. Click to see the Resources.
+              We are preparing the useful resources to make you clear about our
+              mission and our goals. Click to see the Resources.
             </p>
-            <button className="font-inter font-bold 2xl:text-xl lg:text-lg md:text-base text-xs text-[#DA441F] flex items-center">
+            <button className="mx-auto font-inter font-bold lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Download Brochure
               <span className="inline-block ">
                 <svg

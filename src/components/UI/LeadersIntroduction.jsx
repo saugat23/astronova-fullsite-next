@@ -1,5 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import Facebook from '../../../public/assets/facebook.svg';
+import Web from '../../../public/assets/web.svg';
+import Instagram from '../../../public/assets/instagram.svg';
+import Gmail from '../../../public/assets/gmail.svg';
 
 const LeadersIntroduction = ({reverse, imgSrc, name, position, desc, fb, web, instagram, gmail}) => {
   return (
@@ -11,10 +15,10 @@ const LeadersIntroduction = ({reverse, imgSrc, name, position, desc, fb, web, in
                 <h4 className='font-opensans tracking-tighter font-bold text-[#77AB33] 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base'>{position}</h4>
                 <p className='font-montserrat font-medium 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-[#042038]'>{desc}</p>
                 <div className='mt-4 w-full flex justify-center items-center space-x-4'>
-                    <div className='border border-[#DB8114] rounded-full'><a href={fb}><img src="/assets/facebook.svg" alt='Facebook'/></a></div>
-                    <div className='border border-[#2496D7] rounded-full'><a href={web}><img src="/assets/web.svg" alt='Web'/></a></div>
-                    <div className='border border-[#77AB33] rounded-full'><a href={instagram}><img src="/assets/instagram.svg" alt='Instagram'/></a></div>
-                    <div className='border border-[#AF1B1C] rounded-full'><a href={gmail}><img src="/assets/gmail.svg" alt='Gmail'/></a></div>
+                    <div className='border border-[#DB8114] rounded-full'><a href={fb}><Image src={Facebook} alt='Facebook'/></a></div>
+                    <div className='border border-[#2496D7] rounded-full'><a href={web}><Image src={Web} alt='Web'/></a></div>
+                    <div className='border border-[#77AB33] rounded-full'><a href={instagram}><Image src={Instagram} alt='Instagram'/></a></div>
+                    <div className='border border-[#AF1B1C] rounded-full'><a href={gmail}><Image src={Gmail} alt='Gmail'/></a></div>
                 </div>
             </div>
         </div>

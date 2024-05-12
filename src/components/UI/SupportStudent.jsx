@@ -1,6 +1,7 @@
 import { Progress } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const SupportStudent = ({
   id,

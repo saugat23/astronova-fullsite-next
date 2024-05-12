@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import ProjectContainer from "../Projects/ProjectContainer";
+import ShortTermProjects from "../../../../public/projects/shorttermproject.svg"
+import Gap from "../../../../public/projects/gap.svg"
+import Image from "next/image";
 
 const middleTermProjects = () => {
   return (
@@ -19,7 +22,7 @@ const middleTermProjects = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto w-[80%] max-w-[80%] flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10"
+        className="mx-auto max-w-7xl flex flex-col justify-center items-start py-4 md:py-6 lg:py-8 2xl:py-10"
       >
         <div className="flex flex-col justify-center items-start space-y-8">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
@@ -30,24 +33,24 @@ const middleTermProjects = () => {
           </p>
           <div className="w-full flex md:flex-row flex-col justify-stretch items-center md:items-start md:space-x-4 space-x-0 space-y-3 md:space-y-0">
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
           </div>
         </div>
         <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-48 w-auto self-center">
-          <img src="/projects/gap.svg" alt="Gap SVG" className="h-full w-48" />
+          <Image src={Gap} alt="Gap SVG" className="h-full w-48" />
         </div>
       </div>
     </section>

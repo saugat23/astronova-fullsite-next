@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { SiGmail } from "react-icons/si";
+import Lottie from "lottie-react";
+import GlobeLottie from "./globe-lottie.json";
 
 const Footer = () => {
   return (
@@ -16,7 +18,8 @@ const Footer = () => {
         <div className="flex-[0.8] flex flex-col justify-center items-center xl:space-y-4 lg:space-y-2 lg:px-4">
           <div className="self-center lg:self-start lg:border-r-3 border-[#BDB809] flex flex-col lg:w-full w-[60%] justify-center items-center xl:space-y-6 lg:space-y-4 space-y-2 lg:px-4">
             <div>
-              <img src="/globe.png" alt="Globe Image" className="w-60 sm:w-64 md:w-72 lg:w-80 2xl:w-96" />
+              {/* <img src="/globe.png" alt="Globe Image" className="w-60 sm:w-64 md:w-72 lg:w-80 2xl:w-96" /> */}
+              <Lottie animationData={GlobeLottie} loop={true} />
             </div>
             <h3 className="font-poppins font-bold xl:text-4xl lg:text-3xl text-[#1D92C9] text-center">
               Donate for Astronova Globe

@@ -2,6 +2,10 @@
 import React from "react";
 import CategoryContainer from "./CategoryContainer";
 import WorkWithUs from "./WorkWithUs";
+import DesigningSvg from "../../../../public/careers/designing.svg";
+import DevelopmentSvg from "../../../../public/careers/development.svg";
+import TeacherSvg from "../../../../public/careers/teacher.svg";
+import VolunteerSvg from "../../../../public/careers/volunteer.svg";
 
 const Careers = () => {
   return (
@@ -9,7 +13,7 @@ const Careers = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="w-full flex flex-col justify-center items-center space-y-4 2xl:py-14 lg:py-10 md:py-6 py-4 bg-[#2496D7] mt-[4.5rem]"
+        className="w-full flex flex-col justify-center items-center space-y-4 2xl:py-28 lg:py-14 md:py-6 py-4 bg-[#2496D7] mt-[4.5rem]"
       >
         <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-white">
           OPPORTUNITIES ARE AT YOUR DOOR
@@ -36,12 +40,12 @@ const Careers = () => {
           JOBS BY <span className="text-[#AE0D19] font-bold">CATEGORY</span>
         </h3>
         <div className="w-full grid md:grid-cols-3 gap-x-16 gap-y-16 sm:grid-cols-2 grid-cols-1">
-            <CategoryContainer imgSrc="/careers/designing.svg" title="Designing" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
-            <CategoryContainer imgSrc="/careers/development.svg" title="Development" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
-            <CategoryContainer imgSrc="/careers/designing.svg" title="Digital Marketing" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
-            <CategoryContainer imgSrc="/careers/teacher.svg" title="Fellow Teacher" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
-            <CategoryContainer imgSrc="/careers/volunteer.svg" title="Program Volunteer" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
-            <CategoryContainer imgSrc="/careers/designing.svg" title="College Ambassador" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={DesigningSvg} title="Designing" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={DevelopmentSvg} title="Development" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={DesigningSvg} title="Digital Marketing" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={TeacherSvg} title="Fellow Teacher" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={VolunteerSvg} title="Program Volunteer" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
+            <CategoryContainer imgSrc={DesigningSvg} title="College Ambassador" description="Bring your creativity and expertise to our team as a UI Designer. Collaborate with cross-functional teams to design visually stunning and user-friendly interfaces. Utilize your skills in layout design, typography, and color theory to create engaging digital experiences that leave a lasting impression."/>
         </div>
       </div>
 
@@ -59,11 +63,35 @@ const Careers = () => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="w-full px-2 md:px-4 lg:px-0">
-        <div className="flex justify-center items-center p-3">
-            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-white bg-[#3AA0DB] py-3 lg:py-6 px-8 lg:px-12 rounded-lg">JOIN OUR TEAM</h3>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="xl:mt-10 lg:mt-8 flex flex-col justify-center items-center"
+      >
+        <div className="bg-[url('/joinbg.png')] bg-cover flex flex-col justify-start items-center w-full p-6 h-[75vh]"></div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6"
+        >
+          <div className="w-[80%] mx-auto flex flex-col justify-center items-center space-y-4">
+            <h3 className="font-opensans tracking-[-0.07em] text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
+              JOIN THE JOURNEY
+            </h3>
+            <h3 className="font-montserrat tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
+              Be the change you want to see
+            </h3>
+            <p className="font-opensans font-normal xl:text-lg lg:text-base md:text-sm text-xs text-white text-center py-2">
+              We are working to create an environment where students can receive
+              support, mentorship, guidance and access to tools and facilities
+              to explore their curiosity so that they could be able to develop
+              practical & soft skills, entrepreneurial skill and turn their
+              ideas into reality and provide them national and international
+              exposure to explore their innovative research ideas. Together
+              let’s make a community of change makers.
+            </p>
+          </div>
         </div>
-        <div className="h-[60vh] bg-[url('/joinbg.png')] bg-cover bg-[top_20rem]"></div>
       </div>
     </section>
   );

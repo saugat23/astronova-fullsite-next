@@ -8,6 +8,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "aos/dist/aos.css";
+import ShortTermProjects from "../../../../public/projects/shorttermproject.svg";
+import MiddleTermProjects from "../../../../public/projects/middletermproject.svg";
+import PastWorkSVG from "../../../../public/projects/pastwork.svg";
+import Gap from "../../../../public/projects/gap.svg";
+import Image from 'next/image';
 
 const Projects = () => {
   return (
@@ -29,24 +34,24 @@ const Projects = () => {
           </p>
           <div className="w-full flex md:flex-row flex-col justify-stretch items-center md:items-start md:space-x-4 space-x-0 space-y-3 md:space-y-0">
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. "
             />
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. "
             />
             <ProjectContainer
-              imgSrc="/projects/shorttermproject.svg"
+              imgSrc={ShortTermProjects}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. "
             />
           </div>
         </div>
         <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-24 w-auto">
-          <img src="/projects/gap.svg" alt="Gap SVG" className="h-full" />
+          <Image src={Gap} alt="Gap SVG" className="h-full" />
         </div>
         <div className="flex flex-col justify-center items-start space-y-4 bg-[url('/projects/design.svg')] bg-contain bg-no-repeat bg-right">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
@@ -59,24 +64,24 @@ const Projects = () => {
           </p>
           <div className="w-full flex md:flex-row flex-col justify-stretch items-center md:items-start md:space-x-4 space-x-0 space-y-3 md:space-y-0">
             <ProjectContainer
-              imgSrc="/projects/middletermproject.svg"
+              imgSrc={MiddleTermProjects}
               name="Our Global Advocacy for Education Equity"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem a, consectetur est."
             />
             <ProjectContainer
-              imgSrc="/projects/middletermproject.svg"
+              imgSrc={MiddleTermProjects}
               name="Our Global Advocacy for Education Equity"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem a, consectetur est."
             />
             <ProjectContainer
-              imgSrc="/projects/middletermproject.svg"
+              imgSrc={MiddleTermProjects}
               name="Our Global Advocacy for Education Equity"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem a, consectetur est."
             />
           </div>
         </div>
         <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-24 w-auto">
-          <img src="/projects/gap.svg" alt="Gap SVG" className="h-full" />
+          <Image src={Gap} alt="Gap SVG" className="h-full" />
         </div>
         <div className="flex flex-col justify-center items-start space-y-4 bg-[url('/projects/design.svg')] bg-contain bg-no-repeat bg-right">
           <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
@@ -113,28 +118,28 @@ const Projects = () => {
         >
           <SwiperSlide>
             <PastWork
-              imgSrc="/projects/pastwork.svg"
+              imgSrc={PastWorkSVG}
               name="Astronova Global Symposium"
               desc="Hosted the inaugural Astronova Global Symposium, bringing together educators, innovators, and thought leaders from around the world."
             />
           </SwiperSlide>
           <SwiperSlide>
             <PastWork
-              imgSrc="/projects/pastwork.svg"
+              imgSrc={PastWorkSVG}
               name="Recognition for STEM Education Impact"
               desc="Received national recognition for Astronova's significant impact on STEM education through awards or commendations."
             />
           </SwiperSlide>
           <SwiperSlide>
             <PastWork
-              imgSrc="/projects/pastwork.svg"
+              imgSrc={PastWorkSVG}
               name="Innovation Lab Expansion"
               desc="Widening the reach of hands-on learning opportunities, fostering creativity and innovation among students."
             />
           </SwiperSlide>
           <SwiperSlide>
             <PastWork
-              imgSrc="/projects/pastwork.svg"
+              imgSrc={PastWorkSVG}
               name="Recognition for STEM Education Impact"
               desc="Received national recognition for Astronova's significant impact on STEM education through awards or commendations."
             />

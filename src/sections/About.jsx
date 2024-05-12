@@ -1,74 +1,18 @@
-"use client"
+"use client";
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import SupportStudent from "../components/UI/SupportStudent";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Link from "next/link";
 import { getAllCampaign } from "../app/services/api";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-// function SupportNextArrow({className, onClick}) {
-//   return (
-//     <div
-//       className={className}
-//       onClick={onClick}
-//     />
-//   );
-// }
-
-// function SupportPrevArrow({className, onClick}) {
-//   return (
-//     <div
-//       className={className}
-//       onClick={onClick}
-//     />
-//   );
-// }
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
 
 const About = () => {
-//   var settings = {
-//     dots: false,
-//     infinite: false,
-//     speed: 500,
-//     slidesToShow: 3,
-//     slidesToScroll: 3,
-//     initialSlide: 3,
-//     nextArrow: <SupportNextArrow className="bg-red-600 "/>,
-//     prevArrow: <SupportPrevArrow className="bg-blue-500"/>,
-//     adaptiveHeight: true,
-//     responsive: [
-//       {
-//         breakpoint: 1024,
-//         settings: {
-//           slidesToShow: 3,
-//           slidesToScroll: 1,
-//           initialSlide: 3
-//         }
-//       },
-//       {
-//         breakpoint: 600,
-//         settings: {
-//           slidesToShow: 2,
-//           slidesToScroll: 1,
-//           initialSlide: 2
-//         }
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//           initialSlide: 1
-//         }
-//       }
-//     ]
-//   };
 
   const sliderRef = useRef(null);
   const [campaigns, setCampaigns] = useState([]);
@@ -97,7 +41,7 @@ const About = () => {
 
   return (
     <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 '>
-      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full md:w-[90%] xl:w-[80%] md:mt-8 mt-4">
+      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full px-4 max-w-7xl  md:mt-8 mt-4">
         <div className="h-auto flex flex-col justify-center items-center xl:pr-8 xl:border-r-4 border-[#DB8114] md:w-full">
           <Image
             src="/assets/logo.png"
@@ -160,7 +104,7 @@ const About = () => {
                 </h3>
               </div>
               <Link
-                href={{ pathname: "/working_area"}}
+                href={{ pathname: "/working_area", query: { work: 'asw'} }}
                 className="absolute lg:-top-[45%] -top-[35%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -172,7 +116,7 @@ const About = () => {
                 AFTER SCHOOL PROGRAM
               </Link>
               <Link
-                href={{ pathname: "/working_area3"}}
+                href={{ pathname: "/working_area", query: { work: 'startup'} }}
                 className="absolute -top-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -184,7 +128,7 @@ const About = () => {
                 STARTUP & INNOVATION
               </Link>
               <Link
-                href={{ pathname: "/working_area2"}}
+                href={{ pathname: "/working_area", query: { work: 'nesep'} }}
                 className="absolute -top-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -196,7 +140,7 @@ const About = () => {
                 SCIENCE EXPO
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: {field: 'steam'}}}
+                href={{ pathname: "/working_area", query: { field: "steam" } }}
                 className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -207,7 +151,10 @@ const About = () => {
                 />
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: {field: 'research'}}}
+                href={{
+                  pathname: "/working_area",
+                  query: { field: "research" },
+                }}
                 className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -234,50 +181,42 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="h-full flex flex-col justify-between items-center space-y-12 mt-8 mx-auto w-full md:w-[90%] xl:w-[80%]">
+      <div className="h-full flex flex-col justify-between items-center space-y-12 mt-8 mx-auto w-full px-4 max-w-7xl">
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
           SUPPORT FOR STUDENTS
         </h3>
-        <div className="mt-4 w-full flex justify-center items-center">
-          <Swiper
-            spaceBetween={20}
-            modules={[Navigation]}
-            navigation={true}
-            ref={sliderRef}
-            breakpoints={{
-              310: {
-                slidesPerView: 1,
-                centeredSlides: true,
-              },
-              768: {
-                slidesPerView: 1,
-                centeredSlides: true,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+        <div className="mt-4 w-full">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
             }}
-            className="w-full flex justify-evenly items-center space-x-4"
+            className="w-full px-4"
           >
-            <div className="swiper-button-prev" onClick={handlePrev}></div>
-            {campaigns.map((campaign) => {
-              return (
-                <SwiperSlide className="py-4" key={campaign.campaign_id}>
+            <CarouselContent>
+              {campaigns.map((campaign) => {
+                return (
+                <CarouselItem
+                  key={campaign.campaign_id}
+                  className="md:basis-1/2 lg:basis-1/3"
+                >
                   <SupportStudent
-                data-aos="fade-right"
-                data-aos-duration="500"
-                id={campaign.campaign_id}
-                imgSrc={campaign.featured_image}
-                project={campaign.title}
-                desc={campaign.short_description.substr(0, 60) + " ..."}
-                achieved={campaign.achieved_fund}
-                target={campaign.target_fund_dollars}
-              />
-                </SwiperSlide>
-              )
-            })}
-            <div className="swiper-button-next" onClick={handleNext}></div>
-          </Swiper>
+                    data-aos="fade-right"
+                    data-aos-duration="500"
+                    id={campaign.campaign_id}
+                    imgSrc={campaign.featured_image}
+                    project={campaign.title}
+                    desc={campaign.short_description.substr(0, 60) + " ..."}
+                    achieved={campaign.achieved_fund}
+                    target={campaign.target_fund_dollars}
+                  />
+                </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className=""/>
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </section>

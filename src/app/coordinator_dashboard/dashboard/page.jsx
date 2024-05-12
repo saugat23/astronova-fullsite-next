@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 const ChartDonut = dynamic(
   () => import("../../../components/UI/Charts/ChartDonut"),
   {
@@ -20,6 +21,8 @@ const SupportStudent = dynamic(
     ssr: false,
   }
 );
+import nepalFlag from "../../../../public/assets/nepalflag.svg";
+import AayushNepal from "../../../../public/aayushnepal.png"
 
 const page = () => {
   return (
@@ -73,7 +76,7 @@ const page = () => {
               </div>
               <div className="flex justify-center items-start px-4">
                 <div className="w-[70%]">
-                  <img src="/assets/nepalflag.svg" alt="Nepal Flag SVG" />
+                  <Image src={nepalFlag} alt="Nepal Flag SVG" />
                 </div>
                 <div className="w-[30%] flex flex-col items-center justify-center gap-y-3">
                   <div className="w-full px-8 sm:w-1/2">
@@ -104,8 +107,8 @@ const page = () => {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <div className="w-full p-4 border border-[#E0D8FF] flex justify-start space-x-4">
                   <div>
-                    <img
-                      src="/aayushnepal.png"
+                    <Image
+                      src={AayushNepal}
                       alt="Photo"
                       className="rounded-full w-16"
                     />
@@ -114,8 +117,8 @@ const page = () => {
                 </div>
                 <div className="w-full p-4 border border-[#E0D8FF] flex justify-start space-x-4">
                   <div>
-                    <img
-                      src="/aayushnepal.png"
+                    <Image
+                      src={AayushNepal}
                       alt="Photo"
                       className="rounded-full w-16"
                     />
@@ -124,8 +127,8 @@ const page = () => {
                 </div>
                 <div className="w-full p-4 border border-[#E0D8FF] flex justify-start space-x-4">
                   <div>
-                    <img
-                      src="/aayushnepal.png"
+                    <Image
+                      src={AayushNepal}
                       alt="Photo"
                       className="rounded-full w-16"
                     />

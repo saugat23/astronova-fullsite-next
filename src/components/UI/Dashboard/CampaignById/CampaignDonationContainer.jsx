@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const CampaignDonationContainer = ({ title, description, imgSrc, amount}) => {
@@ -10,7 +11,7 @@ const CampaignDonationContainer = ({ title, description, imgSrc, amount}) => {
             <button className='w-1/2 py-3 px-auto text-white bg-[#4A90E2] hover:bg-[#2c5688] hover:duration-300 2xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs font-poppins font-medium rounded-lg'>Donate ${amount}</button>
         </div>
         <div className='w-1/5 h-full flex flex-col justify-center items-center'>
-            <img src={imgSrc} alt={title} className='w-full h-1/2'/>
+            <Image src={imgSrc} alt={title} className='w-full h-1/2'/>
         </div>
     </div>
     </>

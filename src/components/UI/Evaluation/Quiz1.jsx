@@ -5,6 +5,8 @@ import { FaArrowLeft } from "react-icons/fa";
 import {Toaster, toast} from "sonner";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import Quiz1Over from "../../../../public/evaluation/quiz1over.png";
+import Image from "next/image";
 
 function Quiz1() {
   const router = useRouter();
@@ -72,8 +74,8 @@ function Quiz1() {
           <div className="hidden" id="quiz1">
             <div className="flex flex-col justify-center items-start space-y-8 w-[800px]">
               <div className="w-full">
-                <img
-                  src="/evaluation/quiz1over.png"
+                <Image
+                  src={Quiz1Over}
                   alt="Quiz1 Over"
                   className="w-full h-auto"
                 />

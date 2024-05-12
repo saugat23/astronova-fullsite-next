@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../components/ui/carousel";
 
 const Partners = () => {
   return (
@@ -24,6 +25,34 @@ const Partners = () => {
                   width={40}
                   height={30}
                   className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                />
+                <Image
+                  src="/nationalnoc.png"
+                  alt="National NIC Image"
+                  width={80}
+                  height={60}
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                />
+                <Image
+                  src="/neema.png"
+                  alt="Neema Image"
+                  width={80}
+                  height={60}
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                />
+                <Image
+                  src="/thesquad.png"
+                  alt="The Squad Image"
+                  width={80}
+                  height={60}
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                />
+                <Image
+                  src="/brainycube.png"
+                  alt="Brainy Cube Image"
+                  width={80}
+                  height={60}
+                  className="transform scale-100 hover:scale-110 transition-transform sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
                 />
                 <Image
                   src="/neo.svg"
@@ -90,7 +119,7 @@ const Partners = () => {
               let’s make a community of change makers.
             </p>
           </div>
-          <div className="w-full xl:w-[80%] mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white">
+          <div className="w-full mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white max-w-7xl">
             <button
               data-aos="fade-up"
               data-aos-duration="900"
@@ -122,58 +151,15 @@ const Partners = () => {
       <h3 className="xl:mt-12 mt-4 font-opensans font-bold w-auto text-center text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
         GROUND STORIES
       </h3>
-      <Swiper
-        spaceBetween={100}
-        navigation={true}
-        breakpoints={{
-          240: {
-            slidesPerView: 1,
-          },
-          320: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 1,
-          },
-          1024: {
-            // width: 940,
-            slidesPerView: 3,
-          },
+      <Carousel
+        opts={{
+          align: "center",
+          loop: true,
         }}
-        modules={[Navigation]}
-        className="xl:mt-12 mt-4 mx-auto w-full md:w-[90%] xl:w-[80%]"
+        className="w-full mx-auto max-w-7xl px-4"
       >
-        <div className="flex justify-center items-center lg:space-x-4 xl:py-12 xl:px-12 lg:py-8 lg:px-8">
-          {/* <div className="bg-[#639A1B] xl:py-18 xl:px-12 lg:py-16 lg:px-10 flex flex-col justify-center items-center">
-            <h4 className="font-inter font-light xl:text-[3.3rem] lg:text-5xl text-white">
-              Ground <span className="font-bold text-[#B01B1C]">Stories</span>
-            </h4>
-            <div className="flex justify-center items-center space-x-2">
-              <button
-                type="button"
-                className="testimonials-swiper-button-next p-2 rounded-full border border-white text-[#B01B1C]"
-              >
-                &larr;
-              </button>
-              <button
-                type="button"
-                className="testimonials-swiper-button-prev p-2 rounded-full border border-white text-[#B01B1C]"
-              >
-                {" "}
-                &rarr;
-              </button>
-            </div>
-          </div> */}
-          {/* <div className=".testimonial-prev-slide">
-            <button
-              type="button"
-              className="p-2 rounded-full border border-white text-[#B01B1C]"
-            >
-              &larr;
-            </button>
-          </div> */}
-          <div>
-            <SwiperSlide>
+        <CarouselContent>
+        <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <PartnersTestimonial
                 imgSrc="/assets/testimonialaayushnepal.svg"
                 testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
@@ -181,58 +167,45 @@ const Partners = () => {
                 name="Aayush Nepal"
                 position="Astrophysics & Research Enthusiast"
               />
-            </SwiperSlide>
-          </div>
-          <div>
-            <SwiperSlide>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+
               <PartnersTestimonial
                 imgSrc="/assets/testimonialanujadhikari.svg"
                 testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
                 name="Anuj Adhikari"
                 position="Research Enthusiast"
               />
-            </SwiperSlide>
-          </div>
-          <div>
-            <SwiperSlide>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+
               <PartnersTestimonial
                 imgSrc="/assets/testimonialriteshprajapati.svg"
                 testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
                 name="Ritesh Prajapati"
                 position="Video Editor Intern"
               />
-            </SwiperSlide>
-          </div>
-          <div>
-            <SwiperSlide>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <PartnersTestimonial
                 imgSrc="/testimonialdinupbalami.png"
                 testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
                 name="Dinup Balami"
                 position="Campus Ambassador,Mechanical Engineering Student,KU"
               />
-            </SwiperSlide>
-          </div>
-          <div>
-            <SwiperSlide>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <PartnersTestimonial
                 imgSrc="/testimonialnamratabartaula.png"
                 testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
                 name="Namrata Bartaula"
                 position="Stone Art and Crafting Intern"
               />
-            </SwiperSlide>
-          </div>
-          {/* <div className=".testimonial-next-slide">
-            <button
-              type="button"
-              className="p-2 rounded-full border border-white text-[#B01B1C]"
-            >
-              &rarr;
-            </button>
-          </div> */}
-        </div>
-      </Swiper>
+            </CarouselItem>    
+        </CarouselContent>
+        <CarouselPrevious className="ml-8"/>
+            <CarouselNext className="mr-8"/>
+      </Carousel>
 
       <div
         data-aos="fade-up"

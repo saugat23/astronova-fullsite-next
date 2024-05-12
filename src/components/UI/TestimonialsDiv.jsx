@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const TestimonialsDiv = ({imgSrc, name, position, desc}) => {
@@ -5,7 +6,7 @@ const TestimonialsDiv = ({imgSrc, name, position, desc}) => {
     <>
       <div className="bg-[#0052A0CF] px-6 py-6 flex-1 flex flex-col justify-center items-center space-y-4">
         <div>
-          <img
+          <Image
             src={imgSrc}
             alt={name}
             className="rounded-full border border-white w-24 h-24"
