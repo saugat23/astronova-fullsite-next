@@ -29,7 +29,7 @@ const Page = () => {
   const workParams = useSearchParams();
   const work = workParams.get('useSearchParams hook error');
 
-  function renderWorkSection(){
+  function RenderWorkSection(){
     if(work == "asw"){
       return <ASW />
     }else if(work == "startup"){
@@ -44,7 +44,7 @@ const Page = () => {
     <>
     <Navbar />
     <Suspense>
-    {renderWorkSection()}
+      <RenderWorkSection />
     </Suspense>
     <Footer />
     </>
