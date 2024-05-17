@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useCallback, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SupportStudent from "../components/UI/SupportStudent";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,19 +13,7 @@ import {
 } from "../components/ui/carousel";
 
 const About = () => {
-
-  const sliderRef = useRef(null);
   const [campaigns, setCampaigns] = useState([]);
-
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,13 +86,13 @@ const About = () => {
           </div>
           <div className="w-full lg:w-auto grow p-4 h-[70vh] flex justify-center items-center">
             <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-full lg:w-[55%] z-20 my-auto flex justify-center items-center">
-              <div className="w-[50%] lg:w-[45%] h-1/2 rounded-full bg-white flex justify-center items-center">
+              <div className="w-[50%] lg:w-[45%] h-[30%] lg:h-1/2 rounded-full bg-white flex justify-center items-center">
                 <h3 className="font-opensans font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm w-3/4 mx-auto text-center">
                   OUR MAJOR WORKING AREA
                 </h3>
               </div>
               <Link
-                href={{ pathname: "/working_area", query: { work: 'asw'} }}
+                href={{ pathname: "/working_area", query: { work: "asw" } }}
                 className="absolute lg:-top-[45%] -top-[35%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
@@ -112,42 +100,46 @@ const About = () => {
                   alt=""
                   width="120"
                   height="120"
+                  className="w-20 lg:w-32"
                 />
                 AFTER SCHOOL PROGRAM
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: { work: 'startup'} }}
-                className="absolute -top-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                href={{ pathname: "/working_area", query: { work: "startup" } }}
+                className="absolute -top-[15%] lg:-top-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/startup.svg"
                   alt=""
                   width="100"
                   height="100"
+                  className="w-20 lg:w-32"
                 />
                 STARTUP & INNOVATION
               </Link>
               <Link
-                href={{ pathname: "/working_area", query: { work: 'nesep'} }}
-                className="absolute -top-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                href={{ pathname: "/working_area", query: { work: "nesep" } }}
+                className="absolute -top-[15%] lg:-top-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/scienceexpo.svg"
                   alt=""
                   width="120"
                   height="120"
+                  className="w-20 lg:w-32"
                 />
                 SCIENCE EXPO
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { field: "steam" } }}
-                className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:bottom-[30%] bottom-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/steam.svg"
                   alt=""
                   width="120"
-                  height="160"
+                  height="120"
+                  className="w-20 lg:w-32"
                 />
               </Link>
               <Link
@@ -155,13 +147,14 @@ const About = () => {
                   pathname: "/working_area",
                   query: { field: "research" },
                 }}
-                className="absolute lg:bottom-[40%] bottom-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute lg:bottom-[30%] bottom-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/research.svg"
                   alt=""
                   width="80"
                   height="80"
+                  className="w-20 lg:w-32"
                 />
                 RESEARCH & INNOVATION
               </Link>
@@ -174,6 +167,7 @@ const About = () => {
                   alt=""
                   width="40"
                   height="40"
+                  className="w-8 lg:w-12"
                 />
                 TEACHERS PRO DEVELOPMENT, SKILL DEVELOPMENT & SOCIAL SKILLS
               </Link>
@@ -196,26 +190,26 @@ const About = () => {
             <CarouselContent>
               {campaigns.map((campaign) => {
                 return (
-                <CarouselItem
-                  key={campaign.campaign_id}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <SupportStudent
-                    data-aos="fade-right"
-                    data-aos-duration="500"
-                    id={campaign.campaign_id}
-                    imgSrc={campaign.featured_image}
-                    project={campaign.title}
-                    desc={campaign.short_description.substr(0, 60) + " ..."}
-                    achieved={campaign.achieved_fund}
-                    target={campaign.target_fund_dollars}
-                  />
-                </CarouselItem>
+                  <CarouselItem
+                    key={campaign.campaign_id}
+                    className="md:basis-1/2 lg:basis-1/3"
+                  >
+                    <SupportStudent
+                      data-aos="fade-right"
+                      data-aos-duration="500"
+                      id={campaign.campaign_id}
+                      imgSrc={campaign.featured_image}
+                      project={campaign.title}
+                      desc={campaign.short_description.substr(0, 60) + " ..."}
+                      achieved={campaign.achieved_fund}
+                      target={campaign.target_fund_dollars}
+                    />
+                  </CarouselItem>
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className=""/>
-            <CarouselNext />
+            <CarouselPrevious className="ml-8" />
+            <CarouselNext className="mr-8" />
           </Carousel>
         </div>
       </div>

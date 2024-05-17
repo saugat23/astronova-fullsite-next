@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -16,17 +16,17 @@ const Footer = () => {
       className="h-auto max-w-screen overflow-hidden bg-[#190E08ED]"
     >
       <div className="xl:my-10 lg:my-8 w-full h-[2px] bg-[#AE0D19] flex flex-col justify-center space-y-4"></div>
-      <div className="lg:px-8 w-full flex lg:flex-row flex-col space-y-3 lg:space-y-0 justify-between items-start">
+      <div className="lg:px-8 w-full flex lg:flex-row flex-col space-y-6 lg:space-y-0 justify-between items-start">
         <div className="flex-[0.8] flex flex-col justify-center items-center xl:space-y-4 lg:space-y-2 lg:px-4">
           <div className="self-center lg:self-start lg:border-r-3 border-[#BDB809] flex flex-col lg:w-full w-[60%] justify-center items-center xl:space-y-6 lg:space-y-4 space-y-2 lg:px-4">
             <div>
               {/* <img src="/globe.png" alt="Globe Image" className="w-60 sm:w-64 md:w-72 lg:w-80 2xl:w-96" /> */}
               <Lottie animationData={GlobeLottie} loop={true} />
             </div>
-            <h3 className="font-poppins font-bold xl:text-4xl lg:text-3xl text-[#1D92C9] text-center">
+            <h3 className="font-poppins font-bold xl:text-4xl lg:text-3xl sm:text-2xl text-xl text-[#1D92C9] uppercase text-center">
               Donate for Astronova Globe
             </h3>
-            <p className="font-opensans font-normal lg:text-xs text-center text-[#9E9E9E]">
+            <p className="font-opensans font-normal lg:text-base sm:text-sm text-xs text-center text-[#9E9E9E]">
               Make your dreams come true with astronova foundation, Make your
               dreams come true with astronova foundation,Make your dreams come
               true with astronova foundation
@@ -34,11 +34,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="self-center lg:self-start flex flex-col justify-center items-center xl:space-y-4 space-y-2 lg:px-4">
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#77AB33]">
+        <div className="h-px w-[90%] mx-auto bg-[#473e39ED] lg:hidden"></div>
+        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#77AB33]">
             ABOUT US
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Who We Are</Link>
             </li>
@@ -61,10 +62,10 @@ const Footer = () => {
               <Link href="#">International Ambassador</Link>
             </li>
           </ul>
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#AE0D19]">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#AE0D19]">
             OUR SUBSIDIARIES
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Astro E-commerce</Link>
             </li>
@@ -72,10 +73,10 @@ const Footer = () => {
               <Link href="#">E-Learning</Link>
             </li>
           </ul>
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-white">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-white">
             SUPPORT STUDENTS
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Planetarium</Link>
             </li>
@@ -90,11 +91,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:self-start self-center flex flex-col justify-center items-center xl:space-y-4 space-y-2 lg:px-4">
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#BDB809]">
+        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#BDB809]">
             COMPETITIONS
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">National Science and Expo</Link>
             </li>
@@ -102,10 +103,10 @@ const Footer = () => {
               <Link href="#">Best Teacher Award</Link>
             </li>
           </ul>
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#DB8114]">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#DB8114]">
             OUTREACH
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Science and Technology</Link>
             </li>
@@ -121,11 +122,11 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="lg:self-start self-center flex flex-col justify-center items-center xl:space-y-4 space-y-2 lg:px-4">
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#2496D7]">
+        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#2496D7]">
             GET INVOLVED
           </h4>
-          <ul className="flex flex-col justify-center items-center lg:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center lg:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Become Volunteer</Link>
             </li>
@@ -142,10 +143,10 @@ const Footer = () => {
               <Link href="#">Fundraise</Link>
             </li>
           </ul>
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#2496D7]">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#2496D7]">
             OPPORTUNITIES
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Public Speaking</Link>
             </li>
@@ -157,11 +158,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="self-center lg:self-start flex flex-col justify-center items-center xl:space-y-4 space-y-2 lg:px-4">
-          <h4 className="font-roboto font-bold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#DB8114]">
+        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+          <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#DB8114] text-left">
             USEFUL LINKS
           </h4>
-          <ul className="flex flex-col justify-center items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6] text-left">
             <li>
               <Link href="#">Home</Link>
             </li>
@@ -201,19 +202,13 @@ const Footer = () => {
           </div>
           <div className="flex justify-center items-center space-x-4">
             <div>
-              <FaFacebook
-                className="p-1 border-2 border-[#DB8114] text-white rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
-              />
+              <FaFacebook className="p-1 border-2 border-[#DB8114] text-white rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
             </div>
             <div>
-              <TbWorldWww
-                className="text-white p-1 border-2 border-[#2496D7] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
-              />
+              <TbWorldWww className="text-white p-1 border-2 border-[#2496D7] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
             </div>
             <div>
-              <FaInstagram
-                className="text-white p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
-              />
+              <FaInstagram className="text-white p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
             </div>
             <div>
               <img
@@ -223,9 +218,7 @@ const Footer = () => {
               />
             </div>
             <div>
-              <SiGmail
-                className="text-white p-1 border-2 border-[#AF1B1C] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
-              />
+              <SiGmail className="text-white p-1 border-2 border-[#AF1B1C] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
             </div>
           </div>
         </div>

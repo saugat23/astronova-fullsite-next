@@ -4,10 +4,6 @@ import BoardMember from "../BoardMember";
 import Experts from "../Experts";
 import TeamMembers from "../TeamMembers";
 import PartnersTestimonial from "../PartnersTestimonial";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +12,7 @@ import {
   CarouselPrevious,
 } from "../../ui/carousel";
 import { IoMdMail } from "react-icons/io";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLongArrowAltDown } from "react-icons/fa";
 import Link from "next/link";
 
 const Team = () => {
@@ -25,12 +21,17 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[url('/abouthero.png')] bg-cover h-[50vh] mt-20"
+        className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] mt-16"
       >
-        <div className="hero-container-team w-full h-full flex justify-center items-end 2xl:py-10 lg:py-8 md:py-6 py-4 px-4">
-          <h2 className="font-opensans font-bold tracking-tighter 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-white">
+        <div className="hero-container-team h-full w-full flex flex-col justify-end items-center lg:space-y-6 py-16 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
+          <h2 className="font-opensans font-bold tracking-tighter 2xl:text-4xl lg:text-3xl sm:text-2xl text-xl text-white">
             OUR TEAM
           </h2>
+          <div className="">
+            <Link href="#teamhome">
+              <FaLongArrowAltDown className="fill-white stroke-2 h-8 cursor-pointer" />
+            </Link>
+          </div>
         </div>
       </div>
       <div
@@ -38,14 +39,17 @@ const Team = () => {
         data-aos-duration="400"
         className="mx-auto flex flex-col justify-center items-start px-4 max-w-7xl py-6"
       >
-        <h3 className="font-opensans font-medium tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#2496D7]">
+        <h3
+          id="teamhome"
+          className="font-opensans font-medium tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#2496D7]"
+        >
           OUR LEADERSHIP
         </h3>
         <div
           className={`mt-8 w-full flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
           <div
-            className={`border-l-[12px] lg:border-l-[30px] border-[#77AB33] w-1/3 h-full`}
+            className={`border-l-[12px] lg:border-l-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
           >
             <img
               src="/kishanbastola.png"
@@ -92,7 +96,7 @@ const Team = () => {
           className={`mt-12 flex flex-col md:flex-row-reverse justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
         >
           <div
-            className={`border-r-[12px] lg:border-r-[30px] border-[#77AB33] w-1/3 h-full`}
+            className={`border-r-[12px] lg:border-r-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
           >
             <img
               src="/babatundeayoola.png"
@@ -141,7 +145,7 @@ const Team = () => {
         data-aos-duration="400"
         className="h-auto overflow-hidden max-w-7xl mx-auto"
       >
-        <div className="flex flex-col justify-center items-center space-y-28 shadow-xl lg:py-12 lg:px-12 w-full">
+        <div className="flex flex-col justify-center items-center lg:space-y-28 space-y-10 sm:space-y-14 shadow-xl lg:py-12 lg:px-12 w-full mt-8 lg:mt-0">
           <div className="flex justify-center items-center">
             <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
               OUR BOARD OF <br /> DIRECTORS

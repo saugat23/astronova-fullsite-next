@@ -3,7 +3,6 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
 const ASW = dynamic(() => import("../../components/UI/WorkingField/ASW"), {
   loading: () => <p> </p>,
@@ -13,7 +12,7 @@ const Startup = dynamic(
   () => import("../../components/UI/WorkingField/Startup"),
   {
     loading: () => <p> </p>,
-  }
+  },
 );
 
 const NESEP = dynamic(() => import("../../components/UI/WorkingField/NESEP"), {
@@ -30,7 +29,7 @@ const Footer = dynamic(() => import("../../sections/Footer"), {
 
 const Page = () => {
   const workParams = useSearchParams();
-  const work = workParams.get("useSearchParams hook error");
+  const work = workParams.get("work");
 
   function RenderWorkSection() {
     if (work == "asw") {
@@ -45,11 +44,9 @@ const Page = () => {
   }
   return (
     <>
-      <Suspense>
-        <Navbar />
-        <RenderWorkSection />
-        <Footer />
-      </Suspense>
+      <Navbar />
+      <RenderWorkSection />
+      <Footer />
     </>
   );
 };

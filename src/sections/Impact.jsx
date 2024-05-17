@@ -101,10 +101,16 @@ const Impact = () => {
       </div>
       {/* <div className="absolute bg-[url('/impactbg.png')] -top-[18%] -right-1/2 w-full h-full bg-no-repeat z-40 bg-transparent"></div> */}
       <div className="xl:mt-16 lg:mt-12 w-full">
-        <div className="w-full grid grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/careers.svg" alt="Careers Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
+              <Image
+                src="/careers.svg"
+                alt="Careers Logo"
+                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                width={30}
+                height={30}
+              />
             </div>
             <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Careers
@@ -115,7 +121,7 @@ const Impact = () => {
             </p>
             <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
               Apply Today{" "}
-              <span className="inline-block"> 
+              <span className="inline-block">
                 <svg
                   width="16"
                   height="16"
@@ -144,7 +150,13 @@ const Impact = () => {
           </div>
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/funding.svg" alt="Funding Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
+              <Image
+                src="/funding.svg"
+                alt="Funding Logo"
+                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                width={30}
+                height={30}
+              />
             </div>
             <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Funding
@@ -174,7 +186,13 @@ const Impact = () => {
           </div>
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/project.svg" alt="Project Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
+              <Image
+                src="/project.svg"
+                alt="Project Logo"
+                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                width={30}
+                height={30}
+              />
             </div>
             <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Project
@@ -206,7 +224,13 @@ const Impact = () => {
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
-              <Image src="/resource.svg" alt="Resource Logo" className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24" width={30} height={30}/>
+              <Image
+                src="/resource.svg"
+                alt="Resource Logo"
+                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                width={30}
+                height={30}
+              />
             </div>
             <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
               Resource
