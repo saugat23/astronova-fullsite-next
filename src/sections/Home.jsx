@@ -17,21 +17,19 @@ import Media from "../sections/Media";
 import Impact from "../sections/Impact";
 import Partners from "../sections/Partners";
 import Footer from "../sections/Footer";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleOpen = (size) => {
+  const handleOpen = () => {
     onOpen();
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // handleOpen();
-    }, 5000);
-
-    return () => clearTimeout(timer);
+    AOS.init();
   }, []);
 
   return (
@@ -44,11 +42,7 @@ const Home = () => {
       <Partners />
       <Footer />
       {showPopup && (
-        <Modal
-          isOpen={isOpen}
-          onClose={onClose}
-          className="popup-donation"
-        >
+        <Modal isOpen={isOpen} onClose={onClose} className="popup-donation">
           <ModalContent>
             {(onClose) => (
               <div>
@@ -64,7 +58,7 @@ const Home = () => {
                     Close
                   </Button>
                 </ModalFooter>
-                </div>
+              </div>
             )}
           </ModalContent>
         </Modal>

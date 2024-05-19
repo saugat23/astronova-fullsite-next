@@ -7,6 +7,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { SiGmail } from "react-icons/si";
 import Lottie from "lottie-react";
 import GlobeLottie from "./globe-lottie.json";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -185,7 +186,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-auto flex lg:flex-row flex-col-reverse justify-between lg:items-start items-center lg:px-8 py-4">
-        <div className="lg:py-6 border-t-2 border-[#FFFFFF80] flex lg:flex-row flex-col justify-center items-center space-x-3">
+        <div className="lg:py-6 border-t-2 border-[#FFFFFF80] flex flex-col justify-center items-center space-x-3">
           <div className="flex flex-col justify-center items-center space-y-3 py-4">
             <h4 className="font-opensans font-light xl:text-sm md:text-xs text-[10px] text-white text-center">
               &copy; Astronova Foundation Nepal
@@ -202,28 +203,37 @@ const Footer = () => {
           </div>
           <div className="flex justify-center items-center space-x-4">
             <div>
-              <FaFacebook className="p-1 border-2 border-[#DB8114] text-white rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
+              <FaFacebook className="w-8 h-8 cursor-pointer fill-white" />
             </div>
             <div>
-              <TbWorldWww className="text-white p-1 border-2 border-[#2496D7] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
+              <TbWorldWww className="w-8 h-8 cursor-pointer fill-white stroke-white" />
             </div>
             <div>
-              <FaInstagram className="text-white p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
+              <FaInstagram className="w-8 h-8 cursor-pointer fill-white" />
             </div>
             <div>
-              <img
+              <Image
+                priority
                 src="/assets/linkedin.svg"
                 alt="Linkedin SVG"
-                className="p-1 border-2 border-[#77AB33] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6"
+                className="cursor-pointer fill-white"
+                width={35}
+                height={35}
               />
             </div>
             <div>
-              <SiGmail className="text-white p-1 border-2 border-[#AF1B1C] rounded-full 2xl:w-12 2xl:h-12 lg:w-10 kg:h-10 md:w-8 md:h-8 w-6 h-6" />
+              <SiGmail className="h-8 w-8 cursor-pointer fill-white" />
             </div>
           </div>
         </div>
         <div className="lg:py-6 self-center flex justify-center items-center">
-          <img src="/assets/support.svg" alt="Support Image" />
+          <Image
+            priority
+            src="/assets/support.svg"
+            alt="Support Image"
+            width={600}
+            height={300}
+          />
         </div>
       </div>
     </section>

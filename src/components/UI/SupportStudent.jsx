@@ -3,14 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const SupportStudent = ({
-  id,
-  imgSrc,
-  project,
-  desc,
-  achieved,
-  target,
-}) => {
+const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
   var color = "";
   var progressValue = achieved === null ? 0 : (achieved / target) * 100;
   if (progressValue < 25) {
@@ -31,7 +24,14 @@ const SupportStudent = ({
         className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-[40rem] w-auto shadow-2xl"
       >
         <div className="h-1/2">
-          <img src={imgSrc} alt={project} className="h-full"/>
+          <Image
+            priority
+            width={200}
+            height={220}
+            src={imgSrc}
+            alt={project}
+            className="h-full"
+          />
         </div>
         <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black text-center">
           {project}
@@ -69,7 +69,9 @@ const SupportStudent = ({
             type="button"
             className="bg-white border-2 border-[#7926ED] py-2 px-8 font-poppins font-semibold lg:text-sm xl:text-base text-black tracking-wider hover:bg-[#7926ED] hover:text-white hover:shadow-2xl"
           >
-            <Link href={`/donation_campaign_page/${id}`} target="_blank">DONATE</Link>
+            <Link href={`/donation_campaign_page/${id}`} target="_blank">
+              DONATE
+            </Link>
           </button>
         </div>
       </div>

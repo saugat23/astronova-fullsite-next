@@ -14,6 +14,7 @@ import {
 import { IoMdMail } from "react-icons/io";
 import { FaFacebook, FaInstagram, FaLongArrowAltDown } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const Team = () => {
   return (
@@ -51,10 +52,12 @@ const Team = () => {
           <div
             className={`border-l-[12px] lg:border-l-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
           >
-            <img
+            <Image
+              priority
               src="/kishanbastola.png"
               alt="kishanbastola"
-              loading="lazy"
+              width={200}
+              height={200}
               className={`w-full h-full border-2 border-[#AE0D19]`}
             />
           </div>
@@ -98,10 +101,12 @@ const Team = () => {
           <div
             className={`border-r-[12px] lg:border-r-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
           >
-            <img
+            <Image
+              priority
               src="/babatundeayoola.png"
               alt="Babatundeayoola"
-              loading="lazy"
+              width={200}
+              height={200}
               className={`w-full h-full border-2 border-[#AE0D19]`}
             />
           </div>
@@ -259,9 +264,12 @@ const Team = () => {
           <div className="shadow-lg bg-transparent lg:py-12 lg:px-12 grid grid-cols-1 grid-rows-1 place-content-center place-items-center">
             <div className="flex flex-col justify-center items-center space-y-2 h-auto">
               <div className="h-full rounded-md">
-                <img
-                  src="bishnuprasaddhakal.png"
+                <Image
+                  priority
+                  src="/bishnuprasaddhakal.png"
                   alt="Bishnu Prasad Dhakal"
+                  width={200}
+                  height={200}
                   className="h-full border border-[#AE0D19]"
                 />
               </div>

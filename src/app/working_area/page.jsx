@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ASW = dynamic(() => import("../../components/UI/WorkingField/ASW"), {
   loading: () => <p> </p>,
@@ -28,6 +30,10 @@ const Footer = dynamic(() => import("../../sections/Footer"), {
 });
 
 const Page = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const workParams = useSearchParams();
   const work = workParams.get("work");
 

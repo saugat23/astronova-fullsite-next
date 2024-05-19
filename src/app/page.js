@@ -1,20 +1,22 @@
 "use client";
-
-import Home from "../sections/Home";
-import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { Toaster } from "sonner"
+import Home from "../sections/Home";
+import { Toaster } from "sonner";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Page() {
   useEffect(() => {
-    import("aos").then((AOS) => {
-      AOS.init();
+    AOS.init({
+      startEvent: "DOMContentLoaded",
+      once: true,
+      offset: 50,
     });
   }, []);
 
   return (
     <>
-      <Toaster richColors position="top-right"/>
+      <Toaster richColors position="top-right" />
       <Home />
     </>
   );

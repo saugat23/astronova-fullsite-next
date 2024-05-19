@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../../ui/carousel";
+import Image from "next/image";
 
 const Works = () => {
   const [events, setEvents] = useState([]);
@@ -30,9 +31,12 @@ const Works = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
       <div className="w-full lg:h-auto h-[50vh] m-0">
-        <img
+        <Image
+          priority
           src="/works/bg.svg"
           alt="Works Background"
+          width={2000}
+          height={1200}
           className="h-full w-full bg-cover"
         />
       </div>
@@ -55,7 +59,14 @@ const Works = () => {
         <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 hidden lg:flex flex-col justify-center items-center rounded-xl z-30">
           <div className="w-full bg-white flex flex-col justify-center items-center py-6 px-12 rounded-t-xl drop-shadow-[0_0_0.75rem_white]">
             <div className="w-1/2 h-auto">
-              <img src="/logo.png" alt="Logo" className="w-full h-full" />
+              <Image
+                priority
+                src="/logo.png"
+                alt="Logo"
+                className="w-full h-full"
+                width={80}
+                height={80}
+              />
             </div>
             <h3 className="font-inter font-normal tracking-widest 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-black">
               ASTRONOVA
@@ -99,10 +110,13 @@ const Works = () => {
                         </button>
                     </div> */}
                   <div className="h-1/2">
-                    <img
+                    <Image
+                      priority
                       src="/supportstudents.png"
-                      alt=""
+                      alt="Support Students"
                       className="w-full h-full"
+                      width={150}
+                      height={150}
                     />
                   </div>
                   <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
@@ -123,10 +137,13 @@ const Works = () => {
                 </CarouselItem>
                 <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
                   <div className="h-1/2">
-                    <img
+                    <Image
+                      priority
                       src="/supportstudents.png"
-                      alt=""
+                      alt="Support Students"
                       className="w-full h-full"
+                      width={150}
+                      height={150}
                     />
                   </div>
                   <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
@@ -147,10 +164,13 @@ const Works = () => {
                 </CarouselItem>
                 <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
                   <div className="h-1/2">
-                    <img
+                    <Image
+                      priority
                       src="/supportstudents.png"
-                      alt=""
+                      alt="Support Students"
                       className="w-full h-full"
+                      width={150}
+                      height={150}
                     />
                   </div>
                   <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
@@ -171,10 +191,13 @@ const Works = () => {
                 </CarouselItem>
                 <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
                   <div className="h-1/2">
-                    <img
+                    <Image
+                      priority
                       src="/supportstudents.png"
-                      alt=""
+                      alt="Support Students"
                       className="w-full h-full"
+                      width={150}
+                      height={150}
                     />
                   </div>
                   <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">

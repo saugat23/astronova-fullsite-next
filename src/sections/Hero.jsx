@@ -1,10 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -50,13 +45,19 @@ const Hero = () => {
           customTransition="transform 500ms ease-in-out"
           transitionDuration={500}
           containerClass="carousel-container"
-          className="mt-4 h-full"
+          className="mt-8 h-full"
         >
           <div className="h-full w-screen">
             <div className="slidetwobackground h-[90%] w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
               <div className="w-full flex lg:justify-start justify-center items-center pt-10 z-40">
                 <div>
-                  <img src="/slide2nric.svg" alt="NRIC Image" />
+                  <Image
+                    priority
+                    src="/slide2nric.svg"
+                    alt="NRIC Image"
+                    width={800}
+                    height={400}
+                  />
                 </div>
               </div>
               <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-end items-center space-y-6 lg:space-y-0">
@@ -84,11 +85,14 @@ const Hero = () => {
                     Do you have{" "}
                     <span className="font-semibold">Innovation Idea?</span>
                   </h3>
-                  <img
+                  <Image
+                    priority
                     src="/slide2hr.svg"
                     alt="Section Divider"
                     className="float-right mt-6"
-                  ></img>
+                    width={600}
+                    height={30}
+                  />
                   <h3 className="font-montserrat font-normal 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base  lg:text-right text-center lg:text-white text-white">
                     Hetauda Research & Innovation Center <br />{" "}
                     <span className="font-semibold">
@@ -96,11 +100,14 @@ const Hero = () => {
                     </span>{" "}
                     for funding opportunities under
                   </h3>
-                  <img
+                  <Image
+                    priority
                     src="/slide2hr.svg"
                     alt="Section Divider"
-                    className="float-right"
-                  ></img>
+                    className="float-right mt-6"
+                    width={600}
+                    height={30}
+                  />
                   <h3 className="font-montserrat font-semibold 2xl:text-7xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl   lg:text-right text-center text-white">
                     Student Startup & Innovation Policy <br /> SSIP 1.0
                   </h3>
@@ -115,10 +122,13 @@ const Hero = () => {
             <div className="h-full w-full flex lg:flex-row flex-col lg:justify-center justify-start items-start overflow-hidden">
               <div className="w-full lg:w-1/2 h-2/5 lg:h-full flex flex-col justify-center items-center space-y-0">
                 <div className="h-full lg:h-[55%] w-full">
-                  <img
+                  <Image
+                    priority
                     src="/slide1childimage.png"
                     alt="Children Image"
-                    className="h-full w-full"
+                    width={1000}
+                    height={800}
+                    className="h-full w-full bg-center object-fill"
                   />
                 </div>
                 <div className="h-[45%] w-full hidden bg-[#9C0F1A] lg:flex flex-col justify-center items-center">
@@ -140,10 +150,13 @@ const Hero = () => {
                   </h1>
                 </div>
                 <div className="h-2/3 lg:h-[55%] w-full relative">
-                  <img
+                  <Image
+                    priority
                     src="/slide1child-support.png"
                     alt="Children Image"
-                    className="h-full w-full"
+                    width={1000}
+                    height={800}
+                    className="h-full w-full bg-center object-fill"
                   />
                   <div className="absolute bottom-0 -right-[28rem] w-full h-80 bg-white -rotate-45 flex flex-col space-y-3">
                     <h2 className="font-poppins font-semibold xl:text-2xl md:text-xl text-lg text-[#25A6D9] text-center rotate-45 mt-12 mr-28">

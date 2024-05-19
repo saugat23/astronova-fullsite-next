@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
 import React from "react";
+import Image from "next/image";
 
 const Startup = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div data-aos="fade-down" data-aos-duration="400" className='h-[60vh] bg-[url("/working_area/startup.png")] bg-cover flex flex-col space-y-4 justify-center items-center'>
+      <div
+        data-aos="fade-down"
+        data-aos-duration="400"
+        className='h-[60vh] bg-[url("/working_area/startup.png")] bg-cover flex flex-col space-y-4 justify-center items-center'
+      >
         <div>
-          <img
+          <Image
             src="/working_area/startup-logo.png"
-            alt=""
-            className="w-32 h-32"
+            alt="Startup Lgo"
+            width={128}
+            height={128}
           />
         </div>
         <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
@@ -18,7 +24,11 @@ const Startup = () => {
         </h3>
       </div>
       <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4 px-2">
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Introduction:
           </h4>
@@ -41,15 +51,22 @@ const Startup = () => {
             designed to propel startups from ideation to market success.
           </p>
         </div>
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Proto Money:
           </h4>
           <div className="text-[#091747] flex flex-col justify-center items-start space-y-5 font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
             <div>
-              <img
+              <Image
+                priority
                 src="/working_area/startup-proto.png"
-                alt=""
+                alt="Startup prototype image"
+                width={1152}
+                height={1200}
                 className="w-full h-auto"
               />
             </div>
@@ -73,15 +90,22 @@ const Startup = () => {
             </p>
           </div>
         </div>
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Curio Money:
           </h4>
           <div className="flex justify-center items-start space-x-4 text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
             <div className="w-2/5 h-full">
-              <img
+              <Image
+                priority
                 src="/working_area/startup-curio.png"
-                alt=""
+                alt="Startup Curio Image"
+                width={500}
+                height={500}
                 className="w-full h-auto"
               />
             </div>
@@ -96,7 +120,11 @@ const Startup = () => {
             </p>
           </div>
         </div>
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             SEED Money:
           </h4>
@@ -110,7 +138,11 @@ const Startup = () => {
             foundation for future success and scalability.
           </p>
         </div>
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             Additional Resources:
           </h4>
@@ -125,7 +157,11 @@ const Startup = () => {
             connections to potential partners and investors.
           </p>
         </div>
-        <div data-aos="fade-down" data-aos-duration="400"  className="flex flex-col justify-center items-start space-y-6">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="400"
+          className="flex flex-col justify-center items-start space-y-6"
+        >
           <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
             A Vision for Success:
           </h4>

@@ -282,10 +282,13 @@ const Partners = () => {
         className="w-full flex justify-between h-auto items-center bg-gradient-to-br from-yellow-400 to-green-900"
       >
         <div className="hidden h-full md:block md:w-1/2">
-          <img
+          <Image
+            priority
             src="/childrens.png"
             alt="Childrens Image"
-            className="h-full w-full"
+            width={1000}
+            height={1500}
+            className="h-full"
           />
         </div>
         <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 flex flex-col justify-center items-center">
@@ -295,6 +298,7 @@ const Partners = () => {
           <div>
             <Link href="mailto:info@astronovafoundation@gmail.com">
               <Image
+                priority
                 src="/mail.svg"
                 alt="Mail Image"
                 width={180}

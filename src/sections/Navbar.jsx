@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -64,9 +64,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/" && "text-[#F2CE24]"
+                  }`}
               >
                 Home
               </Link>
@@ -74,9 +73,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/about" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/about" && "text-[#F2CE24]"
+                  }`}
               >
                 About Us
               </Link>
@@ -84,9 +82,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/team"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/team" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/team" && "text-[#F2CE24]"
+                  }`}
               >
                 Our Team
               </Link>
@@ -96,9 +93,8 @@ const Navbar = () => {
                 <HoverCardTrigger>
                   <Link
                     href="/projects"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                      pathname === "/projects" && "text-[#F2CE24]"
-                    }`}
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/projects" && "text-[#F2CE24]"
+                      }`}
                   >
                     Our Project
                   </Link>
@@ -136,9 +132,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/works"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/works" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/works" && "text-[#F2CE24]"
+                  }`}
               >
                 Our Works
               </Link>
@@ -146,9 +141,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/blogs"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/blogs" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/blogs" && "text-[#F2CE24]"
+                  }`}
               >
                 Blogs & News
               </Link>
@@ -156,9 +150,8 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                  pathname === "/careers" && "text-[#F2CE24]"
-                }`}
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/careers" && "text-[#F2CE24]"
+                  }`}
               >
                 Careers
               </Link>
@@ -223,9 +216,8 @@ const Navbar = () => {
             </a>
             <Link
               href="/"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
-                pathname === "/" && "text-[#F2CE24]"
-              }`}
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/" && "text-[#F2CE24]"
+                }`}
               onClick={handleListClick}
             >
               Home
@@ -235,9 +227,8 @@ const Navbar = () => {
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
                     href="/about"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                      pathname === "/about" && "text-[#F2CE24]"
-                    }`}
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/about" && "text-[#F2CE24]"
+                      }`}
                     onClick={handleListClick}
                   >
                     About Us
@@ -246,27 +237,42 @@ const Navbar = () => {
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start space-y-4 bg-[#0052A0] py-4 mt-4">
                     <li className="px-6 md:px-10">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Vision and Mission
                       </Link>
                     </li>
                     <li className="px-6 md:px-10">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         History
                       </Link>
                     </li>
                     <li className="px-6 md:px-10">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         CVS
                       </Link>
                     </li>
                     <li className="px-6 md:px-10">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Organization Governance
                       </Link>
                     </li>
                     <li className="px-6 md:px-10">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Financial Transparency
                       </Link>
                     </li>
@@ -280,9 +286,8 @@ const Navbar = () => {
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
                     href="/team"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                      pathname === "/team" && "text-[#F2CE24]"
-                    }`}
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/team" && "text-[#F2CE24]"
+                      }`}
                     onClick={handleListClick}
                   >
                     Our Team
@@ -290,95 +295,139 @@ const Navbar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <li
-                      className="px-6 md:px-10 pb-4 text-[#FF9013]"
-                    >
+                    <li className="px-6 md:px-10 pb-4 text-[#FF9013]">
                       <Link
-                      href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         SUBSCIDIARIES
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Astro E-commerce
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50 py-2"
+                      >
                         E-Learning
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Startups
                       </Link>
                     </li>
-                    <li
-                      className="px-6 md:px-10 py-4 text-[#FF9013]"
-                    >
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         INNOVATION
                       </Link>
                     </li>
                     <li href="#" className="px-6 md:px-10  py-2">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Science and Technology
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Research and Developement
                       </Link>
                     </li>
                     <li className="px-6 md:px-10  py-2">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Startups and Enterpreneurship
                       </Link>
                     </li>
                     <li className="px-6 md:px-10  py-2">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Ventures and Seed Money
                       </Link>
                     </li>
-                    <li
-                      className="px-6 md:px-10 py-4 text-[#FF9013]"
-                    >
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2">
+                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2"
+                      >
                         INFRASTRUCTURE
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         IT Labs
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Science Museum
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Old Age School
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Inucbation and Startups
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Observatory
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Knowledge Park
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Workshop
                       </Link>
                     </li>
@@ -392,9 +441,8 @@ const Navbar = () => {
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
                     href="/projects"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${
-                      pathname === "/projects" && "text-[#F2CE24]"
-                    }`}
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/projects" && "text-[#F2CE24]"
+                      }`}
                     onClick={handleListClick}
                   >
                     Our Project
@@ -402,47 +450,67 @@ const Navbar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <li
-                      className="px-6 md:px-10 pb-4 text-[#FF9013]"
-                    >
-                      <Link href="/short_term_projects" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                    <li className="px-6 md:px-10 pb-4 text-[#FF9013]">
+                      <Link
+                        href="/short_term_projects"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         SHORT TERM PROJECTS
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Establishing Workshop Laboratory
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50 py-2">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50 py-2"
+                      >
                         Creative Cafe
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-white z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
                         Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </Link>
                     </li>
-                    <li
-                      className="px-6 md:px-10 py-4 text-[#FF9013]"
-                    >
-                      <Link href="/middle_term_projects" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                      <Link
+                        href="/middle_term_projects"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         MIDDLE TERM PROJECTS
                       </Link>
                     </li>
                     <li className="px-6 md:px-10  py-2">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Establishing Workshop Laboratory
                       </Link>
                     </li>
                     <li className="px-6 md:px-10 py-1">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Creative Cafe
                       </Link>
                     </li>
                     <li className="px-6 md:px-10  py-2">
-                      <Link href="#" classname="font-poppins font-semibold text-sm text-[#FF9013] z-50">
+                      <Link
+                        href="#"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
                         Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </Link>
                     </li>
@@ -452,9 +520,8 @@ const Navbar = () => {
             </Accordion>
             <Link
               href="/works"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
-                pathname === "/works" && "text-[#F2CE24]"
-              }`}
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/works" && "text-[#F2CE24]"
+                }`}
               onClick={handleListClick}
             >
               Our Works
@@ -462,18 +529,16 @@ const Navbar = () => {
 
             <Link
               href="/blogs"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
-                pathname === "/blogs" && "text-[#F2CE24]"
-              }`}
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/blogs" && "text-[#F2CE24]"
+                }`}
               onClick={handleListClick}
             >
               Blogs & News
             </Link>
             <Link
               href="/careers"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${
-                pathname === "/careers" && "text-[#F2CE24]"
-              }`}
+              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/careers" && "text-[#F2CE24]"
+                }`}
               onClick={handleListClick}
             >
               Careers
@@ -493,10 +558,13 @@ const Navbar = () => {
           {(onClose) => (
             <div>
               <ModalBody className="flex w-auto h-auto justify-center items-center">
-                <img
+                <Image
+                  priority
                   src="/supportmodal.png"
                   alt="Support Modal"
                   className="w-full h-auto bg-cover object-cover"
+                  width={2000}
+                  height={1200}
                 />
               </ModalBody>
             </div>
