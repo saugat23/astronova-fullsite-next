@@ -85,61 +85,61 @@ const About = () => {
             </p>
           </div>
           <div className="w-full lg:w-auto grow p-4 h-[70vh] flex justify-center items-center">
-            <div className="relative bg-transparent border-[10px] border-white rounded-full mx-auto h-3/4 w-full lg:w-[55%] z-20 my-auto flex justify-center items-center">
-              <div className="w-[50%] lg:w-[45%] h-[30%] lg:h-1/2 rounded-full bg-white flex justify-center items-center">
-                <h3 className="font-opensans font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm w-3/4 mx-auto text-center">
+            <div className="relative bg-transparent px-4 lg:px-0 border-[8px] border-white rounded-full mx-auto h-full w-3/4 z-20 my-auto flex justify-center items-center">
+              <div className="p-6 lg:p-10 rounded-full bg-white">
+                <h3 className="font-opensans rounded-full font-bold 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs w-3/4 mx-auto text-center">
                   OUR MAJOR WORKING AREA
                 </h3>
               </div>
               <Link
                 href={{ pathname: "/working_area", query: { work: "asw" } }}
-                className="absolute lg:-top-[45%] -top-[35%] translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-12 -translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/afterschool.svg"
                   alt=""
-                  width="120"
-                  height="120"
-                  className="w-20 lg:w-32"
+                  width="80"
+                  height="80"
+                  className="w-16 lg:w-24"
                 />
                 AFTER SCHOOL PROGRAM
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { work: "startup" } }}
-                className="absolute -top-[15%] lg:-top-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-40 -translate-y-1/2 left-4 lg:left-16 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/startup.svg"
                   alt=""
-                  width="100"
-                  height="100"
-                  className="w-20 lg:w-32"
+                  width="80"
+                  height="80"
+                  className="w-16 lg:w-24"
                 />
                 STARTUP & INNOVATION
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { work: "nesep" } }}
-                className="absolute -top-[15%] lg:-top-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-40 -translate-y-1/2 right-4 lg:right-16 translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/scienceexpo.svg"
                   alt=""
-                  width="120"
-                  height="120"
-                  className="w-20 lg:w-32"
+                  width="80"
+                  height="80"
+                  className="w-16 lg:w-24"
                 />
                 SCIENCE EXPO
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { field: "steam" } }}
-                className="absolute lg:bottom-[30%] bottom-1/4 translate-y-1/2 lg:left-0 left-[12%] -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-40 translate-y-1/2 left-4 lg:left-16 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/steam.svg"
                   alt=""
                   width="120"
                   height="120"
-                  className="w-20 lg:w-32"
+                  className="w-20 lg:w-28"
                 />
               </Link>
               <Link
@@ -147,20 +147,20 @@ const About = () => {
                   pathname: "/working_area",
                   query: { field: "research" },
                 }}
-                className="absolute lg:bottom-[30%] bottom-1/4 translate-y-1/2 lg:left-full left-[88%] -translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-40 translate-y-1/2 right-4 lg:right-16 translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/research.svg"
                   alt=""
                   width="80"
                   height="80"
-                  className="w-20 lg:w-32"
+                  className="w-16 lg:w-24"
                 />
                 RESEARCH & INNOVATION
               </Link>
               <Link
                 href="#"
-                className="absolute lg:-bottom-4 bottom-2 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-12 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/teachers.svg"
@@ -169,7 +169,7 @@ const About = () => {
                   height="40"
                   className="w-8 lg:w-12"
                 />
-                TEACHERS PRO DEVELOPMENT, SKILL DEVELOPMENT & SOCIAL SKILLS
+                TEACHERS PRO DEV, SKILL DEV & SOCIAL SKILLS
               </Link>
             </div>
           </div>

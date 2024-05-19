@@ -27,7 +27,7 @@ const Hero = () => {
       <section
         data-aos="fade-down"
         data-aos-duration="700"
-        className="h-[120vh] md:h-[110vh] lg:h-screen max-w-screen overflow-hidden"
+        className="h-[120vh] max-w-screen overflow-hidden"
       >
         <Carousel
           data-aos="fade-up"
@@ -66,16 +66,16 @@ const Hero = () => {
                     KEY Assistance
                   </h2>
                   <div className="flex justify-center items-center lg:space-x-8 space-x-3 mt-6 -mb-8">
-                    <div className="w-24 h-24 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center">
+                    <div className="lg:w-24 w-20 lg:h-24 h-20 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center text-sm lg:text-base">
                       Curio Money
                     </div>
-                    <div className="w-24 h-24 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center">
+                    <div className="lg:w-24 w-20 lg:h-24 h-20 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center text-sm lg:text-base">
                       Proto Money
                     </div>
-                    <div className="w-24 h-24 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center">
+                    <div className="lg:w-24 w-20 lg:h-24 h-20 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center text-sm lg:text-base">
                       Seed Money
                     </div>
-                    <div className="w-24 h-24 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center">
+                    <div className="lg:w-24 w-20 lg:h-24 h-20 bg-white p-6 rounded-full font-semibold flex justify-center items-center text-center text-sm lg:text-base">
                       Idea Validation
                     </div>
                   </div>
@@ -128,7 +128,7 @@ const Hero = () => {
                     alt="Children Image"
                     width={1000}
                     height={800}
-                    className="h-full w-full bg-center object-fill"
+                    className="h-full w-full bg-cover"
                   />
                 </div>
                 <div className="h-[45%] w-full hidden bg-[#9C0F1A] lg:flex flex-col justify-center items-center">
@@ -156,7 +156,7 @@ const Hero = () => {
                     alt="Children Image"
                     width={1000}
                     height={800}
-                    className="h-full w-full bg-center object-fill"
+                    className="h-full w-full bg-cover"
                   />
                   <div className="absolute bottom-0 -right-[28rem] w-full h-80 bg-white -rotate-45 flex flex-col space-y-3">
                     <h2 className="font-poppins font-semibold xl:text-2xl md:text-xl text-lg text-[#25A6D9] text-center rotate-45 mt-12 mr-28">
