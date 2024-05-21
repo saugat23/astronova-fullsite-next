@@ -72,28 +72,28 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="xl:py-8 bg-[#D9D9D9] md:mt-8 mt-4 py-4"
+        className="xl:py-8 py-3 bg-[#D9D9D9] md:mt-8 mt-4 h-[85vh] md:h-[90vh] xl:h-[70vh] my-auto"
       >
-        <div className="flex md:flex-row flex-col justify-between items-center bg-[#D9D9D94D] mx-auto w-full md:w-[90%] xl:w-[80%]">
-          <div className="w-full md:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-4 border-[#DB8114]">
+        <div className="flex h-full lg:flex-row flex-col justify-between space-y-3 lg:space-y-0 items-center bg-[#D9D9D94D] mx-auto w-full max-w-7xl px-4">
+          <div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-4 border-[#DB8114]">
             <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
               OUR MAJOR WORKING AREA
             </h3>
-            <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-black text-center">
+            <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-black text-left">
               We are actively involving various working area. However, our major
               focusing working area are as below.
             </p>
           </div>
-          <div className="w-full lg:w-auto grow p-4 h-[70vh] flex justify-center items-center">
-            <div className="relative bg-transparent px-4 lg:px-0 border-[8px] border-white rounded-full mx-auto h-full w-3/4 z-20 my-auto flex justify-center items-center">
-              <div className="p-6 lg:p-10 rounded-full bg-white">
+          <div className="w-full lg:w-auto grow p-4  flex justify-center items-center">
+            <div className="relative bg-transparent px-4 lg:py-10 lg:px-6 border-[8px] border-white rounded-full mx-auto h-full sm:h-3/4 w-full sm:w-3/4 z-20 my-auto flex justify-center items-center">
+              <div className="p-6 lg:p-9 rounded-full bg-white">
                 <h3 className="font-opensans rounded-full font-bold 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs w-3/4 mx-auto text-center">
                   OUR MAJOR WORKING AREA
                 </h3>
               </div>
               <Link
                 href={{ pathname: "/working_area", query: { work: "asw" } }}
-                className="absolute top-12 -translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-12 lg:-top-14 -translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/afterschool.svg"
@@ -106,7 +106,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { work: "startup" } }}
-                className="absolute top-40 -translate-y-1/2 left-4 lg:left-16 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-32 lg:-top-8 -translate-y-1/2 left-6 -translate-x-1/2 h-auto w-[35%] bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/startup.svg"
@@ -119,7 +119,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { work: "nesep" } }}
-                className="absolute top-40 -translate-y-1/2 right-4 lg:right-16 translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute top-32 lg:-top-8 -translate-y-1/2 right-6 translate-x-1/2 h-auto w-[35%] bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/scienceexpo.svg"
@@ -132,7 +132,7 @@ const About = () => {
               </Link>
               <Link
                 href={{ pathname: "/working_area", query: { field: "steam" } }}
-                className="absolute bottom-40 translate-y-1/2 left-4 lg:left-16 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-32 lg:-bottom-8 translate-y-1/2 left-6 -translate-x-1/2 h-auto w-[35%] bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/steam.svg"
@@ -147,7 +147,7 @@ const About = () => {
                   pathname: "/working_area",
                   query: { field: "research" },
                 }}
-                className="absolute bottom-40 translate-y-1/2 right-4 lg:right-16 translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-32 lg:-bottom-8 translate-y-1/2 right-6 translate-x-1/2 h-auto w-[35%] bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/research.svg"
@@ -160,7 +160,7 @@ const About = () => {
               </Link>
               <Link
                 href="#"
-                className="absolute bottom-12 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                className="absolute bottom-12 lg:-bottom-14 translate-y-1/2 left-1/2 -translate-x-1/2 h-auto w-[35%] bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
               >
                 <Image
                   src="/assets/teachers.svg"
