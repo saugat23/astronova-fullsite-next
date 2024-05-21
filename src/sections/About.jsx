@@ -175,7 +175,7 @@ const About = () => {
           </div> */}
 
           <div className="w-full lg:w-auto grow p-4 flex">
-            <div className="p-auto w-[40rem] h-[28rem] md:h-[34rem] lg:h-[40rem] border-5 border-white rounded-full mx-auto z-20 my-auto flex flex-col">
+            <div className="p-auto w-[40rem] h-[28rem] md:h-[34rem] lg:h-[40rem] border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
               <div className="justify-self-start self-center h-auto w-[30%] ">
                 <Link
                   href={{ pathname: "/working_area", query: { work: "asw" } }}
@@ -245,14 +245,14 @@ const About = () => {
                   TEACHERS PRO DEVELOPMENT, SKILL DEVELOPMENT & SOCIAL SKILLS
                 </Link>
               </div>
-              <div className="flex w-full justify-between items-center justify-self-end -mt-6 md:-mt-0 lg:-mt-4">
+              <div className="flex w-full justify-evenly items-center justify-self-end md:mt-6 mt-6">
                 <div className="justify-self-end self-start h-auto w-[30%]">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { field: "steam" },
                     }}
-                    className="bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                    className="bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white px-4 py-6"
                   >
                     <Image
                       src="/assets/steam.svg"
