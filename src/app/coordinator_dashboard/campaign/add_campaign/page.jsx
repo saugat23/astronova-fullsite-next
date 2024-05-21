@@ -1,136 +1,51 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { HiMiniCurrencyRupee } from "react-icons/hi2";
 import { useRouter } from "next/navigation";
 import { createCampaign } from "../../../services/api";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-// import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-// import { storage } from "@/app/firebase";
-import Link from "next/link";
+import { toast } from "sonner";
+import Loader from "../../../../components/UI/Loader/Loader";
 
 const Page = () => {
-
-  const [imagefeatureUpload, setImagefeatureUpload] = useState(null);
-    const [imagegalleryUpload1, setImagegalleryUpload1] = useState(null);
-    const [imagegalleryUpload2, setImagegalleryUpload2] = useState(null);
-    const [imagegalleryUpload3, setImagegalleryUpload3] = useState(null);
-    const [imagegalleryUpload4, setImagegalleryUpload4] = useState(null);
-    const [videoUpload, setVideoUpload] = useState(null);
-    const [loading, setLoading] = useState(false);
-
-    const [formData, setFormData] = useState({
-      coordinator_id: 12,
-      title: '',
-      short_description: '',
-      department: '',
-      target_fund_dollars: null,
-      target_fund_rupees: null,
-      start_date: '',
-      end_date: '',
-      long_description: '',
-      featured_image: '',
-      gallery_images: [],
-      video: '', 
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    title: "",
+    sub_title: "",
+    department: "",
+    national_fund: "",
+    international_fund: "",
+    achieved: "",
+    percentage: "",
+    start_date: "",
+    end_date: "",
+    description: "",
+    featured_img: "",
+    gallery: [],
+    video: "",
   });
 
-  useEffect(() => {
-    const uploadFile = async (file, fileType) => {
-      if (!file) return;
-
-      const fileRef = ref(storage, `campaign/${file.name}`);
-
-      try {
-        await uploadBytes(fileRef, file);
-        const url = await getDownloadURL(fileRef);
-
-        setFormData((prevData) => ({
-          ...prevData,
-          [fileType]: url,
-        }));
-      } catch (error) {
-        console.error("Error uploading file:", error);
-      }
-    };
-
-    uploadFile(imagefeatureUpload, "featured_image");
-    uploadFile(videoUpload, "video");
-  }, [imagefeatureUpload, videoUpload]);
-
-  const uploadFilegallery1 = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
-    if (!imagegalleryUpload1) return;
-
-    const imageRef = ref(storage, `campaign/${imagegalleryUpload1.name}`);
-
-    uploadBytes(imageRef, imagegalleryUpload1).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        console.log(url);
-        setFormData((prevData) => ({
-          ...prevData,
-          gallery_images: [...prevData.gallery_images, url],
-        }));
-      });
-    });
-  };
-  const uploadFilegallery2 = (e) => {
-    e.preventDefault();
-    if (!imagegalleryUpload2) return;
-
-    const imageRef = ref(storage, `campaign/${imagegalleryUpload2.name}`);
-
-    uploadBytes(imageRef, imagegalleryUpload2).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        console.log(url);
-        setFormData((prevData) => ({
-          ...prevData,
-          gallery_images: [...prevData.gallery_images, url],
-        }));
-      });
-    });
-  };
-  const uploadFilegallery3 = (e) => {
-    e.preventDefault();
-    if (!imagegalleryUpload3) return;
-
-    const imageRef = ref(storage, `campaign/${imagegalleryUpload3.name}`);
-
-    uploadBytes(imageRef, imagegalleryUpload3).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        console.log(url);
-        setFormData((prevData) => ({
-          ...prevData,
-          gallery_images: [...prevData.gallery_images, url],
-        }));
-      });
-    });
-  };
-  const uploadFilegallery4 = (e) => {
-    e.preventDefault();
-    if (!imagegalleryUpload4) return;
-
-    // const imageRef = ref(storage, `campaign/${imagegalleryUpload4.name}`);
-
-    // uploadBytes(imageRef, imagegalleryUpload4).then((snapshot) => {
-    //   getDownloadURL(snapshot.ref).then((url) => {
-    //     console.log(url);
-    //     setFormData((prevData) => ({
-    //       ...prevData,
-    //       gallery_images: [...prevData.gallery_images, url],
-    //     }));
-    //   });
-    // });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleInputChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
+  const handleFeaturedImageChange = (e) => {
+    const file = e.target.files[0]; // Get the single file from the input
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      featured_img: file,
     }));
+  };
+
+  const handleGalleryImageChange = (e, index) => {
+    const file = e.target.files[0]; // Get the single file from the input
+    setFormData((prevData) => {
+      const newGalleryImages = [...prevData.gallery];
+      newGalleryImages[index] = file; // Update the specific index with the new file
+      return { ...prevData, gallery: newGalleryImages };
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -141,21 +56,13 @@ const Page = () => {
       const response = await createCampaign(formData);
       console.log("response", response);
 
-      toast.success("Campaign created successfully!", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 5000,
-        hideProgressBar: false,
-      });
+      toast.success("Campaign created successfully!");
       setTimeout(() => {
         window.history.back();
       }, 5000);
     } catch (error) {
       console.error("Error:", error);
-      toast.error("Error creating campaign. Please try again!", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 5000,
-        hideProgressBar: false,
-      });
+      toast.error("Error creating campaign. Please try again!");
     } finally {
       setLoading(false);
     }
@@ -163,297 +70,342 @@ const Page = () => {
 
   const router = useRouter();
   return (
-    <section className="p-6 h-auto">
-      <div className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg">
-        <div className="w-[20%] justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
-          <div>
-            <h3 className="font-poppins font-semibold lg:text-xl">
-              Basic Information
-            </h3>
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3 lg:py-4">
-            <label
-              htmlFor="campaignTitle"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Campaign&apos;s Title
-            </label>
-            <input
-              type="text"
-              name="campaignTitle"
-              id="campaignTitle"
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
-              placeholder="Campaign's Title"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="campaignSubTitle"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Campaign&apos;s Sub Title
-            </label>
-            <textarea
-              name="campaignTitle"
-              id="campaignTitle"
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full resize-none h-20"
-              placeholder="Campaign's Sub Title"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="campaignVideo"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Campaign&apos;s Video
-            </label>
-            <input
-              type="text"
-              name="campaignVideo"
-              id="campaignVideo"
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
-              placeholder="URL"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="campaignDepartment"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              For Department
-            </label>
-            <select
-              type="text"
-              name="campaignVideo"
-              id="campaignVideo"
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
-              placeholder="URL"
-            >
-              <option value="subsidiaries">Subsidiaries</option>
-              <option value="innovation">Innovation</option>
-              <option value="infrastructure">Infrastructure</option>
-            </select>
-          </div>
-        </div>
-        <div className="grow justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-6">
-          <div>
-            <h3 className="font-poppins font-semibold lg:text-xl">
-              Funding Information
-            </h3>
-          </div>
-          <div className="w-[80%] flex flex-col justify-center items-start space-y-4">
-            <div className="border-dashed border-[#e0d8ff99] w-full h-60 py-6">
-              <label
-                htmlFor="campaignFeaturePhoto"
-                className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
-              >
+    <>
+      <section className="p-6 h-auto">
+        <div>
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg"
+          >
+            <div className="w-[30%] justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
+              <div>
+                <h3 className="font-poppins font-semibold lg:text-xl">
+                  Basic Information
+                </h3>
+              </div>
+              <div className="w-full flex flex-col justify-center items-start space-y-3 lg:py-4">
+                <label
+                  htmlFor="title"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                >
+                  Campaign&apos;s Title
+                </label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
+                  placeholder="Campaign's Title"
+                  onChange={handleChange}
+                  value={formData.title}
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center items-start space-y-3">
+                <label
+                  htmlFor="sub_title"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                >
+                  Campaign&apos;s Sub Title
+                </label>
+                <textarea
+                  name="sub_title"
+                  id="sub_title"
+                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full resize-none h-20"
+                  placeholder="Campaign's Sub Title"
+                  onChange={handleChange}
+                  value={formData.sub_title}
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center items-start space-y-3">
+                <label
+                  htmlFor="video"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                >
+                  Campaign&apos;s Video
+                </label>
+                <input
+                  type="text"
+                  name="video"
+                  id="video"
+                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                  placeholder="Youtube URL"
+                  onChange={handleChange}
+                  value={formData.video}
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center items-start space-y-3">
+                <label
+                  htmlFor="department"
+                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                >
+                  For Department
+                </label>
+                <select
+                  name="department"
+                  id="department"
+                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                  placeholder="URL"
+                  onChange={handleChange}
+                  value={formData.department}
+                >
+                  <option value="subsidiaries">Subsidiaries</option>
+                  <option value="innovation">Innovation</option>
+                  <option value="infrastructure">Infrastructure</option>
+                </select>
+              </div>
+            </div>
+            <div className="grow justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-6">
+              <div>
+                <h3 className="font-poppins font-semibold lg:text-xl">
+                  Funding Information
+                </h3>
+              </div>
+              <div className="w-[80%] flex flex-col justify-center items-start space-y-4">
+                <div className="border-dashed border-[#e0d8ff99] w-full h-60 py-6">
+                  <label
+                    htmlFor="featured_img"
+                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                  >
+                    Add Featured Image
+                  </label>
+                  <input
+                    type="file"
+                    name="featured_img"
+                    id="featured_img"
+                    className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible "
+                    placeholder=""
+                    onChange={handleFeaturedImageChange}
+                  />
+                </div>
+                <div className="w-full flex justify-center items-center space-x-6 border-dashed border-[#e0d8ff99]">
+                  <div className="w-1/4">
+                    <label
+                      htmlFor="newGalleryImages0"
+                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                    >
+                      Image 1
+                    </label>
+                    <input
+                      type="file"
+                      name="newGalleryImages0"
+                      id="newGalleryImages0"
+                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      placeholder=""
+                      onChange={(e) => handleGalleryImageChange(e, 0)}
+                    />
+                  </div>
+                  <div className="w-1/4">
+                    <label
+                      htmlFor="newGalleryImages1"
+                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                    >
+                      Image 2
+                    </label>
+                    <input
+                      type="file"
+                      name="newGalleryImages1"
+                      id="newGalleryImages1"
+                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      placeholder=""
+                      onChange={(e) => handleGalleryImageChange(e, 1)}
+                    />
+                  </div>
+                  <div className="w-1/4">
+                    <label
+                      htmlFor="newGalleryImages2"
+                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                    >
+                      Image 3
+                    </label>
+                    <input
+                      type="file"
+                      name="newGalleryImages2"
+                      id="newGalleryImages2"
+                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      placeholder=""
+                      onChange={(e) => handleGalleryImageChange(e, 2)}
+                    />
+                  </div>
+                  <div className="w-1/4">
+                    <label
+                      htmlFor="newGalleryImages3"
+                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                    >
+                      Image 4
+                    </label>
+                    <input
+                      type="file"
+                      name="newGalleryImages3"
+                      id="newGalleryImages3"
+                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      placeholder=""
+                      onChange={(e) => handleGalleryImageChange(e, 3)}
+                    />
+                  </div>
+                </div>
+                <div className="w-full flex justify-between items-start">
+                  <div className="flex flex-col justify-center items-start space-y-4">
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="international_fund"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        International Fund
+                      </label>
+                      <Input
+                        startContent={
+                          <BiSolidDollarCircle className="text-[#5C74FF]" />
+                        }
+                        id="international_fund"
+                        variant="faded"
+                        name="international_fund"
+                        placeholder="5,000,000"
+                        className="w-full"
+                        onChange={handleChange}
+                        value={formData.international_fund}
+                      />
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="achieved"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        Achieved
+                      </label>
+                      <Input
+                        type="text"
+                        id="achieved"
+                        name="achieved"
+                        variant="faded"
+                        placeholder="5,000,00"
+                        className="text-[#0000008c] w-full"
+                        onChange={handleChange}
+                        value={formData.achieved}
+                      />
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="start_date"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        Choose Start Date
+                      </label>
+                      <Input
+                        type="date"
+                        id="start_date"
+                        name="start_date"
+                        variant="faded"
+                        className="text-[#0000008c] w-full"
+                        onChange={handleChange}
+                        value={formData.start_date}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-start space-y-4">
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="national_fund"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        National Fund
+                      </label>
+                      <Input
+                        startContent={
+                          <HiMiniCurrencyRupee className="text-[#5C74FF]" />
+                        }
+                        id="national_fund"
+                        name="national_fund"
+                        variant="faded"
+                        placeholder="50,00,000"
+                        className="w-full"
+                        onChange={handleChange}
+                        value={formData.national_fund}
+                      />
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="percentage"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        Percentage
+                      </label>
+                      <Input
+                        type="text"
+                        id="percentage"
+                        name="percentage"
+                        variant="faded"
+                        placeholder="25%"
+                        className="w-full"
+                        onChange={handleChange}
+                        value={formData.percentage}
+                      />
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                      <label
+                        htmlFor="end_date"
+                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      >
+                        Choose End Date
+                      </label>
+                      <Input
+                        type="date"
+                        id="end_date"
+                        name="end_date"
+                        variant="faded"
+                        className="w-full"
+                        onChange={handleChange}
+                        value={formData.end_date}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="w-[80%] flex flex-col justify-center items-start space-y-3">
+                  <label
+                    htmlFor="description"
+                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                  >
+                    Description
+                  </label>
+                  <Textarea
+                    name="description"
+                    id="description"
+                    placeholder="Enter your description"
+                    className="max-w-md w-full my-4"
+                    onChange={handleChange}
+                    value={formData.description}
+                  />
+                </div>
+                <div className="flex justify-start items-center">
+                  <button
+                    type="submit"
+                    className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                  >
+                    {loading ? (
+                      <div className=" flex gap-4 items-center justify-center">
+                        <p>Submitting...</p> <Loader />
+                      </div>
+                    ) : (
+                      "Submit"
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="w-[20%] flex flex-col justify-start items-end justify-self-end">
+              <div className="h-40">
                 <button
                   type="button"
-                  className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
+                  className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                  onClick={() => router.back()}
                 >
-                  Add Featured Image
+                  Go Back
                 </button>
-              </label>
-              <input
-                type="file"
-                name="campaignFeaturePhoto"
-                id="campaignFeaturePhoto"
-                className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                placeholder=""
-              />
-            </div>
-            <div className="w-full flex justify-center items-center space-x-6 border-dashed border-[#e0d8ff99]">
-              <div className="w-1/4">
-                <label
-                  htmlFor="campaignGallery1"
-                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
-                >
-                  <button
-                    type="button"
-                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
-                  >
-                    Image 1
-                  </button>
-                </label>
-                <input
-                  type="file"
-                  name="campaignGallery1"
-                  id="campaignGallery1"
-                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                  placeholder=""
-                />
-              </div>
-              <div className="w-1/4">
-                <label
-                  htmlFor="campaignGallery2"
-                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
-                >
-                  <button
-                    type="button"
-                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
-                  >
-                    Image 2
-                  </button>
-                </label>
-                <input
-                  type="file"
-                  name="campaignGallery2"
-                  id="campaignGallery2"
-                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                  placeholder=""
-                />
-              </div>
-              <div className="w-1/4">
-                <label
-                  htmlFor="campaignGallery3"
-                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
-                >
-                  <button
-                    type="button"
-                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
-                  >
-                    Image 3
-                  </button>
-                </label>
-                <input
-                  type="file"
-                  name="campaignGallery3"
-                  id="campaignGallery3"
-                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                  placeholder=""
-                />
-              </div>
-              <div className="w-1/4">
-                <label
-                  htmlFor="campaignGallery4"
-                  className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center"
-                >
-                  <button
-                    type="button"
-                    className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
-                  >
-                    Image 4
-                  </button>
-                </label>
-                <input
-                  type="file"
-                  name="campaignGallery4"
-                  id="campaignGallery4"
-                  className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                  placeholder=""
-                />
               </div>
             </div>
-            <div className="w-full flex justify-between items-start">
-              <div className="flex flex-col justify-center items-start space-y-4">
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
-                  <label
-                    htmlFor="fundInDollars"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-                  >
-                    Target Fundraising in Dollars
-                  </label>
-                  <Input
-                    startContent={
-                      <BiSolidDollarCircle className="text-[#5C74FF]" />
-                    }
-                    autoFocus
-                    variant="faded"
-                    name="fundInDollars"
-                    placeholder="5,000,000"
-                    className="w-full"
-                  />
-                </div>
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
-                  <label
-                    htmlFor="startDate"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-                  >
-                    Choose Start Date
-                  </label>
-                  <Input
-                    type="date"
-                    autoFocus
-                    name="startDate"
-                    variant="faded"
-                    placeholder="5,000,000"
-                    className="text-[#0000008c] w-full"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col justify-center items-start space-y-4">
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
-                  <label
-                    htmlFor="fundInRupees"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-                  >
-                    Target Fundraising in Rupees
-                  </label>
-                  <Input
-                    startContent={
-                      <HiMiniCurrencyRupee className="text-[#5C74FF]" />
-                    }
-                    autoFocus
-                    name="fundInRupees"
-                    variant="faded"
-                    placeholder="50,00,000"
-                    className="w-full"
-                  />
-                </div>
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
-                  <label
-                    htmlFor="endDate"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-                  >
-                    Choose End Date
-                  </label>
-                  <Input
-                    type="date"
-                    autoFocus
-                    name="endDate"
-                    variant="faded"
-                    placeholder="50,00,000"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="w-[80%] flex flex-col justify-center items-start space-y-3">
-              <label
-                htmlFor="fundDesc"
-                className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-              >
-                Description
-              </label>
-              <Textarea
-                name="fundDesc"
-                placeholder="Enter your description"
-                className="max-w-md w-full my-4"
-              />
-            </div>
-            <div className="flex justify-start items-center">
-              <button
-                type="submit"
-                className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
-        <div className="w-[20%] flex flex-col justify-start items-center justify-self-end">
-          <div className="h-40">
-            <button
-              type="button"
-              className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              onClick={() => router.back()}
-            >
-              Go Back
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
