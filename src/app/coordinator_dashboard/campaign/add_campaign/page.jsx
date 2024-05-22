@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { HiMiniCurrencyRupee } from "react-icons/hi2";
@@ -51,9 +51,40 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // Create a new FormData object
+    const formDataToSend = new FormData();
+    formDataToSend.append("title", formData.title);
+    formDataToSend.append("sub_title", formData.sub_title);
+    formDataToSend.append("department", formData.department);
+    formDataToSend.append("description", formData.description);
+    formDataToSend.append("video", formData.video);
+    formDataToSend.append("national_fund", formData.national_fund);
+    formDataToSend.append("international_fund", formData.international_fund);
+    formDataToSend.append("achieved", formData.achieved);
+    formDataToSend.append("percentage", formData.percentage);
+    formDataToSend.append("start_date", formData.start_date);
+    formDataToSend.append("end_date", formData.end_date);
+
+    // Append the featured image file
+    if (formData.featured_img) {
+      formDataToSend.append("featured_img", formData.featured_img);
+    }
+
+    // Append the gallery images
+    formData.gallery.forEach((file) => {
+      if (file) {
+        formDataToSend.append("gallery", file);
+      }
+    });
+
+    // Debugging: Log FormData entries
+    for (let [key, value] of formDataToSend.entries()) {
+      console.log(key, value);
+    }
+
     try {
-      console.log(formData);
-      const response = await createCampaign(formData);
+      const response = await createCampaign(formDataToSend); // Use formDataToSend here
       console.log("response", response);
 
       toast.success("Campaign created successfully!");
