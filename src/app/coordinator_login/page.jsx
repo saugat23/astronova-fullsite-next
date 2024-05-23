@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../../../public/logo.png";
 import Image from "next/image";
 import { BiShow, BiHide } from "react-icons/bi";
@@ -33,12 +33,16 @@ const Page = () => {
       Cookies.set("token_coordinator", response.token, { expires: 7 });
       router.push("/coordinator_dashboard/dashboard");
     } catch (error) {
-      toast.error("Error Occured, Please try again!");
+      toast.error("Email and Password didn't match! Please try again.");
       console.error("Invalid email or password", error);
     } finally {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    toast.info("You must Login to use the Dashboard!!");
+  }, []);
 
   return (
     <>

@@ -6,86 +6,104 @@ import { Progress } from "@nextui-org/react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import CampaignDonationContainer from "./CampaignDonationContainer";
 import CampaignTopDonor from "./CampaignTopDonor";
-import SupportStudentPNG from "../../../../../public/supportstudents.png"
+import SupportStudentPNG from "../../../../../public/supportstudents.png";
 import Logo from "../../../../../public/assets/logo.png";
 import DonationCampaign from "../../../../../public/assets/donation-campaign-donation.svg";
 
-const CampaignById = ({ id }) => {
-  const campaignId = id;
-  console.log(campaignId);
-
-  const [campaign, setCampaign] = useState({});
-  const [showMore, setShowMore] = useState(false);
+const CampaignById = (id) => {
+  console.log(typeof id);
+  const [campaign, setCampaign] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCampaign = async () => {
       try {
-        const campaignData = await getCampaignById(campaignId);
-        setCampaign(campaignData);
+        const data = await getCampaignById(id);
+        setCampaign(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
-  }, []);
+    fetchCampaign();
+  }, [id]);
 
   function handleShowMore() {
     setShowMore(!showMore);
   }
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!campaign) {
+    return <div>No campaign data available.</div>;
+  }
+
   console.log(campaign);
   return (
     <section className="h-auto max-w-screen overflow-hidden xl:pt-12 lg:pt-10 pt-8 mx-auto w-[70%]">
-      <div data-aos="fade-up" data-aos-duration="400" className="flex flex-col justify-center items-start space-y-4 2xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:py-8 py-6">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="flex flex-col justify-center items-start space-y-4 2xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:py-8 py-6"
+      >
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
-          {/* {campaign.title} */}
-          Tinkering Labs Project
+          {campaign.title}
         </h3>
         <p className="font-opensans font-semibold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-[#1e598a]">
-          Step into the world of Tinkering Labs, where creativity knows no
-          bounds! Our tinkering spaces are designed to ignite curiosity, foster
-          innovation, and unleash the imagination of learners of all ages. Join
-          us in the joy of hands-on exploration and discover the thrill of
-          turning ideas into reality.
+          {showMore
+            ? `${campaign.description}`
+            : `${campaign.description?.substr(0, 100)} ...`}
         </p>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="flex justify-around items-start xl:space-x-12 py-4 mx-auto w-[90%] h-auto">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="flex justify-around items-start xl:space-x-12 py-4 mx-auto w-[90%] h-auto"
+      >
         <div className="flex flex-col justify-center items-start space-y-6 w-3/4 h-auto">
           <div className="w-full flex justify-center items-center">
             <Image
-              src={SupportStudentPNG}
+              src={campaign.featured_img}
               alt=""
-              width={200}
-              height={180}
+              width={500}
+              height={400}
               className="w-full h-96"
             />
           </div>
           <div className="w-full flex justify-stretch items-center space-x-4">
             <Image
-              src={SupportStudentPNG}
+              src={campaign?.gallery[0]}
               alt=""
               width={100}
               height={80}
               className="w-1/4 h-full"
             />
             <Image
-              src={SupportStudentPNG}
+              src={campaign?.gallery[1]}
               alt=""
               width={100}
               height={80}
               className="w-1/4 h-full"
             />
             <Image
-              src={SupportStudentPNG}
+              src={campaign?.gallery[2]}
               alt=""
               width={100}
               height={80}
               className="w-1/4 h-full"
             />
             <Image
-              src={SupportStudentPNG}
+              src={campaign?.gallery[3]}
               alt=""
               width={100}
               height={80}
@@ -124,7 +142,11 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-start space-y-8">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="xl:py-8 flex flex-col justify-center items-start space-y-8"
+      >
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Why This Campaign?
         </h3>
@@ -166,7 +188,11 @@ const CampaignById = ({ id }) => {
         </button>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+      >
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Watch this Story
         </h3>
@@ -183,7 +209,11 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+      >
         <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           Donate and get Rewards!
         </h3>
@@ -219,7 +249,11 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 w-full flex justify-between items-start space-x-4">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="xl:py-8 w-full flex justify-between items-start space-x-4"
+      >
         <div className="w-1/2 flex flex-col justify-center items-center space-y-6">
           <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
             Organizer
@@ -280,7 +314,11 @@ const CampaignById = ({ id }) => {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="400" className="xl:py-8 flex flex-col justify-center items-center space-y-8">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="400"
+        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+      >
         <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
           What our Donor Says
         </h3>

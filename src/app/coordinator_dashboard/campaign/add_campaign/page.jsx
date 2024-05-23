@@ -179,9 +179,9 @@ const Page = () => {
                   onChange={handleChange}
                   value={formData.department}
                 >
-                  <option value="subsidiaries">Subsidiaries</option>
-                  <option value="innovation">Innovation</option>
-                  <option value="infrastructure">Infrastructure</option>
+                  <option value="Subsidiaries">Subsidiaries</option>
+                  <option value="Innovation">Innovation</option>
+                  <option value="Infrastructure">Infrastructure</option>
                 </select>
               </div>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { getAllEvents } from "../../../app/services/api";
+import { getAllWorks } from "../../../app/services/api";
 import {
   Carousel,
   CarouselContent,
@@ -12,15 +12,14 @@ import {
 import Image from "next/image";
 
 const Works = () => {
-  const [events, setEvents] = useState([]);
+  const [works, setWorks] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await getAllEvents();
-        // setEvents(response.events);
-        // console.log(response);
-        // console.log(events);
+        const response = await getAllWorks();
+        setWorks(response.works);
+        console.log(response);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -98,18 +97,39 @@ const Works = () => {
               }}
               className="w-full px-12"
             >
-              {/* {events.map((event) => {
-                return ( */}
               <CarouselContent>
-                <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
-                  {/* <div className="h-1/2"><img src={event.image} alt={event.title} className="w-full h-full" /></div>
-                    <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">{event.title}</h2>
-                    <div className="flex justify-center items-center w-full">
-                        <button type="button" className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg">
-                        <Link href={`/works/details_page/${event.event_id}`}>SEE MORE</Link>
+                {works.map((work) => {
+                  return (
+                    <CarouselItem
+                      key={work.id}
+                      className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3"
+                    >
+                      <div className="h-1/2">
+                        <Image
+                          src={work.cover_img}
+                          alt={work.title}
+                          className="w-full h-full"
+                          width={400}
+                          height={450}
+                        />
+                      </div>
+                      <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
+                        {work.title}
+                      </h2>
+                      <div className="flex justify-center items-center w-full">
+                        <button
+                          type="button"
+                          className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
+                        >
+                          <Link
+                            href={`/work_details_page/${work.id}`}
+                            target="_blank"
+                          >
+                            SEE MORE
+                          </Link>
                         </button>
-                    </div> */}
-                  <div className="h-1/2">
+                      </div>
+                      {/*<div className="h-1/2">
                     <Image
                       priority
                       src="/supportstudents.png"
@@ -214,13 +234,13 @@ const Works = () => {
                     >
                       <Link href={`/works/details_page/1`}>SEE MORE</Link>
                     </button>
-                  </div>
-                </CarouselItem>
+                  </div> */}
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
               <CarouselPrevious className="ml-12" />
               <CarouselNext className="mr-12" />
-              {/* ); */}
-              {/* })} */}
             </Carousel>
           </div>
         </div>

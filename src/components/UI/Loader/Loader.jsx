@@ -1,7 +1,11 @@
 import React from "react";
 
 function Loader() {
-  return <div className="loader"></div>;
+  return (
+    <div className="h-full mx-auto">
+      <div className="loader"></div>
+    </div>
+  );
 }
 
 export default Loader;

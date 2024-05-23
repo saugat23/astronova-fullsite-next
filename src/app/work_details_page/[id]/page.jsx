@@ -1,31 +1,29 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
+import Loader from "../../../components/UI/Loader/Loader";
 
-const CampaignById = dynamic(
-  () => import("../../../components/UI/Dashboard/CampaignById/CampaignById"),
+const WorkById = dynamic(
+  () => import("../../../components/UI/Works/WorkById/WorkById"),
   {
-    loading: () => <p>Loading...</p>,
+    loading: () => <p> </p>,
   },
 );
 
 const Navbar = dynamic(() => import("../../../sections/Navbar"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <p> </p>,
 });
 
 const Footer = dynamic(() => import("../../../sections/Footer"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <p> </p>,
 });
 
 const Page = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  if (!router.isReady) {
-    return <div>Loading...</div>;
-  }
+  const pathname = usePathname();
+  const id = pathname;
+  console.log(pathname);
 
   if (!id) {
     return <div>Error: ID not found</div>;
@@ -35,7 +33,7 @@ const Page = () => {
     <>
       <Navbar />
       <div className="bg-[#f6f6f6]">
-        <CampaignById id={id} />
+        <WorkById id={id} />
       </div>
       <Footer />
     </>

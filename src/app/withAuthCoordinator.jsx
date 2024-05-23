@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import { toast } from "sonner";
 
 const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
@@ -12,6 +13,7 @@ const withAuth = (WrappedComponent) => {
 
       if (!token) {
         router.push("/coordinator_login");
+        toast.error("You have to Login to access Dashboard!")
       }
     });
 

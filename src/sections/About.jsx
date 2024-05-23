@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import SupportStudent from "../components/UI/SupportStudent";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllCampaign } from "../app/services/api";
+import Skeleton from "../components/ui/skeleton";
+import { getAllCampaigns } from "../app/services/api";
 import {
   Carousel,
   CarouselContent,
@@ -14,14 +15,18 @@ import {
 
 const About = () => {
   const [campaigns, setCampaigns] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
-        const response = await getAllCampaign();
-        setCampaigns(response);
+        const response = await getAllCampaigns();
+        setCampaigns(response.campaigns);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -290,30 +295,58 @@ const About = () => {
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
           SUPPORT FOR STUDENTS
         </h3>
-        <div className="mt-4 w-full">
+        {loading && (
+          <div className="mt-4 w-full py-4 flex space-x-3 h-[60vh]">
+            <div className="h-full flex flex-col justify-center items-center">
+              <Skeleton className="h-1/2 w-full"></Skeleton>
+              <div className="h-1/2 flex flex-col">
+                <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <Skeleton className="h-1/2 w-full"></Skeleton>
+                <Skeleton className="h-1/4 w-3/4"></Skeleton>
+              </div>
+            </div>
+            <div className="h-full hidden sm:flex flex-col justify-center items-center">
+              <Skeleton className="h-1/2 w-full"></Skeleton>
+              <div className="h-1/2 flex flex-col">
+                <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <Skeleton className="h-1/2 w-full"></Skeleton>
+                <Skeleton className="h-1/4 w-3/4"></Skeleton>
+              </div>
+            </div>
+            <div className="h-full hidden xl:flex flex-col justify-center items-center">
+              <Skeleton className="h-1/2 w-full"></Skeleton>
+              <div className="h-1/2 flex flex-col">
+                <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <Skeleton className="h-1/2 w-full"></Skeleton>
+                <Skeleton className="h-1/4 w-3/4"></Skeleton>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="mt-4 w-full py-4">
           <Carousel
             opts={{
               align: "center",
               loop: true,
             }}
-            className="w-full px-4"
+            className="w-full px-8"
           >
             <CarouselContent>
               {campaigns.map((campaign) => {
                 return (
                   <CarouselItem
-                    key={campaign.campaign_id}
+                    key={campaign.id}
                     className="md:basis-1/2 lg:basis-1/3"
                   >
                     <SupportStudent
                       data-aos="fade-right"
                       data-aos-duration="500"
-                      id={campaign.campaign_id}
-                      imgSrc={campaign.featured_image}
+                      id={campaign.id}
+                      imgSrc={campaign.featured_img}
                       project={campaign.title}
-                      desc={campaign.short_description.substr(0, 60) + " ..."}
-                      achieved={campaign.achieved_fund}
-                      target={campaign.target_fund_dollars}
+                      desc={campaign.description.substr(0, 60) + " ..."}
+                      achieved={campaign.achieved}
+                      target={campaign.international_fund}
                     />
                   </CarouselItem>
                 );

@@ -1,9 +1,5 @@
 import React from "react";
 import PartnersTestimonial from "../components/UI/PartnersTestimonial";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -21,7 +17,7 @@ const Partners = () => {
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight relative after:bg-[#0B77A5] after:absolute after:h-[4px] after:w-0 after:-bottom-[2px] after:left-0 hover:after:w-full after:transition-all after:duration-300">
           OUR PARTNERS IN CHARGE
         </h3>
-        <div className="bg-[#00000005] xl:py-16 lg:py-12 w-full md:py-8 py-6">
+        <div className="bg-[#00000005] xl:py-10 lg:py-8 w-full md:py-6 py-4">
           <div className="logos">
             <div className="logos-slide">
               <Image
@@ -171,9 +167,9 @@ const Partners = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6"
+          className="bg-[#2496D7] xl:py-12 lg:py-10 w-full flex flex-col justify-center items-center space-y-6"
         >
-          <div className="w-[80%] mx-auto flex flex-col justify-center items-center space-y-4">
+          <div className="mx-auto max-w-7xl px-4 flex flex-col justify-center items-center space-y-4">
             <h3 className="font-opensans tracking-[-0.07em] text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
               JOIN THE JOURNEY
             </h3>
