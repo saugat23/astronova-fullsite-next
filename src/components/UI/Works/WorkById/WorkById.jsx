@@ -10,10 +10,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../../../ui/carousel";
-import { getAllWorks } from "../../../../app/services/api";
+import { getAllWorks, getWorkById } from "../../../../app/services/api";
 
-function WorkById(id) {
+function WorkById({ params }) {
+  const id = params;
   const [works, setWorks] = useState([]);
+  const [singleWork, setSingleWork] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +28,21 @@ function WorkById(id) {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
+
+  useEffect(() => {
+    const fetchWorkById = async () => {
+      try {
+        const data = await getWorkById(id);
+        setSingleWork(data);
+      } catch (error) {
+        console.error("The error is : ", error.message);
+      } finally {
+      }
+    };
+
+    fetchWorkById();
+  }, [id]);
 
   return (
     <>
@@ -46,7 +62,7 @@ function WorkById(id) {
             <div className="w-full font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
               <Image
                 priority
-                src="/supportstudents.png"
+                src={singleWork.cover_img}
                 alt="image"
                 width={1400}
                 height={500}
@@ -54,14 +70,7 @@ function WorkById(id) {
               />
             </div>
             <p className="font-opensans self-start font-normal xl:text-lg md:text-base sm:text-sm text-xs text-black">
-              At Astronova, we are dedicated to fostering education and driving
-              innovation across various domains. Our multifaceted approach
-              encompasses a wide range of initiatives that empower individuals
-              and communities to thrive in the ever-evolving landscape of Astro
-              E-commerce, E-Learning, Startups, Science & Technology, Research
-              and development, Startups and Entrepreneurship, Ventures and Seed
-              Money IT Labs, Science Museum, Old Age School, Incubation and
-              Startups, Observatory, Knowledge Park and Workshops.
+              {singleWork.long_description}
             </p>
           </div>
           <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 hidden lg:flex flex-col justify-between items-center rounded-xl space-y-4 z-30">
@@ -99,9 +108,17 @@ function WorkById(id) {
               rounded-bl-3xl flex flex-col justify-center items-center space-y-3"
             >
               <h3 className="font-inter font-semibold xl:text-lg md:text-base sm:text-sm text-xs text-black">
-                Research Seminar Program at ...
+                {singleWork.sub_description}
               </h3>
-              <div className="py-4">{/* Image */}</div>
+              <div className="py-4">
+                <Image
+                  src={singleWork.cover_img}
+                  alt="cover image"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
               <button
                 type="button"
                 className="bg-[#0205d3] text-white xl:text-sm text-xs font-inter py-3 px-6 rounded-lg"
@@ -126,7 +143,7 @@ function WorkById(id) {
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src="/supportstudents.png"
+                  src={singleWork.cover_img}
                   alt="image"
                   width={1200}
                   height={800}
@@ -136,7 +153,7 @@ function WorkById(id) {
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src="/supportstudents.png"
+                  src={singleWork.cover_img}
                   alt="image"
                   width={1200}
                   height={800}
@@ -146,7 +163,7 @@ function WorkById(id) {
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src="/supportstudents.png"
+                  src={singleWork.cover_img}
                   alt="image"
                   width={1200}
                   height={800}
@@ -156,7 +173,7 @@ function WorkById(id) {
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src="/supportstudents.png"
+                  src={singleWork.cover_img}
                   alt="image"
                   width={1200}
                   height={800}

@@ -50,6 +50,15 @@ export const getCampaignById = async ({ id }) => {
   }
 };
 
+export const getWorkById = async ({ id }) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/work/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const getAllWorks = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/v1/work`);
