@@ -76,3 +76,21 @@ export const createWork = async (workData) => {
     throw error;
   }
 };
+
+export const createTestimonial = async (testimonialData) => {
+  const config = {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/v1/testimonial`,
+      testimonialData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

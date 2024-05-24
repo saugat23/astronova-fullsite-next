@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaEye, FaPen, FaRunning } from "react-icons/fa";
-import { getAllCampaigns } from "../../../app/services/api";
+import { getAllCampaigns, createTestimonial } from "../../../app/services/api";
 import Link from "next/link";
-import "react-toastify/dist/ReactToastify.css";
 import { Progress } from "@nextui-org/react";
+import Loader from "../Loader/Loader";
+import { toast } from "sonner";
 import {
   Table,
   TableHeader,
@@ -20,17 +21,65 @@ import {
   ModalBody,
   Button,
   useDisclosure,
-  Input,
-  Select,
-  SelectItem,
-  Textarea,
 } from "@nextui-org/react";
-import { FaUser } from "react-icons/fa";
 
 const Campaign = () => {
   const [campaign, setCampaign] = useState([]);
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [testimonialData, setTestimonialData] = useState({
+    name: "",
+    campaign_id: "",
+    description: "",
+    img: "",
+  });
+
+  const handleTestimonialChange = (e) => {
+    e.preventDefault();
+    setTestimonialData({
+      ...testimonialData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleTestimonialImageChange = (e) => {
+    const file = e.target.files[0];
+    setTestimonialData((prevData) => ({
+      ...prevData,
+      img: file,
+    }));
+  };
+
+  const handleTestimonialSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", testimonialData.name);
+    formDataToSend.append("campaign_id", testimonialData.campaign_id);
+    formDataToSend.append("description", testimonialData.description);
+
+    if (testimonialData.img) {
+      formDataToSend.append("img", testimonialData.img);
+    }
+
+    for (let [key, value] of formDataToSend.entries()) {
+      console.log(key, value);
+    }
+
+    try {
+      const response = await createTestimonial(formDataToSend);
+      console.log("response", response);
+
+      toast.success("Testimonial created successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Error creating work. Please try again!");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -80,60 +129,78 @@ const Campaign = () => {
                     </ModalHeader>
                     <ModalBody>
                       <form
-                      // onSubmit={handleSubmit}
+                        onSubmit={handleTestimonialSubmit}
+                        className="flex flex-col space-y-3"
                       >
-                        <Input
+                        <label
+                          htmlFor="img"
+                          className="w-full h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-cover mx-auto cursor-pointer flex flex-col justify-center items-center"
+                        >
+                          <span className="bg-white p-2 rounded-lg">
+                            Choose Image.
+                          </span>
+                        </label>
+                        <input
                           type="file"
                           className="hidden"
                           accept="image/*"
-                          id="inputFile"
-                          name="inputFile"
+                          id="img"
+                          name="img"
+                          onChange={handleTestimonialImageChange}
                         />
-                        <label
-                          htmlFor="inputFile"
-                          className="max-w-md w-40 h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-contain mx-auto cursor-pointer"
-                        ></label>
-                        <Input
-                          autoFocus
-                          labelPlacement="outside"
-                          startContent={<FaUser />}
-                          label="Full Name"
+                        <label htmlFor="name">Full Name</label>
+                        <input
+                          name="name"
+                          id="name"
                           placeholder="Enter your Full Name"
-                          variant="faded"
-                          className="font-poppins my-4"
+                          className="font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100"
+                          onChange={handleTestimonialChange}
+                          value={testimonialData.name}
                         />
-                        <Select
-                          labelPlacement="outside"
-                          label="Campaign Name"
+                        <label htmlFor="campaign_id">Campaign Name</label>
+                        <select
                           placeholder="Choose an Option"
-                          variant="faded"
-                          className="my-4"
+                          className="font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100 "
+                          name="campaign_id"
+                          id="campaign_id"
+                          onChange={handleTestimonialChange}
+                          value={testimonialData.campaign_id}
                         >
-                          <SelectItem value="Tinkering Labs Project">
-                            Tinkering Labs Project
-                          </SelectItem>
-                          <SelectItem value="Planetorium Labs">
-                            Planetorium Labs
-                          </SelectItem>
-                          <SelectItem value="Astronova Foundation's Tinkering Labs">
-                            Astronova Foundation&apos;s Tinkering Lab
-                          </SelectItem>
-                        </Select>
-                        <Textarea
-                          labelPlacement="outside"
-                          label="Description"
+                          {campaign.map((item) => {
+                            return (
+                              <option
+                                key={item.id}
+                                value={item.id}
+                                className="p-2 bg-white hover:bg-gray-100"
+                              >
+                                {item.title}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        <label htmlFor="description">Description</label>
+                        <textarea
+                          name="description"
+                          id="description"
+                          onChange={handleTestimonialChange}
+                          value={testimonialData.description}
                           placeholder="Enter your description"
-                          className="max-w-md w-full my-4"
+                          className="w-full h-48 resize-none font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100"
                         />
+
+                        <button
+                          type="submit"
+                          className="bg-[#5C74FF] hover:bg-[#2e3a80] py-3 px-auto w-full rounded-lg font-inter font-semibold xl:text-lg md:text-base text-sm text-white"
+                        >
+                          {loading ? (
+                            <div className="w-full flex gap-4 items-center justify-center">
+                              <p>Submitting...</p> <Loader />
+                            </div>
+                          ) : (
+                            "Submit"
+                          )}
+                        </button>
                       </form>
-                      <Button
-                        color="success"
-                        variant="flat"
-                        onPress={onClose}
-                        type="submit"
-                      >
-                        Submit Testimonial
-                      </Button>
                     </ModalBody>
                   </>
                 )}
@@ -171,13 +238,13 @@ const Campaign = () => {
                 .reverse()
                 .map((item) => {
                   return (
-                    <TableRow key={item.campaign_id}>
+                    <TableRow key={item.id}>
                       <TableCell>
                         <FaEye className="cursor-pointer" />
                       </TableCell>
                       <TableCell>
                         <Link
-                          href={`/coordinator_dashboard/campaign/edit_campaign/${item.campaign_id}`}
+                          href={`/coordinator_dashboard/campaign/edit_campaign/${item.id}`}
                         >
                           <FaPen className="cursor-pointer" />
                         </Link>
@@ -194,18 +261,17 @@ const Campaign = () => {
                               size="md"
                               aria-label="Loading..."
                               color="success"
-                              value={item.status}
+                              value={item.percentage}
                               className="w-full"
                             />
                           </h4>
                         </div>
                       </TableCell>
-                      <TableCell>रु {item.target_fund_rupees}</TableCell>
+                      <TableCell>रु {item.national_fund}</TableCell>
                       <TableCell>
-                        रु{" "}
-                        {item.achieved_fund === null ? "0" : item.achieved_fund}
+                        रु {item.achieved === null ? "0" : item.achieved}
                       </TableCell>
-                      <TableCell>0</TableCell>
+                      <TableCell>{item.percentage} %</TableCell>
                       <TableCell>0</TableCell>
                     </TableRow>
                   );

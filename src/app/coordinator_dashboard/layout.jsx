@@ -5,12 +5,24 @@ import dashboard_items from "./dashboard_items";
 import { usePathname } from "next/navigation";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
-import withAuth from "../withAuthCoordinator.jsx";
 import { Toaster } from "sonner";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import withAuth from "../withAuthCoordinator";
 
 const Layout = ({ children }) => {
+  const router = useRouter();
   const pathname = usePathname();
   const [items, setItems] = useState(dashboard_items);
+
+  function handleLogout() {
+    let currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+    let yesterday = currentDate;
+
+    Cookies.set("token_coordinator", "", { expires: yesterday });
+    router.push("/coordinator_login");
+  }
 
   return (
     <>
@@ -36,7 +48,7 @@ const Layout = ({ children }) => {
                 return (
                   <li
                     key={key}
-                    className={`w-full flex justify-start items-center md:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${pathname === item.link && "bg-[#ececec]"
+                    className={`w-full flex justify-start items-center md:px-2 hover:bg-[#ececec] rounded-xl my-[2px] ${pathname.includes(item.link) && "bg-[#ececec]"
                       }`}
                   >
                     <Link
@@ -75,6 +87,7 @@ const Layout = ({ children }) => {
               <button
                 type="button"
                 className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-poppins font-semibold"
+                onClick={handleLogout}
               >
                 Logout
               </button>
@@ -87,4 +100,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default withAuth(Layout);
