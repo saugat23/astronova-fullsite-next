@@ -23,7 +23,7 @@ const Footer = dynamic(() => import("../../../sections/Footer"), {
 const Page = () => {
   const pathname = usePathname();
   const id = pathname;
-  console.log(pathname);
+  console.log("pathname: ", pathname);
 
   if (!id) {
     return <div>Error: ID not found</div>;

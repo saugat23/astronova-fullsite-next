@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 
 const CampaignById = dynamic(
@@ -12,20 +12,17 @@ const CampaignById = dynamic(
 );
 
 const Navbar = dynamic(() => import("../../../sections/Navbar"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <p></p>,
 });
 
 const Footer = dynamic(() => import("../../../sections/Footer"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <p></p>,
 });
 
 const Page = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  if (!router.isReady) {
-    return <div>Loading...</div>;
-  }
+  const pathname = usePathname();
+  const id = pathname;
+  console.log("pathname : ", pathname);
 
   if (!id) {
     return <div>Error: ID not found</div>;

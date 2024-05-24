@@ -20,7 +20,7 @@ function WorkById(id) {
       try {
         const response = await getAllWorks();
         setWorks(response.works);
-        console.log(response);
+        console.log(response.works);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -43,12 +43,12 @@ function WorkById(id) {
         </div>
         <div className="mx-auto px-4 sm:px-6 md:px-0 w-full md:w-3/5 max-w-6xl xl:py-12 mt-4 flex lg:flex-row flex-col justify-center items-center lg:items-start xl:space-x-16 lg:space-x-4 space-x-0 space-y-4 lg:space-y-0">
           <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-5">
-            <div className="font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
+            <div className="w-full font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
               <Image
                 priority
                 src="/supportstudents.png"
                 alt="image"
-                width={800}
+                width={1400}
                 height={500}
                 className="w-full h-auto"
               />
@@ -64,7 +64,7 @@ function WorkById(id) {
               Startups, Observatory, Knowledge Park and Workshops.
             </p>
           </div>
-          <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 hidden lg:flex flex-col justify-center items-center rounded-xl z-30">
+          <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 hidden lg:flex flex-col justify-between items-center rounded-xl space-y-4 z-30">
             <div>
               <div className="w-full bg-white flex flex-col justify-center items-center py-6 px-12 rounded-t-xl drop-shadow-[0_0_0.75rem_white]">
                 <div className="w-1/2 h-auto">
@@ -95,13 +95,13 @@ function WorkById(id) {
               </div>
             </div>
             <div
-              className="bg-[#4adede] p-3 rounded-tr-2xl
-              rounded-bl-2xl flex flex-col justify-center items-center space-y-3"
+              className="bg-[#4adede] p-3 rounded-tr-3xl
+              rounded-bl-3xl flex flex-col justify-center items-center space-y-3"
             >
               <h3 className="font-inter font-semibold xl:text-lg md:text-base sm:text-sm text-xs text-black">
                 Research Seminar Program at ...
               </h3>
-              {/* Image */}
+              <div className="py-4">{/* Image */}</div>
               <button
                 type="button"
                 className="bg-[#0205d3] text-white xl:text-sm text-xs font-inter py-3 px-6 rounded-lg"
@@ -123,7 +123,7 @@ function WorkById(id) {
             className="w-full px-8"
           >
             <CarouselContent>
-              <CarouselItem className="w-full">
+              <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
                   src="/supportstudents.png"
@@ -133,7 +133,7 @@ function WorkById(id) {
                   className="w-full h-auto"
                 />
               </CarouselItem>
-              <CarouselItem className="w-full">
+              <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
                   src="/supportstudents.png"
@@ -143,7 +143,7 @@ function WorkById(id) {
                   className="w-full h-auto"
                 />
               </CarouselItem>
-              <CarouselItem className="w-full">
+              <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
                   src="/supportstudents.png"
@@ -153,7 +153,7 @@ function WorkById(id) {
                   className="w-full h-auto"
                 />
               </CarouselItem>
-              <CarouselItem className="w-full">
+              <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
                   src="/supportstudents.png"
