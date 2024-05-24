@@ -2,13 +2,24 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
-import { Input, Textarea } from "@nextui-org/react";
+import { createBlog } from "../../services/api";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import Loader from "../../../components/UI/Loader/Loader";
 
 const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
 
 const Page = () => {
-  const [content, setContent] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    sub_title: "",
+    video: "",
+    tags: "",
+    tags2: "",
+    description: "",
+    featured_img: null,
+  });
+  const [loading, setLoading] = useState(false);
 
   const quillModules = {
     toolbar: [
@@ -39,8 +50,44 @@ const Page = () => {
     "code-block",
   ];
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFeaturedImageChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({ ...formData, [name]: files[0] });
+  };
+
   const handleEditorChange = (newContent) => {
-    setContent(newContent);
+    setFormData({ ...formData, description: newContent });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const { title, sub_title, video, tags, tags2, description, featured_img } =
+      formData;
+
+    const data = new FormData();
+    data.append("title", title);
+    data.append("sub_title", sub_title);
+    data.append("description", description);
+    data.append("video", video);
+    data.append("tags", tags);
+    data.append("featured_img", featured_img);
+    data.append("tags", tags2);
+
+    try {
+      const response = await createBlog(data);
+      console.log(response);
+      toast.success("Blog has been created!!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const router = useRouter();
@@ -150,14 +197,9 @@ const Page = () => {
                   </h4>
                   <label
                     htmlFor="featured_img"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-48 bg-cover bg-[top_50%] bg-no-repeat flex justify-center items-center"
+                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-48 bg-cover bg-[top_50%] bg-no-repeat flex justify-center items-center cursor-pointer"
                   >
-                    <button
-                      type="button"
-                      className="px-4 py-2 text-[#0000008c] bg-white rounded-lg border border-[#5C74FF]"
-                    >
-                      Add Image
-                    </button>
+                    Add Image
                   </label>
                   <input
                     type="file"
@@ -178,10 +220,10 @@ const Page = () => {
                 More Description
               </label>
               <QuillEditor
-                value={content}
+                value={formData.description}
                 name="description"
                 id="description"
-                onChange={handleChange}
+                onChange={handleEditorChange}
                 modules={quillModules}
                 formats={quillFormats}
                 className="px-4 md:px-0 w-full overflow-hidden h-48 bg-white py-2 border-b-1 border-gray-300"
@@ -192,7 +234,13 @@ const Page = () => {
                 type="submit"
                 className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
               >
-                Submit
+                {loading ? (
+                  <div className="mx-auto flex gap-4 items-center justify-center w-1/2">
+                    <p>Submitting...</p> <Loader />
+                  </div>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </div>

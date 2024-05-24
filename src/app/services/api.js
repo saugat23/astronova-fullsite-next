@@ -94,3 +94,21 @@ export const createTestimonial = async (testimonialData) => {
     throw error;
   }
 };
+
+export const createBlog = async (blogData) => {
+  const config = {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/v1/blog`,
+      blogData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

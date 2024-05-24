@@ -412,7 +412,7 @@ const Page = () => {
                     className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
                   >
                     {loading ? (
-                      <div className=" flex gap-4 items-center justify-center">
+                      <div className="w-1/2 mx-auto flex gap-4 items-center justify-center">
                         <p>Submitting...</p> <Loader />
                       </div>
                     ) : (

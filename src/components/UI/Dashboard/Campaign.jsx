@@ -193,7 +193,7 @@ const Campaign = () => {
                           className="bg-[#5C74FF] hover:bg-[#2e3a80] py-3 px-auto w-full rounded-lg font-inter font-semibold xl:text-lg md:text-base text-sm text-white"
                         >
                           {loading ? (
-                            <div className="w-full flex gap-4 items-center justify-center">
+                            <div className="flex gap-4 items-center justify-center w-1/2 mx-auto">
                               <p>Submitting...</p> <Loader />
                             </div>
                           ) : (

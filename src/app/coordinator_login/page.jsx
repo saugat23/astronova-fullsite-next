@@ -103,7 +103,7 @@ const Page = () => {
               className="w-full h-14 p-4 bg-[#3042BA] font-poppins font-medium text-base text-white rounded-xl hover:bg-[#1d2870]"
             >
               {loading ? (
-                <div className=" flex gap-4 items-center justify-center">
+                <div className="w-1/2 mx-auto flex gap-4 items-center justify-center">
                   <p>Submitting...</p> <Loader />
                 </div>
               ) : (
