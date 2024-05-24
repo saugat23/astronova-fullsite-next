@@ -112,3 +112,30 @@ export const createBlog = async (blogData) => {
     throw error;
   }
 };
+
+export const createNews = async (newsData) => {
+  const config = {
+    header: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/v1/news`,
+      newsData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllNews = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/news`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
