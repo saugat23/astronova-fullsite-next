@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaEye, FaPen, FaRunning } from "react-icons/fa";
-import { getAllCampaigns, createTestimonial } from "../../../app/services/api";
+import { createTestimonial } from "../../../../app/services/api";
 import Link from "next/link";
 import { Progress } from "@nextui-org/react";
-import Loader from "../Loader/Loader";
+import Loader from "../../Loader/Loader";
 import { toast } from "sonner";
 import {
   Table,
@@ -23,8 +23,8 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 
-const Campaign = () => {
-  const [campaign, setCampaign] = useState([]);
+const Campaign = ({data}) => {
+  const campaign = data.campaigns;
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
@@ -80,19 +80,6 @@ const Campaign = () => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getAllCampaigns();
-        setCampaign(response.campaigns);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
 
   const filteredCampaign = campaign.filter((camp) =>
     camp.title.toLowerCase().includes(search.toLowerCase()),

@@ -11,25 +11,10 @@ import {
   TableCell,
   Button,
 } from "@nextui-org/react";
-import { getAllWorks } from "../../../app/services/api";
 
-const Works = () => {
-  const [works, setWorks] = useState([]);
+const Works = ({data}) => {
+  const works = data.works;
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const worksData = await getAllWorks();
-        setWorks(worksData.works);
-        console.log(works);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const filteredWorks = works.filter((work) =>
     work.title.toLowerCase().includes(search.toLowerCase()),

@@ -24,31 +24,12 @@ import {
   Textarea,
 } from "@nextui-org/react";
 
-import { getAllDonors } from "../../../app/services/api";
-
 const Donor = () => {
     const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
-    const [donors, setDonors] = useState([]);
+    // const donors = data;
+    const donors = [];
     const [selectedDonor, setSelectedDonor] = useState(null);
     const [search, setSearch] = useState("");
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const donorsData = await getAllDonors({
-            offset: 1,
-            limit: 15,
-            role: "Donor",
-          });
-          setDonors(donorsData);
-          console.log(donors);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-  
-      fetchData();
-    }, []);
   
     const filteredDonors = donors.filter((donor) =>
       donor.first_name.toLowerCase().includes(search.toLowerCase())

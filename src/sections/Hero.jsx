@@ -27,7 +27,7 @@ const Hero = () => {
       <section
         data-aos="fade-down"
         data-aos-duration="700"
-        className="h-[120vh] max-w-screen overflow-hidden"
+        className="h-[110vh] max-w-screen overflow-hidden"
       >
         <Carousel
           data-aos="fade-up"
@@ -48,7 +48,7 @@ const Hero = () => {
           className="mt-8 h-full"
         >
           <div className="h-full w-screen">
-            <div className="slidetwobackground h-[90%] w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
+            <div className="slidetwobackground h-auto w-full bg-[url('/slide2bg.png')] relative bg-cover bg-no-repeat flex flex-col justify-evenly lg:px-10 px-4 py-4 lg:py-4">
               <div className="w-full flex lg:justify-start justify-center items-center pt-10 z-40">
                 <div>
                   <Image
@@ -57,11 +57,14 @@ const Hero = () => {
                     alt="NRIC Image"
                     width={800}
                     height={400}
+                    quality={75}
+                    layout="responsive"
+                    objectFit="cover"
                   />
                 </div>
               </div>
               <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-end items-center space-y-6 lg:space-y-0">
-                <div className="w-full lg:w-2/5 lg:h-[70vh] h-[40vh] bg-[url('/slide2rocket.svg')] bg-cover bg-no-repeat flex flex-col justify-end lg:items-start items-center">
+                <div className="w-full lg:w-2/5 lg:h-[70vh] h-[40vh] bg-[url('/slide2rocket.svg')] object-cover bg-cover bg-no-repeat flex flex-col justify-end lg:items-start items-center">
                   <h2 className="font-montserrat font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-center lg:text-left">
                     KEY Assistance
                   </h2>
@@ -89,6 +92,9 @@ const Hero = () => {
                     priority
                     src="/slide2hr.svg"
                     alt="Section Divider"
+                    quality={75}
+                    layout="responsive"
+                    objectFit="cover"
                     className="float-right mt-6"
                     width={600}
                     height={30}
@@ -103,6 +109,9 @@ const Hero = () => {
                   <Image
                     priority
                     src="/slide2hr.svg"
+                    quality={75}
+                    layout="responsive"
+                    objectFit="cover"
                     alt="Section Divider"
                     className="float-right mt-6"
                     width={600}
@@ -114,7 +123,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="h-auto flex justify-center items-center lg:p-6 py-10 px-2 font-poppins font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-xs bg-[#6960E1] text-white">
+            <div className="h-full flex justify-center items-center lg:p-6 py-10 px-2 font-poppins font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-xs bg-[#6960E1] text-white">
               JOIN US TO ESTABLISH HETAUDA RESEARCH & INNOVATION CENTER
             </div>
           </div>
@@ -125,6 +134,9 @@ const Hero = () => {
                   <Image
                     priority
                     src="/slide1childimage.png"
+                    quality={75}
+                    objectFit="cover"
+                    layout="responsive"
                     alt="Children Image"
                     width={1000}
                     height={800}
@@ -153,6 +165,9 @@ const Hero = () => {
                   <Image
                     priority
                     src="/slide1child-support.png"
+                    quality={75}
+                    objectFit="cover"
+                    layout="responsive"
                     alt="Children Image"
                     width={1000}
                     height={800}

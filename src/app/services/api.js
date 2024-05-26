@@ -148,3 +148,30 @@ export const getAllNews = async () => {
     throw error;
   }
 };
+
+export const createEvent = async (eventData) => {
+  const config = {
+    header: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/v1/event`,
+      eventData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllEvents = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/event`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

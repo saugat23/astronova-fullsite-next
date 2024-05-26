@@ -10,39 +10,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../../../ui/carousel";
-import { getAllWorks, getWorkById } from "../../../../app/services/api";
 
-function WorkById({ params }) {
+function WorkById({ params, data, allWorks }) {
   const id = params;
-  const [works, setWorks] = useState([]);
-  const [singleWork, setSingleWork] = useState({});
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getAllWorks();
-        setWorks(response.works);
-        console.log(response.works);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, [id]);
-
-  useEffect(() => {
-    const fetchWorkById = async () => {
-      try {
-        const data = await getWorkById(id);
-        setSingleWork(data);
-      } catch (error) {
-        console.error("The error is : ", error.message);
-      } finally {
-      }
-    };
-
-    fetchWorkById();
-  }, [id]);
+  console.log("allworks: ", allWorks);
+  const works = allWorks.works;
+  const singleWork = data;
 
   return (
     <>
@@ -143,41 +116,53 @@ function WorkById({ params }) {
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src={singleWork.cover_img}
+                  src={singleWork.gallery[0]}
                   alt="image"
                   width={1200}
                   height={800}
-                  className="w-full h-auto"
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={75}
+                  className="w-full h-full"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src={singleWork.cover_img}
+                  src={singleWork.gallery[1]}
                   alt="image"
                   width={1200}
                   height={800}
-                  className="w-full h-auto"
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={75}
+                  className="w-full h-full"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src={singleWork.cover_img}
+                  src={singleWork.gallery[2]}
                   alt="image"
                   width={1200}
                   height={800}
-                  className="w-full h-auto"
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={75}
+                  className="w-full h-full"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
                 <Image
                   priority
-                  src={singleWork.cover_img}
+                  src={singleWork.gallery[3]}
                   alt="image"
                   width={1200}
                   height={800}
-                  className="w-full h-auto"
+                  layout="responsive"
+                  objectFit="cover"
+                  quality={75}
+                  className="w-full h-full"
                 />
               </CarouselItem>
             </CarouselContent>

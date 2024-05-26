@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import dynamic from "next/dynamic";
-import Loader from "../../../components/UI/Loader/Loader";
+import { getAllWorks, getWorkById } from "../../services/api";
 
 const WorkById = dynamic(
   () => import("../../../components/UI/Works/WorkById/WorkById"),
@@ -19,12 +17,16 @@ const Footer = dynamic(() => import("../../../sections/Footer"), {
   loading: () => <p> </p>,
 });
 
-const Page = ({ params }) => {
+const Page = async ({ params }) => {
+  const id = params;
+  const data = await getWorkById(id);
+
+  const allWorks = await getAllWorks();
   return (
     <>
       <Navbar />
       <div className="bg-[#f6f6f6]">
-        <WorkById params={params} />
+        <WorkById params={params} data={data} allWorks={allWorks} />
       </div>
       <Footer />
     </>

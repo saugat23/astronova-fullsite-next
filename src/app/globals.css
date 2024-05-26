@@ -106,14 +106,6 @@ html {
   visibility: hidden;
 }
 
-.dashboard-sidebar {
-  position: sticky;
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 .swiper-wrapper {
   width: 100vw;
   display: flex;
@@ -171,5 +163,35 @@ html {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.application_process {
+  box-shadow: 0px 2px 15px -6px #8b20d3;
+  border-radius: 12px;
+  width: 26vw;
+}
+
+@media screen and (max-width: 1150px) {
+  .application_process {
+    width: 32vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .application_process {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .application_process {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .application_process {
+    width: 100%;
   }
 }

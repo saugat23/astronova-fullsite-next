@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import dashboard_items from "./dashboard_items";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,7 @@ import withAuth from "../withAuthCoordinator";
 const Layout = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const [items, setItems] = useState(dashboard_items);
+  const items = dashboard_items;
 
   function handleLogout() {
     let currentDate = new Date();
@@ -27,8 +27,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Toaster expand={true} richColors position="top-right" />
-      <div className="flex">
-        <div className="hidden min-w-flex-[0.5] md:w-56 md:block md:sticky dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
+      <div className="flex justify-stretch">
+        <div className="hidden min-w-[15%] w-[15%] shrink-0 md:block md:fixed dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
           <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">
             <div className="flex flex-col justify-center items-center hover:scale-105 hover:transition-all">
               <div className="flex justify-center items-center">
@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
             </ul>
           </div>
         </div>
-        <div className="flex-[4] bg-[#FAFAFA] dashboard-navbar w-screen">
+        <div className="min-w-[85%] w-full md:w-[85%] bg-[#FAFAFA] dashboard-navbar fixed ml-[15%] h-[10vh]">
           <div className="flex justify-between w-full px-4 py-6 shadow-2xl bg-white">
             <div className="flex flex-col justify-center items-start">
               <h3 className="font-poppins font-medium xl:text-base text-[#2A2A2A]">
@@ -93,6 +93,8 @@ const Layout = ({ children }) => {
               </button>
             </div>
           </div>
+        </div>
+        <div className="min-w-[85%] w-full md:w-[85%] bg-[#FAFAFA] ml-[15%] mt-[10vh]">
           {children}
         </div>
       </div>

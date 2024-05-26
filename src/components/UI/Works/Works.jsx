@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { getAllWorks } from "../../../app/services/api";
 import {
   Carousel,
   CarouselContent,
@@ -11,21 +10,8 @@ import {
 } from "../../ui/carousel";
 import Image from "next/image";
 
-const Works = () => {
-  const [works, setWorks] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getAllWorks();
-        setWorks(response.works);
-        console.log(response);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+const Works = ({data}) => {
+  const works = data.works;
 
   return (
     <section className="h-auto max-w-screen overflow-hidden">

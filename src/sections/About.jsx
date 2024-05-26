@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Skeleton from "../components/ui/skeleton";
 import { getAllCampaigns } from "../app/services/api";
+import Gap from "../../public/projects/gap.svg";
 import {
   Carousel,
   CarouselContent,
@@ -179,16 +180,17 @@ const About = () => {
             </div>
           </div> */}
 
-          <div className="w-full lg:w-auto grow p-4 flex">
-            <div className="p-auto w-[40rem] h-[28rem] md:h-[34rem] lg:h-[40rem] border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
-              <div className="justify-self-start self-center h-auto w-[30%] ">
+          <div className="md:w-3/4 lg:w-2/3 w-screen grow px-4 pt-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 flex">
+            <div className="p-auto w-full h-auto border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
+              <div className="justify-self-start self-center h-auto w-20 sm:w-24 md:w-32 lg:w-36 -mt-8">
                 <Link
                   href={{ pathname: "/working_area", query: { work: "asw" } }}
-                  className=" bg-[#2496D7] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                  className=" bg-[#2496D7] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
                 >
                   <Image
                     src="/assets/afterschool.svg"
                     alt=""
+                    priority
                     width="80"
                     height="80"
                     className="w-16 lg:w-24"
@@ -196,18 +198,19 @@ const About = () => {
                   AFTER SCHOOL PROGRAM
                 </Link>
               </div>
-              <div className="flex w-full justify-between items-center justify-self-start -mt-8 md:-mt-0 lg:-mt-6">
-                <div className="justify-self-start self-start h-auto w-[30%]">
+              <div className="flex w-full justify-between items-center justify-self-start mt-4">
+                <div className="self-start h-auto w-20 sm:w-24 md:w-32 lg:w-36 md:-ml-6">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { work: "startup" },
                     }}
-                    className="bg-[#AE0D19] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                    className="bg-[#AE0D19] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
                   >
                     <Image
                       src="/assets/startup.svg"
                       alt=""
+                      priority
                       width="80"
                       height="80"
                       className="w-16 lg:w-24"
@@ -215,17 +218,29 @@ const About = () => {
                     STARTUP & INNOVATION
                   </Link>
                 </div>
-                <div className="justify-self-start self-end  h-auto w-[30%]">
+                <div className="self-start h-auto w-56 sm:w-64 md:w-72 lg:w-[22rem] mt-8">
+                  <Link href="#" className="hover:scale-105 hover:duration-400">
+                    <Image
+                      src="/assets/teachers.svg"
+                      alt="Teachers Workfield SVG"
+                      width="200"
+                      height="200"
+                      className="w-full"
+                    />
+                  </Link>
+                </div>
+                <div className="self-start  h-auto w-20 sm:w-24 md:w-32 lg:w-36 md:-mr-6">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { work: "nesep" },
                     }}
-                    className="bg-[#DB8114] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                    className="bg-[#DB8114] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
                   >
                     <Image
                       src="/assets/scienceexpo.svg"
                       alt=""
+                      priority
                       width="80"
                       height="80"
                       className="w-16 lg:w-24"
@@ -235,46 +250,47 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="justify-self-center self-center h-auto w-[30%] -mt-16 md:-mt-0 lg:-mt-12">
+              {/*<div className="justify-self-center self-center h-auto w-40 md:w-60 lg:w-80 -mt-20 md:-mt-0 lg:-mt-24">
                 <Link
                   href="#"
-                  className="bg-[#77ab33] font-opensans font-medium 2xl:text-base lg:text-sm md:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                  className="bg-[#77ab33] font-opensans font-medium xl:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white"
                 >
                   <Image
                     src="/assets/teachers.svg"
                     alt=""
                     width="40"
                     height="40"
-                    className="w-12 lg:w-16"
+                    className="w-12 lg:w-40"
                   />
                   TEACHERS PRO DEVELOPMENT, SKILL DEVELOPMENT & SOCIAL SKILLS
-                </Link>
-              </div>
-              <div className="flex w-full justify-evenly items-center justify-self-end md:mt-6 mt-6">
-                <div className="justify-self-end self-start h-auto w-[30%]">
+                </Link> 
+               
+              </div>*/}
+              <div className="flex w-full justify-around items-center justify-self-end mt-6">
+                <div className="justify-self-end self-start h-auto w-20 sm:w-24 md:w-32 lg:w-36">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { field: "steam" },
                     }}
-                    className="bg-white font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white px-4 py-6"
+                    className="bg-white font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
                   >
                     <Image
                       src="/assets/steam.svg"
                       alt=""
-                      width="120"
+                      width="240"
                       height="120"
-                      className="w-20 lg:w-28"
+                      className="w-32 h-20 lg:w-40 lg:h-28"
                     />
                   </Link>
                 </div>
-                <div className="justify-self-end self-end h-auto w-[30%]">
+                <div className="justify-self-end self-end h-auto w-20 sm:w-24 md:w-32 lg:w-36">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { field: "research" },
                     }}
-                    className=" bg-[#BD8809] font-opensans font-medium 2xl:text-lg lg:text-base md:text-sm text-xs tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-4"
+                    className="bg-[#BD8809] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
                   >
                     <Image
                       src="/assets/research.svg"

@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
-import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
+import { getCampaignById } from "../../services/api";
 
 const CampaignById = dynamic(
-  () => import("../../../components/UI/Dashboard/CampaignById/CampaignById"),
+  () => import("../../../components/UI/Dashboard/Campaign/CampaignById/CampaignById"),
   {
     loading: () => <p>Loading...</p>,
   },
@@ -19,12 +17,15 @@ const Footer = dynamic(() => import("../../../sections/Footer"), {
   loading: () => <p></p>,
 });
 
-const Page = ({ params }) => {
+const Page = async ({ params }) => {
+  const id = params;
+  const data = await getCampaignById(id);
+
   return (
     <>
       <Navbar />
       <div className="bg-[#f6f6f6]">
-        <CampaignById params={params} />
+        <CampaignById params={params} data={data} />
       </div>
       <Footer />
     </>

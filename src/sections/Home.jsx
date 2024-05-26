@@ -29,7 +29,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      startEvent: "DOMContentLoaded",
+      once: true,
+      offset: 50,
+    });
   }, []);
 
   return (

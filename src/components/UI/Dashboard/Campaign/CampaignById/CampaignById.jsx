@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { getCampaignById } from "../../../../app/services/api";
+import React, { useState } from "react";
 import Image from "next/image";
+import ReactPlayer from "react-player/youtube";
 import {
   Progress,
   Button,
@@ -13,46 +13,31 @@ import {
 } from "@nextui-org/react";
 import CampaignDonationContainer from "./CampaignDonationContainer";
 import CampaignTopDonor from "./CampaignTopDonor";
-import SupportStudentPNG from "../../../../../public/supportstudents.png";
-import Logo from "../../../../../public/assets/logo.png";
-import DonationCampaign from "../../../../../public/assets/donation-campaign-donation.svg";
+import SupportStudentPNG from "../../../../../../public/supportstudents.png";
+import Logo from "../../../../../../public/assets/logo.png";
+import DonationCampaign from "../../../../../../public/assets/donation-campaign-donation.svg";
 
-const CampaignById = ({ params }) => {
-  const id = params;
-  const [campaign, setCampaign] = useState({});
+const CampaignById = ({ params, data }) => {
+  const campaign = data;
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [loading, setLoading] = useState(false);
   const [selectedPayment, setSelectedPayment] = useState("khalti");
   const [amount, setAmount] = useState("");
+  const [featuredImage, setFeaturedImage] = useState(campaign.featured_img);
 
   const handleAmountClick = (value) => {
     setAmount(value);
   };
 
-  useEffect(() => {
-    const fetchCampaign = async () => {
-      try {
-        const data = await getCampaignById(id);
-        setCampaign(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCampaign();
-  }, [id]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (!campaign) {
     return <div>No campaign data available.</div>;
   }
 
-  console.log("");
+  console.log(campaign);
+
+  const handleGalleryClick = (image) => {
+    setFeaturedImage(image);
+  };
+
   return (
     <section className="h-auto max-w-screen overflow-hidden xl:pt-12 lg:pt-10 pt-8 mx-auto w-[70%]">
       <div
@@ -76,44 +61,33 @@ const CampaignById = ({ params }) => {
         <div className="flex flex-col justify-center items-start space-y-6 w-3/4 h-auto">
           <div className="w-full flex justify-center items-center">
             <Image
-              src={campaign.featured_img}
-              alt=""
+              src={featuredImage}
+              alt="Campaign Featured Image"
+              priority
               width={500}
               height={400}
               className="w-full h-96"
+              layout="responsive"
+              objectFit="cover"
+              quality={75}
             />
           </div>
           <div className="w-full flex justify-stretch items-center space-x-4">
-            <Image
-              src={campaign.featured_img}
-              alt=""
-              width={100}
-              height={80}
-              className="w-1/4 h-full"
-            />
-            <Image
-              src={campaign.featured_img}
-              alt=""
-              width={100}
-              height={80}
-              className="w-1/4 h-full"
-            />
-            <Image
-              src={campaign.featured_img}
-              alt=""
-              width={100}
-              height={80}
-              className="w-1/4 h-full"
-            />
-            <Image
-              src={campaign.featured_img}
-              alt=""
-              width={100}
-              height={80}
-              className="w-1/4 h-full"
-            />
+            {campaign.gallery.map((img, index) => (
+              <Image
+                key={index}
+                src={img}
+                alt={`Campaign Gallery Image ${index + 1}`}
+                priority
+                width={100}
+                height={80}
+                className="w-1/4 h-full cursor-pointer"
+                onClick={() => handleGalleryClick(img)}
+                quality={75}
+              />
+            ))}
           </div>
-        </div>
+        </div>{" "}
         <div className="w-1/4 shadow-xl bg-white rounded-lg p-6 flex flex-col justify-center items-center space-y-3">
           <h3 className="text-[#4a90e2] font-opensans font-semibold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
             {campaign.achieved}
@@ -168,11 +142,13 @@ const CampaignById = ({ params }) => {
           Watch this Story
         </h3>
         <div className="flex justify-center items-center w-full aspect-[5/2]">
-          <iframe
-            className="w-full h-full"
-            src={campaign.video}
-            title="YouTube video player"
-          ></iframe>
+          <ReactPlayer
+            controls="true"
+            className="w-full h-full aspect-video"
+            width={1200}
+            height={675}
+            url={campaign.video}
+          />
         </div>
       </div>
 
