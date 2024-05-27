@@ -195,7 +195,7 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className='max-w-3xl h-auto mx-auto bg-[url("/childrens.png")] bg-black/25 bg-cover lg:rounded-xl'
+        className='max-w-3xl h-auto mx-auto bg-[url("/childrens.png")] bg-black/25 bg-cover rounded-t-xl mt-8 z-40'
       >
         <div className="w-full h-full bg-black/70 lg:py-12 py-8 flex flex-col justify-center items-center space-y-12 lg:rounded-xl">
           <div className="flex flex-col space-y-4">
@@ -222,6 +222,7 @@ const About = () => {
           </button>
         </div>
       </div>
+      <div className="w-full bg-[#291f19] h-20 z-30 -mt-20"></div>
     </section>
   );
 };

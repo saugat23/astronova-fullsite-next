@@ -1,14 +1,19 @@
-import Image from "next/image";
+"use client";
 import React from "react";
+import Image from "next/image";
+
+import { FiCheckCircle, FiDownload } from "react-icons/fi";
+import { FaArrowRight } from "react-icons/fa";
+import { IoPersonAddOutline } from "react-icons/io5";
 
 const Impact = () => {
   return (
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full max-w-7xl md:mt-8 mt-4"
+      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-10 xl:py-8 lg:py-6 py-4 px-4 w-full max-w-6xl md:mt-4"
     >
-      <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4 xl:px-4">
+      <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4">
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight relative after:bg-[#0B77A5] after:absolute after:h-[4px] after:w-0 after:-bottom-[2px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
           OUR IMPACT
         </h3>
@@ -78,9 +83,12 @@ const Impact = () => {
           >
             <div>
               <Image
+                priority
+                quality={80}
+                layout="responsive"
+                objectFit="cover"
                 src="/assets/workshop.svg"
                 alt="Workshop SVG"
-                priority
                 width={42}
                 height={38}
                 className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
@@ -99,17 +107,20 @@ const Impact = () => {
           </div>
         </div>
       </div>
-      {/* <div className="absolute bg-[url('/impactbg.png')] -top-[18%] -right-1/2 w-full h-full bg-no-repeat z-40 bg-transparent"></div> */}
       <div className="xl:mt-16 lg:mt-12 w-full">
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image
+                priority
+                quality={80}
+                layout="responsive"
+                objectFit="cover"
                 src="/careers.svg"
                 alt="Careers Logo"
-                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
-                width={30}
-                height={30}
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
+                width={100}
+                height={100}
               />
             </div>
             <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
@@ -120,40 +131,19 @@ const Impact = () => {
               mission. Come help us build a better future for students
             </p>
             <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
-              Apply Today{" "}
-              <span className="inline-block">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="80 0 30 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="md:w-20 lg:w-24 2xl:w-28"
-                >
-                  <path
-                    d="M29.0625 16.6875C27.9375 22.3125 23.6962 27.609 17.745 28.7925C14.8425 29.3705 11.8316 29.0181 9.14099 27.7854C6.45043 26.5526 4.21736 24.5025 2.75975 21.9268C1.30214 19.3511 0.694303 16.3812 1.02278 13.44C1.35126 10.4988 2.59932 7.73614 4.58924 5.54548C8.67074 1.04998 15.5625 -0.187519 21.1875 2.06248"
-                    stroke="#DE5B3B"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9.9375 14.4375L15.5625 20.0625L29.0625 5.4375"
-                    stroke="#DE5B3B"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+              Apply Today <FiCheckCircle className="ml-2" />
             </button>
           </div>
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image
+                priority
+                quality={80}
+                layout="responsive"
+                objectFit="cover"
                 src="/funding.svg"
                 alt="Funding Logo"
-                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
@@ -167,29 +157,19 @@ const Impact = () => {
             </p>
             <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Register your Idea
-              <span className="inline-block ">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="60 0 38 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="md:w-20 lg:w-24 2xl:w-28"
-                >
-                  <path
-                    d="M24 0.666687C22.2319 0.666687 20.5362 1.36907 19.286 2.61931C18.0357 3.86955 17.3333 5.56524 17.3333 7.33335C17.3333 9.10146 18.0357 10.7972 19.286 12.0474C20.5362 13.2976 22.2319 14 24 14C25.7681 14 27.4638 13.2976 28.714 12.0474C29.9643 10.7972 30.6667 9.10146 30.6667 7.33335C30.6667 5.56524 29.9643 3.86955 28.714 2.61931C27.4638 1.36907 25.7681 0.666687 24 0.666687ZM24 3.83335C24.4596 3.83335 24.9148 3.92388 25.3394 4.09978C25.764 4.27567 26.1499 4.53347 26.4749 4.85848C26.7999 5.18348 27.0577 5.56932 27.2336 5.99396C27.4095 6.4186 27.5 6.87373 27.5 7.33335C27.5 7.79298 27.4095 8.24811 27.2336 8.67275C27.0577 9.09739 26.7999 9.48322 26.4749 9.80823C26.1499 10.1332 25.764 10.391 25.3394 10.5669C24.9148 10.7428 24.4596 10.8334 24 10.8334C23.5404 10.8334 23.0852 10.7428 22.6606 10.5669C22.236 10.391 21.8501 10.1332 21.5251 9.80823C21.2001 9.48322 20.9423 9.09739 20.7664 8.67275C20.5905 8.24811 20.5 7.79298 20.5 7.33335C20.5 6.4051 20.8687 5.51486 21.5251 4.85848C22.1815 4.2021 23.0717 3.83335 24 3.83335ZM5.66666 5.66669V10.6667H0.666664V14H5.66666V19H9V14H14V10.6667H9V5.66669H5.66666ZM24 15.6667C19.55 15.6667 10.6667 17.8834 10.6667 22.3334V27.3334H37.3333V22.3334C37.3333 17.8834 28.45 15.6667 24 15.6667ZM24 18.8334C28.95 18.8334 34.1667 21.2667 34.1667 22.3334V24.1667H13.8333V22.3334C13.8333 21.2667 19 18.8334 24 18.8334Z"
-                    fill="#DA441F"
-                  />
-                </svg>
-              </span>
+              <IoPersonAddOutline className="ml-2" />
             </button>
           </div>
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image
+                priority
+                quality={80}
+                layout="responsive"
+                objectFit="cover"
                 src="/project.svg"
                 alt="Project Logo"
-                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
@@ -199,35 +179,23 @@ const Impact = () => {
             </h3>
             <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
               let’s see what we have done in past to promote science and
-              innovation among the students. Check out our project with this
-              button Click.
+              innovation among the students. Check out our Project.
             </p>
             <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
-              Learn More
-              <span className="inline-block ">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="60 0 18 23"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="md:w-20 lg:w-24 2xl:w-28"
-                >
-                  <path
-                    d="M17.2623 12.1816C17.8481 11.5958 17.8481 10.6461 17.2623 10.0603L7.71638 0.51437C7.1306 -0.0714169 6.18085 -0.0714169 5.59506 0.51437C5.00928 1.10016 5.00928 2.0499 5.59506 2.63569L14.0803 11.121L5.59506 19.6063C5.00928 20.192 5.00928 21.1418 5.59506 21.7276C6.18085 22.3134 7.1306 22.3134 7.71638 21.7276L17.2623 12.1816ZM0.322632 12.621H16.2017V9.62097H0.322632V12.621Z"
-                    fill="#DA441F"
-                  />
-                </svg>
-              </span>
+              Learn More <FaArrowRight className="ml-2" />
             </button>
           </div>
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">
               <Image
+                priority
+                quality={80}
+                layout="responsive"
+                objectFit="cover"
                 src="/resource.svg"
                 alt="Resource Logo"
-                className="sm:w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
@@ -240,22 +208,7 @@ const Impact = () => {
               mission and our goals. Click to see the Resources.
             </p>
             <button className="mx-auto font-inter font-bold lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
-              Download Brochure
-              <span className="inline-block ">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="60 0 34 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="md:w-20 lg:w-24 2xl:w-28"
-                >
-                  <path
-                    d="M17 25.3333L6.58331 14.9166L9.49998 11.8958L14.9166 17.3125V0.333313H19.0833V17.3125L24.5 11.8958L27.4166 14.9166L17 25.3333ZM4.49998 33.6666C3.35415 33.6666 2.37359 33.259 1.55831 32.4437C0.743035 31.6285 0.334702 30.6472 0.333313 29.5V23.25H4.49998V29.5H29.5V23.25H33.6666V29.5C33.6666 30.6458 33.259 31.6271 32.4437 32.4437C31.6285 33.2604 30.6472 33.668 29.5 33.6666H4.49998Z"
-                    fill="#DA441F"
-                  />
-                </svg>
-              </span>
+              Download Brochure <FiDownload className="ml-2" />
             </button>
           </div>
         </div>

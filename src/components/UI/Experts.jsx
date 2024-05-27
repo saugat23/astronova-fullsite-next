@@ -8,8 +8,11 @@ const Experts = ({ imgSrc, name, profession }) => {
         <div>
           <Image
             priority
-            width={220}
-            height={220}
+            layout="responsive"
+            objectFit="cover"
+            quality={80}
+            width={400}
+            height={400}
             src={imgSrc}
             alt={name}
             className="rounded-md lg:h-60 lg:w-60"

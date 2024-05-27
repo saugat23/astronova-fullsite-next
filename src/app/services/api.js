@@ -41,6 +41,24 @@ export const createCampaign = async (campaignData) => {
   }
 };
 
+export const updateCampaign = async (id, campaignData) => {
+  const config = {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.put(
+      `${API_BASE_URL}/v1/campaign/${id}`,
+      campaignData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const getCampaignById = async ({ id }) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/v1/campaign/${id}`);
@@ -53,6 +71,24 @@ export const getCampaignById = async ({ id }) => {
 export const getWorkById = async ({ id }) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/v1/work/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateWork = async (id, workData) => {
+  const config = {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.put(
+      `${API_BASE_URL}/v1/work/${id}`,
+      workData,
+      config,
+    );
     return response.data;
   } catch (error) {
     throw error;

@@ -8,11 +8,14 @@ const BoardMember = ({ imgSrc, name, position }) => {
         <div className="w-4/5">
           <Image
             priority
+            layout="responsive"
+            objectFit="cover"
+            quality={80}
             src={`/` + imgSrc}
             alt={name}
             className="h-full"
-            width={250}
-            height={250}
+            width={600}
+            height={600}
           />
         </div>
         <div className="flex flex-col justify-center items-center space-y-1">

@@ -1,18 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaEye, FaPen } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Table,
-  TableHeader,
-  TableColumn,
-  TableBody,
-  TableRow,
-  TableCell,
-  Button,
-} from "@nextui-org/react";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../../../ui/sheet";
 
-const Works = ({data}) => {
+const Works = ({ data }) => {
   const works = data.works;
   const [search, setSearch] = useState("");
 
@@ -25,12 +25,12 @@ const Works = ({data}) => {
         <div className="bg-white py-8 px-4 w-full">
           <div className="flex justify-between w-full items-center">
             <div className="font-montserrat tracking-wider font-semibold md:text-sm lg:text-base cursor-pointer flex justify-center items-center">
-              <Button
+              <button
                 type="button"
                 className="py-2 px-2 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
               >
                 <Link href="works/add_work">Add New Works</Link>
-              </Button>
+              </button>
             </div>
             <div>
               <input
@@ -44,32 +44,72 @@ const Works = ({data}) => {
             </div>
           </div>
           <div className="py-4 w-full">
-            <Table aria-label="Work Table">
-              <TableHeader>
-                <TableColumn className="w-[10%]">
-                  <FaEye />
-                </TableColumn>
-                <TableColumn className="w-[10%]">Edit</TableColumn>
-                <TableColumn>Work Title</TableColumn>
-                <TableColumn>Short Description</TableColumn>
-              </TableHeader>
-              <TableBody emptyContent={"No rows to display."}>
+            <table aria-label="Work Table">
+              <thead>
+                <tr>
+                  <th className="w-[10%]">
+                    <FaEye />
+                  </th>
+                  <th className="w-[10%]">Edit</th>
+                  <th>Work Title</th>
+                  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tbody>
                 {(search === "" ? works : filteredWorks).map((work) => {
                   return (
-                    <TableRow key={work.id}>
-                      <TableCell>
-                        <FaEye />
-                      </TableCell>
-                      <TableCell>
-                        <FaPen />
-                      </TableCell>
-                      <TableCell>{work.title}</TableCell>
-                      <TableCell>{work.sub_description}</TableCell>
-                    </TableRow>
+                    <tr key={work.id}>
+                      <Sheet>
+                        <td>
+                          <SheetTrigger>
+                            <FaEye className="cursor-pointer" />
+                          </SheetTrigger>
+                          <SheetContent>
+                            <SheetHeader>
+                              <SheetTitle>Work Details</SheetTitle>
+                              <SheetDescription className="flex flex-col justify-center items-start space-y-3 mt-6">
+                                <div className="w-full h-auto">
+                                  <Image
+                                    priority
+                                    src={work.cover_img}
+                                    alt="Work Cover Photo"
+                                    width={800}
+                                    height={600}
+                                    className="w-full h-auto rounded-lg"
+                                    layout="responsive"
+                                    quality={75}
+                                    objectFit="cover"
+                                  />
+                                </div>
+                                <h1 className="text-base font-semibold font-inter">
+                                  {work.title}
+                                </h1>
+                                <p className="text-sm font-semibold font-inter text-gray-700">
+                                  Description{" "}
+                                  <span className="block">
+                                    {work.long_description}
+                                  </span>
+                                </p>
+                              </SheetDescription>
+                            </SheetHeader>
+                          </SheetContent>
+                        </td>
+                      </Sheet>
+
+                      <td>
+                        <Link
+                          href={`/coordinator_dashboard/works/edit_work/${work.id}`}
+                        >
+                          <FaPen className="ml-16 cursor-pointer" />
+                        </Link>
+                      </td>
+                      <td>{work.title}</td>
+                      <td>{work.sub_description}</td>
+                    </tr>
                   );
                 })}
-              </TableBody>
-            </Table>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

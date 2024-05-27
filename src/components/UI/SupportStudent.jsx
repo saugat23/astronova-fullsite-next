@@ -21,11 +21,14 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="p-3 flex flex-col justify-center items-center xl:space-y-6 space-y-4 h-[40rem] w-auto shadow-2xl"
+        className="border border-[#e0d8ff] p-2 rounded-lg flex flex-col justify-center xl:space-y-5 space-y-3 min-h-full h-auto w-auto shadow-lg bg-white mb-3"
       >
         <div className="h-1/2">
           <Image
             priority
+            quality={75}
+            objectFit="cover"
+            layout="responsive"
             width={600}
             height={400}
             src={imgSrc}
@@ -33,7 +36,7 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
             className="w-full h-full"
           />
         </div>
-        <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black text-center">
+        <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black">
           {project}
         </h3>
         <p className="font-poppins font-normal w-full xl:text-xs text-[10px] text-wrap text-[#1F1F1F]">
@@ -46,9 +49,9 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
           value={progressValue}
           className="w-full"
         />
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-around items-center">
           <div className="flex flex-col justify-center items-start space-y-3">
-            <p className="font-poppins font-semibold text-base lg:text-xl 2xl:text-2xl text-[#7926ED]">
+            <p className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl 2xl:text-3xl text-[#7926ED]">
               {progressValue}%
             </p>
             <p className="font-poppins font-normal 2xl:text-xs lg:text-[10px] text-[8px] text-black">

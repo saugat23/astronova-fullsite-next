@@ -4,19 +4,18 @@ import React, { useEffect, useState } from "react";
 import {
   Modal,
   ModalContent,
-  ModalHeader,
   ModalBody,
   ModalFooter,
   Button,
   useDisclosure,
 } from "@nextui-org/react";
-import Navbar from "../sections/Navbar";
-import Hero from "../sections/Hero";
-import About from "../sections/About";
-import Media from "../sections/Media";
-import Impact from "../sections/Impact";
-import Partners from "../sections/Partners";
-import Footer from "../sections/Footer";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import About from "./About";
+import Media from "./Media";
+import Impact from "./Impact";
+import Partners from "./Partners";
+import Footer from "./Footer";
 import "aos/dist/aos.css";
 import AOS from "aos";
 

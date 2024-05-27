@@ -135,7 +135,7 @@ html {
 .logos-slide img {
   height: 6rem;
   margin: 0 4rem;
-  transform: scale(1.5, 1.15);
+  transform: scale(1.35, 1.10);
 }
 
 .swiper-pagination-bullet {
@@ -194,4 +194,28 @@ html {
   .application_process {
     width: 100%;
   }
+}
+
+table {
+  width: 100%;
+  border-radius: 6px;
+}
+
+table > thead {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+}
+
+table > thead > tr > th {
+  padding: 10px 0px;
+  padding-left: 6px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(107, 114, 128);
+}
+
+table > tbody > tr > td {
+  text-align: center;
+  padding: 6px 2px;
+  font-size: 0.875rem;
 }

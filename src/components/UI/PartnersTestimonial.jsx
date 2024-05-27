@@ -15,13 +15,13 @@ const PartnersTestimonial = ({ imgSrc, testimonial, name, position }) => {
             className="absolute bottom-0 right-0 bg-[#72D8D8] rounded-full"
           />
         </div>
-        <p className="font-kumbhsans font-normal lg:text-lg text-center text-[#1D3677]">
+        <p className="font-kumbhsans font-normal lg:text-lg text-center text-white">
           {testimonial}
         </p>
-        <h4 className="font-inter font-bold xl:text-lg lg:text-base md:text-sm text-xs text-[#1D3677]">
+        <h4 className="font-inter font-bold xl:text-lg lg:text-base md:text-sm text-xs text-white">
           {name}
         </h4>
-        <h4 className="font-kumbhsans font-normal lg:text-sm xl:text-base md:text-xs text-[10px] text-[#747577]">
+        <h4 className="font-kumbhsans font-normal text-center lg:text-sm xl:text-base md:text-xs text-[10px] text-white">
           {position}
         </h4>
       </div>

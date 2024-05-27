@@ -7,13 +7,14 @@ import { Progress } from "@nextui-org/react";
 import Loader from "../../Loader/Loader";
 import { toast } from "sonner";
 import {
-  Table,
-  TableHeader,
-  TableColumn,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@nextui-org/react";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../../../ui/sheet";
+import Image from "next/image";
 import {
   Modal,
   ModalContent,
@@ -23,7 +24,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 
-const Campaign = ({data}) => {
+const Campaign = ({ data }) => {
   const campaign = data.campaigns;
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
   const [search, setSearch] = useState("");
@@ -206,38 +207,73 @@ const Campaign = ({data}) => {
           </div>
         </div>
         <div className="py-4 w-full">
-          <Table aria-label="Donor Table">
-            <TableHeader>
-              <TableColumn>
-                <FaEye />
-              </TableColumn>
-              <TableColumn>Edit</TableColumn>
-              <TableColumn>Campaign&apos;s Title</TableColumn>
-              <TableColumn>Status</TableColumn>
-              <TableColumn>Target Amount</TableColumn>
-              <TableColumn>Achieved</TableColumn>
-              <TableColumn>Pleased %</TableColumn>
-              <TableColumn>People Donated</TableColumn>
-            </TableHeader>
-            <TableBody emptyContent={"No rows to display."}>
+          <table aria-label="Campaign Table" className="w-full campaign_table">
+            <thead className="bg-[#f4f4f5]">
+              <tr className="text-sm text-gray-500">
+                <th>
+                  <FaEye className="ml-4" />
+                </th>
+                <th>Edit</th>
+                <th>Campaign&apos;s Title</th>
+                <th>Status</th>
+                <th>Target Amount</th>
+                <th>Achieved</th>
+                <th>Pleased %</th>
+                <th>People Donated</th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
               {(search === "" ? campaign : filteredCampaign)
                 .slice()
                 .reverse()
                 .map((item) => {
                   return (
-                    <TableRow key={item.id}>
-                      <TableCell>
-                        <FaEye className="cursor-pointer" />
-                      </TableCell>
-                      <TableCell>
+                    <tr key={item.id}>
+                      <Sheet>
+                        <td>
+                          <SheetTrigger>
+                            <FaEye className="cursor-pointer" />
+                          </SheetTrigger>
+                          <SheetContent>
+                            <SheetHeader>
+                              <SheetTitle>Campaign Details</SheetTitle>
+                              <SheetDescription className="flex flex-col justify-center items-start space-y-3 mt-6">
+                                <div className="w-full h-auto">
+                                  <Image
+                                    priority
+                                    src={item.featured_img}
+                                    alt="Campaign Featured Photo"
+                                    width={800}
+                                    height={600}
+                                    className="w-full h-auto rounded-lg"
+                                    layout="responsive"
+                                    quality={75}
+                                    objectFit="cover"
+                                  />
+                                </div>
+                                <h1 className="text-base font-semibold font-inter">
+                                  {item.title}
+                                </h1>
+                                <p className="text-sm font-semibold font-inter text-gray-700">
+                                  Description{" "}
+                                  <span className="block">
+                                    {item.description}
+                                  </span>
+                                </p>
+                              </SheetDescription>
+                            </SheetHeader>
+                          </SheetContent>
+                        </td>
+                      </Sheet>
+                      <td className="text-center">
                         <Link
                           href={`/coordinator_dashboard/campaign/edit_campaign/${item.id}`}
                         >
-                          <FaPen className="cursor-pointer" />
+                          <FaPen className="cursor-pointer text-center ml-10" />
                         </Link>
-                      </TableCell>
-                      <TableCell>{item.title}</TableCell>
-                      <TableCell className="flex justify-start items-center space-x-2 w-full">
+                      </td>
+                      <td>{item.title}</td>
+                      <td className="flex justify-start items-center space-x-2 w-full">
                         <div>
                           <FaRunning />
                         </div>
@@ -253,18 +289,16 @@ const Campaign = ({data}) => {
                             />
                           </h4>
                         </div>
-                      </TableCell>
-                      <TableCell>रु {item.national_fund}</TableCell>
-                      <TableCell>
-                        रु {item.achieved === null ? "0" : item.achieved}
-                      </TableCell>
-                      <TableCell>{item.percentage} %</TableCell>
-                      <TableCell>0</TableCell>
-                    </TableRow>
+                      </td>
+                      <td>रु {item.national_fund}</td>
+                      <td>रु {item.achieved === null ? "0" : item.achieved}</td>
+                      <td>{item.percentage} %</td>
+                      <td>0</td>
+                    </tr>
                   );
                 })}
-            </TableBody>
-          </Table>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

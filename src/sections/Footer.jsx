@@ -2,12 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { TbWorldWww } from "react-icons/tb";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Lottie from "lottie-react";
 import GlobeLottie from "./globe-lottie.json";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -35,11 +35,11 @@ const Footer = () => {
         </div>
 
         <div className="h-px w-[90%] mx-auto bg-[#473e39ED] lg:hidden"></div>
-        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+        <div className="self-start flex flex-col justify-center items-start  xl:space-y-4 space-y-2 px-6">
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#77AB33]">
             ABOUT US
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start  xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Who We Are</Link>
             </li>
@@ -65,7 +65,7 @@ const Footer = () => {
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#AE0D19]">
             OUR SUBSIDIARIES
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Astro E-commerce</Link>
             </li>
@@ -76,7 +76,7 @@ const Footer = () => {
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-white">
             SUPPORT STUDENTS
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Planetarium</Link>
             </li>
@@ -91,11 +91,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+        <div className="self-start flex flex-col justify-center items-start  xl:space-y-4 space-y-2 px-6">
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#BDB809]">
             COMPETITIONS
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">National Science and Expo</Link>
             </li>
@@ -106,7 +106,7 @@ const Footer = () => {
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#DB8114]">
             OUTREACH
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Science and Technology</Link>
             </li>
@@ -122,11 +122,11 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+        <div className="self-start flex flex-col justify-center items-start xl:space-y-4 space-y-2 px-6">
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#2496D7]">
             GET INVOLVED
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center lg:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start lg:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Become Volunteer</Link>
             </li>
@@ -146,7 +146,7 @@ const Footer = () => {
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#2496D7]">
             OPPORTUNITIES
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
               <Link href="#">Public Speaking</Link>
             </li>
@@ -158,11 +158,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="self-start flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 px-6">
+        <div className="self-start flex flex-col justify-center items-start xl:space-y-4 space-y-2 px-6">
           <h4 className="font-inter font-bold 2xl:text-xl xl:text-lg sm:text-base text-sm text-[#DB8114] text-left">
             USEFUL LINKS
           </h4>
-          <ul className="flex flex-col justify-center items-start lg:items-center xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6] text-left">
+          <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6] text-left">
             <li>
               <Link href="#">Home</Link>
             </li>
@@ -202,23 +202,20 @@ const Footer = () => {
           </div>
           <div className="flex justify-center items-center space-x-4">
             <div>
-              <FaFacebook className="w-8 h-8 cursor-pointer fill-white" />
+              <Link href="https://www.facebook.com/astroinf369">
+                <FaFacebook className="w-8 h-8 cursor-pointer fill-white" />
+              </Link>
             </div>
             <div>
-              <TbWorldWww className="w-8 h-8 cursor-pointer fill-white stroke-white" />
+              <Link href="https://www.linkedin.com/company/astro369">
+                <FaLinkedin className="w-8 h-8 cursor-pointer fill-white stroke-white" />
+              </Link>
             </div>
             <div>
               <FaInstagram className="w-8 h-8 cursor-pointer fill-white" />
             </div>
             <div>
-              <Image
-                priority
-                src="/assets/linkedin.svg"
-                alt="Linkedin SVG"
-                className="cursor-pointer fill-white"
-                width={35}
-                height={35}
-              />
+              <FaTwitter className="w-8 h-8 cursor-pointer fill-white" />
             </div>
             <div>
               <SiGmail className="h-8 w-8 cursor-pointer fill-white" />

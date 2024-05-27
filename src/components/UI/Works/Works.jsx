@@ -10,7 +10,7 @@ import {
 } from "../../ui/carousel";
 import Image from "next/image";
 
-const Works = ({data}) => {
+const Works = ({ data }) => {
   const works = data.works;
 
   return (
@@ -83,15 +83,18 @@ const Works = ({data}) => {
               }}
               className="w-full px-12"
             >
-              <CarouselContent>
+              <CarouselContent className="py-3">
                 {works.map((work) => {
                   return (
                     <CarouselItem
                       key={work.id}
-                      className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3"
+                      className="py-4 flex flex-col justify-center items-start space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3 mx-3"
                     >
-                      <div className="h-1/2">
+                      <div className="h-1/2 w-full">
                         <Image
+                          priority
+                          objectFit="cover"
+                          quality={80}
                           src={work.cover_img}
                           alt={work.title}
                           className="w-full h-full"
@@ -99,9 +102,12 @@ const Works = ({data}) => {
                           height={450}
                         />
                       </div>
-                      <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
+                      <h2 className="font-poppins font-semibold text-black xl:text-lg md:text-base sm:text-sm text-xs px-2">
                         {work.title}
                       </h2>
+                      <p className="font-poppins font-medium text-gray-800 xl:text-base md:text-sm sm:text-xs text-[10px] px-2">
+                        {work.long_description}
+                      </p>
                       <div className="flex justify-center items-center w-full">
                         <button
                           type="button"
@@ -111,116 +117,10 @@ const Works = ({data}) => {
                             href={`/work_details_page/${work.id}`}
                             target="_blank"
                           >
-                            SEE MORE
+                            READ MORE
                           </Link>
                         </button>
                       </div>
-                      {/*<div className="h-1/2">
-                    <Image
-                      priority
-                      src="/supportstudents.png"
-                      alt="Support Students"
-                      className="w-full h-full"
-                      width={150}
-                      height={150}
-                    />
-                  </div>
-                  <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
-                    Some Title
-                  </h2>
-                  <p className="font-poppins font-normal text-black xl:text-base md:text-sm text-xs">
-                    Research Seminar Program by Astronova Foundation Nepal at
-                    Navodaya Shishu Sadan English Secondary School.
-                  </p>
-                  <div className="flex justify-center items-center w-full">
-                    <button
-                      type="button"
-                      className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
-                    >
-                      <Link href={`/works/details_page/1`}>SEE MORE</Link>
-                    </button>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
-                  <div className="h-1/2">
-                    <Image
-                      priority
-                      src="/supportstudents.png"
-                      alt="Support Students"
-                      className="w-full h-full"
-                      width={150}
-                      height={150}
-                    />
-                  </div>
-                  <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
-                    Some Title
-                  </h2>
-                  <p className="font-poppins font-normal text-black xl:text-base md:text-sm text-xs">
-                    Research Seminar Program by Astronova Foundation Nepal at
-                    Navodaya Shishu Sadan English Secondary School.
-                  </p>
-                  <div className="flex justify-center items-center w-full">
-                    <button
-                      type="button"
-                      className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
-                    >
-                      <Link href={`/works/details_page/1`}>SEE MORE</Link>
-                    </button>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
-                  <div className="h-1/2">
-                    <Image
-                      priority
-                      src="/supportstudents.png"
-                      alt="Support Students"
-                      className="w-full h-full"
-                      width={150}
-                      height={150}
-                    />
-                  </div>
-                  <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
-                    Some Title
-                  </h2>
-                  <p className="font-poppins font-normal text-black xl:text-base md:text-sm text-xs">
-                    Research Seminar Program by Astronova Foundation Nepal at
-                    Navodaya Shishu Sadan English Secondary School.
-                  </p>
-                  <div className="flex justify-center items-center w-full">
-                    <button
-                      type="button"
-                      className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
-                    >
-                      <Link href={`/works/details_page/1`}>SEE MORE</Link>
-                    </button>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="p-4 pt-4 flex flex-col justify-center items-center space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3">
-                  <div className="h-1/2">
-                    <Image
-                      priority
-                      src="/supportstudents.png"
-                      alt="Support Students"
-                      className="w-full h-full"
-                      width={150}
-                      height={150}
-                    />
-                  </div>
-                  <h2 className="font-poppins font-medium text-black xl:text-lg md:text-base sm:text-sm text-xs">
-                    Some Title
-                  </h2>
-                  <p className="font-poppins font-normal text-black xl:text-base md:text-sm text-xs">
-                    Research Seminar Program by Astronova Foundation Nepal at
-                    Navodaya Shishu Sadan English Secondary School.
-                  </p>
-                  <div className="flex justify-center items-center w-full">
-                    <button
-                      type="button"
-                      className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
-                    >
-                      <Link href={`/works/details_page/1`}>SEE MORE</Link>
-                    </button>
-                  </div> */}
                     </CarouselItem>
                   );
                 })}

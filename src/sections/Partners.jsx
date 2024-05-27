@@ -21,6 +21,9 @@ const Partners = () => {
           <div className="logos">
             <div className="logos-slide">
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/triontech.svg"
                 alt="Trion Tech Image"
                 width={40}
@@ -28,6 +31,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/nationalnoc.png"
                 alt="National NIC Image"
                 width={80}
@@ -35,6 +41,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/neema.png"
                 alt="Neema Image"
                 width={80}
@@ -42,6 +51,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/thesquad.png"
                 alt="The Squad Image"
                 width={80}
@@ -49,6 +61,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/brainycube.png"
                 alt="Brainy Cube Image"
                 width={80}
@@ -56,6 +71,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/neo.svg"
                 alt="NEO Image"
                 width={40}
@@ -63,6 +81,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/creativecafe.svg"
                 alt="Creative Cafe Image"
                 width={40}
@@ -70,6 +91,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/man.svg"
                 alt="MAN Image"
                 width={40}
@@ -80,6 +104,9 @@ const Partners = () => {
                 EduCompass
               </h2> */}
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/dur.svg"
                 alt="Dursikshya Image"
                 width={40}
@@ -88,6 +115,9 @@ const Partners = () => {
               />
 
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/triontech.svg"
                 alt="Trion Tech Image"
                 width={40}
@@ -95,6 +125,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/nationalnoc.png"
                 alt="National NIC Image"
                 width={80}
@@ -102,6 +135,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/neema.png"
                 alt="Neema Image"
                 width={80}
@@ -109,6 +145,9 @@ const Partners = () => {
                 className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/thesquad.png"
                 alt="The Squad Image"
                 width={80}
@@ -116,6 +155,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/brainycube.png"
                 alt="Brainy Cube Image"
                 width={80}
@@ -123,6 +165,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/neo.svg"
                 alt="NEO Image"
                 width={40}
@@ -130,6 +175,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/creativecafe.svg"
                 alt="Creative Cafe Image"
                 width={40}
@@ -137,6 +185,9 @@ const Partners = () => {
                 className=" sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/man.svg"
                 alt="MAN Image"
                 width={40}
@@ -147,6 +198,9 @@ const Partners = () => {
                 EduCompass
               </h2> */}
               <Image
+                priority
+                quality={90}
+                objectFit="cover"
                 src="/dur.svg"
                 alt="Dursikshya Image"
                 width={40}
@@ -169,7 +223,7 @@ const Partners = () => {
           data-aos-duration="700"
           className="bg-[#2496D7] xl:py-12 lg:py-10 w-full flex flex-col justify-center items-center space-y-6"
         >
-          <div className="mx-auto max-w-7xl px-4 flex flex-col justify-center items-center space-y-4">
+          <div className="mx-auto max-w-6xl px-4 flex flex-col justify-center items-center space-y-4">
             <h3 className="font-opensans tracking-[-0.07em] text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
               JOIN THE JOURNEY
             </h3>
@@ -186,7 +240,7 @@ const Partners = () => {
               let’s make a community of change makers.
             </p>
           </div>
-          <div className="w-full mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white max-w-7xl">
+          <div className="w-full mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white max-w-6xl">
             <button
               data-aos="fade-up"
               data-aos-duration="900"
@@ -221,12 +275,12 @@ const Partners = () => {
       <Carousel
         opts={{
           align: "center",
-          loop: true,
+          loop: false,
         }}
-        className="w-full mx-auto max-w-7xl px-8"
+        className="w-full mx-auto max-w-7xl px-12"
       >
-        <CarouselContent>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+        <CarouselContent className="py-6 lg:py-10">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#639a1b] mx-4">
             <PartnersTestimonial
               imgSrc="/assets/testimonialaayushnepal.svg"
               testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
@@ -235,7 +289,7 @@ const Partners = () => {
               position="Astrophysics & Research Enthusiast"
             />
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#aeab3b] mx-4">
             <PartnersTestimonial
               imgSrc="/assets/testimonialanujadhikari.svg"
               testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
@@ -243,7 +297,7 @@ const Partners = () => {
               position="Research Enthusiast"
             />
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#639a1b] mx-4">
             <PartnersTestimonial
               imgSrc="/assets/testimonialriteshprajapati.svg"
               testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
@@ -251,7 +305,7 @@ const Partners = () => {
               position="Video Editor Intern"
             />
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#ae0d19] mx-4">
             <PartnersTestimonial
               imgSrc="/testimonialdinupbalami.png"
               testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
@@ -259,7 +313,7 @@ const Partners = () => {
               position="Campus Ambassador,Mechanical Engineering Student,KU"
             />
           </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#2496d7] mx-4">
             <PartnersTestimonial
               imgSrc="/testimonialnamratabartaula.png"
               testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
@@ -283,23 +337,26 @@ const Partners = () => {
             src="/childrens.png"
             alt="Childrens Image"
             width={1000}
-            height={1500}
+            height={1000}
             className="h-full"
           />
         </div>
-        <div className="w-full md:w-1/2 xl:p-10 lg:p-8 py-4 flex flex-col justify-center items-center">
+        <div className="w-full md:w-1/2 xl:p-8 lg:p-6 flex flex-col justify-center items-center">
           <h3 className="font-opensans tracking-tighter font-extrabold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-white text-center">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
-          <div>
+          <div className="h-3/4">
             <Link href="mailto:info@astronovafoundation@gmail.com">
               <Image
                 priority
+                layout="responsive"
+                objectFit="cover"
+                quality={100}
                 src="/mail.svg"
                 alt="Mail Image"
-                width={180}
-                height={120}
-                className="w-96 sm:w-96 md:w-80 lg:w-96 xl:w-[30rem] 2xl:w-[34rem]"
+                width={1000}
+                height={1200}
+                className="h-full w-full"
               />
             </Link>
           </div>

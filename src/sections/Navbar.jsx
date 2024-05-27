@@ -71,7 +71,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/about" && "text-[#F2CE24]"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/about" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 About Us
@@ -80,7 +80,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/team"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/team" && "text-[#F2CE24]"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/team" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Our Team
@@ -90,37 +90,42 @@ const Navbar = () => {
               <HoverCard>
                 <HoverCardTrigger>
                   <Link
-                    href="/projects"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/projects" && "text-[#F2CE24]"
+                    href="#"
+                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname ===
+                      ("/projects" ||
+                        "/short_term_projects" ||
+                        "/middle_term_projects" ||
+                        "/long_term_projects") &&
+                      "text-[#F2CE24] after:w-full"
                       }`}
                   >
                     Our Project
                   </Link>
                 </HoverCardTrigger>
-                <HoverCardContent>
-                  <ul className="flex flex-col justify-center items-start space-y-4 xl:text-base text-sm">
+                <HoverCardContent className="lg:ml-16 xl:ml-20 w-66 py-3 px-0">
+                  <ul className="flex flex-col justify-center items-start space-y-3 xl:text-base text-sm font-medium w-full">
                     <li>
                       <Link
                         href="/short_term_projects"
-                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
-                        Short Term Projects{" >"}
+                        Short Term Projects
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/middle_term_projects"
-                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
-                        Middle Term Projects{" >"}
+                        Middle Term Projects
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/long_term_projects"
-                        className="relative after:bg-[#F2CE24] after:absolute after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 py-6"
+                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
-                        Long Term Projects{" >"}
+                        Long Term Projects
                       </Link>
                     </li>
                   </ul>
@@ -130,7 +135,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/works"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/works" && "text-[#F2CE24]"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/works" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Our Works
@@ -139,7 +144,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/blogs"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/blogs" && "text-[#F2CE24]"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/blogs" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Blogs & News
@@ -148,7 +153,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/careers" && "text-[#F2CE24]"
+                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/careers" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Careers

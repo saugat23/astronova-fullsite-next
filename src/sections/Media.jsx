@@ -1,10 +1,5 @@
 import React from "react";
 import Publications from "../components/UI/Publications";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import {
   Carousel,
   CarouselContent,
@@ -18,7 +13,7 @@ const Media = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 px-4 w-full md:mt-8 mt-4 max-w-7xl"
+      className="h-auto max-w-screen overflow-hidden mx-auto 2xl:py-8 lg:py-6 py-4 px-4 w-full md:mt-4 max-w-6xl"
     >
       <div className="flex flex-col justify-center items-center space-y-6">
         <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
@@ -30,7 +25,7 @@ const Media = () => {
               align: "center",
               loop: true,
             }}
-            className="w-full px-12"
+            className="w-full px-14"
           >
             <CarouselContent>
               <CarouselItem className="md:basis-1/2 lg:basis-1/3">
@@ -66,8 +61,8 @@ const Media = () => {
                 />
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious className="ml-8"/>
-            <CarouselNext className="mr-8"/>
+            <CarouselPrevious className="ml-8" />
+            <CarouselNext className="mr-8" />
           </Carousel>
         </div>
       </div>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Skeleton from "../components/ui/skeleton";
 import { getAllCampaigns } from "../app/services/api";
-import Gap from "../../public/projects/gap.svg";
 import {
   Carousel,
   CarouselContent,
@@ -35,12 +34,12 @@ const About = () => {
 
   return (
     <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 '>
-      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full px-4 max-w-7xl  md:mt-8 mt-4">
+      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full px-4 max-w-6xl  md:mt-8 mt-4">
         <div className="h-auto flex flex-col justify-center items-center xl:pr-8 xl:border-r-4 border-[#DB8114] md:w-full">
           <Image
             src="/assets/logo.png"
             alt=""
-            width={160}
+            width={180}
             height={120}
             className="py-4 md:w-full h-auto"
           />
@@ -53,7 +52,7 @@ const About = () => {
           <h3 className="px-4 lg:px-0 font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#33A4C6] tracking-tight">
             About Us
           </h3>
-          <p className="font-opensans text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-normal px-4 lg:px-0">
+          <p className="font-opensans text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-lg font-normal px-4 lg:px-0">
             The{" "}
             <span className="text-[#BDB809] font-bold">
               Astronova Foundation Nepal
@@ -78,11 +77,11 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="xl:py-8 py-3 bg-[#D9D9D9] md:mt-8 mt-4 h-auto my-auto"
+        className="xl:py-8 py-3 bg-[#D9D9D97D] md:mt-8 mt-4 h-auto my-auto"
       >
-        <div className="flex h-full lg:flex-row flex-col justify-between space-y-3 lg:space-y-0 items-center bg-[#D9D9D94D] mx-auto w-full max-w-7xl px-4">
-          <div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-4 border-[#DB8114]">
-            <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+        <div className="flex h-full lg:flex-row flex-col justify-between space-y-3 lg:space-y-0 items-center mx-auto w-full max-w-6xl px-4">
+          <div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-5 border-[#DB8114]">
+            <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-wider">
               OUR MAJOR WORKING AREA
             </h3>
             <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg  text-black text-left">
@@ -180,9 +179,9 @@ const About = () => {
             </div>
           </div> */}
 
-          <div className="md:w-3/4 lg:w-2/3 w-screen grow px-4 pt-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 flex">
-            <div className="p-auto w-full h-auto border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
-              <div className="justify-self-start self-center h-auto w-20 sm:w-24 md:w-32 lg:w-36 -mt-8">
+          <div className="md:w-[60%] lg:w-[55%] w-screen grow px-4 pt-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 flex">
+            <div className="w-full h-auto border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
+              <div className="justify-self-start self-center h-auto w-20 sm:w-24 md:w-36 lg:w-40 -mt-8">
                 <Link
                   href={{ pathname: "/working_area", query: { work: "asw" } }}
                   className=" bg-[#2496D7] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
@@ -198,8 +197,8 @@ const About = () => {
                   AFTER SCHOOL PROGRAM
                 </Link>
               </div>
-              <div className="flex w-full justify-between items-center justify-self-start mt-4">
-                <div className="self-start h-auto w-20 sm:w-24 md:w-32 lg:w-36 md:-ml-6">
+              <div className="flex w-full justify-between items-center">
+                <div className="self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40 md:-ml-6">
                   <Link
                     href={{
                       pathname: "/working_area",
@@ -218,7 +217,7 @@ const About = () => {
                     STARTUP & INNOVATION
                   </Link>
                 </div>
-                <div className="self-start h-auto w-56 sm:w-64 md:w-72 lg:w-[22rem] mt-8">
+                <div className="self-start h-auto w-48 sm:w-56 md:w-64 lg:w-80 mt-2">
                   <Link href="#" className="hover:scale-105 hover:duration-400">
                     <Image
                       src="/assets/teachers.svg"
@@ -229,7 +228,7 @@ const About = () => {
                     />
                   </Link>
                 </div>
-                <div className="self-start  h-auto w-20 sm:w-24 md:w-32 lg:w-36 md:-mr-6">
+                <div className="self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40 md:-mr-6">
                   <Link
                     href={{
                       pathname: "/working_area",
@@ -266,8 +265,8 @@ const About = () => {
                 </Link> 
                
               </div>*/}
-              <div className="flex w-full justify-around items-center justify-self-end mt-6">
-                <div className="justify-self-end self-start h-auto w-20 sm:w-24 md:w-32 lg:w-36">
+              <div className="flex w-full justify-around items-center mt-4">
+                <div className="justify-self-end self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
@@ -278,13 +277,13 @@ const About = () => {
                     <Image
                       src="/assets/steam.svg"
                       alt=""
-                      width="240"
-                      height="120"
-                      className="w-32 h-20 lg:w-40 lg:h-28"
+                      width="320"
+                      height="180"
+                      className="w-32 h-24 lg:w-40 lg:h-32"
                     />
                   </Link>
                 </div>
-                <div className="justify-self-end self-end h-auto w-20 sm:w-24 md:w-32 lg:w-36">
+                <div className="justify-self-end self-end h-auto w-20 sm:w-24 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
@@ -307,70 +306,72 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="h-full flex flex-col justify-between items-center space-y-12 mt-8 mx-auto w-full px-4 max-w-7xl">
-        <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
-          SUPPORT FOR STUDENTS
-        </h3>
-        {loading && (
-          <div className="mt-4 w-full py-4 flex space-x-3 h-[60vh]">
-            <div className="h-full flex flex-col justify-center items-center">
-              <Skeleton className="h-1/2 w-full"></Skeleton>
-              <div className="h-1/2 flex flex-col">
-                <Skeleton className="w-3/4 h-1/4"></Skeleton>
+      <div className="w-full bg-white py-6">
+        <div className="h-full flex flex-col justify-between items-center space-y-8 mx-auto w-full px-4 max-w-6xl">
+          <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+            SUPPORT FOR STUDENTS
+          </h3>
+          {loading && (
+            <div className="mt-4 w-full py-4 flex space-x-3 h-[60vh]">
+              <div className="h-full flex flex-col justify-center items-center">
                 <Skeleton className="h-1/2 w-full"></Skeleton>
-                <Skeleton className="h-1/4 w-3/4"></Skeleton>
+                <div className="h-1/2 flex flex-col">
+                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                  <Skeleton className="h-1/2 w-full"></Skeleton>
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
+                </div>
+              </div>
+              <div className="h-full hidden sm:flex flex-col justify-center items-center">
+                <Skeleton className="h-1/2 w-full"></Skeleton>
+                <div className="h-1/2 flex flex-col">
+                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                  <Skeleton className="h-1/2 w-full"></Skeleton>
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
+                </div>
+              </div>
+              <div className="h-full hidden xl:flex flex-col justify-center items-center">
+                <Skeleton className="h-1/2 w-full"></Skeleton>
+                <div className="h-1/2 flex flex-col">
+                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                  <Skeleton className="h-1/2 w-full"></Skeleton>
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
+                </div>
               </div>
             </div>
-            <div className="h-full hidden sm:flex flex-col justify-center items-center">
-              <Skeleton className="h-1/2 w-full"></Skeleton>
-              <div className="h-1/2 flex flex-col">
-                <Skeleton className="w-3/4 h-1/4"></Skeleton>
-                <Skeleton className="h-1/2 w-full"></Skeleton>
-                <Skeleton className="h-1/4 w-3/4"></Skeleton>
-              </div>
-            </div>
-            <div className="h-full hidden xl:flex flex-col justify-center items-center">
-              <Skeleton className="h-1/2 w-full"></Skeleton>
-              <div className="h-1/2 flex flex-col">
-                <Skeleton className="w-3/4 h-1/4"></Skeleton>
-                <Skeleton className="h-1/2 w-full"></Skeleton>
-                <Skeleton className="h-1/4 w-3/4"></Skeleton>
-              </div>
-            </div>
+          )}
+          <div className="w-full">
+            <Carousel
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              className="w-full px-8 py-4"
+            >
+              <CarouselContent className="py-4">
+                {campaigns.map((campaign) => {
+                  return (
+                    <CarouselItem
+                      key={campaign.id}
+                      className="md:basis-1/2 lg:basis-1/3"
+                    >
+                      <SupportStudent
+                        data-aos="fade-right"
+                        data-aos-duration="500"
+                        id={campaign.id}
+                        imgSrc={campaign.featured_img}
+                        project={campaign.title}
+                        desc={campaign.description.substr(0, 60) + " ..."}
+                        achieved={campaign.achieved}
+                        target={campaign.international_fund}
+                      />
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="ml-8" />
+              <CarouselNext className="mr-8" />
+            </Carousel>
           </div>
-        )}
-        <div className="mt-4 w-full py-4">
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            className="w-full px-8"
-          >
-            <CarouselContent>
-              {campaigns.map((campaign) => {
-                return (
-                  <CarouselItem
-                    key={campaign.id}
-                    className="md:basis-1/2 lg:basis-1/3"
-                  >
-                    <SupportStudent
-                      data-aos="fade-right"
-                      data-aos-duration="500"
-                      id={campaign.id}
-                      imgSrc={campaign.featured_img}
-                      project={campaign.title}
-                      desc={campaign.description.substr(0, 60) + " ..."}
-                      achieved={campaign.achieved}
-                      target={campaign.international_fund}
-                    />
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious className="ml-8" />
-            <CarouselNext className="mr-8" />
-          </Carousel>
         </div>
       </div>
     </section>
