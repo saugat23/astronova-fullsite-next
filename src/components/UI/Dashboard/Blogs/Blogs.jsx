@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import { createBlog } from "../../../../app/services/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Loader from "../../Loader/Loader";
-
-const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+import ReactQuill from "react-quill";
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -219,7 +217,8 @@ const Page = () => {
               >
                 More Description
               </label>
-              <QuillEditor
+              <ReactQuill
+                theme="snow"
                 value={formData.description}
                 name="description"
                 id="description"

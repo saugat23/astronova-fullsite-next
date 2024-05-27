@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import { Input, Textarea } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-
-const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+import ReactQuill from "react-quill";
 
 const Page = () => {
   const [content, setContent] = useState("");
@@ -198,7 +196,8 @@ const Page = () => {
               >
                 More Description
               </label>
-              <QuillEditor
+              <ReactQuill
+                theme="snow"
                 value={content}
                 onChange={handleEditorChange}
                 modules={quillModules}
