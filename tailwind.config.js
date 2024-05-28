@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
-import {nextui} from "@nextui-org/react";
+import { nextui } from "@nextui-org/react";
 
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -80,15 +80,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        "inter" : ["var(--font-inter)"],
-        "opensans" : ["var(--font-opensans)"],
-        "montserrat" : ["var(--font-montserrat)"],
-        "lato" : ["var(--font-lato)"],
-        "ibmplex" : ["var(--font-ibmplex)"],
-        "poppins" : ["var(--font-poppins)"],
-        "kumbhsans" : ["var(--font-kumbhsans)"],
-        "roboto" : ["var(--font-roboto)"],
-        "tinos" : ["var(--font-tinos)"],
+        inter: ["var(--font-inter)"],
+        opensans: ["var(--font-opensans)"],
+        poppins: ["var(--font-poppins)"],
+        kumbhsans: ["var(--font-kumbhsans)"],
       },
       screens: {
         xs: "320px",
@@ -97,4 +92,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate"), nextui()],
-}
+};

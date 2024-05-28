@@ -66,9 +66,7 @@ const CampaignById = ({ params, data }) => {
               priority
               width={500}
               height={400}
-              className="w-full h-96"
-              layout="responsive"
-              objectFit="cover"
+              className="w-full h-96 object-center object-cover"
               quality={75}
             />
           </div>
@@ -448,7 +446,7 @@ const CampaignById = ({ params, data }) => {
                       className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 1000" : "$1000",
+                          selectedPayment === "khalti" ? "Rs 1000" : "$1000"
                         )
                       }
                     >
@@ -459,7 +457,7 @@ const CampaignById = ({ params, data }) => {
                       className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 2000" : "$2000",
+                          selectedPayment === "khalti" ? "Rs 2000" : "$2000"
                         )
                       }
                     >
@@ -470,7 +468,7 @@ const CampaignById = ({ params, data }) => {
                       className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 3000" : "$3000",
+                          selectedPayment === "khalti" ? "Rs 3000" : "$3000"
                         )
                       }
                     >
@@ -481,7 +479,7 @@ const CampaignById = ({ params, data }) => {
                       className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 4000" : "$4000",
+                          selectedPayment === "khalti" ? "Rs 4000" : "$4000"
                         )
                       }
                     >
@@ -492,7 +490,7 @@ const CampaignById = ({ params, data }) => {
                       className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 5000" : "$5000",
+                          selectedPayment === "khalti" ? "Rs 5000" : "$5000"
                         )
                       }
                     >

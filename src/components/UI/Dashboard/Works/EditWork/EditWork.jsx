@@ -116,7 +116,6 @@ const Page = ({ data }) => {
                   width={400}
                   height={300}
                   quality={75}
-                  objectFit="cover"
                   priority
                   className="absolute top-0 left-0 w-full h-full object-cover cursor-pointer"
                   onClick={handleCoverImageClick}
@@ -226,7 +225,6 @@ const Page = ({ data }) => {
                           {img && (
                             <Image
                               priority
-                              objectFit="cover"
                               quality={75}
                               width={600}
                               height={400}

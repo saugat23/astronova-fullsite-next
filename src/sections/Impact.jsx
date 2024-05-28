@@ -85,13 +85,11 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                layout="responsive"
-                objectFit="cover"
                 src="/assets/workshop.svg"
                 alt="Workshop SVG"
                 width={42}
                 height={38}
-                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px]"
+                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px] object-center object-cover"
               />
             </div>
             <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
@@ -114,11 +112,9 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                layout="responsive"
-                objectFit="cover"
                 src="/careers.svg"
                 alt="Careers Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
                 width={100}
                 height={100}
               />
@@ -139,11 +135,9 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                layout="responsive"
-                objectFit="cover"
                 src="/funding.svg"
                 alt="Funding Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
                 width={30}
                 height={30}
               />
@@ -165,11 +159,9 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                layout="responsive"
-                objectFit="cover"
                 src="/project.svg"
                 alt="Project Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
                 width={30}
                 height={30}
               />
@@ -191,11 +183,9 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                layout="responsive"
-                objectFit="cover"
                 src="/resource.svg"
                 alt="Resource Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16"
+                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
                 width={30}
                 height={30}
               />

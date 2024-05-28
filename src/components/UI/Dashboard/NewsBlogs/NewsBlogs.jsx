@@ -11,7 +11,7 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 
-const Page = ({data}) => {
+const Page = ({ data }) => {
   const items = data.news_blogs;
   const [search, setSearch] = useState("");
 
@@ -32,7 +32,7 @@ const Page = ({data}) => {
               type="text"
               id="campaignSearch"
               name="campaignSearch"
-              className="p-3 bg-transparent w-60 md:w-96 font-montserrat text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+              className="p-3 bg-transparent w-60 md:w-96 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
               placeholder="Search by Campaign name"
               onChange={(e) => setSearch(e.target.value)}
             />

@@ -58,14 +58,12 @@ const Hero = () => {
                     width={800}
                     height={400}
                     quality={75}
-                    layout="responsive"
-                    objectFit="cover"
                   />
                 </div>
               </div>
               <div className="w-full flex lg:flex-row flex-col-reverse lg:justify-between justify-center lg:items-end items-center space-y-6 lg:space-y-0">
                 <div className="w-full lg:w-2/5 lg:h-[70vh] h-[40vh] bg-[url('/slide2rocket.svg')] object-cover bg-cover bg-no-repeat flex flex-col justify-end lg:items-start items-center">
-                  <h2 className="font-montserrat font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-center lg:text-left">
+                  <h2 className="font-kumbhsans font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg text-center lg:text-left">
                     KEY Assistance
                   </h2>
                   <div className="flex justify-center items-center lg:space-x-8 space-x-3 mt-6 -mb-8">
@@ -84,7 +82,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center lg:items-end items-center space-y-4 lg:w-2/5 w-full">
-                  <h3 className="font-montserrat font-normal 2xl:text-7xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl tracking-wider lg:text-right text-center text-white">
+                  <h3 className="font-kumbhsans font-normal 2xl:text-7xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl tracking-wider lg:text-right text-center text-white">
                     Do you have{" "}
                     <span className="font-semibold">Innovation Idea?</span>
                   </h3>
@@ -93,13 +91,11 @@ const Hero = () => {
                     src="/slide2hr.svg"
                     alt="Section Divider"
                     quality={75}
-                    layout="responsive"
-                    objectFit="cover"
-                    className="float-right mt-6"
+                    className="float-right mt-6 object-center object-cover"
                     width={600}
                     height={30}
                   />
-                  <h3 className="font-montserrat font-normal 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base  lg:text-right text-center lg:text-white text-white">
+                  <h3 className="font-kumbhsans font-normal 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base  lg:text-right text-center lg:text-white text-white">
                     Hetauda Research & Innovation Center <br />{" "}
                     <span className="font-semibold">
                       announces call for Applications
@@ -109,21 +105,19 @@ const Hero = () => {
                   <Image
                     priority
                     src="/slide2hr.svg"
-                    quality={75}
-                    layout="responsive"
-                    objectFit="cover"
                     alt="Section Divider"
-                    className="float-right mt-6"
+                    quality={75}
+                    className="float-right mt-6 object-center object-cover"
                     width={600}
                     height={30}
                   />
-                  <h3 className="font-montserrat font-semibold 2xl:text-7xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl   lg:text-right text-center text-white">
+                  <h3 className="font-kumbhsans font-semibold 2xl:text-7xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl   lg:text-right text-center text-white">
                     Student Startup & Innovation Policy <br /> SSIP 1.0
                   </h3>
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center lg:p-6 py-10 px-2 font-poppins font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-xs bg-[#6960E1] text-white">
+            <div className="h-full flex justify-center items-center lg:p-6 py-10 px-2 font-kumbhsans font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-xs bg-[#6960E1] text-white">
               JOIN US TO ESTABLISH HETAUDA RESEARCH & INNOVATION CENTER
             </div>
           </div>
@@ -135,12 +129,10 @@ const Hero = () => {
                     priority
                     src="/slide1childimage.png"
                     quality={75}
-                    objectFit="cover"
-                    layout="responsive"
+                    className="h-full w-full bg-cover object-center object-cover"
                     alt="Children Image"
                     width={1000}
                     height={800}
-                    className="h-full w-full bg-cover"
                   />
                 </div>
                 <div className="h-[45%] w-full hidden bg-[#9C0F1A] lg:flex flex-col justify-center items-center">
@@ -166,12 +158,10 @@ const Hero = () => {
                     priority
                     src="/slide1child-support.png"
                     quality={75}
-                    objectFit="cover"
-                    layout="responsive"
                     alt="Children Image"
                     width={1000}
                     height={800}
-                    className="h-full w-full bg-cover"
+                    className="h-full w-full bg-cover object-center object-cover"
                   />
                   <div className="absolute bottom-0 -right-[28rem] w-full h-80 bg-white -rotate-45 flex flex-col space-y-3">
                     <h2 className="font-poppins font-semibold xl:text-2xl md:text-xl text-lg text-[#25A6D9] text-center rotate-45 mt-12 mr-28">

@@ -67,7 +67,7 @@ function WorkById({ params, data, allWorks }) {
                 </h3>
               </div>
               <div className="bg-[#4455C0] py-8 px-4 flex justify-center items-start rounded-b-xl">
-                <p className="font-roboto font-medium text-white 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
+                <p className="font-poppins font-medium text-white 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
                   At Astronova, we are dedicated to fostering education and
                   driving innovation across various domains. Our multifaceted
                   approach encompasses a wide range of initiatives that empower
@@ -120,10 +120,8 @@ function WorkById({ params, data, allWorks }) {
                   alt="image"
                   width={1200}
                   height={800}
-                  layout="responsive"
-                  objectFit="cover"
                   quality={75}
-                  className="w-full h-full"
+                  className="w-full h-full object-center object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
@@ -133,10 +131,8 @@ function WorkById({ params, data, allWorks }) {
                   alt="image"
                   width={1200}
                   height={800}
-                  layout="responsive"
-                  objectFit="cover"
                   quality={75}
-                  className="w-full h-full"
+                  className="w-full h-full object-center object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
@@ -146,10 +142,8 @@ function WorkById({ params, data, allWorks }) {
                   alt="image"
                   width={1200}
                   height={800}
-                  layout="responsive"
-                  objectFit="cover"
                   quality={75}
-                  className="w-full h-full"
+                  className="w-full h-full object-center object-cover"
                 />
               </CarouselItem>
               <CarouselItem className="md:basis-1/2">
@@ -159,10 +153,8 @@ function WorkById({ params, data, allWorks }) {
                   alt="image"
                   width={1200}
                   height={800}
-                  layout="responsive"
-                  objectFit="cover"
                   quality={75}
-                  className="w-full h-full"
+                  className="w-full h-full object-center object-cover"
                 />
               </CarouselItem>
             </CarouselContent>

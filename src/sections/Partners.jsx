@@ -23,7 +23,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/triontech.svg"
                 alt="Trion Tech Image"
                 width={40}
@@ -33,7 +32,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/nationalnoc.png"
                 alt="National NIC Image"
                 width={80}
@@ -43,7 +41,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/neema.png"
                 alt="Neema Image"
                 width={80}
@@ -53,7 +50,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/thesquad.png"
                 alt="The Squad Image"
                 width={80}
@@ -63,7 +59,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/brainycube.png"
                 alt="Brainy Cube Image"
                 width={80}
@@ -73,7 +68,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/neo.svg"
                 alt="NEO Image"
                 width={40}
@@ -83,7 +77,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/creativecafe.svg"
                 alt="Creative Cafe Image"
                 width={40}
@@ -93,7 +86,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/man.svg"
                 alt="MAN Image"
                 width={40}
@@ -106,7 +98,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/dur.svg"
                 alt="Dursikshya Image"
                 width={40}
@@ -117,7 +108,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/triontech.svg"
                 alt="Trion Tech Image"
                 width={40}
@@ -127,7 +117,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/nationalnoc.png"
                 alt="National NIC Image"
                 width={80}
@@ -137,7 +126,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/neema.png"
                 alt="Neema Image"
                 width={80}
@@ -147,7 +135,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/thesquad.png"
                 alt="The Squad Image"
                 width={80}
@@ -157,7 +144,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/brainycube.png"
                 alt="Brainy Cube Image"
                 width={80}
@@ -167,7 +153,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/neo.svg"
                 alt="NEO Image"
                 width={40}
@@ -177,7 +162,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/creativecafe.svg"
                 alt="Creative Cafe Image"
                 width={40}
@@ -187,7 +171,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/man.svg"
                 alt="MAN Image"
                 width={40}
@@ -200,7 +183,6 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                objectFit="cover"
                 src="/dur.svg"
                 alt="Dursikshya Image"
                 width={40}
@@ -227,7 +209,7 @@ const Partners = () => {
             <h3 className="font-opensans tracking-[-0.07em] text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
               JOIN THE JOURNEY
             </h3>
-            <h3 className="font-montserrat tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
+            <h3 className="font-kumbhsans tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
               Be the change you want to see
             </h3>
             <p className="font-opensans font-normal xl:text-lg lg:text-base md:text-sm text-xs text-white text-center py-2">
@@ -334,11 +316,12 @@ const Partners = () => {
         <div className="hidden h-full md:block md:w-1/2">
           <Image
             priority
+            quality={80}
             src="/childrens.png"
             alt="Childrens Image"
             width={1000}
             height={1000}
-            className="h-full"
+            className="h-full object-center object-cover"
           />
         </div>
         <div className="w-full md:w-1/2 xl:p-8 lg:p-6 flex flex-col justify-center items-center">
@@ -349,14 +332,12 @@ const Partners = () => {
             <Link href="mailto:info@astronovafoundation@gmail.com">
               <Image
                 priority
-                layout="responsive"
-                objectFit="cover"
                 quality={100}
                 src="/mail.svg"
                 alt="Mail Image"
                 width={1000}
                 height={1200}
-                className="h-full w-full"
+                className="h-full w-full object-center object-cover"
               />
             </Link>
           </div>

@@ -30,10 +30,10 @@ const Publications = ({ imgSrc, logoSrc, title, article }) => {
               height={120}
             />
           </div>
-          <h3 className="font-montserrat font-bold 2xl:text-xl lg:text-lg md:text-base text-sm">
+          <h3 className="font-kumbhsans font-bold 2xl:text-xl lg:text-lg md:text-base text-sm">
             {title}
           </h3>
-          <p className="font-roboto font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-[#6E6E6E]">
+          <p className="font-poppins font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-[#6E6E6E]">
             {article}
           </p>
           <Link

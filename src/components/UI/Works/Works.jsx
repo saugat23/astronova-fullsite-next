@@ -62,7 +62,7 @@ const Works = ({ data }) => {
             </h3>
           </div>
           <div className="bg-[#4455C0] py-8 px-4 flex justify-center items-start rounded-b-xl">
-            <p className="font-roboto font-medium text-white 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
+            <p className="font-poppins font-medium text-white 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
               At Astronova, we are dedicated to fostering education and driving
               innovation across various domains. Our multifaceted approach
               encompasses a wide range of initiatives that empower individuals
@@ -94,7 +94,6 @@ const Works = ({ data }) => {
                       <div className="h-1/2 w-full">
                         <Image
                           priority
-                          objectFit="cover"
                           quality={80}
                           src={work.cover_img}
                           alt={work.title}

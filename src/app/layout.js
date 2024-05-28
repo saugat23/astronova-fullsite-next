@@ -1,14 +1,4 @@
-import {
-  Inter,
-  Open_Sans,
-  Montserrat,
-  Lato,
-  IBM_Plex_Sans_Thai_Looped,
-  Poppins,
-  Kumbh_Sans,
-  Tinos,
-  Roboto,
-} from "next/font/google";
+import { Inter, Open_Sans, Poppins, Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Suspense } from "react";
@@ -19,34 +9,11 @@ const kumbhSans = Kumbh_Sans({
   subsets: ["latin"],
   variable: "--font-kumbhsans",
 });
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-const lato = Lato({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-lato",
-});
-const ibmPlex = IBM_Plex_Sans_Thai_Looped({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-ibmplex",
-});
+
 const poppins = Poppins({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
-});
-const tinos = Tinos({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-tinos",
-});
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
 });
 
 export const metadata = {
@@ -57,13 +24,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className={`${inter.variable} ${openSans.variable} ${montserrat.variable} ${lato.variable} ${ibmPlex.variable} ${poppins.variable} ${kumbhSans.variable} ${tinos.variable} ${roboto.variable}`}>
-          <Suspense>
-      <Providers>
-          {children}
-      </Providers>
-      </Suspense>
-        </body>
+      <body
+        className={`${inter.variable} ${openSans.variable}  ${poppins.variable} ${kumbhSans.variable} `}
+      >
+        <Suspense>
+          <Providers>{children}</Providers>
+        </Suspense>
+      </body>
     </html>
   );
 }

@@ -12,7 +12,7 @@ import {
   TableCell,
 } from "@nextui-org/react";
 
-const Page = ({data}) => {
+const Page = ({ data }) => {
   const items = data.events;
   const [search, setSearch] = useState("");
 
@@ -21,7 +21,7 @@ const Page = ({data}) => {
       <section className="overflow-visible h-auto p-4">
         <div className="bg-white py-8 px-4 w-full">
           <div className="flex justify-between w-full items-center">
-            <h3 className="font-montserrat tracking-wider font-semibold text-base cursor-pointer">
+            <h3 className="font-kumbhsans tracking-wider font-semibold text-base cursor-pointer">
               <button
                 type="button"
                 className="py-4 px-2 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans text-xs md:text-sm xl:text-base font-semibold"
@@ -34,7 +34,7 @@ const Page = ({data}) => {
                 type="text"
                 id="eventSearch"
                 name="eventSearch"
-                className="p-3 bg-transparent w-60 md:w-96 font-montserrat text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+                className="p-3 bg-transparent w-60 md:w-96 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
                 placeholder="Search by Upcoming events"
                 onChange={(e) => setSearch(e.target.value)}
               />

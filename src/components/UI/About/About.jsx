@@ -172,7 +172,6 @@ const About = () => {
             <Image
               src="/aboutusimage2.png"
               alt="About us Image"
-              loading="lazy"
               width={600}
               height={650}
               className="w-full hover:scale-105 hover:duration-300"

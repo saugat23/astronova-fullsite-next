@@ -203,7 +203,6 @@ const Page = ({ data }) => {
                   <Image
                     priority
                     quality={75}
-                    objectFit="cover"
                     src={formData.featured_img}
                     alt="Featured"
                     width={1000}
@@ -235,7 +234,6 @@ const Page = ({ data }) => {
                       <Image
                         priority
                         quality={75}
-                        objectFit="cover"
                         src={img}
                         width={600}
                         height={400}

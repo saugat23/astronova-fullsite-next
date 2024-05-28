@@ -17,14 +17,14 @@ const Works = ({ data }) => {
   const [search, setSearch] = useState("");
 
   const filteredWorks = works.filter((work) =>
-    work.title.toLowerCase().includes(search.toLowerCase()),
+    work.title.toLowerCase().includes(search.toLowerCase())
   );
   return (
     <>
       <section className="overflow-visible h-auto p-4">
         <div className="bg-white py-8 px-4 w-full">
           <div className="flex justify-between w-full items-center">
-            <div className="font-montserrat tracking-wider font-semibold md:text-sm lg:text-base cursor-pointer flex justify-center items-center">
+            <div className="font-kumbhsans tracking-wider font-semibold md:text-sm lg:text-base cursor-pointer flex justify-center items-center">
               <button
                 type="button"
                 className="py-2 px-2 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
@@ -37,7 +37,7 @@ const Works = ({ data }) => {
                 type="text"
                 id="workSearch"
                 name="workSearch"
-                className="p-2 md:p-3 bg-transparent w-60 md:w-96 font-montserrat md:text-xs lg:text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+                className="p-2 md:p-3 bg-transparent w-60 md:w-96 font-kumbhsans md:text-xs lg:text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
                 placeholder="Search by Work Title"
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -75,10 +75,8 @@ const Works = ({ data }) => {
                                     alt="Work Cover Photo"
                                     width={800}
                                     height={600}
-                                    className="w-full h-auto rounded-lg"
-                                    layout="responsive"
+                                    className="w-full h-auto rounded-lg object-center object-cover"
                                     quality={75}
-                                    objectFit="cover"
                                   />
                                 </div>
                                 <h1 className="text-base font-semibold font-inter">

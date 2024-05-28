@@ -41,7 +41,7 @@ const Page = () => {
       <section className="overflow-visible h-auto p-4">
         <div className="bg-white py-8 px-4 w-full">
           <div className="flex justify-between w-full items-center">
-            <h3 className="font-montserrat tracking-wider font-semibold text-xs md:text-sm xl:text-base cursor-pointer">
+            <h3 className="font-kumbhsans tracking-wider font-semibold text-xs md:text-sm xl:text-base cursor-pointer">
               Form Response
             </h3>
             <div>
@@ -49,7 +49,7 @@ const Page = () => {
                 type="text"
                 id="applicantSearch"
                 name="applicantSearch"
-                className="p-3 bg-transparent w-60 md:w-96 font-montserrat text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+                className="p-3 bg-transparent w-60 md:w-96 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
                 placeholder="Search by Applicant's Name"
                 onChange={(e) => setSearch(e.target.value)}
               />

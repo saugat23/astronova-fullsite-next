@@ -18,7 +18,7 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
 function LineChart() {
@@ -69,7 +69,7 @@ function LineChart() {
           <div className="flex w-full flex-wrap gap-3 sm:gap-5 mt-4">
             <div className="flex min-w-47.5">
               <div className="w-full">
-                <p className="font-semibold xs:text-base md:text-lg xl:text-xl font-montserrat">
+                <p className="font-semibold xs:text-base md:text-lg xl:text-xl font-kumbhsans">
                   Statistics
                 </p>
               </div>

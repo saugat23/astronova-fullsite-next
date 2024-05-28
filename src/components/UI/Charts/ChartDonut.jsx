@@ -44,7 +44,7 @@ function DoughnutChart() {
       <div className="w-[60%] rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-xl dark:border-strokedark dark:bg-boxdark sm:px-7.5 h-full">
         <div className="mb-3 justify-between gap-4 sm:flex">
           <div>
-            <h5 className="xs:text-base md:text-lg xl:text-xl font-semibold font-montserrat text-black dark:text-white mt-4">
+            <h5 className="xs:text-base md:text-lg xl:text-xl font-semibold font-kumbhsans text-black dark:text-white mt-4">
               Campaign Type
             </h5>
           </div>

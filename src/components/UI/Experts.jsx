@@ -8,14 +8,12 @@ const Experts = ({ imgSrc, name, profession }) => {
         <div>
           <Image
             priority
-            layout="responsive"
-            objectFit="cover"
             quality={80}
             width={400}
             height={400}
             src={imgSrc}
             alt={name}
-            className="rounded-md lg:h-60 lg:w-60"
+            className="rounded-md lg:h-60 lg:w-60 object-center object-cover"
           />
         </div>
         <div className="flex flex-col justify-center items-center space-y-1">

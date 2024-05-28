@@ -17,7 +17,7 @@ const ValuesContainer = ({ bgColor, svg, title, desc }) => {
           />
         </div>
         <h4
-          className={`font-montserrat font-bold text-xl text-justify text-[${bgColor}]`}
+          className={`font-kumbhsans font-bold text-xl text-justify text-[${bgColor}]`}
         >
           {title}
         </h4>

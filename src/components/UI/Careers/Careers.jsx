@@ -38,7 +38,7 @@ const Careers = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto max-w-7xl flex flex-col justify-center items-start lg:space-y-16 space-y-8 py-12 px-2 md:px-4 lg:px-0"
+        className="mx-auto max-w-6xl flex flex-col justify-center items-start lg:space-y-16 space-y-8 py-12 px-2 md:px-4 lg:px-0"
       >
         <h3 className="font-opensans font-medium tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black">
           JOBS BY <span className="text-[#AE0D19] font-bold">CATEGORY</span>
@@ -82,7 +82,7 @@ const Careers = () => {
         data-aos-duration="400"
         className="bg-[#F4F4F4] mt-16 py-12 px-2 md:px-4 lg:px-0"
       >
-        <div className="mx-auto max-w-7xl flex flex-col justify-center items-start lg:space-y-16 space-y-6">
+        <div className="mx-auto max-w-6xl flex flex-col justify-center items-start lg:space-y-16 space-y-6">
           <div className="w-auto lg:w-1/4">
             <button
               type="button"
@@ -125,13 +125,13 @@ const Careers = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="bg-[#2496D7] xl:py-12 lg:py-10 xl:px-12 lg:px-10 py-2 px-2 flex flex-col justify-center items-center space-y-6"
+          className="bg-[#2496D7] w-full xl:py-12 lg:py-10  flex flex-col justify-center items-center space-y-6"
         >
-          <div className="w-[80%] mx-auto flex flex-col justify-center items-center space-y-4">
-            <h3 className="font-opensans tracking-[-0.07em] text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
+          <div className="max-w-6xl px-4 mx-auto flex flex-col justify-center items-center space-y-4">
+            <h3 className="font-inter text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
               JOIN THE JOURNEY
             </h3>
-            <h3 className="font-montserrat tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
+            <h3 className="font-kumbhsans tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
               Be the change you want to see
             </h3>
             <p className="font-opensans font-normal xl:text-lg lg:text-base md:text-sm text-xs text-white text-center py-2">

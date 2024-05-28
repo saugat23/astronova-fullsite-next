@@ -55,13 +55,13 @@ const Page = () => {
           <div className="">
             <Image src={Logo} alt="Astronova Foundation" priority />
           </div>
-          <h2 className="font-tinos font-bold lg:text-2xl text-black tracking-[0.2em] leading-loose">
+          <h2 className="font-kumbhsans font-bold lg:text-2xl text-black tracking-[0.2em] leading-loose">
             ASTRONOVA
           </h2>
           <h2 className="font-poppins font-medium lg:text-xs text-black tracking-[0.3em] leading-loose">
             Foundation Nepal
           </h2>
-          <h2 className="font-montserrat font-semibold lg:text-4xl text-[#091747] lg:mt-3">
+          <h2 className="font-kumbhsans font-semibold lg:text-4xl text-[#091747] lg:mt-3">
             Welcome Back Coordinator
           </h2>
           <div className="w-full sm:w-3/4 lg:w-1/2 mx-auto">
@@ -70,7 +70,7 @@ const Page = () => {
               name="email"
               id="email"
               placeholder="Email or User ID"
-              className="bg-[#ECECEC] p-5 outline-none font-roboto font-normal focus:border focus:border-[#134affcc] rounded-xl w-full"
+              className="bg-[#ECECEC] p-5 outline-none font-poppins font-normal focus:border focus:border-[#134affcc] rounded-xl w-full"
               onChange={handleChange}
               value={formData.email}
             />
@@ -81,7 +81,7 @@ const Page = () => {
               name="password"
               id="password"
               placeholder="Password"
-              className="bg-[#ECECEC] p-5 outline-none font-roboto font-normal focus:border focus:border-[#134affcc] rounded-xl w-full"
+              className="bg-[#ECECEC] p-5 outline-none font-poppins font-normal focus:border focus:border-[#134affcc] rounded-xl w-full"
               onChange={handleChange}
               value={formData.password}
             />

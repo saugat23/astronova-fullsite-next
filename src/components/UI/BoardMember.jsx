@@ -8,21 +8,19 @@ const BoardMember = ({ imgSrc, name, position }) => {
         <div className="w-4/5">
           <Image
             priority
-            layout="responsive"
-            objectFit="cover"
             quality={80}
             src={`/` + imgSrc}
             alt={name}
-            className="h-full"
+            className="h-full object-cover object-center"
             width={600}
             height={600}
           />
         </div>
         <div className="flex flex-col justify-center items-center space-y-1">
-          <h4 className="font-montserrat font-semibold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#0052A0]">
+          <h4 className="font-kumbhsans font-semibold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#0052A0]">
             {name}
           </h4>
-          <h4 className="font-montserrat font-semibold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#0052A0]">
+          <h4 className="font-kumbhsans font-semibold 2xl:text-xl xl:text-lg md:text-base sm:text-sm text-xs text-[#0052A0]">
             {position}
           </h4>
         </div>

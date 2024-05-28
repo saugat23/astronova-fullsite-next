@@ -83,7 +83,7 @@ const Campaign = ({ data }) => {
   };
 
   const filteredCampaign = campaign.filter((camp) =>
-    camp.title.toLowerCase().includes(search.toLowerCase()),
+    camp.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -200,7 +200,7 @@ const Campaign = ({ data }) => {
               type="text"
               id="campaignSearch"
               name="campaignSearch"
-              className="p-3 bg-transparent w-80 font-montserrat text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg block md:inline-block"
+              className="p-3 bg-transparent w-80 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg block md:inline-block"
               placeholder="Search by Campaign name"
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -245,10 +245,8 @@ const Campaign = ({ data }) => {
                                     alt="Campaign Featured Photo"
                                     width={800}
                                     height={600}
-                                    className="w-full h-auto rounded-lg"
-                                    layout="responsive"
+                                    className="w-full h-auto rounded-lg object-center object-cover"
                                     quality={75}
-                                    objectFit="cover"
                                   />
                                 </div>
                                 <h1 className="text-base font-semibold font-inter">

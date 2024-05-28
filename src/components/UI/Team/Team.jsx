@@ -54,7 +54,6 @@ const Team = () => {
           >
             <Image
               priority
-              objectFit="cover"
               quality={80}
               src="/kishanbastola.png"
               alt="kishanbastola"
@@ -70,7 +69,7 @@ const Team = () => {
             <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
               FOUNDER AND PRESIDENT
             </h4>
-            <p className="font-montserrat font-medium 2xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
+            <p className="font-kumbhsans font-medium 2xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -105,7 +104,6 @@ const Team = () => {
           >
             <Image
               priority
-              objectFit="cover"
               quality={80}
               src="/babatundeayoola.png"
               alt="Babatundeayoola"
@@ -121,7 +119,7 @@ const Team = () => {
             <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
               GLOBAL AMBASSADOR
             </h4>
-            <p className="font-montserrat font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
+            <p className="font-kumbhsans font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -270,20 +268,18 @@ const Team = () => {
               <div className="h-full rounded-md">
                 <Image
                   priority
-                  objectFit="cover"
-                  layout="responsive"
                   quality={80}
                   src="/bishnuprasaddhakal.png"
                   alt="Bishnu Prasad Dhakal"
                   width={200}
                   height={200}
-                  className="h-full border border-[#AE0D19]"
+                  className="h-full border border-[#AE0D19] object-center object-cover"
                 />
               </div>
-              <h4 className="font-montserrat font-semibold text-xl text-[#1A1728]">
+              <h4 className="font-kumbhsans font-semibold text-xl text-[#1A1728]">
                 Bishnu Prasad Dhakal
               </h4>
-              <h4 className="font-montserrat font-semibold text-sm text-[#1A1728B5]">
+              <h4 className="font-kumbhsans font-semibold text-sm text-[#1A1728B5]">
                 Legal Practitioner
               </h4>
             </div>
@@ -564,7 +560,6 @@ const Team = () => {
             alt="Team Footer Child SVG"
             priority
             quality={90}
-            objectFit="cover"
             width={400}
             height={600}
             className="justify-self-end h-full w-auto"

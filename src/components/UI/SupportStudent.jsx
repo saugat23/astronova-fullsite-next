@@ -27,13 +27,11 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
           <Image
             priority
             quality={75}
-            objectFit="cover"
-            layout="responsive"
             width={600}
             height={400}
             src={imgSrc}
             alt={project}
-            className="w-full h-full"
+            className="w-full h-full object-center object-cover"
           />
         </div>
         <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black">
