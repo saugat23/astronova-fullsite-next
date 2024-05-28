@@ -102,12 +102,12 @@ const Navbar = () => {
                     Our Project
                   </Link>
                 </HoverCardTrigger>
-                <HoverCardContent className="lg:ml-16 xl:ml-20 w-66 py-3 px-0">
+                <HoverCardContent className="lg:ml-16 xl:ml-20 py-3">
                   <ul className="flex flex-col justify-center items-start space-y-3 xl:text-base text-sm font-medium w-full">
                     <li>
                       <Link
                         href="/short_term_projects"
-                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                        className="w-full py-3 px-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
                         Short Term Projects
                       </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/middle_term_projects"
-                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                        className="w-full py-3 px-2 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
                         Middle Term Projects
                       </Link>
@@ -123,7 +123,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         href="/long_term_projects"
-                        className="w-full p-3 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                        className="w-full py-3 px-4 hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
                       >
                         Long Term Projects
                       </Link>

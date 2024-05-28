@@ -14,7 +14,7 @@ const Works = ({ data }) => {
   const works = data.works;
 
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="h-auto max-w-screen">
       <div className="w-full lg:h-auto h-[50vh] m-0">
         <Image
           priority
@@ -25,8 +25,8 @@ const Works = ({ data }) => {
           className="h-full w-full bg-cover"
         />
       </div>
-      <div className="mx-auto px-4 sm:px-6 md:px-0 w-full md:w-3/5 max-w-6xl xl:py-12 mt-4 flex lg:flex-row flex-col justify-center items-center lg:items-start xl:space-x-16 lg:space-x-4 space-x-0 space-y-4 lg:space-y-0">
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-5">
+      <div className="mx-auto px-4 w-full max-w-6xl xl:py-12 flex lg:flex-row flex-col justify-center items-center lg:items-start xl:space-x-16 lg:space-x-4 space-x-0 space-y-4 lg:space-y-0">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-5 mt-4">
           <h3 className="font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
             Our Work
           </h3>
@@ -41,11 +41,12 @@ const Works = ({ data }) => {
             Observatory, Knowledge Park and Workshops.
           </p>
         </div>
-        <div className="mx-auto lg:mx-0 h-auto w-64 lg:w-72 xl:80 2xl:w-96 lg:-mt-60 xl:-mt-72 hidden lg:flex flex-col justify-center items-center rounded-xl z-30">
+        <div className="mx-auto px-4 h-auto w-1/2 lg:-mt-40 xl:-mt-60 flex flex-col justify-center items-center rounded-xl z-30">
           <div className="w-full bg-white flex flex-col justify-center items-center py-6 px-12 rounded-t-xl drop-shadow-[0_0_0.75rem_white]">
             <div className="w-1/2 h-auto">
               <Image
                 priority
+                quality={90}
                 src="/logo.png"
                 alt="Logo"
                 className="w-full h-full"
