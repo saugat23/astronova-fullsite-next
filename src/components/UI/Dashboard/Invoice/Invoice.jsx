@@ -1,45 +1,101 @@
 "use client";
 import React, { useState } from "react";
-import "react-quill/dist/quill.snow.css";
-import { Input, Textarea } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
+import {
+  Bold,
+  Strikethrough,
+  Italic,
+  Heading as HeadingIcon,
+  Code,
+  Pen,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
-import ReactQuill from "react-quill";
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Heading from "@tiptap/extension-heading";
+import { Toggle } from "../../../ui/toggle";
+
+const Toolbar = ({ editor }) => {
+  if (!editor) {
+    return null;
+  }
+  return (
+    <div className="bg-transparent rounded-xl pb-4 flex gap-3">
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("heading")}
+        onPressedChange={() =>
+          editor.chain().focus().toggleHeading({ level: 2 }).run()
+        }
+      >
+        <HeadingIcon className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("bold")}
+        onPressedChange={() => editor.chain().focus().toggleBold().run()}
+      >
+        <Bold className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("italic")}
+        onPressedChange={() => editor.chain().focus().toggleItalic().run()}
+      >
+        <Italic className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("strike")}
+        onPressedChange={() => editor.chain().focus().toggleStrike().run()}
+      >
+        <Strikethrough className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("code")}
+        onPressedChange={() => editor.chain().focus().toggleCode().run()}
+      >
+        <Code className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("codeblock")}
+        onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
+      >
+        <Pen className="h-6 w-6 stroke-black" />
+      </Toggle>
+    </div>
+  );
+};
 
 const Page = () => {
   const [content, setContent] = useState("");
 
-  const quillModules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
-      [{ align: [] }],
-      [{ color: [] }],
-      ["code-block"],
-      ["clean"],
-    ],
-  };
-
-  const quillFormats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "link",
-    "image",
-    "align",
-    "color",
-    "code-block",
-  ];
-
-  const handleEditorChange = (newContent) => {
-    setContent(newContent);
-  };
+  const editor = useEditor({
+    extensions: [StarterKit.configure({}), Heading.configure({})],
+    content: "<p> Hello World </p>",
+    editorProps: {
+      attributes: {
+        class:
+          "rounded-md border h-40 border-gray-300 bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 w-[50rem] outline-none",
+      },
+    },
+    onUpdate({ editor }) {
+      setContent(editor.getHTML());
+    },
+  });
 
   const router = useRouter();
   return (
@@ -196,14 +252,10 @@ const Page = () => {
               >
                 More Description
               </label>
-              <ReactQuill
-                theme="snow"
-                value={content}
-                onChange={handleEditorChange}
-                modules={quillModules}
-                formats={quillFormats}
-                className="max-w-[95%] w-full overflow-hidden h-auto mt-10 bg-white"
-              />
+              <div className="flex flex-col space-y-0 ">
+                <Toolbar editor={editor} />
+                <EditorContent editor={editor} />
+              </div>
             </div>
             <div className="flex justify-start items-center">
               <button

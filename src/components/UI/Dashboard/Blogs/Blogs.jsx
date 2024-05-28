@@ -1,11 +1,86 @@
 "use client";
 import React, { useState } from "react";
-import "react-quill/dist/quill.snow.css";
 import { createBlog } from "../../../../app/services/api";
 import { useRouter } from "next/navigation";
+import {
+  Bold,
+  Strikethrough,
+  Italic,
+  Heading as HeadingIcon,
+  Code,
+  Pen,
+} from "lucide-react";
 import { toast } from "sonner";
 import Loader from "../../Loader/Loader";
-import ReactQuill from "react-quill";
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Heading from "@tiptap/extension-heading";
+import { Toggle } from "../../../ui/toggle";
+
+const Toolbar = ({ editor }) => {
+  if (!editor) {
+    return null;
+  }
+  return (
+    <div className="bg-transparent rounded-xl pb-4 flex gap-3">
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("heading")}
+        onPressedChange={() =>
+          editor.chain().focus().toggleHeading({ level: 2 }).run()
+        }
+      >
+        <HeadingIcon className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("bold")}
+        onPressedChange={() => editor.chain().focus().toggleBold().run()}
+      >
+        <Bold className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("italic")}
+        onPressedChange={() => editor.chain().focus().toggleItalic().run()}
+      >
+        <Italic className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("strike")}
+        onPressedChange={() => editor.chain().focus().toggleStrike().run()}
+      >
+        <Strikethrough className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("code")}
+        onPressedChange={() => editor.chain().focus().toggleCode().run()}
+      >
+        <Code className="h-6 w-6 stroke-black" />
+      </Toggle>
+
+      <Toggle
+        className="bg-white"
+        size="lg"
+        pressed={editor.isActive("codeblock")}
+        onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
+      >
+        <Pen className="h-6 w-6 stroke-black" />
+      </Toggle>
+    </div>
+  );
+};
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -19,35 +94,6 @@ const Page = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const quillModules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
-      [{ align: [] }],
-      [{ color: [] }],
-      ["code-block"],
-      ["clean"],
-    ],
-  };
-
-  const quillFormats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "link",
-    "image",
-    "align",
-    "color",
-    "code-block",
-  ];
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -58,9 +104,19 @@ const Page = () => {
     setFormData({ ...formData, [name]: files[0] });
   };
 
-  const handleEditorChange = (newContent) => {
-    setFormData({ ...formData, description: newContent });
-  };
+  const editor = useEditor({
+    extensions: [StarterKit.configure({}), Heading.configure({})],
+    content: "<p> Hello World </p>",
+    editorProps: {
+      attributes: {
+        class:
+          "rounded-md border h-40 border-gray-300 bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 w-[50rem] outline-none",
+      },
+    },
+    onUpdate({ editor }) {
+      setFormData({ ...formData, description: editor.getHTML() });
+    },
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -217,16 +273,10 @@ const Page = () => {
               >
                 More Description
               </label>
-              <ReactQuill
-                theme="snow"
-                value={formData.description}
-                name="description"
-                id="description"
-                onChange={handleEditorChange}
-                modules={quillModules}
-                formats={quillFormats}
-                className="px-4 md:px-0 w-full overflow-hidden h-48 bg-white py-2 border-b-1 border-gray-300"
-              />
+              <div className="flex flex-col space-y-0 ">
+                <Toolbar editor={editor} />
+                <EditorContent editor={editor} />
+              </div>
             </div>
             <div className="flex justify-start items-center">
               <button
