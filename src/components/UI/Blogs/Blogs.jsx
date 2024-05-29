@@ -148,6 +148,7 @@ const Blogs = ({ data }) => {
             return (
               <BlogCard
                 key={blog.id}
+                id={blog.id}
                 imgSrc={blog.featured_img}
                 title={blog.title}
                 desc={stripHtmlTags(blog.description)}
@@ -157,7 +158,6 @@ const Blogs = ({ data }) => {
               />
             );
           })}
-          ;
         </div>
       </div>
 

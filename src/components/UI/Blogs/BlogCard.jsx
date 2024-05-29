@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
-const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time }) => {
+const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time, id }) => {
   return (
     <>
       <div className="w-full h-auto flex flex-col justify-center items-start space-y-4 shadow-xl px-3 py-2 bg-white">
@@ -48,12 +49,14 @@ const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time }) => {
               </div>
             </div>
             <div className="w-full lg:w-auto">
-              <button
-                type="button"
-                className="bg-[#AE0D19] font-inter text-white font-semibold 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] py-2 px-4 rounded-lg hover:bg-black hover:text-white hover:duration-250"
-              >
-                READ
-              </button>
+              <Link href={`/blogs/details_page/${id}`} target="_blank">
+                <button
+                  type="button"
+                  className="bg-[#AE0D19] font-inter text-white font-semibold 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] py-2 px-4 rounded-lg hover:bg-black hover:text-white hover:duration-250"
+                >
+                  READ
+                </button>
+              </Link>
             </div>
           </div>
         </div>
