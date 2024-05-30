@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
 import ProjectContainer from "../Projects/ProjectContainer";
-import ShortTermProjects from "../../../../public/projects/shorttermproject.svg";
+import MiddleTermProjectBG from "../../../../public/projects/middletermprojectsbg.jpg";
+import MiddleTermProject1 from "../../../../public/projects/middletermproject1.jpg";
+import MiddleTermProject2 from "../../../../public/projects/middletermproject2.jpg";
+import MiddleTermProject3 from "../../../../public/projects/middletermproject3.jpg";
+import DonationCampaign from "../../../../public/assets/donation-campaign-donation.svg";
 import Gap from "../../../../public/projects/gap.svg";
 import Image from "next/image";
-import Link from "next/link";
-import { FaLongArrowAltDown } from "react-icons/fa";
 
 const middleTermProjects = () => {
   return (
@@ -13,17 +15,16 @@ const middleTermProjects = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[url('/abouthero.png')] bg-cover lg:h-[50vh] mt-16"
+        className=" bg-cover lg:h-[70vh] mt-16"
       >
-        <div className="hero-container-team w-full h-full flex flex-col justify-end items-center lg:space-y-6 py-16 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
-          <h2 className="font-opensans font-bold tracking-tighter 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl text-white">
-            OUR PROJECTS
-          </h2>
-          <div className="">
-            <Link href="#middletermhome">
-              <FaLongArrowAltDown className="fill-white stroke-2 h-8 cursor-pointer" />
-            </Link>
-          </div>
+        <div className="hero-container-team w-full h-full relative">
+          <Image
+            priority
+            layout="fill"
+            className="object-center object-cover w-full h-full"
+            src={MiddleTermProjectBG}
+            alt="Short Term Project BG"
+          />
         </div>
       </div>
       <div
@@ -50,25 +51,35 @@ const middleTermProjects = () => {
           </p>
           <div className="w-full flex md:flex-row flex-col justify-stretch items-center md:items-start md:space-x-4 space-x-0 space-y-3 md:space-y-0">
             <ProjectContainer
-              imgSrc={ShortTermProjects}
+              imgSrc={MiddleTermProject1}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
             <ProjectContainer
-              imgSrc={ShortTermProjects}
+              imgSrc={MiddleTermProject2}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
             <ProjectContainer
-              imgSrc={ShortTermProjects}
+              imgSrc={MiddleTermProject3}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
             />
           </div>
         </div>
-        <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-48 w-auto self-center">
-          <Image src={Gap} alt="Gap SVG" className="h-full w-48" />
+        <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-32 w-auto self-center">
+          <Image src={Gap} alt="Gap SVG" className="h-full w-24" />
         </div>
+      </div>
+      <div className="w-full flex justify-center space-x-12 items-center h-auto p-4 bg-[#ffba6c]">
+        <Image
+          src={DonationCampaign}
+          alt="Donation Campaign Image"
+          className="object-center object-cover"
+        />
+        <h2 className="text-black font-inter font-semibold capitalize xl:text-base md:text-sm text-xs text-wrap">
+          contribute to our middle term projects
+        </h2>
       </div>
     </section>
   );
