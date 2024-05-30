@@ -54,16 +54,19 @@ const shortTermProjects = () => {
               imgSrc={ShortTermProject1}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="/short_term_projects/ghar_ghar_ma_gyan_ghar_ghar_ma_bigyan"
             />
             <ProjectContainer
               imgSrc={ShortTermProject2}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="#"
             />
             <ProjectContainer
               imgSrc={ShortTermProject3}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="#"
             />
           </div>
         </div>

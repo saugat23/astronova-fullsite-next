@@ -54,16 +54,19 @@ const middleTermProjects = () => {
               imgSrc={MiddleTermProject1}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="#"
             />
             <ProjectContainer
               imgSrc={MiddleTermProject2}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="#"
             />
             <ProjectContainer
               imgSrc={MiddleTermProject3}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
+              link="#"
             />
           </div>
         </div>
