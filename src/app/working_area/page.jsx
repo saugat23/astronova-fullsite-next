@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import TransitionEffect from "../../components/UI/TransitionEffect";
 
 const ASW = dynamic(() => import("../../components/UI/WorkingField/ASW"), {
   loading: () => <p> </p>,
@@ -50,6 +51,7 @@ const Page = () => {
   }
   return (
     <>
+      <TransitionEffect />
       <Navbar />
       <RenderWorkSection />
       <Footer />

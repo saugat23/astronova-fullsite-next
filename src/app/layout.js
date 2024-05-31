@@ -2,6 +2,7 @@ import { Inter, Open_Sans, Poppins, Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Suspense } from "react";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-opensans" });
@@ -28,7 +29,10 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} ${openSans.variable}  ${poppins.variable} ${kumbhSans.variable} `}
       >
         <Suspense>
-          <Providers>{children}</Providers>
+          <Providers>
+            <NextTopLoader showSpinner={false} />
+            {children}
+          </Providers>
         </Suspense>
       </body>
     </html>

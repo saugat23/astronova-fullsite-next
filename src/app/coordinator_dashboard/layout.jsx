@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import withAuth from "../withAuthCoordinator";
+import TransitionEffect from "../../components/UI/TransitionEffect";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Toaster expand={true} richColors position="top-right" />
+      <TransitionEffect />
       <div className="flex justify-stretch">
         <div className="hidden min-w-[15%] w-[15%] shrink-0 md:block md:fixed dashboard-sidebar lg:py-6 shadow-2xl min-h-screen bg-white z-40">
           <div className="xs:py-2 xl:py-4 border-b border-[#e0d8ff99]">

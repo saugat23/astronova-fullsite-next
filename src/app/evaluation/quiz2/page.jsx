@@ -1,16 +1,16 @@
-import React from 'react';
-import dynamic from 'next/dynamic'
+import React from "react";
+import dynamic from "next/dynamic";
 
-const Quiz2 = dynamic(() => import('../../../components/UI/Evaluation/Quiz2'), {
-     loading: () => <p> </p>,
+const Quiz2 = dynamic(() => import("../../../components/UI/Evaluation/Quiz2"), {
+  loading: () => <p> </p>,
 });
 
 function page() {
   return (
     <>
-    <Quiz2 />
+      <Quiz2 />
     </>
-  )
+  );
 }
 
-export default page
+export default page;

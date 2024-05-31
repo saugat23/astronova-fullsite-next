@@ -1,9 +1,9 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import TransitionEffect from "../../components/UI/TransitionEffect";
 
 const About = dynamic(() => import("../../components/UI/About/About"), {
   loading: () => <p> </p>,
-  ssr: false,
 });
 
 const Navbar = dynamic(() => import("../../sections/Navbar"), {
@@ -17,6 +17,7 @@ const Footer = dynamic(() => import("../../sections/Footer"), {
 const Page = () => {
   return (
     <>
+      <TransitionEffect />
       <Navbar />
       <About />
       <Footer />

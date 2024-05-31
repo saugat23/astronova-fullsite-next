@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
+import CountUp from "react-countup";
 import { FiCheckCircle, FiDownload } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import { IoPersonAddOutline } from "react-icons/io5";
@@ -37,7 +37,15 @@ const Impact = () => {
               </svg>
             </div>
             <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
-              100K +
+              <CountUp
+                start={0}
+                end={100}
+                duration={2}
+                delay={1}
+                prefix=""
+                suffix="K+"
+                enableScrollSpy="true"
+              ></CountUp>
             </h4>
             <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               STUDENT REACHED
@@ -66,7 +74,15 @@ const Impact = () => {
               </svg>
             </div>
             <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
-              5M +
+              <CountUp
+                start={0}
+                end={5}
+                duration={2}
+                delay={1}
+                prefix=""
+                suffix="M+"
+                enableScrollSpy="true"
+              ></CountUp>
             </h4>
             <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               FUND INVESTED
@@ -93,7 +109,15 @@ const Impact = () => {
               />
             </div>
             <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
-              100 +
+              <CountUp
+                start={0}
+                end={100}
+                duration={2}
+                delay={1}
+                prefix=""
+                suffix="+"
+                enableScrollSpy="true"
+              ></CountUp>
             </h4>
             <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
               FREE WORKSHOPS
