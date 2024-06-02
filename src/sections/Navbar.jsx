@@ -100,28 +100,28 @@ const Navbar = () => {
                 </HoverCardTrigger>
                 <HoverCardContent className="lg:ml-16 xl:ml-20 mt-2">
                   <ul className="flex flex-col justify-center items-start xl:text-base text-sm font-medium w-full">
-                    <li className="w-full py-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/short_term_projects"
                         className="pl-1 h-full w-full"
                       >
-                        Short Term Projects
+                        Short Term Projects<span className="float-right">&gt;</span>
                       </Link>
                     </li>
-                    <li className="w-full py-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/middle_term_projects"
                         className="pl-1 h-full w-full"
                       >
-                        Middle Term Projects
+                        Middle Term Projects<span className="float-right">&gt;</span>
                       </Link>
                     </li>
-                    <li className="w-full py-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/long_term_projects"
                         className="pl-1 h-full w-full"
                       >
-                        Long Term Projects
+                        Long Term Projects<span className="float-right">&gt;</span>
                       </Link>
                     </li>
                   </ul>

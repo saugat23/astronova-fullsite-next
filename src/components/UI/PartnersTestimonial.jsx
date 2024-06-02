@@ -15,7 +15,7 @@ const PartnersTestimonial = ({ imgSrc, testimonial, name, position }) => {
             className="absolute bottom-0 right-0 bg-[#72D8D8] rounded-full"
           />
         </div>
-        <p className="font-kumbhsans font-normal lg:text-lg text-center text-white">
+        <p className="font-kumbhsans font-normal xl:text-base md:text-sm text-xs text-center text-white">
           {testimonial}
         </p>
         <h4 className="font-inter font-bold xl:text-lg lg:text-base md:text-sm text-xs text-white">

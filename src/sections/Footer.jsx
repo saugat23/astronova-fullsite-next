@@ -111,10 +111,14 @@ const Footer = () => {
               <Link href="#">Science and Technology</Link>
             </li>
             <li>
-              <Link href="#">Research and Development</Link>
+              <Link href="/school_event_registration">
+                Research and Development
+              </Link>
             </li>
             <li>
-              <Link href="#">Startups and Entrepreneurship</Link>
+              <Link href="/school_event_registration">
+                Startups and Entrepreneurship
+              </Link>
             </li>
             <li>
               <Link href="#">Ventures and Seed Money</Link>
@@ -128,7 +132,9 @@ const Footer = () => {
           </h4>
           <ul className="flex flex-col justify-center items-start lg:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6]">
             <li>
-              <Link href="#">Become Volunteer</Link>
+              <Link href="https://forms.gle/3uCVNnSz6MvqeGfn8" target="_blank">
+                Become Volunteer
+              </Link>
             </li>
             <li>
               <Link href="#">Become Trainee Trainer</Link>
@@ -164,22 +170,22 @@ const Footer = () => {
           </h4>
           <ul className="flex flex-col justify-center items-start xl:space-y-4 space-y-2 font-kumbhsans font-normal 2xl:text-lg xl:text-base sm:text-sm  text-xs text-[#C9BDB6] text-left">
             <li>
-              <Link href="#">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
               <Link href="#">News and Events</Link>
             </li>
             <li>
-              <Link href="#">Our Projects</Link>
+              <Link href="/short_term_projects">Our Projects</Link>
             </li>
             <li>
               <Link href="#">Podcast</Link>
             </li>
             <li>
-              <Link href="#">Career</Link>
+              <Link href="/careers">Career</Link>
             </li>
           </ul>
         </div>

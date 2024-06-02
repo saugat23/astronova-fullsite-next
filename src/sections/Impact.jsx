@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import CountUp from "react-countup";
 import { FiCheckCircle, FiDownload } from "react-icons/fi";
@@ -173,10 +174,10 @@ const Impact = () => {
               We provide Seed money and Venture money to the innovative business
               idea. Come and join us and work on your idea.
             </p>
-            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
+            <Link href="/i_have_an_idea_form" className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Register your Idea
               <IoPersonAddOutline className="ml-2" />
-            </button>
+            </Link>
           </div>
           <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">

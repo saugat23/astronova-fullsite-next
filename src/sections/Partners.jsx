@@ -9,8 +9,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel";
+import {
+  Modal,
+  ModalContent,
+  ModalBody,
+  Button,
+  useDisclosure,
+} from "@nextui-org/react";
 
 const Partners = () => {
+  const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+
   return (
     <section className="h-auto max-w-screen overflow-hidden mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 xl:mt-12 lg:mt-8">
       <div className="xl:mt-20 lg:mt-18 flex flex-col justify-center items-center xl:space-y-12 lg:space-y-10">
@@ -223,30 +232,32 @@ const Partners = () => {
             </p>
           </div>
           <div className="w-full mx-auto flex md:flex-row flex-col space-y-4 md:space-y-0 justify-around items-center md:items-start text-white max-w-6xl">
-            <button
+            <Link
               data-aos="fade-up"
               data-aos-duration="900"
-              type="button"
-              className="bg-[#0012FF] hover:scale-105 p-4 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base cursor-pointer hover:bg-white hover:text-[#0012FF] hover:duration-200"
+              href="https://forms.gle/3uCVNnSz6MvqeGfn8"
+              target="_blank"
+              className="bg-[#0012FF] hover:scale-105 py-2 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base cursor-pointer hover:bg-white hover:text-[#0012FF] hover:duration-200"
             >
               JOIN AS VOLUNTEER
-            </button>
-            <button
+            </Link>
+            <Link
               data-aos="fade-up"
               data-aos-duration="1100"
-              type="button"
-              className="bg-[#EC008C] hover:scale-105 p-4 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base cursor-pointer hover:bg-white hover:text-[#EC008C] hover:duration-200"
+              href="/mentor_registration"
+              className="bg-[#EC008C] hover:scale-105 py-2 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base cursor-pointer hover:bg-white hover:text-[#EC008C] hover:duration-200"
             >
               BECOME A TEAM MEMBER
-            </button>
-            <button
+            </Link>
+            <Button
               data-aos="fade-up"
               data-aos-duration="1300"
               type="button"
-              className="bg-[#F26522] hover:scale-105 p-4 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
+              onPress={onOpen}
+              className="bg-[#F26522] hover:scale-105 py-3 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base text-white cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
             >
               MAKE A DONATION
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -346,6 +357,31 @@ const Partners = () => {
           </h3>
         </div>
       </div>
+
+      <Modal
+        size="5xl"
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpenChange={onOpenChange}
+        className=""
+      >
+        <ModalContent>
+          {(onClose) => (
+            <div>
+              <ModalBody className="flex w-auto h-auto justify-center items-center">
+                <Image
+                  priority
+                  src="/supportmodal.png"
+                  alt="Support Modal"
+                  className="w-full h-auto bg-cover object-cover"
+                  width={2000}
+                  height={1200}
+                />
+              </ModalBody>
+            </div>
+          )}
+        </ModalContent>
+      </Modal>
     </section>
   );
 };

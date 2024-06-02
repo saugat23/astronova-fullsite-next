@@ -18,7 +18,6 @@ import Partners from "./Partners";
 import Footer from "./Footer";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import TransitionEffect from "../components/UI/TransitionEffect";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -38,7 +37,6 @@ const Home = () => {
 
   return (
     <>
-      <TransitionEffect />
       <Navbar />
       <Hero />
       <About />
