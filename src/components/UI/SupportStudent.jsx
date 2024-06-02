@@ -21,7 +21,7 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="border border-[#e0d8ff] p-2 rounded-lg flex flex-col justify-center xl:space-y-5 space-y-3 min-h-full h-auto w-auto shadow-xl bg-white mb-3"
+        className="border border-[#e0d8ff] p-2 rounded-lg flex flex-col justify-center xl:space-y-5 space-y-4 min-h-full h-auto w-auto shadow-xl bg-white mb-3"
       >
         <div className="h-1/2">
           <Image

@@ -279,7 +279,7 @@ const About = () => {
                       alt=""
                       width="320"
                       height="180"
-                      className="w-32 h-24 lg:w-40 lg:h-32"
+                      className="w-32 h-28 lg:w-40 lg:h-36"
                     />
                   </Link>
                 </div>
