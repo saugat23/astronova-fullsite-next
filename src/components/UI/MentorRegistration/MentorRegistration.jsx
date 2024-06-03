@@ -14,21 +14,15 @@ function Page() {
     dob: "",
     gender: "",
     profile: "",
-    role: "",
-    project_title: "",
-    project_description: "",
-    category: [],
-    project_aim: "",
-    project_importance: "",
-    project_plan: "",
-    project_benefits: "",
-    project_duration: "",
-    team_members: "",
-    materials: "",
-    project_cost: "",
-    guidance: "",
-    project_secondary_info: "",
-    video_link: "",
+    organization: "",
+    qualification: "",
+    certificate: "",
+    ID: "",
+    country: "",
+    address: "",
+    expo_event: "",
+    expo2_event: "",
+    expo3_event: "",
   });
   const [step, setStep] = useState(1);
   const [error, setError] = useState("");
@@ -39,10 +33,26 @@ function Page() {
   }
 
   const handleProfileChange = (e) => {
-    const file = e.target.files[0]; // Get the single file from the input
+    const file = e.target.files[0];
     setFormData((prevData) => ({
       ...prevData,
       profile: file,
+    }));
+  };
+
+  const handleCertificateChange = (e) => {
+    const file = e.target.files[0]; // Get the single file from the input
+    setFormData((prevData) => ({
+      ...prevData,
+      certificate: file,
+    }));
+  };
+
+  const handleIDChange = (e) => {
+    const file = e.target.files[0]; // Get the single file from the input
+    setFormData((prevData) => ({
+      ...prevData,
+      ID: file,
     }));
   };
 
@@ -83,24 +93,15 @@ function Page() {
     formDataToSend.append("dob", formData.dob);
     formDataToSend.append("gender", formData.gender);
     formDataToSend.append("profile", formData.profile);
-    formDataToSend.append("role", formData.role);
-    formDataToSend.append("project_title", formData.project_title);
-    formDataToSend.append("project_description", formData.project_description);
-    formDataToSend.append("category", formData.category);
-    formDataToSend.append("project_aim", formData.project_aim);
-    formDataToSend.append("project_importance", formData.project_importance);
-    formDataToSend.append("project_plan", formData.project_plan);
-    formDataToSend.append("project_benefits", formData.project_benefits);
-    formDataToSend.append("project_duration", formData.project_duration);
-    formDataToSend.append("team_members", formData.team_members);
-    formDataToSend.append("materials", formData.materials);
-    formDataToSend.append("project_cost", formData.project_cost);
-    formDataToSend.append("guidance", formData.guidance);
-    formDataToSend.append(
-      "project_secondary_info",
-      formData.project_secondary_info,
-    );
-    formDataToSend.append("video_link", formDataToSend.video_link);
+    formDataToSend.append("organization", formData.organization);
+    formDataToSend.append("qualification", formData.qualification);
+    formDataToSend.append("certificate", formData.certificate);
+    formDataToSend.append("ID", formData.ID);
+    formDataToSend.append("country", formData.country);
+    formDataToSend.append("address", formData.address);
+    formDataToSend.append("expo_event", formData.expo_event);
+    formDataToSend.append("expo2_event", formData.expo2_event);
+    formDataToSend.append("expo3_event", formData.expo3_event);
 
     try {
       for (let [key, value] of formDataToSend.entries()) {
@@ -288,249 +289,340 @@ function Page() {
                 {step === 2 && (
                   <>
                     <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="role">
-                        What will be your role from the following?
-                      </label>
-                      <select
-                        name="role"
-                        id="role"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                      >
-                        <option value="">Choose your role</option>
-                        <option value="Doing Innovative Project(Schools/Colleges Level)">
-                          Doing Innovative Project(Schools/Colleges Level)
-                        </option>
-                        <option value="Conducting Workshops/Seminars /Campaigns /Bootcamps/Lectures/Talk series/Panel Discussion(PD)/Group Discussion(GD).">
-                          Conducting Workshops/Seminars /Campaigns
-                          /Bootcamps/Lectures/Talk series/Panel
-                          Discussion(PD)/Group Discussion(GD).
-                        </option>
-                        <option value="Podcast Host/ Event Manager">
-                          Podcast Host/ Event Manager
-                        </option>
-                        <option value="Trainer/Experts/Researchers">
-                          Trainer/Experts/Researchers
-                        </option>
-                      </select>
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_title">
-                        Title of the Project
+                      <label htmlFor="organization">
+                        What will be your role from the following? organization
                       </label>
                       <input
                         type="text"
-                        name="project_title"
-                        id="project_title"
+                        required
+                        name="organization"
+                        id="organization"
                         onChange={handleChange}
                         className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Title"
+                        placeholder="Organization"
                       />
                     </div>
                     <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_description">
-                        Description of the Project
+                      <label htmlFor="qualification">
+                        Title of the Project qualification
                       </label>
-                      <textarea
+                      <input
+                        required
                         type="text"
-                        name="project_description"
-                        id="project_description"
+                        name="qualification"
+                        id="qualification"
                         onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full h-24 resize-none"
-                        placeholder="Type Project Title"
+                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        placeholder="Qualification"
                       />
                     </div>
+                    <div className="w-full flex space-x-3">
+                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                        <label htmlFor="certificate" className="w-full">
+                          Certificate *
+                          <div className="w-full border border-gray-300 bg-gray-50 p-2">
+                            Add a Certificate
+                          </div>
+                        </label>
+                        <input
+                          type="file"
+                          name="certificate"
+                          id="certificate"
+                          onChange={handleCertificateChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 hidden"
+                        />
+                      </div>
+                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                        <label htmlFor="ID" className="w-full">
+                          ID/Passport *
+                          <div className="w-full border border-gray-300 bg-gray-50 p-2">
+                            Add a ID
+                          </div>
+                        </label>
+                        <input
+                          type="file"
+                          name="ID"
+                          id="ID"
+                          onChange={handleIDChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 hidden"
+                        />
+                      </div>
+                    </div>
                     <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="category">
+                      <label htmlFor="country">
                         Please select the category that best fits your project:
+                        country
                       </label>
-                      <input
-                        type="text"
-                        name="category"
-                        id="category"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Category"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_aim">
-                        What do you aim to achieve with this project?
-                      </label>
-                      <input
-                        type="text"
-                        name="project_aim"
-                        id="project_aim"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Aim"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_importance">
-                        Why is this project important to you?
-                      </label>
-                      <input
-                        type="text"
-                        name="project_importance"
-                        id="project_importance"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Importance"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_plan">
-                        How do you plan to accomplish the project?
-                      </label>
-                      <input
-                        type="text"
-                        name="project_plan"
-                        id="project_plan"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Plan"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_benefits">
-                        How does this project benefit society or the community?
-                      </label>
-                      <input
-                        type="text"
-                        name="project_benefits"
-                        id="project_benefits"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Benefits"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_duration">
-                        Please provide an estimated time frame for completing
-                        your project (in days/months)
-                      </label>
-                      <input
-                        type="text"
-                        name="project_duration"
-                        id="project_duration"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Duration"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="team_members">
-                        List the names of any team members involved in the
-                        project (if applicable)
-                      </label>
-                      <input
-                        type="text"
-                        name="team_members"
-                        id="team_members"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type team Members"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="materials">
-                        List the necessary materials you need to accomplish the
-                        project
-                      </label>
-                      <input
-                        type="text"
-                        name="materials"
-                        id="materials"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Materials"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_cost">
-                        Estimated Cost: (Mention NA if not applicable)
-                      </label>
-                      <input
-                        type="text"
-                        name="project_cost"
-                        id="project_cost"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Cost"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="guidance">
-                        Please mention, if you expect special
-                        mentorship/guidance/resource.
-                      </label>
-                      <input
-                        type="text"
-                        name="guidance"
-                        id="guidance"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Guidance"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="project_secondary_info">
-                        Is there anything else you would like to share about
-                        your project?
-                      </label>
-                      <input
-                        type="text"
-                        name="project_secondary_info"
-                        id="project_secondary_info"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Info"
-                      />
-                    </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
-                      <label htmlFor="video_link">
-                        Please upload a short video (up to 120 seconds)
-                        explaining your project concept and its significance.
-                        You can use platforms like YouTube or Google Drive and
-                        provide the link below.
-                      </label>
-                      <input
-                        type="text"
-                        name="video_link"
-                        id="video_link"
-                        onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
-                        placeholder="Type Project Video Link"
-                      />
-                    </div>
-                    <div className="w-full flex justify-start items-center space-x-2">
                       <input
                         required
-                        type="checkbox"
-                        name="agreement"
-                        id="agreement"
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 inline"
+                        type="text"
+                        name="country"
+                        id="country"
+                        onChange={handleChange}
+                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        placeholder="Type Country"
                       />
-                      <label htmlFor="agreement" className="inline">
-                        I confirm that the information provided is accurate, and
-                        I am committed to actively working on the proposed
-                        project if selected and I am agree to keep my project in
-                        foundation&apos;s gallery for demonstration.
-                      </label>
                     </div>
-                    <div className="w-full flex justify-start items-center space-x-2">
+                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                      <label htmlFor="address">
+                        What do you aim to achieve with this project? address
+                      </label>
                       <input
                         required
-                        type="checkbox"
-                        name="parental_consent"
-                        id="parental_consent"
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 inline"
+                        type="text"
+                        name="address"
+                        id="address"
+                        onChange={handleChange}
+                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        placeholder="Type Address"
                       />
-                      <label htmlFor="parental_consent" className="inline">
-                        I confirm that my parent/guardian has given consent for
-                        me to participate in this project.
-                      </label>
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                      <h2>Why is this project important to you? expo_event</h2>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo_event"
+                          id="regional_expo"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 inline"
+                        />
+                        <label htmlFor="expo_event" className="inline ml-3">
+                          Regional Expo
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo_event"
+                          id="international_expo"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 inline"
+                        />
+                        <label htmlFor="expo_event" className="inline ml-3">
+                          International Science Fair
+                        </label>
+                      </div>
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                      <h2 htmlFor="expo2_event">
+                        How do you plan to accomplish the project? expo2_event
+                      </h2>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="agricultural_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Agricultural Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="animal_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Animal Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="biomedical_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Biomedical and Medical Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="chemistry"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Chemistry and Biochemistry
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="computer_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Computer Science and Software Development
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="earth_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Earth Sciences
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="energy"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Energy
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="engineering"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Engineering
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="environment_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Environment Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="mathematics"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Mathematics
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="plant_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Plant Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="physics"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Physics, Astronomy & Space Science
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo2_event"
+                          id="social_science"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo2_event" className="ml-3">
+                          Social Sciences
+                        </label>
+                      </div>
+                    </div>
+                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                      <h2 htmlFor="expo2_event">
+                        How do you plan to accomplish the project? expo3_event
+                      </h2>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo3_event"
+                          id="normal"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo3_event" className="ml-3">
+                          Normal
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo3_event"
+                          id="vegetarian"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo3_event" className="ml-3">
+                          Vegetarian
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          required
+                          type="checkbox"
+                          name="expo3_event"
+                          id="non_vegetarian"
+                          onChange={handleChange}
+                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300"
+                        />
+                        <label htmlFor="expo3_event" className="ml-3">
+                          Non Vegetarian
+                        </label>
+                      </div>
                     </div>
                     <div className="w-full">
                       <button
