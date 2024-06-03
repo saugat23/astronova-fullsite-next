@@ -218,7 +218,7 @@ const About = () => {
               Be the Change you want to see.
             </h2>
           </div>
-          <div className="flex space-x-6 text-center">
+          <div className="flex flex-col space-y-2 text-center">
             <Link
               data-aos="fade-up"
               data-aos-duration="900"
@@ -249,13 +249,38 @@ const About = () => {
           <Link
             href="https://forms.gle/3uCVNnSz6MvqeGfn8"
             target="_blank"
-            className="bg-[#FF9013] hover:bg-white text-white hover:text-blue-700 hover:duration lg:text-base text-sm py-3 px-6 font-semibold"
+            className="bg-[#FF9013] hover:bg-white text-white hover:text-blue-700 hover:duration lg:text-base rounded-lg text-sm py-2 px-4 font-semibold"
           >
             JOIN AS VOLUNTEEER
           </Link>
         </div>
       </div>
-      <div className="w-full bg-[#291f19] h-20 z-10 -mt-6"></div>
+      <div className="w-full bg-[#291f19] h-20 z-10 -mt-20"></div>
+
+      <Modal
+        size="5xl"
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpenChange={onOpenChange}
+        className=""
+      >
+        <ModalContent>
+          {(onClose) => (
+            <div>
+              <ModalBody className="flex w-auto h-auto justify-center items-center">
+                <Image
+                  priority
+                  src="/supportmodal.png"
+                  alt="Support Modal"
+                  className="w-full h-auto bg-cover object-cover"
+                  width={2000}
+                  height={1200}
+                />
+              </ModalBody>
+            </div>
+          )}
+        </ModalContent>
+      </Modal>
     </section>
   );
 };
