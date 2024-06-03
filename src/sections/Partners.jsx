@@ -254,7 +254,7 @@ const Partners = () => {
               data-aos-duration="1300"
               type="button"
               onPress={onOpen}
-              className="bg-[#F26522] hover:scale-105 py-3 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base text-white cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
+              className="bg-[#F26522] hover:scale-105 !py-2 !m-0 px-6 font-opensans font-bold tracking-tighter rounded-lg xl:text-2xl lg:text-xl md:text-lg text-base text-white cursor-pointer hover:bg-white hover:text-[#F26522] hover:duration-200"
             >
               MAKE A DONATION
             </Button>
