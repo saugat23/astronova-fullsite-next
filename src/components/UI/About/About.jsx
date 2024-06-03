@@ -10,8 +10,17 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import AboutUSImage from "../../../../public/assets/aboutusimage.svg";
+import {
+  Modal,
+  ModalContent,
+  ModalBody,
+  Button,
+  useDisclosure,
+} from "@nextui-org/react";
 
 const About = () => {
+  const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
+
   return (
     <section className="h-auto max-w-screen overflow-hidden">
       <div
@@ -121,9 +130,13 @@ const About = () => {
                 Engineering, Arts, Mathematics, Entrepreneurship, Soft-Skills,
               </p>
             </div>
-            <button className="bg-[#0012FF] hover:bg-[#000db3] hover:scale-105 hover:duration-300 text-white font-inter font-semibold xl:text-lg md:text-base text-sm block self-start p-3">
+            <Link
+              href="https://forms.gle/3uCVNnSz6MvqeGfn8"
+              target="_blank"
+              className="bg-[#0012FF] hover:bg-[#000db3] hover:scale-105 hover:duration-300 text-white font-inter font-semibold xl:text-lg md:text-base text-sm block self-start p-3"
+            >
               JOIN AS VOLUNTEER
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -194,9 +207,9 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className='max-w-3xl h-auto mx-auto bg-[url("/childrens.png")] bg-black/25 bg-cover rounded-t-xl mt-8 z-40'
+        className='max-w-3xl h-auto mx-auto bg-[url("/childrens.png")] bg-black/25 bg-cover rounded-t-xl mt-8 z-50'
       >
-        <div className="w-full h-full bg-black/70 lg:py-12 py-8 flex flex-col justify-center items-center space-y-12 lg:rounded-xl">
+        <div className="w-full h-full bg-black/70 lg:py-8 py-6 flex flex-col justify-center items-center space-y-8 lg:rounded-xl">
           <div className="flex flex-col space-y-4">
             <h2 className="text-white font-inter font-semibold 2xl:text-xl lg:text-lg md:text-base text-sm text-center">
               JOIN THE JOURNEY
@@ -205,23 +218,44 @@ const About = () => {
               Be the Change you want to see.
             </h2>
           </div>
-          <div className="flex flex-col space-y-2 text-center">
-            <p className="text-white font-medium 2xl:text-base lg:text-sm text-xs">
-              Join as Volunteer
-            </p>
-            <p className="text-white font-medium 2xl:text-base lg:text-sm text-xs">
-              Become a Team Member
-            </p>
-            <p className="text-white font-medium 2xl:text-base lg:text-sm text-xs">
-              Make a Donation
-            </p>
+          <div className="flex space-x-6 text-center">
+            <Link
+              data-aos="fade-up"
+              data-aos-duration="900"
+              href="https://forms.gle/3uCVNnSz6MvqeGfn8"
+              target="_blank"
+              className="hover:scale-105 font-opensans mt-2 font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+            >
+              JOIN AS VOLUNTEER
+            </Link>
+            <Link
+              data-aos="fade-up"
+              data-aos-duration="1100"
+              href="/mentor_registration"
+              className="hover:scale-105 font-opensans mt-2 font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+            >
+              BECOME A TEAM MEMBER
+            </Link>
+            <Button
+              data-aos="fade-up"
+              data-aos-duration="1300"
+              type="button"
+              onPress={onOpen}
+              className="hover:scale-105 bg-transparent p-0 m-0 font-opensans font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+            >
+              MAKE A DONATION
+            </Button>
           </div>
-          <button className="bg-[#FF9013] hover:bg-white text-white hover:text-blue-700 hover:duration lg:text-base text-sm py-3 px-6 font-semibold">
+          <Link
+            href="https://forms.gle/3uCVNnSz6MvqeGfn8"
+            target="_blank"
+            className="bg-[#FF9013] hover:bg-white text-white hover:text-blue-700 hover:duration lg:text-base text-sm py-3 px-6 font-semibold"
+          >
             JOIN AS VOLUNTEEER
-          </button>
+          </Link>
         </div>
       </div>
-      <div className="w-full bg-[#291f19] h-20 z-30 -mt-20"></div>
+      <div className="w-full bg-[#291f19] h-20 z-10 -mt-6"></div>
     </section>
   );
 };
