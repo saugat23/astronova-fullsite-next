@@ -11,17 +11,17 @@ import ShortTermProjectBG from "../../../../public/projects/shorttermprojectsbg.
 
 const shortTermProjects = () => {
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className=" bg-cover lg:h-[70vh] mt-16"
+        className="mt-16 bg-cover lg:h-[70vh]"
       >
-        <div className="hero-container-team w-full h-full relative">
+        <div className="hero-container-team relative h-full w-full">
           <Image
             priority
             layout="fill"
-            className="object-center object-cover w-full h-full"
+            className="h-full w-full object-cover object-center"
             src={ShortTermProjectBG}
             alt="Short Term Project BG"
           />
@@ -30,16 +30,16 @@ const shortTermProjects = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto flex flex-col justify-center items-start max-w-6xl py-4 px-4 md:py-6 lg:py-8 2xl:py-10"
+        className="mx-auto flex max-w-6xl flex-col items-start justify-center px-4 py-4 md:py-6 lg:py-8 2xl:py-10"
       >
         <div
           id="shorttermhome"
-          className="flex flex-col justify-center items-start space-y-8"
+          className="flex flex-col items-start justify-center space-y-8"
         >
-          <h3 className="font-opensans tracking-tighter font-semibold 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-[#3DD47E]">
+          <h3 className="font-opensans text-base font-semibold tracking-tighter text-[#3DD47E] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
             Short-Term Projects
           </h3>
-          <p className="font-opensans tracking-tight font-normal 2xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-[#8B8B8B]">
+          <p className="font-opensans text-xs font-normal tracking-tight text-[#8B8B8B] sm:text-sm md:text-base lg:text-lg 2xl:text-xl">
             Before diving into the details of our short-term projects, it&apos;s
             essential to recognize their significance within our organization.
             These projects serve as catalysts for innovation, driving rapid
@@ -49,12 +49,12 @@ const shortTermProjects = () => {
             immediate challenges and opportunities. Now, let&apos;s explore the
             exciting endeavors underway in our short-term project section.
           </p>
-          <div className="w-full flex md:flex-row flex-col justify-stretch items-center md:items-start md:space-x-4 space-x-0 space-y-3 md:space-y-0">
+          <div className="flex w-full flex-col items-center justify-stretch space-x-0 space-y-3 md:flex-row md:items-start md:space-x-4 md:space-y-0">
             <ProjectContainer
               imgSrc={ShortTermProject1}
               name="Our Vision"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
-              link="/short_term_projects/ghar_ghar_ma_gyan_ghar_ghar_ma_bigyan"
+              link="/short_term_projects/ghar_ghar_ma_gyan_ghar_ghar_ma_vigyan"
             />
             <ProjectContainer
               imgSrc={ShortTermProject2}
@@ -70,17 +70,17 @@ const shortTermProjects = () => {
             />
           </div>
         </div>
-        <div className="2xl:px-10 lg:px-8 md:px-6 px-4 h-32 py-4 w-auto self-center">
+        <div className="h-32 w-auto self-center px-4 py-4 md:px-6 lg:px-8 2xl:px-10">
           <Image src={Gap} alt="Gap SVG" className="h-full w-24" />
         </div>
       </div>
-      <div className="w-full flex justify-center space-x-12 items-center h-auto p-4 bg-[#ffba6c]">
+      <div className="flex h-auto w-full items-center justify-center space-x-12 bg-[#ffba6c] p-4">
         <Image
           src={DonationCampaign}
           alt="Donation Campaign Image"
-          className="object-center object-cover"
+          className="object-cover object-center"
         />
-        <h2 className="text-black font-inter font-semibold capitalize xl:text-base md:text-sm text-xs text-wrap">
+        <h2 className="text-wrap font-inter text-xs font-semibold capitalize text-black md:text-sm xl:text-base">
           contribute to our short term projects
         </h2>
       </div>

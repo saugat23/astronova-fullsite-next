@@ -26,6 +26,8 @@
     "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.1.5",
+    "embla-carousel-autoplay": "^8.1.5",
     "embla-carousel-react": "^8.0.4",
     "framer-motion": "^11.0.24",
     "js-cookie": "^3.0.5",
