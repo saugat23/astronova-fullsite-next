@@ -33,28 +33,28 @@ const About = () => {
   }, []);
 
   return (
-    <section className='h-auto max-w-screen overflow-hidden bg-[url("/aboutsection.png")] bg-cover mx-auto 2xl:py-12 lg:py-8 md:py-6 py-4 '>
-      <div className="flex md:flex-row flex-col justify-center items-center md:space-x-4 space-x-0 mx-auto w-full px-4 max-w-6xl  md:mt-8 mt-4">
-        <div className="h-auto flex flex-col justify-center items-center xl:pr-8 xl:border-r-4 border-[#DB8114] md:w-full">
+    <section className='max-w-screen mx-auto h-auto overflow-hidden bg-[url("/aboutsection.png")] bg-cover py-4 md:py-6 lg:py-8 2xl:py-12'>
+      <div className="mx-auto mt-4 flex w-full max-w-6xl flex-col items-center justify-center space-x-0 md:mt-8 md:flex-row md:space-x-4">
+        <div className="flex h-auto flex-col items-center justify-center border-[#DB8114] md:w-full xl:border-r-4 xl:pr-8">
           <Image
             src="/assets/logo.png"
             alt=""
             width={180}
             height={120}
-            className="py-4 md:w-full h-auto"
+            className="h-auto py-4 md:w-full"
           />
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="flex flex-col justify-center space-y-4 items-start"
+          className="flex flex-col items-start justify-center space-y-4"
         >
-          <h3 className="px-4 lg:px-0 font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#33A4C6] tracking-tight">
+          <h3 className="px-3 font-opensans text-base font-bold tracking-tight text-[#33A4C6] md:text-lg lg:px-0 lg:text-xl xl:text-2xl 2xl:text-3xl">
             About Us
           </h3>
-          <p className="font-opensans text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-lg font-normal px-4 lg:px-0">
+          <p className="px-3 font-opensans text-xs font-normal md:text-sm lg:px-0 lg:text-base xl:text-lg 2xl:text-lg">
             The{" "}
-            <span className="text-[#BDB809] font-bold">
+            <span className="font-bold text-[#BDB809]">
               Astronova Foundation Nepal
             </span>{" "}
             is officially registered as non-profit organization. It&apos;s
@@ -77,14 +77,14 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="xl:py-8 py-3 bg-[#D9D9D97D] md:mt-8 mt-4 h-auto my-auto"
+        className="my-auto mt-4 h-auto bg-[#D9D9D97D] py-3 md:mt-8 xl:py-8"
       >
-        <div className="flex h-full lg:flex-row flex-col justify-between space-y-3 lg:space-y-0 items-center mx-auto w-full max-w-6xl px-4">
-          <div className="w-full lg:w-1/3 flex flex-col justify-evenly items-center space-y-6 xl:py-4 xl:px-4 xl:border-r-5 border-[#DB8114]">
-            <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-wider">
+        <div className="mx-auto flex h-full w-full max-w-6xl flex-col items-center justify-between space-y-3 px-4 lg:flex-row lg:space-y-0">
+          <div className="flex w-full flex-col items-center justify-evenly space-y-6 border-[#DB8114] lg:w-1/3 xl:border-r-5 xl:px-4 xl:py-4">
+            <h3 className="font-opensans text-base font-bold tracking-wider text-[#0B77A5] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
               OUR MAJOR WORKING AREA
             </h3>
-            <p className="font-opensans font-normal text-xs md:text-sm lg:text-base xl:text-lg  text-black text-left">
+            <p className="text-left font-opensans text-xs font-normal text-black md:text-sm lg:text-base xl:text-lg">
               We are actively involving various working area. However, our major
               focusing working area are as below.
             </p>
@@ -179,12 +179,12 @@ const About = () => {
             </div>
           </div> */}
 
-          <div className="md:w-[60%] lg:w-[55%] w-screen grow px-4 pt-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 flex">
-            <div className="w-full h-auto border-5 border-white rounded-full mx-auto z-20 my-4 flex flex-col">
-              <div className="justify-self-start self-center h-auto w-20 sm:w-24 md:w-36 lg:w-40 -mt-8">
+          <div className="flex w-screen grow px-4 pt-4 sm:px-6 md:w-[60%] md:px-8 lg:w-[55%] lg:px-10 xl:px-16">
+            <div className="z-20 mx-auto my-4 flex h-auto w-full flex-col rounded-full border-5 border-white">
+              <div className="-mt-8 h-auto w-20 self-center justify-self-start sm:w-24 md:w-36 lg:w-40">
                 <Link
                   href={{ pathname: "/working_area", query: { work: "asw" } }}
-                  className=" bg-[#2496D7] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
+                  className="mx-auto flex flex-col items-center justify-center space-y-2 rounded-lg bg-[#2496D7] p-2 text-center font-opensans text-[10px] font-medium tracking-tighter text-white hover:scale-105 hover:duration-400 sm:text-xs md:text-sm xl:text-base"
                 >
                   <Image
                     src="/assets/afterschool.svg"
@@ -197,14 +197,14 @@ const About = () => {
                   AFTER SCHOOL PROGRAM
                 </Link>
               </div>
-              <div className="flex w-full justify-between items-center">
-                <div className="self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40 md:-ml-6">
+              <div className="flex w-full items-center justify-between">
+                <div className="h-auto w-20 self-start sm:w-24 md:-ml-6 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { work: "startup" },
                     }}
-                    className="bg-[#AE0D19] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
+                    className="mx-auto flex flex-col items-center justify-center space-y-2 rounded-lg bg-[#AE0D19] p-2 text-center font-opensans text-[10px] font-medium tracking-tighter text-white hover:scale-105 hover:duration-400 sm:text-xs md:text-sm xl:text-base"
                   >
                     <Image
                       src="/assets/startup.svg"
@@ -217,7 +217,7 @@ const About = () => {
                     STARTUP & INNOVATION
                   </Link>
                 </div>
-                <div className="self-start h-auto w-48 sm:w-56 md:w-64 lg:w-80 mt-2">
+                <div className="mt-2 h-auto w-48 self-start sm:w-56 md:w-64 lg:w-80">
                   <Link href="#" className="hover:scale-105 hover:duration-400">
                     <Image
                       src="/assets/teachers.svg"
@@ -228,13 +228,13 @@ const About = () => {
                     />
                   </Link>
                 </div>
-                <div className="self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40 md:-mr-6">
+                <div className="h-auto w-20 self-start sm:w-24 md:-mr-6 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { work: "nesep" },
                     }}
-                    className="bg-[#DB8114] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
+                    className="mx-auto flex flex-col items-center justify-center space-y-2 rounded-lg bg-[#DB8114] p-2 text-center font-opensans text-[10px] font-medium tracking-tighter text-white hover:scale-105 hover:duration-400 sm:text-xs md:text-sm xl:text-base"
                   >
                     <Image
                       src="/assets/scienceexpo.svg"
@@ -265,31 +265,31 @@ const About = () => {
                 </Link> 
                
               </div>*/}
-              <div className="flex w-full justify-around items-center mt-4">
-                <div className="justify-self-end self-start h-auto w-20 sm:w-24 md:w-36 lg:w-40">
+              <div className="mt-4 flex w-full items-center justify-around">
+                <div className="h-auto w-20 self-start justify-self-end sm:w-24 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { field: "steam" },
                     }}
-                    className="bg-white font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
+                    className="mx-auto flex flex-col items-center justify-center space-y-2 rounded-lg bg-white p-2 text-center font-opensans text-[10px] font-medium tracking-tighter text-white hover:scale-105 hover:duration-400 sm:text-xs md:text-sm xl:text-base"
                   >
                     <Image
                       src="/assets/steam.svg"
                       alt=""
                       width="320"
                       height="180"
-                      className="w-32 h-28 lg:w-40 lg:h-36"
+                      className="h-28 w-32 lg:h-36 lg:w-40"
                     />
                   </Link>
                 </div>
-                <div className="justify-self-end self-end h-auto w-20 sm:w-24 md:w-36 lg:w-40">
+                <div className="h-auto w-20 self-end justify-self-end sm:w-24 md:w-36 lg:w-40">
                   <Link
                     href={{
                       pathname: "/working_area",
                       query: { field: "research" },
                     }}
-                    className="bg-[#BD8809] font-opensans font-medium xl:text-base md:text-sm sm:text-xs text-[10px] tracking-tighter mx-auto text-center flex flex-col justify-center items-center space-y-2 rounded-lg hover:scale-105 hover:duration-400 text-white p-2"
+                    className="mx-auto flex flex-col items-center justify-center space-y-2 rounded-lg bg-[#BD8809] p-2 text-center font-opensans text-[10px] font-medium tracking-tighter text-white hover:scale-105 hover:duration-400 sm:text-xs md:text-sm xl:text-base"
                   >
                     <Image
                       src="/assets/research.svg"
@@ -307,32 +307,32 @@ const About = () => {
         </div>
       </div>
       <div className="w-full bg-white py-6">
-        <div className="h-full flex flex-col justify-between items-center space-y-8 mx-auto w-full px-4 max-w-6xl">
-          <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+        <div className="mx-auto flex h-full w-full max-w-6xl flex-col items-center justify-between space-y-8 px-4">
+          <h3 className="font-opensans text-base font-bold tracking-tight text-[#0B77A5] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             SUPPORT FOR STUDENTS
           </h3>
           {loading && (
-            <div className="mt-4 w-full py-4 flex space-x-3 h-[60vh]">
-              <div className="h-full flex flex-col justify-center items-center">
+            <div className="mt-4 flex h-[60vh] w-full space-x-3 py-4">
+              <div className="flex h-full flex-col items-center justify-center">
                 <Skeleton className="h-1/2 w-full"></Skeleton>
-                <div className="h-1/2 flex flex-col">
-                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <div className="flex h-1/2 flex-col">
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
                   <Skeleton className="h-1/2 w-full"></Skeleton>
                   <Skeleton className="h-1/4 w-3/4"></Skeleton>
                 </div>
               </div>
-              <div className="h-full hidden sm:flex flex-col justify-center items-center">
+              <div className="hidden h-full flex-col items-center justify-center sm:flex">
                 <Skeleton className="h-1/2 w-full"></Skeleton>
-                <div className="h-1/2 flex flex-col">
-                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <div className="flex h-1/2 flex-col">
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
                   <Skeleton className="h-1/2 w-full"></Skeleton>
                   <Skeleton className="h-1/4 w-3/4"></Skeleton>
                 </div>
               </div>
-              <div className="h-full hidden xl:flex flex-col justify-center items-center">
+              <div className="hidden h-full flex-col items-center justify-center xl:flex">
                 <Skeleton className="h-1/2 w-full"></Skeleton>
-                <div className="h-1/2 flex flex-col">
-                  <Skeleton className="w-3/4 h-1/4"></Skeleton>
+                <div className="flex h-1/2 flex-col">
+                  <Skeleton className="h-1/4 w-3/4"></Skeleton>
                   <Skeleton className="h-1/2 w-full"></Skeleton>
                   <Skeleton className="h-1/4 w-3/4"></Skeleton>
                 </div>
