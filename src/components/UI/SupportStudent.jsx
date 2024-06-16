@@ -21,7 +21,7 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="border border-[#e0d8ff] p-2 rounded-lg flex flex-col justify-center xl:space-y-5 space-y-4 min-h-full h-auto w-auto shadow-xl bg-white mb-3"
+        className="mb-3 flex h-auto min-h-full w-auto flex-col justify-center space-y-4 rounded-lg border border-[#e0d8ff] bg-white p-2 shadow-xl xl:space-y-5"
       >
         <div className="h-1/2">
           <Image
@@ -31,14 +31,14 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
             height={400}
             src={imgSrc}
             alt={project}
-            className="w-full h-full object-center object-cover rounded-lg"
+            className="h-full w-full rounded-lg object-cover object-center"
           />
         </div>
         <div className="flex flex-col justify-center space-y-3">
-          <h3 className="font-poppins font-bold text-base w-full xl:text-lg text-wrap text-black">
+          <h3 className="w-full text-wrap font-poppins text-base font-bold text-black xl:text-lg">
             {project}
           </h3>
-          <p className="font-poppins font-normal w-full xl:text-xs text-[10px] text-wrap text-[#1F1F1F]">
+          <p className="w-full text-wrap font-poppins text-[10px] font-normal text-[#1F1F1F] xl:text-xs">
             {desc}
           </p>
           <Progress
@@ -48,33 +48,32 @@ const SupportStudent = ({ id, imgSrc, project, desc, achieved, target }) => {
             value={progressValue}
             className="w-full"
           />
-          <div className="w-full flex justify-around items-center">
-            <div className="flex flex-col justify-center items-start space-y-3">
-              <p className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl 2xl:text-3xl text-[#7926ED]">
+          <div className="flex w-full items-center justify-around">
+            <div className="flex flex-col items-start justify-center space-y-3">
+              <p className="font-poppins text-lg font-semibold text-[#7926ED] md:text-xl lg:text-2xl 2xl:text-3xl">
                 {progressValue}%
               </p>
-              <p className="font-poppins font-normal 2xl:text-xs lg:text-[10px] text-[8px] text-black">
+              <p className="font-poppins text-[8px] font-normal text-black lg:text-[10px] 2xl:text-xs">
                 Pledge so far
               </p>
             </div>
-            <div className="flex flex-col justify-center items-start space-y-3">
-              <p className="font-poppins font-medium 2xl:text-xs lg:text-[10px] text-[8px] text-black">
+            <div className="flex flex-col items-start justify-center space-y-3">
+              <p className="font-poppins text-[8px] font-medium text-black lg:text-[10px] 2xl:text-xs">
                 Achieved  {achieved}
               </p>
-              <p className="font-poppins font-semibold 2xl:text-xs lg:text-[10px] text-[8px] text-black">
+              <p className="font-poppins text-[8px] font-semibold text-black lg:text-[10px] 2xl:text-xs">
                 Target  {target}
               </p>
             </div>
           </div>
-          <div className="w-full flex justify-center items-center mt-0 lg:mt-4">
-            <button
-              type="button"
-              className="bg-white border-2 border-[#7926ED] py-2 px-8 font-poppins font-semibold lg:text-sm xl:text-base text-black tracking-wider hover:bg-[#7926ED] hover:text-white hover:shadow-2xl"
+          <div className="mt-0 flex w-full items-center justify-center lg:mt-4">
+            <Link
+              href={`/donation_campaign_page/${id}`}
+              target="_blank"
+              className="border-2 border-[#7926ED] bg-white px-8 py-2 font-poppins font-semibold tracking-wider text-black hover:bg-[#7926ED] hover:text-white hover:shadow-2xl lg:text-sm xl:text-base"
             >
-              <Link href={`/donation_campaign_page/${id}`} target="_blank">
-                DONATE
-              </Link>
-            </button>
+              DONATE
+            </Link>
           </div>
         </div>
       </div>

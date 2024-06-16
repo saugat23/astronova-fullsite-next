@@ -14,8 +14,8 @@ const Works = ({ data }) => {
   const works = data.works;
 
   return (
-    <section className="h-auto max-w-screen">
-      <div className="w-full lg:h-auto h-[50vh] m-0">
+    <section className="max-w-screen h-auto">
+      <div className="m-0 h-[50vh] w-full lg:h-auto">
         <Image
           priority
           src="/works/bg.svg"
@@ -25,12 +25,12 @@ const Works = ({ data }) => {
           className="h-full w-full bg-cover"
         />
       </div>
-      <div className="mx-auto px-4 w-full max-w-6xl xl:py-12 flex lg:flex-row flex-col justify-center items-center lg:items-start xl:space-x-16 lg:space-x-4 space-x-0 space-y-4 lg:space-y-0">
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-5 mt-4">
-          <h3 className="font-opensans self-start font-semibold 2xl:text-3xl xl:text-2xl md:text-xl sm:text-lg text-base text-black">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center space-x-0 space-y-4 px-4 lg:flex-row lg:items-start lg:space-x-4 lg:space-y-0 xl:space-x-16 xl:py-12">
+        <div className="mt-4 flex w-full flex-col items-start justify-center space-y-5 lg:w-1/2">
+          <h3 className="self-start font-opensans text-base font-semibold text-black sm:text-lg md:text-xl xl:text-2xl 2xl:text-3xl">
             Our Work
           </h3>
-          <p className="font-opensans self-start font-normal xl:text-lg md:text-base sm:text-sm text-xs text-black">
+          <p className="self-start font-opensans text-xs font-normal text-black sm:text-sm md:text-base xl:text-lg">
             At Astronova, we are dedicated to fostering education and driving
             innovation across various domains. Our multifaceted approach
             encompasses a wide range of initiatives that empower individuals and
@@ -41,28 +41,28 @@ const Works = ({ data }) => {
             Observatory, Knowledge Park and Workshops.
           </p>
         </div>
-        <div className="mx-auto px-4 h-auto w-1/2 lg:-mt-40 xl:-mt-60 flex flex-col justify-center items-center rounded-xl z-30">
-          <div className="w-full bg-white flex flex-col justify-center items-center py-6 px-12 rounded-t-xl drop-shadow-[0_0_0.75rem_white]">
-            <div className="w-1/2 h-auto">
+        <div className="z-30 mx-auto flex h-auto w-1/2 flex-col items-center justify-center rounded-xl px-4 lg:-mt-40 xl:-mt-60">
+          <div className="flex w-full flex-col items-center justify-center rounded-t-xl bg-white px-12 py-6 drop-shadow-[0_0_0.75rem_white]">
+            <div className="h-auto w-1/2">
               <Image
                 priority
                 quality={90}
                 src="/logo.png"
                 alt="Logo"
-                className="w-full h-full"
+                className="h-full w-full"
                 width={80}
                 height={80}
               />
             </div>
-            <h3 className="font-inter font-normal tracking-widest 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-black">
+            <h3 className="font-inter text-sm font-normal tracking-widest text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
               ASTRONOVA
             </h3>
-            <h3 className="font-inter font-normal tracking-wide 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] text-black">
+            <h3 className="font-inter text-[10px] font-normal tracking-wide text-black sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl">
               FOUNDATION NEPAL
             </h3>
           </div>
-          <div className="bg-[#4455C0] py-8 px-4 flex justify-center items-start rounded-b-xl">
-            <p className="font-poppins font-medium text-white 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
+          <div className="flex items-start justify-center rounded-b-xl bg-[#4455C0] px-4 py-8">
+            <p className="font-poppins text-[10px] font-medium text-white sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl">
               At Astronova, we are dedicated to fostering education and driving
               innovation across various domains. Our multifaceted approach
               encompasses a wide range of initiatives that empower individuals
@@ -71,12 +71,12 @@ const Works = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="w-full xl:py-12 md:py-8 sm:py-6 py-4 mt-4 bg-[#f8f8f8]">
-        <div className="mx-auto xl:w-3/5 md:w-3/4 w-full flex flex-col justify-center items-center space-y-5">
-          <h3 className="font-inter self-center font-extrabold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#0B77A5]">
+      <div className="mt-4 w-full bg-[#f8f8f8] py-4 sm:py-6 md:py-8 xl:py-12">
+        <div className="mx-auto flex w-full flex-col items-center justify-center space-y-5 md:w-3/4 xl:w-3/5">
+          <h3 className="self-center font-inter text-sm font-extrabold text-[#0B77A5] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             Event and Function
           </h3>
-          <div className="w-full mt-4">
+          <div className="mt-4 w-full">
             <Carousel
               opts={{
                 align: "center",
@@ -89,7 +89,7 @@ const Works = ({ data }) => {
                   return (
                     <CarouselItem
                       key={work.id}
-                      className="py-4 flex flex-col justify-center items-start space-y-4 bg-white rounded-xl shadow-xl md:basis-1/2 lg:basis-1/3 mx-3"
+                      className="mx-3 flex flex-col items-start justify-center space-y-4 rounded-xl bg-white py-4 shadow-xl md:basis-1/2 lg:basis-1/3"
                     >
                       <div className="h-1/2 w-full">
                         <Image
@@ -97,29 +97,25 @@ const Works = ({ data }) => {
                           quality={80}
                           src={work.cover_img}
                           alt={work.title}
-                          className="w-full h-full"
+                          className="h-full w-full"
                           width={400}
                           height={450}
                         />
                       </div>
-                      <h2 className="font-poppins font-semibold text-black xl:text-lg md:text-base sm:text-sm text-xs px-2">
+                      <h2 className="px-2 font-poppins text-xs font-semibold text-black sm:text-sm md:text-base xl:text-lg">
                         {work.title}
                       </h2>
-                      <p className="font-poppins font-medium text-gray-800 xl:text-base md:text-sm sm:text-xs text-[10px] px-2">
+                      <p className="px-2 font-poppins text-[10px] font-medium text-gray-800 sm:text-xs md:text-sm xl:text-base">
                         {work.long_description}
                       </p>
-                      <div className="flex justify-center items-center w-full">
-                        <button
-                          type="button"
-                          className="px-12 py-3 font-poppins font-normal text-white bg-[#4455C0] xl:text-base md:text-sm sm:text-xs text-[10px] rounded-lg"
+                      <div className="flex w-full items-center justify-center">
+                        <Link
+                          href={`/work_details_page/${work.id}`}
+                          target="_blank"
+                          className="rounded-lg bg-[#4455C0] px-12 py-3 font-poppins text-[10px] font-normal text-white sm:text-xs md:text-sm xl:text-base"
                         >
-                          <Link
-                            href={`/work_details_page/${work.id}`}
-                            target="_blank"
-                          >
-                            READ MORE
-                          </Link>
-                        </button>
+                          READ MORE
+                        </Link>
                       </div>
                     </CarouselItem>
                   );

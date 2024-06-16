@@ -151,9 +151,9 @@ const Impact = () => {
               We’re always looking for talented, driven individuals to join our
               mission. Come help us build a better future for students
             </p>
-            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
+            <Link href="/mentor_registration" className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
               Apply Today <FiCheckCircle className="ml-2" />
-            </button>
+            </Link>
           </div>
           <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
             <div className="flex justify-center items-center">

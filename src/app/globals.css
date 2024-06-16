@@ -125,6 +125,7 @@ html {
 .logos {
   overflow: hidden;
   white-space: nowrap !important;
+  height: 8rem;
 }
 
 .logos-slide {
@@ -134,8 +135,8 @@ html {
 
 .logos-slide img {
   height: 6rem;
-  margin: 0 4rem;
-  transform: scale(1.35, 1.1);
+  margin: 1rem 4rem;
+  transform: scale(1.3, 1.1);
 }
 
 .swiper-pagination-bullet {
