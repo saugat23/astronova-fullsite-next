@@ -222,9 +222,9 @@ const Impact = () => {
               We are preparing the useful resources to make you clear about our
               mission and our goals. Click to see the Resources.
             </p>
-            <button className="mx-auto font-inter font-bold lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
+            <Link href="https://drive.google.com/file/d/1ZLembdtyrx9DljsZ8F3kEDLjyaLH8JrS/view?usp=drive_link" target="_blank" className="mx-auto font-inter font-bold lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
               Download Brochure <FiDownload className="ml-2" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -42,10 +42,10 @@ const Navbar = () => {
     <header
       data-aos="fade-down"
       data-aos-duration="500"
-      className="h-auto bg-[#048FB7] fixed w-full z-50"
+      className="fixed z-50 h-auto w-full bg-[#048FB7]"
     >
-      <nav className="w-full flex justify-between items-center py-4 px-4 lg:px-4 xl:px-8 2xl:px-12 2xl:pt-4">
-        <div className="flex justify-center items-center">
+      <nav className="flex w-full items-center justify-between px-4 py-4 lg:px-4 xl:px-8 2xl:px-12 2xl:pt-4">
+        <div className="flex items-center justify-center">
           <Link href="/">
             <Image
               src="/assets/navbarlogo.svg"
@@ -53,16 +53,16 @@ const Navbar = () => {
               width={120}
               height={60}
               priority
-              className="cursor-pointer 2xl:w-40 xl:w-36 lg:w-32 md:w-30"
+              className="md:w-30 cursor-pointer lg:w-32 xl:w-36 2xl:w-40"
             />
           </Link>
         </div>
-        <div className="hidden lg:flex lg:items-center lg:justify-end lg:w-full">
-          <ul className="flex justify-evenly items-center lg:space-x-5 2xl:space-x-8 text-white font-poppins font-semibold text-[10px] md:text-xs lg:text-sm xl:text-base 2xl:text-lg uppercase leading-[25.2px]">
+        <div className="hidden lg:flex lg:w-full lg:items-center lg:justify-end">
+          <ul className="flex items-center justify-evenly font-poppins text-[10px] font-semibold uppercase leading-[25.2px] text-white md:text-xs lg:space-x-5 lg:text-sm xl:text-base 2xl:space-x-8 2xl:text-lg">
             <li>
               <Link
                 href="/"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/" && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname === "/" && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Home
@@ -71,7 +71,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("about") && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("about") && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 About Us
@@ -80,7 +80,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/team"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("team") && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("team") && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Our Team
@@ -91,37 +91,40 @@ const Navbar = () => {
                 <HoverCardTrigger>
                   <Link
                     href="#"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("projects") &&
+                    className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("projects") &&
                       "text-[#F2CE24] after:w-full"
                       }`}
                   >
                     Our Project
                   </Link>
                 </HoverCardTrigger>
-                <HoverCardContent className="lg:ml-16 xl:ml-20 mt-2">
-                  <ul className="flex flex-col justify-center items-start xl:text-base text-sm font-medium w-full">
+                <HoverCardContent className="mt-2 lg:ml-16 xl:ml-20">
+                  <ul className="flex w-full flex-col items-start justify-center text-sm font-medium xl:text-base">
                     <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/short_term_projects"
-                        className="pl-1 h-full w-full"
+                        className="h-full w-full pl-1"
                       >
-                        Short Term Projects<span className="float-right">&gt;</span>
+                        Short Term Projects
+                        <span className="float-right">&gt;</span>
                       </Link>
                     </li>
                     <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/middle_term_projects"
-                        className="pl-1 h-full w-full"
+                        className="h-full w-full pl-1"
                       >
-                        Middle Term Projects<span className="float-right">&gt;</span>
+                        Middle Term Projects
+                        <span className="float-right">&gt;</span>
                       </Link>
                     </li>
                     <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
                       <Link
                         href="/long_term_projects"
-                        className="pl-1 h-full w-full"
+                        className="h-full w-full pl-1"
                       >
-                        Long Term Projects<span className="float-right">&gt;</span>
+                        Long Term Projects
+                        <span className="float-right">&gt;</span>
                       </Link>
                     </li>
                   </ul>
@@ -131,7 +134,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/works"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("works") && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("works") && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Our Works
@@ -140,7 +143,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/blogs"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("blogs") && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("blogs") && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Blogs & News
@@ -149,16 +152,16 @@ const Navbar = () => {
             <li>
               <Link
                 href="/careers"
-                className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname.includes("careers") && "text-[#F2CE24] after:w-full"
+                className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname.includes("careers") && "text-[#F2CE24] after:w-full"
                   }`}
               >
                 Careers
               </Link>
             </li>
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               <Button
                 type="button"
-                className="bg-[#F2CE24] rounded-lg px-4 py-2 2xl:px-8 xl:px-6 md:px-4 md:py-4 2xl:py-6 text-black font-poppins font-semibold text-base lg:text-lg 2xl:text-xl leading-[25.2px] hover:scale-105 hover:bg-black hover:text-[#F2CE24]"
+                className="rounded-lg bg-[#F2CE24] px-4 py-2 font-poppins text-base font-semibold leading-[25.2px] text-black hover:scale-105 hover:bg-black hover:text-[#F2CE24] md:px-4 md:py-4 lg:text-lg xl:px-6 2xl:px-8 2xl:py-6 2xl:text-xl"
                 onPress={onOpen}
               >
                 SUPPORT US
@@ -187,7 +190,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-0 h-auto overflow-hidden w-screen bg-[#048FB7]/70 flex flex-col justify-center space-y-6 items-start py-6 sm:py-8 lg:hidden font-poppins font-semibold text-sm text-white z-50"
+            className="absolute top-0 z-50 flex h-screen w-screen flex-col items-start justify-start space-y-6 overflow-y-scroll bg-[#048FB7] py-6 font-poppins text-sm font-semibold text-white sm:py-8 lg:hidden"
             initial={{ y: -250, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.25 }}
@@ -215,7 +218,7 @@ const Navbar = () => {
             </a>
             <Link
               href="/"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/" && "text-[#F2CE24]"
+              className={`relative px-6 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full md:px-10 ${pathname === "/" && "text-[#F2CE24]"
                 }`}
               onClick={handleListClick}
             >
@@ -226,7 +229,7 @@ const Navbar = () => {
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
                     href="/about"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/about" && "text-[#F2CE24]"
+                    className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname === "/about" && "text-[#F2CE24]"
                       }`}
                     onClick={handleListClick}
                   >
@@ -234,7 +237,7 @@ const Navbar = () => {
                   </Link>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="flex flex-col justify-center items-start space-y-4 bg-[#0052A0] py-4 mt-4">
+                  <ul className="mt-4 flex flex-col items-start justify-center space-y-4 bg-[#0052A0] py-4">
                     <li className="px-6 md:px-10">
                       <Link
                         href="#"
@@ -285,7 +288,7 @@ const Navbar = () => {
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
                     href="/team"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/team" && "text-[#F2CE24]"
+                    className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname === "/team" && "text-[#F2CE24]"
                       }`}
                     onClick={handleListClick}
                   >
@@ -293,8 +296,8 @@ const Navbar = () => {
                   </Link>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <li className="px-6 md:px-10 pb-4 text-[#FF9013]">
+                  <ul className="mt-4 flex flex-col items-start justify-center bg-[#0052A0] py-4">
+                    <li className="px-6 pb-4 text-[#FF9013] md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -302,7 +305,7 @@ const Navbar = () => {
                         SUBSCIDIARIES
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-white z-50"
@@ -310,7 +313,7 @@ const Navbar = () => {
                         Astro E-commerce
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-white z-50 py-2"
@@ -318,7 +321,7 @@ const Navbar = () => {
                         E-Learning
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-white z-50"
@@ -326,7 +329,7 @@ const Navbar = () => {
                         Startups
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                    <li className="px-6 py-4 text-[#FF9013] md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -334,7 +337,7 @@ const Navbar = () => {
                         INNOVATION
                       </Link>
                     </li>
-                    <li href="#" className="px-6 md:px-10  py-2">
+                    <li href="#" className="px-6 py-2 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -342,7 +345,7 @@ const Navbar = () => {
                         Science and Technology
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -350,7 +353,7 @@ const Navbar = () => {
                         Research and Developement
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10  py-2">
+                    <li className="px-6 py-2 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -358,7 +361,7 @@ const Navbar = () => {
                         Startups and Enterpreneurship
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10  py-2">
+                    <li className="px-6 py-2 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -366,7 +369,7 @@ const Navbar = () => {
                         Ventures and Seed Money
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                    <li className="px-6 py-4 text-[#FF9013] md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50 mt-2"
@@ -374,7 +377,7 @@ const Navbar = () => {
                         INFRASTRUCTURE
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -382,7 +385,7 @@ const Navbar = () => {
                         IT Labs
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -390,7 +393,7 @@ const Navbar = () => {
                         Science Museum
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -398,7 +401,7 @@ const Navbar = () => {
                         Old Age School
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -406,7 +409,7 @@ const Navbar = () => {
                         Inucbation and Startups
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -414,7 +417,7 @@ const Navbar = () => {
                         Observatory
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -422,7 +425,7 @@ const Navbar = () => {
                         Knowledge Park
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
                         href="#"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -439,8 +442,8 @@ const Navbar = () => {
               <AccordionItem value="item-1">
                 <AccordionTrigger className="px-6 md:px-10">
                   <Link
-                    href="/projects"
-                    className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 ${pathname === "/projects" && "text-[#F2CE24]"
+                    href="#"
+                    className={`relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full ${pathname === "/projects" && "text-[#F2CE24]"
                       }`}
                     onClick={handleListClick}
                   >
@@ -448,8 +451,8 @@ const Navbar = () => {
                   </Link>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="flex flex-col justify-center items-start bg-[#0052A0] py-4 mt-4">
-                    <li className="px-6 md:px-10 pb-4 text-[#FF9013]">
+                  <ul className="mt-2 flex flex-col items-start justify-center bg-[#0052A0] py-4">
+                    <li className="px-6 pb-4 pt-3 text-[#FF9013] md:px-10">
                       <Link
                         href="/short_term_projects"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -457,31 +460,31 @@ const Navbar = () => {
                         SHORT TERM PROJECTS
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
-                        href="#"
-                        classname="font-poppins font-semibold text-sm text-white z-50"
-                      >
-                        Establishing Workshop Laboratory
-                      </Link>
-                    </li>
-                    <li className="px-6 md:px-10 py-1">
-                      <Link
-                        href="#"
-                        classname="font-poppins font-semibold text-sm text-white z-50 py-2"
-                      >
-                        Creative Cafe
-                      </Link>
-                    </li>
-                    <li className="px-6 md:px-10 py-1">
-                      <Link
-                        href="#"
+                        href="/short_term_projects/ghar_ghar_ma_gyan_ghar_ghar_ma_vigyan"
                         classname="font-poppins font-semibold text-sm text-white z-50"
                       >
                         Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-4 text-[#FF9013]">
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/short_term_projects/establishing_workshop_lab"
+                        classname="font-poppins font-semibold text-sm text-white z-50 py-2"
+                      >
+                        The Workshop Lab
+                      </Link>
+                    </li>
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/short_term_projects/creative_cafe"
+                        classname="font-poppins font-semibold text-sm text-white z-50"
+                      >
+                        Creative Cafe
+                      </Link>
+                    </li>
+                    <li className="px-6 pb-4 pt-3 text-[#FF9013] md:px-10">
                       <Link
                         href="/middle_term_projects"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
@@ -489,28 +492,60 @@ const Navbar = () => {
                         MIDDLE TERM PROJECTS
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10  py-2">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
-                        href="#"
+                        href="/middle_term_projects/establishing_observatory"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
                       >
                         Establishing Workshop Laboratory
                       </Link>
                     </li>
-                    <li className="px-6 md:px-10 py-1">
+                    <li className="px-6 py-1 md:px-10">
                       <Link
-                        href="#"
+                        href="/middle_term_projects/hetauda_innovation"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
+                        Hetauda Research and Innovation Center
+                      </Link>
+                    </li>
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/middle_term_projects/national_expo"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
+                        National Expo for Science Projects
+                      </Link>
+                    </li>
+                    <li className="px-6 py-3 pb-4 text-[#FF9013] md:px-10">
+                      <Link
+                        href="/long_term_projects"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
+                        LONG TERM PROJECTS
+                      </Link>
+                    </li>
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/long_term_projects/planetarium"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
+                        Planetarium
+                      </Link>
+                    </li>
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/long_term_projects/establishing_workshop_lab"
+                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
+                      >
+                        Establishing Workshop Lab
+                      </Link>
+                    </li>
+                    <li className="px-6 py-1 md:px-10">
+                      <Link
+                        href="/long_term_projects/creative_cafe"
                         classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
                       >
                         Creative Cafe
-                      </Link>
-                    </li>
-                    <li className="px-6 md:px-10  py-2">
-                      <Link
-                        href="#"
-                        classname="font-poppins font-semibold text-sm text-[#FF9013] z-50"
-                      >
-                        Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
                       </Link>
                     </li>
                   </ul>
@@ -519,7 +554,7 @@ const Navbar = () => {
             </Accordion>
             <Link
               href="/works"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/works" && "text-[#F2CE24]"
+              className={`relative px-6 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full md:px-10 ${pathname === "/works" && "text-[#F2CE24]"
                 }`}
               onClick={handleListClick}
             >
@@ -528,7 +563,7 @@ const Navbar = () => {
 
             <Link
               href="/blogs"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-6 md:px-10 ${pathname === "/blogs" && "text-[#F2CE24]"
+              className={`relative px-6 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full md:px-10 ${pathname === "/blogs" && "text-[#F2CE24]"
                 }`}
               onClick={handleListClick}
             >
@@ -536,7 +571,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/careers"
-              className={`relative after:bg-[#F2CE24] after:absolute after:h-[2px] after:w-0 after:-bottom-1 after:left-0 hover:after:w-full after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 px-4 md:px-8 ${pathname === "/careers" && "text-[#F2CE24]"
+              className={`relative px-6 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-[#F2CE24] after:transition-all after:duration-300 hover:text-[#F2CE24] hover:duration-300 hover:after:w-full md:px-10 ${pathname === "/careers" && "text-[#F2CE24]"
                 }`}
               onClick={handleListClick}
             >
@@ -556,12 +591,12 @@ const Navbar = () => {
         <ModalContent>
           {(onClose) => (
             <div>
-              <ModalBody className="flex w-auto h-auto justify-center items-center">
+              <ModalBody className="flex h-auto w-auto items-center justify-center">
                 <Image
                   priority
                   src="/supportmodal.png"
                   alt="Support Modal"
-                  className="w-full h-auto bg-cover object-cover"
+                  className="h-auto w-full bg-cover object-cover"
                   width={2000}
                   height={1200}
                 />

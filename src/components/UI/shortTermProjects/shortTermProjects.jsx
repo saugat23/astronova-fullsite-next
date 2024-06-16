@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import ProjectContainer from "../Projects/ProjectContainer";
-import ShortTermProject1 from "../../../../public/projects/shorttermproject1.jpg";
-import ShortTermProject2 from "../../../../public/projects/shorttermproject2.jpg";
-import ShortTermProject3 from "../../../../public/projects/shorttermproject3.jpg";
+import ShortTermProject1 from "../../../../public/projects/shorttermproject1.webp";
+import ShortTermProject2 from "../../../../public/projects/shorttermproject2.webp";
+import ShortTermProject3 from "../../../../public/projects/shorttermproject3.webp";
 import Gap from "../../../../public/projects/gap.svg";
 import Image from "next/image";
 import DonationCampaign from "../../../../public/assets/donation-campaign-donation.svg";
-import ShortTermProjectBG from "../../../../public/projects/shorttermprojectsbg.jpg";
+import ShortTermProjectBG from "../../../../public/projects/ShortTermProjectBG.webp";
 
 const shortTermProjects = () => {
   return (
@@ -60,13 +60,13 @@ const shortTermProjects = () => {
               imgSrc={ShortTermProject2}
               name="Our Mission"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
-              link="#"
+              link="/short_term_projects/establishing_workshop_lab"
             />
             <ProjectContainer
               imgSrc={ShortTermProject3}
               name="Get Involved"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non sem nunc. Quisque a egestas ipsum. Donec pellentesque est maximus, ornare lorem... "
-              link="#"
+              link="/short_term_projects/creative_cafe"
             />
           </div>
         </div>

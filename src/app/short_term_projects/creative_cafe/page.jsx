@@ -1,5 +1,5 @@
 import React from "react";
-import GharGharMaGyan from "../../../components/UI/shortTermProjects/GharGharMaGyan/GharGharMaGyan";
+import CreativeCafe from "../../../components/UI/shortTermProjects/CreativeCafe/CreativeCafe";
 import TransitionEffect from "../../../components/UI/TransitionEffect";
 import Navbar from "../../../sections/Navbar";
 import Footer from "../../../sections/Footer";
@@ -9,7 +9,7 @@ function page() {
     <>
       <TransitionEffect />
       <Navbar />
-      <GharGharMaGyan />
+      <CreativeCafe />
       <Footer />
     </>
   );

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ProjectBG from "../../../../../public/projects/GharGharmaGyanGharGharmaVigyan.svg";
+import ProjectBG from "../../../../../public/projects/EstablishingWorkshopLaboratory1.webp";
 import ProjectDonation from "../../../../../public/projects/makedonation.jpeg";
 
 export default function Page() {

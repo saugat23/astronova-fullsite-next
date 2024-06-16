@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import ProjectBG from "../../../../../public/projects/GharGharmaGyanGharGharmaVigyan.svg";
+import ProjectBG from "../../../../../public/projects/CreativeCafe.webp";
 import ProjectDonation from "../../../../../public/projects/makedonation.jpeg";
 
 export default function Page() {
@@ -62,8 +62,8 @@ export default function Page() {
         <div className="hero-container-team relative h-full w-full">
           <Image
             priority
-            layout="fill"
-            className="h-full w-full object-cover object-center"
+            fill
+            className="relative h-full w-full object-cover object-center"
             src={ProjectDonation}
             alt="Project Donation"
           />
