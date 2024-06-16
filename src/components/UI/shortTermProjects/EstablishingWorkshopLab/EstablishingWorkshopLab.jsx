@@ -24,34 +24,40 @@ export default function Page() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4 py-6 xl:py-8">
         <h1 className="font-inter text-base font-semibold text-[#bdb809] md:text-lg xl:text-xl">
-          Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+          Establishing Workshop Laboratory
         </h1>
         <p className="font-inter text-xs font-medium text-[#093494] md:text-sm xl:text-base">
-          &quot;Knowledge in every home, science in every home,&quot; or
-          &quot;Ghar ghar ma gyan, ghar ghar ma bigyan,&quot; describes an
-          important concept emphasizing the value of education and scientific
-          investigation in every household. Parents may help their children
-          develop a love of learning and exploration in addition to teaching
-          useful life skills. For kids, simple activities like cooking,
-          gardening, or housework provide a wealth of opportunities for
-          education. For instance, youngsters can assist in food preparation
-          while learning about measurements, and the science of cooking in the
-          kitchen. They learn about ecosystems, plant life cycles, and the value
-          of environmental preservation through gardening. Tasks around the
-          house that involve sorting clothes, arranging bookcases, or preparing
-          the table help to foster ideas of responsibilities, cooperation, and
-          organization. <br />
-          Furthermore, engaging in creative and imaginative activities like
-          puzzle solving, reading aloud, or arts and crafts fosters imagination
-          and creativity. By engaging in practical investigation and testing,
-          kids can build self-assurance, adaptability, and a curiosity about
-          their surroundings.
-          <br /> Its main goal is to encourage students to have Technical,
-          innovative, and creative mindset by creating a platform where students
-          can explore their curiosity with support, guidance, mentoring, and
-          access to resources and facilities. This will enable them to develop
-          entrepreneurial skills, practical and soft skills, and the ability to
-          turn their ideas into reality.
+          Our workshops will be filled with all sorts of tools and equipment,
+          like 3D printers, electronics kits, woodworking tools, and more.
+          Whether you&apos;re into building robots, designing circuits, or
+          crafting prototypes, there&apos;ll be something for everyone.
+          It&apos;s a place where you can let your imagination run wild and
+          bring your ideas to life. <br />
+          <br />
+          And then there are our labs – these will be like science playgrounds,
+          where researchers can conduct experiments, analyze data, and make
+          groundbreaking discoveries. Whether it&paos;s studying new materials,
+          developing cutting-edge technologies, or unraveling the mysteries of
+          the universe, our labs will be at the forefront of scientific
+          exploration. <br />
+          <br />
+          By setting up these workshops and labs, we&apos;re creating spaces
+          where creativity and innovation can thrive. We want to empower people
+          to dream big, think outside the box, and push the boundaries of
+          what&apos;s possible. So, whether you&apos;re an engineer, a
+          scientist, an artist, or just someone with a curious mind,
+          there&apos;ll be a place for you to explore, learn, and create amazing
+          things. Come join us on this exciting journey – the future is waiting
+          to be built! <br />
+          <br />
+          As we dive into the world of innovation, we&apos;re not just talking
+          about workshops and labs – we&apos;re making spaces where creativity
+          thrives and discoveries happen. Our goal is simple: to give engineers,
+          scientists, and anyone with big ideas the tools and chances they need
+          to make those ideas real. So, let&apos;s take this journey together,
+          fueled by excitement, guided by curiosity, and united by the belief
+          that amazing things can happen when we dream and act. This isn&apos;t
+          just a project – it&apos;s a movement. Are you ready to be part of it?
         </p>
       </div>
       <div

@@ -99,35 +99,20 @@ const Navbar = () => {
                   </Link>
                 </HoverCardTrigger>
                 <HoverCardContent className="mt-2 lg:ml-16 xl:ml-20">
-                  <ul className="flex w-full flex-col items-start justify-center text-sm font-medium xl:text-base">
-                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
-                      <Link
-                        href="/short_term_projects"
-                        className="h-full w-full pl-1"
-                      >
-                        Short Term Projects
-                        <span className="float-right">&gt;</span>
-                      </Link>
-                    </li>
-                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
-                      <Link
-                        href="/middle_term_projects"
-                        className="h-full w-full pl-1"
-                      >
-                        Middle Term Projects
-                        <span className="float-right">&gt;</span>
-                      </Link>
-                    </li>
-                    <li className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
-                      <Link
-                        href="/long_term_projects"
-                        className="h-full w-full pl-1"
-                      >
-                        Long Term Projects
-                        <span className="float-right">&gt;</span>
-                      </Link>
-                    </li>
-                  </ul>
+                  <nav className="flex w-full flex-col items-start justify-center text-sm font-medium xl:text-base">
+                    <Link href="/short_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                      Short Term Projects
+                      <span className="float-right">&gt;</span>
+                    </Link>
+                    <Link href="/middle_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                      Middle Term Projects
+                      <span className="float-right">&gt;</span>
+                    </Link>
+                    <Link href="/long_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                      Long Term Projects
+                      <span className="float-right">&gt;</span>
+                    </Link>
+                  </nav>
                 </HoverCardContent>
               </HoverCard>
             </li>

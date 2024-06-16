@@ -24,34 +24,30 @@ export default function Page() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4 py-6 xl:py-8">
         <h1 className="font-inter text-base font-semibold text-[#bdb809] md:text-lg xl:text-xl">
-          Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+          Establishing Observatory
         </h1>
         <p className="font-inter text-xs font-medium text-[#093494] md:text-sm xl:text-base">
-          &quot;Knowledge in every home, science in every home,&quot; or
-          &quot;Ghar ghar ma gyan, ghar ghar ma bigyan,&quot; describes an
-          important concept emphasizing the value of education and scientific
-          investigation in every household. Parents may help their children
-          develop a love of learning and exploration in addition to teaching
-          useful life skills. For kids, simple activities like cooking,
-          gardening, or housework provide a wealth of opportunities for
-          education. For instance, youngsters can assist in food preparation
-          while learning about measurements, and the science of cooking in the
-          kitchen. They learn about ecosystems, plant life cycles, and the value
-          of environmental preservation through gardening. Tasks around the
-          house that involve sorting clothes, arranging bookcases, or preparing
-          the table help to foster ideas of responsibilities, cooperation, and
-          organization. <br />
-          Furthermore, engaging in creative and imaginative activities like
-          puzzle solving, reading aloud, or arts and crafts fosters imagination
-          and creativity. By engaging in practical investigation and testing,
-          kids can build self-assurance, adaptability, and a curiosity about
-          their surroundings.
-          <br /> Its main goal is to encourage students to have Technical,
-          innovative, and creative mindset by creating a platform where students
-          can explore their curiosity with support, guidance, mentoring, and
-          access to resources and facilities. This will enable them to develop
-          entrepreneurial skills, practical and soft skills, and the ability to
-          turn their ideas into reality.
+          Our organization is getting ready to build a special place called an
+          observatory. It&apos;s going to have tools like telescopes and
+          binoculars so students can look up at the stars and planets. We want
+          to use these tools to learn more about space and the things in it. We
+          will invite students to come and visit the observatory. They&apos;ll
+          get to use the telescopes and binoculars to look at the stars and
+          planets up close. We will provide chance for them to see things they
+          might never have seen before and learn new things about space and how
+          it all works.
+          <br />
+          <br />
+          Our goal with the observatory isn&apos;t just to do science. We also
+          want to make exploring space fun for everyone. We&apos;re going to
+          have events and activities whether people are kids or grown-ups. At
+          the heart of our mission is a commitment to nurturing the curiosity
+          and passion of enthusiastic students. We prioritize providing
+          opportunities for these eager learners to delve into the realms of the
+          unknown and explore the awe-inspiring wonders of the universe. Just as
+          we embark on our journey of discovery, we extend a special invitation
+          to these enthusiastic students to join us in our quest for knowledge
+          and exploration.
         </p>
       </div>
       <div

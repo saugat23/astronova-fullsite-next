@@ -24,34 +24,35 @@ export default function Page() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4 py-6 xl:py-8">
         <h1 className="font-inter text-base font-semibold text-[#bdb809] md:text-lg xl:text-xl">
-          Ghar Ghar ma Gyan Ghar Ghar ma Vigyan
+          Creative Cafe
         </h1>
         <p className="font-inter text-xs font-medium text-[#093494] md:text-sm xl:text-base">
-          &quot;Knowledge in every home, science in every home,&quot; or
-          &quot;Ghar ghar ma gyan, ghar ghar ma bigyan,&quot; describes an
-          important concept emphasizing the value of education and scientific
-          investigation in every household. Parents may help their children
-          develop a love of learning and exploration in addition to teaching
-          useful life skills. For kids, simple activities like cooking,
-          gardening, or housework provide a wealth of opportunities for
-          education. For instance, youngsters can assist in food preparation
-          while learning about measurements, and the science of cooking in the
-          kitchen. They learn about ecosystems, plant life cycles, and the value
-          of environmental preservation through gardening. Tasks around the
-          house that involve sorting clothes, arranging bookcases, or preparing
-          the table help to foster ideas of responsibilities, cooperation, and
-          organization. <br />
-          Furthermore, engaging in creative and imaginative activities like
-          puzzle solving, reading aloud, or arts and crafts fosters imagination
-          and creativity. By engaging in practical investigation and testing,
-          kids can build self-assurance, adaptability, and a curiosity about
-          their surroundings.
-          <br /> Its main goal is to encourage students to have Technical,
-          innovative, and creative mindset by creating a platform where students
-          can explore their curiosity with support, guidance, mentoring, and
-          access to resources and facilities. This will enable them to develop
-          entrepreneurial skills, practical and soft skills, and the ability to
-          turn their ideas into reality.
+          Creative Cafe is a vibrant hub where creativity takes center stage and
+          sparks fly. &nbsp;We will bring in a diverse range of voices, from
+          seasoned artists and innovative entrepreneurs to quirky scientists and
+          everyday heroes. Each episode will be like a treasure trove of
+          inspiration, filled with captivating stories, unexpected insights, and
+          thought-provoking conversations.
+          <br />
+          <br />
+          But here&apos;s where it gets really exciting – Creative Cafe
+          isn&apos;t just about listening; it&apos;s about engaging and
+          participating. We&apos;re all about breaking down barriers and
+          inviting everyone to the table. That means hosting interactive
+          sessions where students, parents, educators, and creative minds from
+          all walks of life can join the conversation, ask burning questions,
+          and share their own unique perspectives. Imagine a virtual gathering
+          where ideas collide, connections are made, and creativity knows no
+          bounds.
+          <br />
+          <br />
+          There&apos;s more! We&apos;re not content with just scratching the
+          surface – we&apos;re all about diving deep and exploring the uncharted
+          waters of creativity. That&apos;s why we&apos;re constantly dreaming
+          up new ways to elevate your experience at Creative Cafe. Think live
+          events that bring the podcast to life, immersive workshops where
+          people can roll up their sleeves and get hands-on and exclusive
+          content that takes them behind the scenes and beyond the mic.
         </p>
       </div>
       <div
