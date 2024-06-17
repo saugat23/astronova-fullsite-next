@@ -2,13 +2,12 @@ import React from "react";
 import PartnersTestimonial from "../components/UI/PartnersTestimonial";
 import Image from "next/image";
 import Link from "next/link";
+import useEmblaCarousel from "embla-carousel-react";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../components/ui/carousel";
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButtons";
 import {
   Modal,
   ModalContent,
@@ -20,8 +19,21 @@ import {
 const Partners = () => {
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    slidesToScroll: 1,
+    loop: "true",
+    align: "center",
+  });
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
   return (
-    <section className="max-w-screen mx-auto h-auto overflow-hidden py-4 md:py-6 lg:mt-8 lg:py-8 xl:mt-12 2xl:py-12">
+    <section className="max-w-screen mx-auto h-auto overflow-hidden lg:mt-8 xl:mt-12">
       <div className="lg:mt-18 flex flex-col items-center justify-center lg:space-y-10 xl:mt-20 xl:space-y-12">
         <h3 className="relative font-opensans text-base font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           OUR PARTNERS IN CHARGE
@@ -208,11 +220,11 @@ const Partners = () => {
         data-aos-duration="700"
         className="flex flex-col items-center justify-center lg:mt-8 xl:mt-10"
       >
-        <div className="flex h-[75vh] w-full flex-col items-center justify-start bg-[url('/joinbg.png')] bg-cover p-6"></div>
+        <div className="flex min-h-[70vh] w-full flex-col items-center justify-start bg-[url('/joinbg.png')] bg-cover p-6"></div>
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="flex w-full flex-col items-center justify-center space-y-6 bg-[#2496D7] lg:py-10 xl:py-12"
+          className="flex w-full flex-col items-center justify-center space-y-6 bg-[#2496D7] py-4 md:py-6 lg:py-10 xl:py-12"
         >
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4">
             <h3 className="text-center font-opensans text-xl font-bold tracking-[-0.07em] text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
@@ -254,7 +266,7 @@ const Partners = () => {
               data-aos-duration="1300"
               type="button"
               onPress={onOpen}
-              className="!m-0 cursor-pointer rounded-lg bg-[#F26522] !py-2 px-6 font-opensans text-base font-bold tracking-tighter text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 md:text-lg lg:text-xl xl:text-2xl"
+              className="mt-4 cursor-pointer rounded-lg bg-[#F26522] px-6 font-opensans text-base font-bold tracking-tighter text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 md:text-lg lg:text-xl xl:text-2xl"
             >
               MAKE A DONATION
             </Button>
@@ -265,59 +277,72 @@ const Partners = () => {
       <h3 className="mt-4 w-auto text-center font-opensans text-base font-bold tracking-tight text-[#0B77A5] md:text-lg lg:text-xl xl:mt-12 xl:text-2xl 2xl:text-3xl">
         GROUND STORIES
       </h3>
-      <Carousel
-        opts={{
-          align: "center",
-          loop: false,
-        }}
-        className="mx-auto w-full max-w-7xl px-12"
-      >
-        <CarouselContent className="py-6 lg:py-10">
-          <CarouselItem className="mx-4 bg-[#639a1b] md:basis-1/2 lg:basis-1/3">
-            <PartnersTestimonial
-              imgSrc="/assets/testimonialaayushnepal.svg"
-              testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
+      <div className="mx-auto w-full max-w-6xl px-3 pt-4">
+        <div className="embla_homepage">
+          <div className="embla__viewport_homepage" ref={emblaRef}>
+            <div className="embla__container_homepage">
+              <div className="embla__slide_homepage">
+                <PartnersTestimonial
+                  imgSrc="/assets/testimonialaayushnepal.svg"
+                  testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
                   Don't be capped, learn to adapt.”"
-              name="Aayush Nepal"
-              position="Astrophysics & Research Enthusiast"
-            />
-          </CarouselItem>
-          <CarouselItem className="mx-4 bg-[#aeab3b] md:basis-1/2 lg:basis-1/3">
-            <PartnersTestimonial
-              imgSrc="/assets/testimonialanujadhikari.svg"
-              testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
-              name="Anuj Adhikari"
-              position="Research Enthusiast"
-            />
-          </CarouselItem>
-          <CarouselItem className="mx-4 bg-[#639a1b] md:basis-1/2 lg:basis-1/3">
-            <PartnersTestimonial
-              imgSrc="/assets/testimonialriteshprajapati.svg"
-              testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
-              name="Ritesh Prajapati"
-              position="Video Editor Intern"
-            />
-          </CarouselItem>
-          <CarouselItem className="mx-4 bg-[#ae0d19] md:basis-1/2 lg:basis-1/3">
-            <PartnersTestimonial
-              imgSrc="/testimonialdinupbalami.png"
-              testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
-              name="Dinup Balami"
-              position="Campus Ambassador,Mechanical Engineering Student,KU"
-            />
-          </CarouselItem>
-          <CarouselItem className="mx-4 bg-[#2496d7] md:basis-1/2 lg:basis-1/3">
-            <PartnersTestimonial
-              imgSrc="/testimonialnamratabartaula.png"
-              testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
-              name="Namrata Bartaula"
-              position="Stone Art and Crafting Intern"
-            />
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious className="ml-12" />
-        <CarouselNext className="mr-12" />
-      </Carousel>
+                  name="Aayush Nepal"
+                  position="Astrophysics & Research Enthusiast"
+                  bgColor="green"
+                />
+              </div>
+              <div className="embla__slide_homepage">
+                <PartnersTestimonial
+                  imgSrc="/assets/testimonialanujadhikari.svg"
+                  testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
+                  name="Anuj Adhikari"
+                  position="Research Enthusiast"
+                  bgColor="yellow"
+                />
+              </div>
+              <div className="embla__slide_homepage">
+                <PartnersTestimonial
+                  imgSrc="/assets/testimonialriteshprajapati.svg"
+                  testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
+                  name="Ritesh Prajapati"
+                  position="Video Editor Intern"
+                  bgColor="green"
+                />
+              </div>
+              <div className="embla__slide_homepage">
+                <PartnersTestimonial
+                  imgSrc="/testimonialdinupbalami.png"
+                  testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
+                  name="Dinup Balami"
+                  position="Campus Ambassador,Mechanical Engineering Student,KU"
+                  bgColor="red"
+                />
+              </div>
+              <div className="embla__slide_homepage">
+                <PartnersTestimonial
+                  imgSrc="/testimonialnamratabartaula.png"
+                  testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
+                  name="Namrata Bartaula"
+                  position="Stone Art and Crafting Intern"
+                  bgColor="blue"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="embla__controls_homepage">
+            <div className="embla__buttons_homepage">
+              <PrevButton
+                onClick={onPrevButtonClick}
+                disabled={prevBtnDisabled}
+              />
+              <NextButton
+                onClick={onNextButtonClick}
+                disabled={nextBtnDisabled}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div
         data-aos="fade-up"

@@ -1,69 +1,87 @@
 import React from "react";
 import Publications from "../components/UI/Publications";
+import useEmblaCarousel from "embla-carousel-react";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../components/ui/carousel";
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButtons";
 
 const Media = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    slidesToScroll: 1,
+    loop: "true",
+    align: "center",
+  });
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
   return (
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden mx-auto 2xl:py-8 lg:py-6 py-4 px-4 w-full md:mt-4 max-w-6xl"
+      className="max-w-screen h-auto overflow-hidden"
     >
-      <div className="flex flex-col justify-center items-center space-y-6">
-        <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center space-y-6 px-4 py-4 md:mt-4 lg:py-6 2xl:py-8">
+        <h3 className="font-opensans text-base font-bold tracking-tight text-[#0B77A5] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           MEDIA PUBLICATION
         </h3>
         <div className="w-full">
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            className="w-full px-14"
-          >
-            <CarouselContent>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <Publications
-                  imgSrc="/kathmandupost.png"
-                  logoSrc="/kathmandupostlogo.png"
-                  title="lorem ipsum dolor sit amet, consectetur adipiscing"
-                  article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+          <div className="embla_homepage">
+            <div className="embla__viewport_homepage" ref={emblaRef}>
+              <div className="embla__container_homepage">
+                <div className="embla__slide_homepage">
+                  <Publications
+                    imgSrc="/kathmandupost.png"
+                    logoSrc="/kathmandupostlogo.png"
+                    title="lorem ipsum dolor sit amet, consectetur adipiscing"
+                    article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+                  />
+                </div>
+                <div className="embla__slide_homepage">
+                  <Publications
+                    imgSrc="/kathmandupost.png"
+                    logoSrc="/kathmandupostlogo.png"
+                    title="lorem ipsum dolor sit amet, consectetur adipiscing"
+                    article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+                  />
+                </div>
+                <div className="embla__slide_homepage">
+                  <Publications
+                    imgSrc="/kathmandupost.png"
+                    logoSrc="/nayapatrikalogo.png"
+                    title="lorem ipsum dolor sit amet, consectetur adipiscing"
+                    article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+                  />
+                </div>
+                <div className="embla__slide_homepage">
+                  <Publications
+                    imgSrc="/kathmandupost.png"
+                    logoSrc="/nayapatrikalogo.png"
+                    title="lorem ipsum dolor sit amet, consectetur adipiscing"
+                    article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="embla__controls_homepage">
+              <div className="embla__buttons_homepage">
+                <PrevButton
+                  onClick={onPrevButtonClick}
+                  disabled={prevBtnDisabled}
                 />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <Publications
-                  imgSrc="/kathmandupost.png"
-                  logoSrc="/kathmandupostlogo.png"
-                  title="lorem ipsum dolor sit amet, consectetur adipiscing"
-                  article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
+                <NextButton
+                  onClick={onNextButtonClick}
+                  disabled={nextBtnDisabled}
                 />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <Publications
-                  imgSrc="/kathmandupost.png"
-                  logoSrc="/nayapatrikalogo.png"
-                  title="lorem ipsum dolor sit amet, consectetur adipiscing"
-                  article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
-                />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                <Publications
-                  imgSrc="/kathmandupost.png"
-                  logoSrc="/nayapatrikalogo.png"
-                  title="lorem ipsum dolor sit amet, consectetur adipiscing"
-                  article="Astronova provides a global platform for consumers to donate and suppliers to invest in campaigns, workshops, and infrastructure, empowering young"
-                />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="ml-8" />
-            <CarouselNext className="mr-8" />
-          </Carousel>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

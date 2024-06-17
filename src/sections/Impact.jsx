@@ -12,21 +12,21 @@ const Impact = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="700"
-      className="h-auto max-w-screen overflow-hidden relative mx-auto 2xl:py-10 xl:py-8 lg:py-6 py-4 px-4 w-full max-w-6xl md:mt-4"
+      className="max-w-screen relative mx-auto h-auto w-full max-w-6xl overflow-hidden px-4 py-4 md:mt-4 lg:py-6 xl:py-8 2xl:py-10"
     >
-      <div className="flex flex-col justify-center items-center lg:space-y-6 xl:py-4">
-        <h3 className="font-opensans font-bold text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight relative after:bg-[#0B77A5] after:absolute after:h-[4px] after:w-0 after:-bottom-[2px] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-50">
+      <div className="flex flex-col items-center justify-center lg:space-y-6 xl:py-4">
+        <h3 className="relative z-50 font-opensans text-base font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           OUR IMPACT
         </h3>
-        <div className="flex md:flex-row flex-col justify-center items-center lg:space-x-6 space-x-0 md:space-x-4 space-y-4 md:space-y-0 py-4">
+        <div className="flex flex-col items-center justify-center space-x-0 space-y-4 py-4 md:flex-row md:space-x-4 md:space-y-0 lg:space-x-6">
           <div
             data-aos="fade-up"
             data-aos-duration="1300"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#BDB809] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
+            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#BDB809] px-4 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
           >
             <div>
               <svg
-                className="w-[30px] md:w-[36px] lg:[42px] xl:w-[50px]"
+                className="lg:[42px] w-[30px] md:w-[36px] xl:w-[50px]"
                 viewBox="0 0 58 57"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
+            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
               <CountUp
                 start={0}
                 end={100}
@@ -48,10 +48,10 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
+            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
               STUDENT REACHED
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-white text-center">
+            <p className="text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
               Through various workshops, seminars, STEAM camps, trainings &
               programs.
             </p>
@@ -59,11 +59,11 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="1100"
-            className="lg:py-16 lg:px-8 py-4 px-4 flex flex-col justify-center items-center space-y-4 bg-[#AE0D19] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
+            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#AE0D19] px-4 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
           >
             <div>
               <svg
-                className="w-[30px] md:w-[36px] lg:[42px] xl:w-[50px]"
+                className="lg:[42px] w-[30px] md:w-[36px] xl:w-[50px]"
                 viewBox="0 0 54 54"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
+            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
               <CountUp
                 start={0}
                 end={5}
@@ -85,10 +85,10 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
+            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
               FUND INVESTED
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white">
+            <p className="text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
               To build IT Lab, Podcast Hall, Resource Allocation, Student
               Grants, Human Resource.
             </p>
@@ -96,7 +96,7 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="900"
-            className="lg:py-16 lg:px-6 py-4 px-2 flex flex-col justify-center items-center space-y-4 z-40 bg-[#2496D7] cursor-pointer shadow-md hover:scale-105 hover:duration-400"
+            className="z-40 flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#2496D7] px-2 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-6 lg:py-16"
           >
             <div>
               <Image
@@ -106,10 +106,10 @@ const Impact = () => {
                 alt="Workshop SVG"
                 width={42}
                 height={38}
-                className="w-[40px] md:w-[46px] lg:[52px] xl:w-[58px] object-center object-cover"
+                className="lg:[52px] w-[40px] object-cover object-center md:w-[46px] xl:w-[58px]"
               />
             </div>
-            <h4 className="font-inter font-bold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-white">
+            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
               <CountUp
                 start={0}
                 end={100}
@@ -120,110 +120,119 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter font-bold tracking-tight 2xl:text-2xl lg:text-xl md:text-base text-sm text-white">
+            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
               FREE WORKSHOPS
             </h3>
-            <p className="font-inter font-normal 2xl:text-base lg:text-sm md:text-xs text-[10px] text-center text-white w-full">
+            <p className="w-full text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>
           </div>
         </div>
       </div>
-      <div className="xl:mt-16 lg:mt-12 w-full">
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 place-content-center place-items-center">
-          <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
-            <div className="flex justify-center items-center">
+      <div className="w-full lg:mt-12 xl:mt-16">
+        <div className="grid w-full grid-cols-2 place-content-center place-items-center xl:grid-cols-4">
+          <div className="flex flex-col items-center justify-center space-y-3 p-4 px-3 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
+            <div className="flex items-center justify-center">
               <Image
                 priority
                 quality={80}
                 src="/careers.svg"
                 alt="Careers Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
+                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={100}
                 height={100}
               />
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
+            <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
               Careers
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
+            <p className="text-center font-inter text-[10px] font-extralight text-black md:text-xs lg:text-sm 2xl:text-base">
               We’re always looking for talented, driven individuals to join our
               mission. Come help us build a better future for students
             </p>
-            <Link href="/mentor_registration" className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] text-center flex items-center">
-              Apply Today <FiCheckCircle className="ml-2" />
+            <Link
+              href="/mentor_registration"
+              className="flex items-center text-center font-inter text-xs font-bold text-[#DA441F] md:text-sm lg:text-base 2xl:text-lg"
+            >
+              Apply Today <FiCheckCircle className="ml-1" />
             </Link>
           </div>
-          <div className="flex flex-col justify-center items-center px-3 xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
-            <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center justify-center space-y-3 p-4 px-3 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
+            <div className="flex items-center justify-center">
               <Image
                 priority
                 quality={80}
                 src="/funding.svg"
                 alt="Funding Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
+                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
+            <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
               Funding
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
+            <p className="text-center font-inter text-[10px] font-extralight text-black md:text-xs lg:text-sm 2xl:text-base">
               We provide Seed money and Venture money to the innovative business
               idea. Come and join us and work on your idea.
             </p>
-            <Link href="/i_have_an_idea_form" className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
-              Register your Idea
-              <IoPersonAddOutline className="ml-2" />
+            <Link
+              href="/i_have_an_idea_form"
+              className="flex items-center font-inter text-xs font-bold text-[#DA441F] md:text-sm lg:text-base 2xl:text-lg"
+            >
+              Register your Idea <IoPersonAddOutline className="ml-1" />
             </Link>
           </div>
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
-            <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center justify-center space-y-3 p-4 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
+            <div className="flex items-center justify-center">
               <Image
                 priority
                 quality={80}
                 src="/project.svg"
                 alt="Project Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
+                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
+            <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
               Project
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
+            <p className="text-center font-inter text-[10px] font-extralight text-black md:text-xs lg:text-sm 2xl:text-base">
               let’s see what we have done in past to promote science and
               innovation among the students. Check out our Project.
             </p>
-            <button className="font-inter font-bold 2xl:text-lg lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
-              Learn More <FaArrowRight className="ml-2" />
+            <button className="flex items-center font-inter text-xs font-bold text-[#DA441F] md:text-sm lg:text-base 2xl:text-lg">
+              Learn More <FaArrowRight className="ml-1" />
             </button>
           </div>
           {/* <div className="w-8 h-[1px] bg-black"></div> */}
-          <div className="flex flex-col justify-center items-center xl:space-y-6 lg:space-y-4 space-y-3 p-4 w-3/4 sm:w-1/2 md:w-auto">
-            <div className="flex justify-center items-center">
+          <div className="flex flex-col items-center justify-center space-y-3 p-4 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
+            <div className="flex items-center justify-center">
               <Image
                 priority
                 quality={80}
                 src="/resource.svg"
                 alt="Resource Logo"
-                className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 object-center object-cover"
+                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
                 width={30}
                 height={30}
               />
             </div>
-            <h3 className="font-inter font-extrabold 2xl:text-3xl lg:text-2xl md:text-lg text-base text-black">
+            <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
               Resource
             </h3>
-            <p className="font-inter font-extralight 2xl:text-base lg:text-sm md:text-xs text-[10px] text-black text-center">
+            <p className="text-center font-inter text-[10px] font-extralight text-black md:text-xs lg:text-sm 2xl:text-base">
               We are preparing the useful resources to make you clear about our
               mission and our goals. Click to see the Resources.
             </p>
-            <Link href="https://drive.google.com/file/d/1ZLembdtyrx9DljsZ8F3kEDLjyaLH8JrS/view?usp=drive_link" target="_blank" className="mx-auto font-inter font-bold lg:text-base md:text-sm text-xs text-[#DA441F] flex items-center">
-              Download Brochure <FiDownload className="ml-2" />
+            <Link
+              href="https://drive.google.com/file/d/1ZLembdtyrx9DljsZ8F3kEDLjyaLH8JrS/view?usp=drive_link"
+              target="_blank"
+              className="mx-auto flex items-center font-inter text-xs font-bold text-[#DA441F] md:text-sm lg:text-base"
+            >
+              Download Brochure <FiDownload className="ml-1" />
             </Link>
           </div>
         </div>
