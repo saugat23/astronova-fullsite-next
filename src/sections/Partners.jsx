@@ -256,13 +256,13 @@ const Partners = () => {
             </p>
           </div>
           <div className="mx-auto w-full max-w-6xl">
-            <div className="flex w-full flex-col items-center justify-around space-x-0 space-y-4 px-20 text-white md:flex-row md:items-start md:space-x-3 md:space-y-0 md:px-0">
+            <div className="flex w-full flex-col items-center justify-center space-x-0 space-y-4 px-20 text-white md:flex-row md:items-start md:space-x-5 md:space-y-0 md:px-0">
               <Link
                 data-aos="fade-up"
                 data-aos-duration="900"
                 href="https://forms.gle/3uCVNnSz6MvqeGfn8"
                 target="_blank"
-                className="w-full cursor-pointer bg-[#0012FF] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#0012FF] hover:duration-200 lg:text-base xl:text-lg"
+                className="w-full cursor-pointer bg-[#0012FF] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#0012FF] hover:duration-200 md:w-auto lg:text-base xl:text-lg"
               >
                 JOIN AS VOLUNTEER
               </Link>
@@ -270,7 +270,7 @@ const Partners = () => {
                 data-aos="fade-up"
                 data-aos-duration="1100"
                 href="/mentor_registration"
-                className="w-full cursor-pointer bg-[#EC008C] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#EC008C] hover:duration-200 lg:text-base xl:text-lg"
+                className="w-full cursor-pointer bg-[#EC008C] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#EC008C] hover:duration-200 md:w-auto lg:text-base xl:text-lg"
               >
                 BECOME A TEAM MEMBER
               </Link>
@@ -280,7 +280,7 @@ const Partners = () => {
                 type="button"
                 onPress={onOpen}
                 radius="none"
-                className="mt-4 w-full cursor-pointer bg-[#F26522] px-6 font-opensans text-sm font-semibold text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 lg:text-base xl:text-lg"
+                className="mt-4 w-full cursor-pointer bg-[#F26522] px-6 font-opensans text-sm font-semibold text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 md:w-auto lg:text-base xl:text-lg"
               >
                 MAKE A DONATION
               </Button>
