@@ -134,7 +134,7 @@ const Impact = () => {
         </div>
       </div>
       <div className="w-full lg:mt-12 xl:mt-16">
-        <div className="grid w-full grid-cols-2 place-content-center place-items-center xl:grid-cols-4">
+        <div className="grid w-full grid-cols-2 place-content-center place-items-center lg:grid-cols-4">
           <div className="flex flex-col items-center justify-center space-y-3 p-4 px-3 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
             <div className="flex items-center justify-center">
               <Image

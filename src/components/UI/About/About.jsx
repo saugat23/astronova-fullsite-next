@@ -32,7 +32,7 @@ const About = () => {
           <h4 className="text-justify font-opensans text-sm font-medium text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             WHO ARE WE?
           </h4>
-          <h4 className="w-4/5 text-center font-opensans text-lg font-bold tracking-tighter text-[#F28459] sm:text-xl md:text-2xl lg:w-2/5 lg:text-3xl xl:text-4xl 2xl:text-5xl">
+          <h4 className="max-w-[30rem] text-center font-opensans text-lg font-bold tracking-tighter text-[#F28459] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
             A Nonprofit Committed to Education and Innovation
           </h4>
           <div className="">
@@ -47,7 +47,7 @@ const About = () => {
         data-aos-duration="400"
         className="h-auto bg-[#F0F6FB] py-12"
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-6xl px-4">
           <h2
             className="font-opensans text-base font-normal text-[#0052A0D4] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
             id="abouthome"
@@ -98,7 +98,7 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto mt-4 h-auto w-full max-w-7xl px-4"
+        className="mx-auto mt-4 h-auto w-full max-w-6xl px-4"
       >
         <div className="flex w-full flex-col items-center justify-between space-y-5 lg:flex-row lg:space-y-0">
           <div className="">
@@ -143,7 +143,7 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto mt-8 h-auto max-w-7xl bg-[#F0F6FB] py-4 md:py-6 lg:py-8 2xl:py-12"
+        className="mx-auto mt-8 h-auto max-w-6xl bg-[#F0F6FB] py-4 md:py-6 lg:py-8 2xl:py-12"
       >
         <div className="grid h-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <ValuesContainer
@@ -175,7 +175,7 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto mt-4 h-auto w-full max-w-7xl px-4"
+        className="mx-auto mt-4 h-auto w-full max-w-6xl px-4"
       >
         <h3 className="text-center font-inter text-base font-semibold text-[#AE0D19] md:text-lg lg:text-xl 2xl:text-2xl">
           SHARING SUCCESS TOGETHER
@@ -246,16 +246,9 @@ const About = () => {
               MAKE A DONATION
             </Button>
           </div>
-          <Link
-            href="https://forms.gle/3uCVNnSz6MvqeGfn8"
-            target="_blank"
-            className="hover:duration rounded-lg bg-[#FF9013] px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-blue-700 lg:text-base"
-          >
-            JOIN AS VOLUNTEEER
-          </Link>
         </div>
       </div>
-      <div className="z-10 -mt-20 h-20 w-full bg-[#291f19]"></div>
+      <div className="z-10 -mt-8 h-20 w-full bg-[#190e08]"></div>
 
       <Modal
         size="5xl"

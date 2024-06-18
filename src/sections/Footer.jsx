@@ -25,7 +25,7 @@ const Footer = () => {
       data-aos-duration="700"
       className="max-w-screen h-auto overflow-hidden bg-[#190e08] font-opensans text-[#9e9e9e]"
     >
-      <div className="mx-auto flex max-w-lg flex-col items-center justify-center space-y-4 py-6">
+      <div className="mx-auto flex max-w-lg flex-col items-center justify-center space-y-4 pt-12 pb-6">
         <div className="flex w-full flex-col items-center justify-center space-y-3">
           <Lottie
             animationData={GlobeLottie}
@@ -76,10 +76,10 @@ const Footer = () => {
           <div className="flex w-full flex-col items-center justify-center space-y-2 border-none px-8 text-white lg:w-1/2 lg:border-r lg:border-r-[#9e9e9e] lg:px-0 xl:w-3/5">
             <Image src={Logo} alt="Logo" priority width={80} height={80} />
             <div>
-              <p className="text-base font-normal tracking-[0.3em] lg:text-xl xl:text-2xl">
+              <p className="text-base font-normal text-center tracking-[0.3em] lg:text-xl xl:text-2xl">
                 ASTRONOVA
               </p>
-              <p className="text-xs font-light tracking-[0.3em] lg:text-base">
+              <p className="text-xs font-light text-center tracking-[0.3em] lg:text-base">
                 Foundation Nepal
               </p>
             </div>
@@ -244,7 +244,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-col items-center justify-center space-y-4 border-t border-t-[#9e9e9e] px-3 py-6 text-xs lg:px-6">
+      <div className="flex font-semibold w-full flex-col items-center justify-center space-y-4 border-t border-t-[#9e9e9e] px-3 py-6 text-xs lg:px-6">
         <p>Copyright &copy; 2024 Astronova Foundation. All Rights Reserved.</p>
         <div className="flex flex-col items-center justify-center">
           <p className="text-center">
