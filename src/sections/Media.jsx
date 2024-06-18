@@ -28,7 +28,7 @@ const Media = () => {
       className="max-w-screen h-auto overflow-hidden"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center space-y-6 px-4 py-4 md:mt-4 lg:py-6 2xl:py-8">
-        <h3 className="font-opensans text-base font-bold tracking-tight text-[#0B77A5] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+        <h3 className="font-opensans text-xl font-bold tracking-tight text-[#0B77A5] lg:text-2xl xl:text-3xl">
           MEDIA PUBLICATION
         </h3>
         <div className="w-full">

@@ -14,61 +14,37 @@ const Hero = () => {
       <section
         data-aos="fade-down"
         data-aos-duration="700"
-        className="max-w-screen h-screen overflow-hidden"
+        className="max-w-screen h-[75vh] min-h-[75vh] overflow-hidden"
       >
-        <div className="embla">
+        <div className="embla !mt-16">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
               <div className="embla__slide">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="400"
-                  className="h-screen"
-                >
-                  <div className="relative h-full w-full">
-                    <Image
-                      priority
-                      layout="fill"
-                      className="h-full w-full object-cover object-center"
-                      src={Slide1hero}
-                      alt="Slide 1 Hero BG"
-                    />
-                  </div>
-                </div>
+                <Image
+                  priority
+                  fill
+                  className="relative h-full w-full object-cover object-center"
+                  src={Slide1hero}
+                  alt="Slide 1 Hero BG"
+                />
               </div>
               <div className="embla__slide">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="400"
-                  className="h-screen"
-                >
-                  <div className="relative h-full w-full">
-                    <Image
-                      priority
-                      layout="fill"
-                      className="h-full w-full object-cover object-center"
-                      src={Slide2hero}
-                      alt="Slide 2 Hero BG"
-                    />
-                  </div>
-                </div>
+                <Image
+                  priority
+                  fill
+                  className="relative h-full w-full object-cover object-center"
+                  src={Slide2hero}
+                  alt="Slide 2 Hero BG"
+                />
               </div>
               <div className="embla__slide">
-                <div
-                  data-aos="fade-up"
-                  data-aos-duration="400"
-                  className="h-screen"
-                >
-                  <div className="relative h-full w-full">
-                    <Image
-                      priority
-                      layout="fill"
-                      className="h-full w-full object-cover object-center"
-                      src={Slide3hero}
-                      alt="Slide 3 Hero BG"
-                    />
-                  </div>
-                </div>
+                <Image
+                  priority
+                  fill
+                  className="relative h-full w-full object-cover object-center"
+                  src={Slide3hero}
+                  alt="Slide 3 Hero BG"
+                />
               </div>
             </div>
           </div>

@@ -3,6 +3,8 @@ import PartnersTestimonial from "../components/UI/PartnersTestimonial";
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
+import Mail from "../../public/mail.svg";
+import MailBell from "../../public/mailbell.svg";
 import {
   PrevButton,
   NextButton,
@@ -33,12 +35,12 @@ const Partners = () => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="max-w-screen mx-auto h-auto overflow-hidden lg:mt-8 xl:mt-12">
+    <section className="max-w-screen mx-auto mt-6 h-auto overflow-hidden lg:mt-8 xl:mt-12">
       <div className="lg:mt-18 flex flex-col items-center justify-center lg:space-y-10 xl:mt-20 xl:space-y-12">
-        <h3 className="relative font-opensans text-base font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+        <h3 className="relative font-opensans text-xl font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full lg:text-2xl xl:text-3xl">
           OUR PARTNERS IN CHARGE
         </h3>
-        <div className="w-full bg-[#00000005]">
+        <div className="my-4 w-full py-8">
           <div className="logos">
             <div className="logos-slide">
               <Image
@@ -48,7 +50,7 @@ const Partners = () => {
                 alt="Trion Tech Image"
                 width={40}
                 height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="h-8 w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
               />
               <Image
                 priority
@@ -227,54 +229,67 @@ const Partners = () => {
           className="flex w-full flex-col items-center justify-center space-y-6 bg-[#2496D7] py-4 md:py-6 lg:py-10 xl:py-12"
         >
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4">
-            <h3 className="text-center font-opensans text-xl font-bold tracking-[-0.07em] text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+            <h3 className="text-center font-opensans text-2xl font-bold text-white lg:text-3xl xl:text-4xl">
               JOIN THE JOURNEY
             </h3>
-            <h3 className="text-center font-kumbhsans text-base font-bold tracking-wider text-white md:text-lg lg:text-xl xl:text-2xl">
+            <h3 className="text-center font-opensans text-base font-medium text-white md:text-lg lg:text-xl xl:text-2xl">
               Be the change you want to see
             </h3>
-            <p className="py-2 text-center font-opensans text-xs font-normal text-white md:text-sm lg:text-base xl:text-lg">
-              We are working to create an environment where students can receive
-              support, mentorship, guidance and access to tools and facilities
-              to explore their curiosity so that they could be able to develop
-              practical & soft skills, entrepreneurial skill and turn their
-              ideas into reality and provide them national and international
-              exposure to explore their innovative research ideas. Together
-              let’s make a community of change makers.
+            <p className="py-2 text-center font-opensans text-xs font-normal leading-[1.6em] text-white md:text-sm lg:text-base xl:text-lg">
+              The Astronova Foundation Nepal is officially registered as
+              non-profit organization. It&apos;s primary mission is to foster
+              creative, innovative & entrepreneurial mindset among
+              school/college students from their early ages. We are working to
+              create an environment where students can receive support,
+              mentorship, guidance and access to tools and facilities to explore
+              their curiosity so that they could be able to develop practical &
+              soft skills, entrepreneurial skill and turn their ideas into
+              reality and provide them national and international exposure to
+              explore their innovative research ideas.
+              <br />
+              Recognizing that many young minds possess innovative ideas and
+              energy that often remain untapped due to financial constraints and
+              a lack of resources, the foundation aims to bridge this gap. The
+              foundation believes that none of the creative curiosities should
+              be killed just because of lack of money and the resources and
+              moves ahead accordingly.
             </p>
           </div>
-          <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-around space-y-4 text-white md:flex-row md:items-start md:space-y-0">
-            <Link
-              data-aos="fade-up"
-              data-aos-duration="900"
-              href="https://forms.gle/3uCVNnSz6MvqeGfn8"
-              target="_blank"
-              className="cursor-pointer rounded-lg bg-[#0012FF] px-6 py-2 font-opensans text-base font-bold tracking-tighter hover:scale-105 hover:bg-white hover:text-[#0012FF] hover:duration-200 md:text-lg lg:text-xl xl:text-2xl"
-            >
-              JOIN AS VOLUNTEER
-            </Link>
-            <Link
-              data-aos="fade-up"
-              data-aos-duration="1100"
-              href="/mentor_registration"
-              className="cursor-pointer rounded-lg bg-[#EC008C] px-6 py-2 font-opensans text-base font-bold tracking-tighter hover:scale-105 hover:bg-white hover:text-[#EC008C] hover:duration-200 md:text-lg lg:text-xl xl:text-2xl"
-            >
-              BECOME A TEAM MEMBER
-            </Link>
-            <Button
-              data-aos="fade-up"
-              data-aos-duration="1300"
-              type="button"
-              onPress={onOpen}
-              className="mt-4 cursor-pointer rounded-lg bg-[#F26522] px-6 font-opensans text-base font-bold tracking-tighter text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 md:text-lg lg:text-xl xl:text-2xl"
-            >
-              MAKE A DONATION
-            </Button>
+          <div className="mx-auto w-full max-w-6xl">
+            <div className="flex w-full flex-col items-center justify-around space-x-0 space-y-4 px-20 text-white md:flex-row md:items-start md:space-x-3 md:space-y-0 md:px-0">
+              <Link
+                data-aos="fade-up"
+                data-aos-duration="900"
+                href="https://forms.gle/3uCVNnSz6MvqeGfn8"
+                target="_blank"
+                className="w-full cursor-pointer bg-[#0012FF] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#0012FF] hover:duration-200 lg:text-base xl:text-lg"
+              >
+                JOIN AS VOLUNTEER
+              </Link>
+              <Link
+                data-aos="fade-up"
+                data-aos-duration="1100"
+                href="/mentor_registration"
+                className="w-full cursor-pointer bg-[#EC008C] px-6 py-2 text-center font-opensans text-sm font-semibold hover:scale-105 hover:bg-white hover:text-[#EC008C] hover:duration-200 lg:text-base xl:text-lg"
+              >
+                BECOME A TEAM MEMBER
+              </Link>
+              <Button
+                data-aos="fade-up"
+                data-aos-duration="1300"
+                type="button"
+                onPress={onOpen}
+                radius="none"
+                className="mt-4 w-full cursor-pointer bg-[#F26522] px-6 font-opensans text-sm font-semibold text-white hover:scale-105 hover:bg-white hover:text-[#F26522] hover:duration-200 lg:text-base xl:text-lg"
+              >
+                MAKE A DONATION
+              </Button>
+            </div>
           </div>
         </div>
       </div>
 
-      <h3 className="mt-4 w-auto text-center font-opensans text-base font-bold tracking-tight text-[#0B77A5] md:text-lg lg:text-xl xl:mt-12 xl:text-2xl 2xl:text-3xl">
+      <h3 className="mt-4 w-auto text-center font-opensans text-xl font-bold tracking-tight text-[#0B77A5] lg:text-2xl xl:mt-12 xl:text-3xl">
         GROUND STORIES
       </h3>
       <div className="mx-auto w-full max-w-6xl px-3 pt-4">
@@ -360,20 +375,27 @@ const Partners = () => {
             className="h-full object-cover object-center"
           />
         </div>
-        <div className="flex w-full flex-col items-center justify-center md:w-1/2 lg:p-6 xl:p-8">
+        <div className="flex h-full w-full flex-col items-center justify-around space-y-5 p-4 md:w-1/2 lg:p-6 xl:p-8">
           <h3 className="text-center font-opensans text-lg font-extrabold tracking-tighter text-white md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
-          <div className="h-3/4">
-            <Link href="mailto:info@astronovafoundation@gmail.com">
+          <div>
+            <Link
+              href="mailto:info@astronovafoundation@gmail.com"
+              className="relative h-full w-full"
+            >
+              <Image
+                src={MailBell}
+                quality={100}
+                alt="MailBell Image"
+                className="absolute -top-8 left-1/2 z-40 -translate-x-1/2"
+              />
               <Image
                 priority
                 quality={100}
-                src="/mail.svg"
+                src={Mail}
                 alt="Mail Image"
-                width={1000}
-                height={1200}
-                className="h-full w-full object-cover object-center"
+                className="relative z-30 object-cover object-center"
               />
             </Link>
           </div>

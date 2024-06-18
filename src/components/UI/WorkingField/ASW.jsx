@@ -5,7 +5,7 @@ import React from "react";
 const ASW = () => {
   return (
     <section className="h-auto max-w-screen overflow-hidden">
-      <div data-aos="fade-up" data-aos-duration="400" className='h-[60vh] bg-[url("/working_area/asw.png")] bg-cover flex flex-col space-y-4 justify-center items-center'>
+      <div data-aos="fade-up" data-aos-duration="400" className='mt-16 h-[60vh] bg-[url("/working_area/asw.png")] bg-cover flex flex-col space-y-4 justify-center items-center'>
         <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
           AFTER SCHOOL
         </h3>

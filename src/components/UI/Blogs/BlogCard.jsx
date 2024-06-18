@@ -7,8 +7,8 @@ import Link from "next/link";
 const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time, id }) => {
   return (
     <>
-      <div className="w-full h-auto flex flex-col justify-center items-start space-y-4 shadow-xl px-3 py-2 bg-white">
-        <div className="w-full h-1/2">
+      <div className="flex h-auto w-full flex-col items-start justify-center space-y-4 bg-white px-3 py-2 shadow-xl">
+        <div className="h-1/2 w-full">
           <Image
             priority={true}
             quality={80}
@@ -16,18 +16,18 @@ const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time, id }) => {
             alt={title}
             width={600}
             height={500}
-            className="object-cover object-center w-full h-full"
+            className="h-full w-full object-cover object-center"
           />
         </div>
-        <div className="w-full flex flex-col justify-center items-start space-y-3">
-          <h2 className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-gray-800">
+        <div className="flex w-full flex-col items-start justify-center space-y-3">
+          <h2 className="font-inter text-sm font-bold text-gray-800 sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
             {title}
           </h2>
-          <p className="font-inter font-normal 2xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] text-[#6E6E6E]">
+          <p className="font-inter text-[10px] font-normal text-[#6E6E6E] sm:text-xs md:text-sm lg:text-base 2xl:text-lg">
             {desc}
           </p>
-          <div className="w-full flex md:flex-row flex-col space-y-2 md:space-y-0 lg:justify-between items-center">
-            <div className="flex justify-start items-center space-x-4">
+          <div className="flex w-full flex-col items-center space-y-2 md:flex-row md:space-y-0 lg:justify-between">
+            <div className="flex items-center justify-start space-x-4">
               <div>
                 <Image
                   priority
@@ -36,23 +36,23 @@ const BlogCard = ({ imgSrc, title, desc, authorImgSrc, author, time, id }) => {
                   alt={author}
                   width={100}
                   height={100}
-                  className="rounded-full w-16 h-16"
+                  className="h-16 w-16 rounded-full"
                 />
               </div>
-              <div className="flex flex-col justify-center items-start space-y-1 font-inter">
-                <h4 className="font-inter font-bold xl:text-sm md:text-xs text-[10px]">
+              <div className="flex flex-col items-start justify-center space-y-1 font-inter">
+                <h4 className="font-inter text-[10px] font-bold md:text-xs xl:text-sm">
                   {author}
                 </h4>
-                <h4 className="font-inter font-bold xl:text-sm md:text-xs text-[10px]">
+                <h4 className="font-inter text-[10px] font-bold md:text-xs xl:text-sm">
                   {time}
                 </h4>
               </div>
             </div>
-            <div className="w-full lg:w-auto">
+            <div className="w-full md:w-auto">
               <Link href={`/blogs/details_page/${id}`} target="_blank">
                 <button
                   type="button"
-                  className="bg-[#AE0D19] font-inter text-white font-semibold 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] py-2 px-4 rounded-lg hover:bg-black hover:text-white hover:duration-250"
+                  className="w-full rounded-lg bg-[#AE0D19] px-4 py-2 font-inter text-[10px] font-semibold text-white hover:bg-black hover:text-white hover:duration-250 sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl"
                 >
                   READ
                 </button>

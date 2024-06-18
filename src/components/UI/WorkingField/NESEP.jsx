@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const NESEP = () => {
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className='h-[70vh] bg-[url("/working_area/nesep.png")] bg-cover flex flex-col space-y-4 justify-center items-center'
+        className='mt-16 flex h-[70vh] flex-col items-center justify-center space-y-4 bg-[url("/working_area/nesep.png")] bg-cover'
       >
         <div>
           <Image
@@ -19,29 +19,29 @@ const NESEP = () => {
             height={128}
           />
         </div>
-        <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
+        <h3 className="mx-auto w-1/2 text-center font-poppins text-base font-extrabold leading-loose text-white sm:text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-5xl">
           NATIONAL EXPO
         </h3>
-        <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-center leading-loose">
+        <h3 className="mx-auto w-1/2 text-center font-poppins text-xs font-extrabold leading-loose text-white sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
           FOR SCIENCE AND
         </h3>
-        <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-center leading-loose">
+        <h3 className="mx-auto w-1/2 text-center font-poppins text-sm font-extrabold leading-loose text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           ENGINEERING PROJECTS
         </h3>
-        <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
+        <h3 className="mx-auto w-1/2 text-center font-poppins text-base font-extrabold leading-loose text-white sm:text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-5xl">
           (NESEP)
         </h3>
       </div>
-      <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4 px-2">
+      <div className="mx-auto mt-6 flex max-w-6xl flex-col items-start justify-center space-y-8 px-2 py-4">
         <div
           data-aos="fade-up"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             Introduction:
           </h4>
-          <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             We are thrilled to introduce our inaugural Science Expo, an
             extraordinary event poised to illuminate the wonders of science and
             ignite a passion for discovery. More than just a gathering of
@@ -77,20 +77,20 @@ const NESEP = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[#77AB33] p-8 w-full h-auto"
+        className="h-auto w-full bg-[#77AB33] p-8"
       >
-        <div className="mx-auto w-3/5 flex justify-center items-center">
-          <div className="w-1/2 h-full">
+        <div className="mx-auto flex w-3/5 items-center justify-center">
+          <div className="h-full w-1/2">
             <Image
               priority
               src="/assets/donation-campaign-donation.svg"
               alt="Donation Campign Image"
               width={500}
               height={500}
-              className="w-full h-full"
+              className="h-full w-full"
             />
           </div>
-          <h2 className="w-1/2 text-center px-10 font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base text-white">
+          <h2 className="w-1/2 px-10 text-center font-inter text-base font-bold text-white md:text-lg lg:text-xl 2xl:text-2xl">
             CONTRIBUTE TO SPONSOR NATIONAL EXPO PROGRAM
           </h2>
         </div>

@@ -1,313 +1,123 @@
 "use client";
 import React, { useState } from "react";
-import { createBlog } from "../../../../app/services/api";
-import { useRouter } from "next/navigation";
+import { FaEye, FaPen } from "react-icons/fa";
+import Link from "next/link";
 import {
-  Bold,
-  Strikethrough,
-  Italic,
-  Heading as HeadingIcon,
-  Code,
-  Pen,
-} from "lucide-react";
-import { toast } from "sonner";
-import Loader from "../../Loader/Loader";
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Heading from "@tiptap/extension-heading";
-import { Toggle } from "../../../ui/toggle";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../../../ui/sheet";
+import Image from "next/image";
 
-const Toolbar = ({ editor }) => {
-  if (!editor) {
-    return null;
-  }
-  return (
-    <div className="bg-transparent rounded-xl pb-4 flex gap-3">
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("heading")}
-        onPressedChange={() =>
-          editor.chain().focus().toggleHeading({ level: 2 }).run()
-        }
-      >
-        <HeadingIcon className="h-6 w-6 stroke-black" />
-      </Toggle>
+const Blogs = ({ data }) => {
+  const blogs = data.blogs;
+  const [search, setSearch] = useState("");
 
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("bold")}
-        onPressedChange={() => editor.chain().focus().toggleBold().run()}
-      >
-        <Bold className="h-6 w-6 stroke-black" />
-      </Toggle>
-
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("italic")}
-        onPressedChange={() => editor.chain().focus().toggleItalic().run()}
-      >
-        <Italic className="h-6 w-6 stroke-black" />
-      </Toggle>
-
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("strike")}
-        onPressedChange={() => editor.chain().focus().toggleStrike().run()}
-      >
-        <Strikethrough className="h-6 w-6 stroke-black" />
-      </Toggle>
-
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("code")}
-        onPressedChange={() => editor.chain().focus().toggleCode().run()}
-      >
-        <Code className="h-6 w-6 stroke-black" />
-      </Toggle>
-
-      <Toggle
-        className="bg-white"
-        size="lg"
-        pressed={editor.isActive("codeblock")}
-        onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
-      >
-        <Pen className="h-6 w-6 stroke-black" />
-      </Toggle>
-    </div>
+  const filteredBlog = blogs.filter((blog) =>
+    blog.title.toLowerCase().includes(search.toLowerCase()),
   );
-};
 
-const Page = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    sub_title: "",
-    video: "",
-    tags: "",
-    tags2: "",
-    description: "",
-    featured_img: null,
-  });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFeaturedImageChange = (e) => {
-    const { name, files } = e.target;
-    setFormData({ ...formData, [name]: files[0] });
-  };
-
-  const editor = useEditor({
-    extensions: [StarterKit.configure({}), Heading.configure({})],
-    content: "<p> Hello World </p>",
-    editorProps: {
-      attributes: {
-        class:
-          "rounded-md border h-40 border-gray-300 bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 w-[50rem] outline-none",
-      },
-    },
-    onUpdate({ editor }) {
-      setFormData({ ...formData, description: editor.getHTML() });
-    },
-  });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    const { title, sub_title, video, tags, tags2, description, featured_img } =
-      formData;
-
-    const data = new FormData();
-    data.append("title", title);
-    data.append("sub_title", sub_title);
-    data.append("description", description);
-    data.append("video", video);
-    data.append("tags", tags);
-    data.append("featured_img", featured_img);
-    data.append("tags", tags2);
-
-    try {
-      const response = await createBlog(data);
-      console.log(response);
-      toast.success("Blog has been created!!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const router = useRouter();
   return (
-    <section className="p-6 h-auto overflow-hidden">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white w-full flex md:flex-row flex-col-reverse items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg"
-      >
-        <div className="w-1/4 justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
-          <div>
-            <h3 className="font-poppins font-semibold lg:text-xl">
-              Blog Basic Info
-            </h3>
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="title"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Blog Title
-            </label>
-            <input
-              name="title"
-              id="title"
-              onChange={handleChange}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
-              placeholder="Input Blog Title"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="sub_title"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Blog Sub Title
-            </label>
-            <textarea
-              type="text"
-              name="sub_title"
-              id="sub_title"
-              onChange={handleChange}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c] h-20 resize-none"
-              placeholder="Input Blog Sub Title"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="video"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Video
-            </label>
-            <input
-              name="video"
-              id="video"
-              onChange={handleChange}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
-              placeholder="Input Youtube URL"
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="tags"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Tags (Max 8 Only)
-            </label>
-            <input
-              type="text"
-              name="tags"
-              id="tags"
-              onChange={handleChange}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
-              placeholder=""
-            />
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
-            <label
-              htmlFor="tags2"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-            >
-              Tags
-            </label>
-            <input
-              type="text"
-              name="tags2"
-              id="tags2"
-              onChange={handleChange}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
-              placeholder=""
-            />
-          </div>
-        </div>
-        <div className="grow justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-3">
-          <div className="w-full flex justify-between items-center">
-            <h3 className="font-poppins font-semibold lg:text-xl">
-              Funding Information
-            </h3>
-          </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-4">
-            <div className="w-[80%] flex justify-between items-start">
-              <div className="w-full flex flex-col justify-center items-start space-y-4">
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
-                  <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">
-                    Blog Featured Image
-                  </h4>
-                  <label
-                    htmlFor="featured_img"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-48 bg-cover bg-[top_50%] bg-no-repeat flex justify-center items-center cursor-pointer"
-                  >
-                    Add Image
-                  </label>
-                  <input
-                    type="file"
-                    name="featured_img"
-                    id="featured_img"
-                    onChange={handleFeaturedImageChange}
-                    className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="py-2 h-auto overflow-hidden w-full flex flex-col justify-center items-start space-y-3">
-              <label
-                htmlFor="description"
-                className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
-              >
-                More Description
-              </label>
-              <div className="flex flex-col space-y-0 ">
-                <Toolbar editor={editor} />
-                <EditorContent editor={editor} />
-              </div>
-            </div>
-            <div className="flex justify-start items-center">
-              <button
-                type="submit"
-                className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              >
-                {loading ? (
-                  <div className="mx-auto flex gap-4 items-center justify-center w-1/2">
-                    <p>Submitting...</p> <Loader />
-                  </div>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="w-[10%] flex flex-col justify-start items-end justify-self-end">
-          <div className="h-40">
+    <section className="h-auto overflow-hidden p-4">
+      <div className="w-full bg-white px-4 py-8">
+        <div className="flex w-full flex-col items-start justify-start space-y-3 md:flex-row md:items-center md:justify-between md:space-y-0">
+          <div className="flex items-center justify-center space-x-6">
             <button
               type="button"
-              className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              onClick={() => router.back()}
+              className="rounded-xl bg-[#5C74FF] px-6 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
             >
-              Go Back
+              <Link href="blogs/add_blog">Add Blog</Link>
             </button>
           </div>
+          <div className="block md:inline">
+            <input
+              type="text"
+              id="blogSearch"
+              name="blogSearch"
+              className="block w-80 rounded-lg border border-[#E0D8FF] bg-transparent p-3 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none md:inline-block"
+              placeholder="Search by Blog name"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </div>
-      </form>
+        <div className="w-full py-4">
+          <table aria-label="Blog Table" className="blog_table w-full">
+            <thead className="bg-[#f4f4f5]">
+              <tr className="text-sm text-gray-500">
+                <th>
+                  <FaEye className="ml-4" />
+                </th>
+                <th>Edit</th>
+                <th>Blog&apos;s Title</th>
+                <th>Blog&apos;s Subtitle</th>
+                <th>Video Link</th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              {(search === "" ? blogs : filteredBlog)
+                .slice()
+                .reverse()
+                .map((item) => {
+                  return (
+                    <tr key={item.id}>
+                      <Sheet>
+                        <td>
+                          <SheetTrigger>
+                            <FaEye className="cursor-pointer" />
+                          </SheetTrigger>
+                          <SheetContent>
+                            <SheetHeader>
+                              <SheetTitle>Blog Details</SheetTitle>
+                              <SheetDescription className="mt-6 flex flex-col items-start justify-center space-y-3">
+                                <div className="h-auto w-full">
+                                  <Image
+                                    priority
+                                    src={item.featured_img}
+                                    alt="Blog Featured Photo"
+                                    width={800}
+                                    height={600}
+                                    className="h-auto w-full rounded-lg object-cover object-center"
+                                    quality={75}
+                                  />
+                                </div>
+                                <h1 className="font-inter text-base font-semibold">
+                                  {item.title}
+                                </h1>
+                                <p className="font-inter text-sm font-semibold text-gray-700">
+                                  Sub Title{" "}
+                                  <span className="block">
+                                    {item.sub_title}
+                                  </span>
+                                </p>
+                              </SheetDescription>
+                            </SheetHeader>
+                          </SheetContent>
+                        </td>
+                      </Sheet>
+                      <td className="text-center">
+                        <Link
+                          href={`/coordinator_dashboard/blogs/edit_blog/${item.id}`}
+                        >
+                          <FaPen className="ml-10 cursor-pointer text-center" />
+                        </Link>
+                      </td>
+                      <td>{item.title}</td>
+                      <td className="flex w-full items-center justify-start space-x-2">
+                        <h4 className="w-full">{item.sub_title}</h4>
+                      </td>
+                      <td>{item.video}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
   );
 };
 
-export default Page;
+export default Blogs;

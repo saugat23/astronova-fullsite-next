@@ -68,6 +68,15 @@ export const getCampaignById = async ({ id }) => {
   }
 };
 
+export const deleteCampaign = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/v1/campaign/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const getWorkById = async ({ id }) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/v1/work/${id}`);
@@ -122,6 +131,15 @@ export const createWork = async (workData) => {
   }
 };
 
+export const deleteWork = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/v1/work/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createTestimonial = async (testimonialData) => {
   const config = {
     headers: {
@@ -140,6 +158,33 @@ export const createTestimonial = async (testimonialData) => {
   }
 };
 
+export const deleteTestimonial = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/v1/testimonial/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllBlogs = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/blog`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getBlogById = async (id) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/blog/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createBlog = async (blogData) => {
   const config = {
     headers: {
@@ -152,6 +197,33 @@ export const createBlog = async (blogData) => {
       blogData,
       config,
     );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateBlog = async (id, blogData) => {
+  const config = {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  try {
+    const response = await axios.put(
+      `${API_BASE_URL}/v1/blog/${id}`,
+      blogData,
+      config,
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteBlog = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/v1/blog/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -185,6 +257,24 @@ export const getAllNews = async () => {
   }
 };
 
+export const getNewsById = async (id) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/v1/news/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteNews = async (id) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/v1/news/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createEvent = async (eventData) => {
   const config = {
     header: {
@@ -212,18 +302,9 @@ export const getAllEvents = async () => {
   }
 };
 
-export const getAllBlogs = async () => {
+export const deleteEvent = async (id) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/v1/blog`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const getBlogById = async (id) => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/v1/blog/${id}`);
+    const response = await axios.delete(`${API_BASE_URL}/v1/event/${id}`);
     return response.data;
   } catch (error) {
     throw error;

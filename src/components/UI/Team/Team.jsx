@@ -4,6 +4,7 @@ import BoardMember from "../BoardMember";
 import Experts from "../Experts";
 import TeamMembers from "../TeamMembers";
 import PartnersTestimonial from "../PartnersTestimonial";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,26 +12,44 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../../ui/carousel";
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "../../../sections/EmblaCarouselArrowButtons";
 import { IoMdMail } from "react-icons/io";
 import { FaFacebook, FaInstagram, FaLongArrowAltDown } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
 const Team = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    slidesToScroll: 1,
+    loop: "true",
+    align: "center",
+  });
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] mt-16"
+        className="mt-16 bg-[url('/abouthero.png')] bg-cover lg:h-[70vh]"
       >
-        <div className="hero-container-team h-full w-full flex flex-col justify-end items-center lg:space-y-6 py-16 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
-          <h2 className="font-opensans font-bold tracking-tighter 2xl:text-4xl lg:text-3xl sm:text-2xl text-xl text-white">
+        <div className="hero-container-team flex h-full w-full flex-col items-center justify-end px-16 py-16 sm:px-20 md:px-24 lg:space-y-6 lg:px-32 2xl:px-40">
+          <h2 className="font-opensans text-xl font-bold tracking-tighter text-white sm:text-2xl lg:text-3xl 2xl:text-4xl">
             OUR TEAM
           </h2>
           <div className="">
             <Link href="#teamhome">
-              <FaLongArrowAltDown className="fill-white stroke-2 h-8 cursor-pointer" />
+              <FaLongArrowAltDown className="h-8 cursor-pointer fill-white stroke-2" />
             </Link>
           </div>
         </div>
@@ -38,19 +57,19 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto flex flex-col justify-center items-start px-4 max-w-6xl py-6"
+        className="mx-auto flex max-w-6xl flex-col items-start justify-center space-y-4 px-4 py-6"
       >
         <h3
           id="teamhome"
-          className="font-opensans font-medium tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#2496D7]"
+          className="font-opensans text-lg font-medium tracking-tight text-[#2496D7] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl"
         >
           OUR LEADERSHIP
         </h3>
         <div
-          className={`mt-8 w-full flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
+          className={`mt-8 flex h-auto w-full flex-col items-center justify-center space-y-4 md:flex-row md:justify-between md:space-y-0`}
         >
           <div
-            className={`border-l-[12px] lg:border-l-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
+            className={`h-full w-1/2 border-l-[12px] border-[#77AB33] lg:w-1/3 lg:border-l-[30px]`}
           >
             <Image
               priority
@@ -59,17 +78,17 @@ const Team = () => {
               alt="kishanbastola"
               width={600}
               height={600}
-              className={`w-full h-full border-2 border-[#AE0D19]`}
+              className={`h-full w-full border-2 border-[#AE0D19]`}
             />
           </div>
-          <div className="w-full flex-col justify-center items-start md:w-1/2 space-y-4">
-            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-center">
+          <div className="w-full flex-col items-start justify-center space-y-4 md:w-1/2">
+            <h4 className="text-center font-opensans text-base font-bold tracking-tighter text-[#AE0D19] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
               KISHAN BASTOLA
             </h4>
-            <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
+            <h4 className="text-center font-opensans text-sm font-bold tracking-tight text-[#77AB33] sm:text-base md:text-lg xl:text-xl 2xl:text-2xl">
               FOUNDER AND PRESIDENT
             </h4>
-            <p className="font-kumbhsans font-medium 2xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
+            <p className="text-center font-kumbhsans text-[10px] font-medium text-[#042038] sm:text-xs md:text-sm lg:text-base 2xl:text-lg">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -77,30 +96,30 @@ const Team = () => {
               of the nation and the world is all about the education system of
               the nation
             </p>
-            <div className="mt-4 w-full flex justify-center items-center space-x-4">
-              <div className="bg-[#77AB33] rounded-full p-1">
+            <div className="mt-4 flex w-full items-center justify-center space-x-4">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <FaFacebook className="fill-white w-6 h-6" />
+                  <FaFacebook className="h-6 w-6 fill-white" />
                 </Link>
               </div>
-              <div className="bg-[#77AB33] rounded-full p-1">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <FaInstagram className="fill-white w-6 h-6" />
+                  <FaInstagram className="h-6 w-6 fill-white" />
                 </Link>
               </div>
-              <div className="bg-[#77AB33] rounded-full p-1">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <IoMdMail className="fill-white w-6 h-6" />
+                  <IoMdMail className="h-6 w-6 fill-white" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
         <div
-          className={`mt-12 flex flex-col md:flex-row-reverse justify-between items-center space-y-4 md:space-y-0 h-[40vh]`}
+          className={`mt-12 flex h-auto flex-col items-center justify-between space-y-4 md:flex-row-reverse md:space-y-0`}
         >
           <div
-            className={`border-r-[12px] lg:border-r-[30px] border-[#77AB33] lg:w-1/3 w-1/2 h-full`}
+            className={`h-full w-1/2 border-r-[12px] border-[#77AB33] lg:w-1/3 lg:border-r-[30px]`}
           >
             <Image
               priority
@@ -109,17 +128,17 @@ const Team = () => {
               alt="Babatundeayoola"
               width={600}
               height={600}
-              className={`w-full h-full border-2 border-[#AE0D19]`}
+              className={`h-full w-full border-2 border-[#AE0D19]`}
             />
           </div>
-          <div className="w-full flex-col justify-center items-start md:w-1/2 space-y-4">
-            <h4 className="font-opensans tracking-tighter font-bold text-[#AE0D19] 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-center">
+          <div className="w-full flex-col items-start justify-center space-y-4 md:w-1/2">
+            <h4 className="text-center font-opensans text-base font-bold tracking-tighter text-[#AE0D19] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
               BABATUNDE AYOOLA
             </h4>
-            <h4 className="font-opensans tracking-tight font-bold text-[#77AB33] 2xl:text-2xl xl:text-xl md:text-lg sm:text-base text-sm text-center">
+            <h4 className="text-center font-opensans text-sm font-bold tracking-tight text-[#77AB33] sm:text-base md:text-lg xl:text-xl 2xl:text-2xl">
               GLOBAL AMBASSADOR
             </h4>
-            <p className="font-kumbhsans font-medium 2xl:text-lg xl:text-base md:text-sm sm:text-xs text-[10px] text-[#042038] text-center">
+            <p className="text-center font-kumbhsans text-[10px] font-medium text-[#042038] sm:text-xs md:text-sm xl:text-base 2xl:text-lg">
               Astronova Science Foundation is an officially registered as a
               non-profit organization under the name of &quot;Astronova
               Foundation Nepal&quot;(Companies Act, 2006), Office of the Company
@@ -127,20 +146,20 @@ const Team = () => {
               of the nation and the world is all about the education system of
               the nation
             </p>
-            <div className="mt-4 w-full flex justify-center items-center space-x-4">
-              <div className="bg-[#77AB33] rounded-full p-1">
+            <div className="mt-4 flex w-full items-center justify-center space-x-4">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <FaFacebook className="fill-white w-6 h-6" />
+                  <FaFacebook className="h-6 w-6 fill-white" />
                 </Link>
               </div>
-              <div className="bg-[#77AB33] rounded-full p-1">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <FaInstagram className="fill-white w-6 h-6" />
+                  <FaInstagram className="h-6 w-6 fill-white" />
                 </Link>
               </div>
-              <div className="bg-[#77AB33] rounded-full p-1">
+              <div className="rounded-full bg-[#77AB33] p-1">
                 <Link href="#">
-                  <IoMdMail className="fill-white w-6 h-6" />
+                  <IoMdMail className="h-6 w-6 fill-white" />
                 </Link>
               </div>
             </div>
@@ -150,15 +169,15 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto overflow-hidden max-w-6xl mx-auto"
+        className="mx-auto h-auto max-w-6xl overflow-hidden"
       >
-        <div className="flex flex-col justify-center items-center lg:space-y-28 space-y-10 sm:space-y-14 shadow-xl lg:py-12 lg:px-12 w-full mt-8 lg:mt-0">
-          <div className="flex justify-center items-center">
-            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+        <div className="mt-8 flex w-full flex-col items-center justify-center space-y-10 shadow-xl sm:space-y-14 lg:mt-0 lg:space-y-28 lg:px-12 lg:py-12">
+          <div className="flex items-center justify-center">
+            <h3 className="text-center font-opensans text-lg font-bold tracking-tight text-[#0052A0] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
               OUR BOARD OF <br /> DIRECTORS
             </h3>
           </div>
-          <div className="w-full mx-auto flex md:flex-row flex-col space-y-3 md:space-y-0 justify-evenly items-center">
+          <div className="mx-auto flex w-full flex-col items-center justify-evenly space-y-3 md:flex-row md:space-y-0">
             <BoardMember
               imgSrc="cofounder.png"
               name="Mr. Kishan Bastola"
@@ -170,7 +189,7 @@ const Team = () => {
               position="Chief Secretary"
             />
           </div>
-          <div className="md:w-[80%] w-full mx-auto flex md:flex-row flex-col space-y-3 md:space-y-0 justify-around items-center">
+          <div className="mx-auto flex w-full flex-col items-center justify-around space-y-3 md:w-[80%] md:flex-row md:space-y-0">
             <BoardMember
               imgSrc="treasurer.png"
               name="Er. Aayush Basnet"
@@ -192,14 +211,14 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto overflow-hidden mt-4 mx-auto max-w-6xl"
+        className="mx-auto mt-4 h-auto max-w-6xl overflow-hidden"
       >
-        <div className="flex justify-center items-center py-8">
-          <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+        <div className="flex items-center justify-center py-8">
+          <h3 className="text-center font-opensans text-lg font-bold tracking-tight text-[#0052A0] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
             MEET OUR EXPERT MENTORS
           </h3>
         </div>
-        <div className="shadow-lg bg-white lg:py-12">
+        <div className="bg-white shadow-lg lg:py-12">
           <Carousel
             opts={{
               align: "center",
@@ -255,16 +274,16 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto overflow-hidden mt-4"
+        className="mt-4 h-auto overflow-hidden"
       >
         <div className="mx-auto max-w-6xl">
-          <div className="flex justify-center items-center py-8">
-            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+          <div className="flex items-center justify-center py-8">
+            <h3 className="text-center font-opensans text-lg font-bold tracking-tight text-[#0052A0] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
               LEGAL ADVISOR
             </h3>
           </div>
-          <div className="shadow-lg bg-transparent lg:py-12 lg:px-12 grid grid-cols-1 grid-rows-1 place-content-center place-items-center">
-            <div className="flex flex-col justify-center items-center space-y-2 h-auto">
+          <div className="grid grid-cols-1 grid-rows-1 place-content-center place-items-center bg-transparent shadow-lg lg:px-12 lg:py-12">
+            <div className="flex h-auto flex-col items-center justify-center space-y-2">
               <div className="h-full rounded-md">
                 <Image
                   priority
@@ -273,24 +292,24 @@ const Team = () => {
                   alt="Bishnu Prasad Dhakal"
                   width={200}
                   height={200}
-                  className="h-full border border-[#AE0D19] object-center object-cover"
+                  className="h-full border border-[#AE0D19] object-cover object-center"
                 />
               </div>
-              <h4 className="font-kumbhsans font-semibold text-xl text-[#1A1728]">
+              <h4 className="font-kumbhsans text-xl font-semibold text-[#1A1728]">
                 Bishnu Prasad Dhakal
               </h4>
-              <h4 className="font-kumbhsans font-semibold text-sm text-[#1A1728B5]">
+              <h4 className="font-kumbhsans text-sm font-semibold text-[#1A1728B5]">
                 Legal Practitioner
               </h4>
             </div>
           </div>
-          <div className="flex justify-center items-center py-8">
-            <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-[#0052A0] text-center">
+          <div className="flex items-center justify-center py-8">
+            <h3 className="text-center font-opensans text-lg font-bold tracking-tight text-[#0052A0] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
               OUR TEAM MEMBERS
             </h3>
           </div>
-          <div className="hidden shadow-lg bg-transparent lg:py-8 lg:px-8 lg:block">
-            <div className="lg:grid grid-cols-4 gap-x-4 gap-y-6">
+          <div className="hidden bg-transparent shadow-lg lg:block lg:px-8 lg:py-8">
+            <div className="grid-cols-4 gap-x-4 gap-y-6 lg:grid">
               <TeamMembers
                 imgSrc="/aayushbasnet.png"
                 name="Er. Aayush Basnet"
@@ -352,7 +371,7 @@ const Team = () => {
                 position="Campus Ambassador, KU"
               />
             </div>
-            <div className="flex w-full justify-around items-center mt-4">
+            <div className="mt-4 flex w-full items-center justify-around">
               <TeamMembers
                 imgSrc="/saugatbartaula.png"
                 name="Mr. Saugat Bartaula"
@@ -365,13 +384,13 @@ const Team = () => {
               />
               <TeamMembers
                 imgSrc="/niranjanbikramthakuri.png"
-                name="Mr. Niranajan Bikram Thakuri"
+                name="Niranajan Bikram Thakuri"
                 position="International Relational Manager, Seoul,South Korea"
               />
             </div>
           </div>
 
-          <div className="shadow-lg bg-transparent py-2 block lg:hidden">
+          <div className="block bg-transparent py-2 shadow-lg lg:hidden">
             <Carousel
               opts={{
                 align: "center",
@@ -471,6 +490,13 @@ const Team = () => {
                     position="Student Coordinator"
                   />
                 </CarouselItem>
+                <CarouselItem>
+                  <TeamMembers
+                    imgSrc="/niranjanbikramthakuri.png"
+                    name="Niranjan Bikram Thakuri"
+                    position="International Relational Manager, Seoul South Korea"
+                  />
+                </CarouselItem>
               </CarouselContent>
               <CarouselPrevious className="ml-12" />
               <CarouselNext className="mr-12" />
@@ -481,78 +507,91 @@ const Team = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto w-full overflow-hidden mx-auto max-w-7xl flex justify-center md:justify-evenly 2xl:py-12 lg:py-8 py-4"
+        className="mx-auto flex h-auto w-full max-w-7xl justify-center overflow-hidden py-4 md:justify-evenly lg:py-8 2xl:py-12"
       >
-        <div className="w-full flex flex-col justify-center items-center space-y-4">
-          <h3 className="xl:mt-12 mt-4 font-opensans font-bold w-auto text-center text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#0B77A5] tracking-tight">
+        <div className="flex w-full flex-col items-center justify-center space-y-4">
+          <h3 className="mt-4 w-auto text-center font-opensans text-xl font-bold tracking-tight text-[#0B77A5] lg:text-2xl xl:mt-12 xl:text-3xl">
             GROUND STORIES
           </h3>
-          <Carousel
-            opts={{
-              align: "center",
-              loop: false,
-            }}
-            className="w-full mx-auto max-w-7xl px-12"
-          >
-            <CarouselContent className="py-6 lg:py-10">
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#639a1b] mx-4">
-                <PartnersTestimonial
-                  imgSrc="/assets/testimonialaayushnepal.svg"
-                  testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
+          <div className="mx-auto w-full max-w-6xl px-3 pt-4">
+            <div className="embla_homepage">
+              <div className="embla__viewport_homepage" ref={emblaRef}>
+                <div className="embla__container_homepage">
+                  <div className="embla__slide_homepage">
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialaayushnepal.svg"
+                      testimonial="“I had been capped on knowledge and Information about Astronomy, cosmology and Astrophysics for years that there wasn't anything left for me to learn on the surface staggering my growth but Astronova opened that cap and exposed me to Boundless ocean of knowledge and experience about Astronomy, cosmology and Astrophysics which is more than enough to satisfy my hunger for Astronomy, cosmology and Astrophysics. 
                   Don't be capped, learn to adapt.”"
-                  name="Aayush Nepal"
-                  position="Astrophysics & Research Enthusiast"
-                />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#aeab3b] mx-4">
-                <PartnersTestimonial
-                  imgSrc="/assets/testimonialanujadhikari.svg"
-                  testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
-                  name="Anuj Adhikari"
-                  position="Research Enthusiast"
-                />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#639a1b] mx-4">
-                <PartnersTestimonial
-                  imgSrc="/assets/testimonialriteshprajapati.svg"
-                  testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
-                  name="Ritesh Prajapati"
-                  position="Video Editor Intern"
-                />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#ae0d19] mx-4">
-                <PartnersTestimonial
-                  imgSrc="/testimonialdinupbalami.png"
-                  testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
-                  name="Dinup Balami"
-                  position="Campus Ambassador,Mechanical Engineering Student,KU"
-                />
-              </CarouselItem>
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 bg-[#2496d7] mx-4">
-                <PartnersTestimonial
-                  imgSrc="/testimonialnamratabartaula.png"
-                  testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
-                  name="Namrata Bartaula"
-                  position="Stone Art and Crafting Intern"
-                />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="ml-12" />
-            <CarouselNext className="mr-12" />
-          </Carousel>
+                      name="Aayush Nepal"
+                      position="Astrophysics & Research Enthusiast"
+                      bgColor="green"
+                    />
+                  </div>
+                  <div className="embla__slide_homepage">
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialanujadhikari.svg"
+                      testimonial="“Reflecting on my journey with the Astronova Foundation, I am truly amazed by the wealth of knowledge and experiences it has brought into my life. Through my involvement, I've gained invaluable insights, honed essential skills, and formed meaningful connections with like-minded individuals. Each encounter has fueled my passion for making a positive impact and has instilled in me a profound sense of optimism for the future. With the guidance and support of Astronova, I am more determined than ever to contribute to creating a enthusiastic and brighter tomorrow.”"
+                      name="Anuj Adhikari"
+                      position="Research Enthusiast"
+                      bgColor="yellow"
+                    />
+                  </div>
+                  <div className="embla__slide_homepage">
+                    <PartnersTestimonial
+                      imgSrc="/assets/testimonialriteshprajapati.svg"
+                      testimonial="“Throughout my journey as a passionate video editor, I've explored the art of highlighting key moments, choosing the right sounds, and perfecting color grading and motion graphics. Each project fuels my determination to push creative boundaries, continuously generating new ideas for video creation. I'm always inspired by the endless possibilities of video editing. Here's to embracing the craft and the excitement it brings!”"
+                      name="Ritesh Prajapati"
+                      position="Video Editor Intern"
+                      bgColor="green"
+                    />
+                  </div>
+                  <div className="embla__slide_homepage">
+                    <PartnersTestimonial
+                      imgSrc="/testimonialdinupbalami.png"
+                      testimonial="“Astronova is a platform where creativity thrives and ideas come to life. It has fueled my passion for making a positive impact on the community. Together, we are actively shaping a better future, driven by passion and purpose. It's a privilege to be part of such a dynamic environment, where creativity knows no bounds. I've gained invaluable insights, essential skills, and formed meaningful connections with like-minded people. Here's to Astronova—where the potential for impact is limitless.”"
+                      name="Dinup Balami"
+                      position="Campus Ambassador,Mechanical Engineering Student,KU"
+                      bgColor="red"
+                    />
+                  </div>
+                  <div className="embla__slide_homepage">
+                    <PartnersTestimonial
+                      imgSrc="/testimonialnamratabartaula.png"
+                      testimonial="“For over years, I always felt like people's view and awareness toward arts and culture had quite dip in terms of impact. And as a art enthusiast myself I felt pretty sad about it and felt obligated to change this trend. To my surprise, I find myself here at Astronova where I got the chance I needed to bring that change and leave a permanent mark and impact on people's views from early age. So bring change, starting from early age.”"
+                      name="Namrata Bartaula"
+                      position="Stone Art and Crafting Intern"
+                      bgColor="blue"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="embla__controls_homepage">
+                <div className="embla__buttons_homepage">
+                  <PrevButton
+                    onClick={onPrevButtonClick}
+                    disabled={prevBtnDisabled}
+                  />
+                  <NextButton
+                    onClick={onNextButtonClick}
+                    disabled={nextBtnDisabled}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-8 flex justify-center items-center bg-gradient-to-b from-[#027c4f] to-[#bcbe37] h-72">
-        <div className="w-screen  flex flex-col justify-center items-center space-y-3">
-          <h3 className="text-white tracking-wider font-inter font-semibold xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-center w-full">
+      <div className="mt-8 flex h-72 items-center justify-center bg-gradient-to-b from-[#027c4f] to-[#bcbe37]">
+        <div className="flex w-screen flex-col items-center justify-center space-y-3">
+          <h3 className="w-full text-center font-inter text-sm font-semibold tracking-wider text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             DREAM BIG, SHINE BRIGHT
           </h3>
-          <button
-            type="button"
-            className="font-inter w-64 mx-auto font-semibold bg-blue-600 text-white hover:bg-white hover:text-blue-600 hover:duration-300 py-2 px-6 rounded-xl"
+          <Link
+            href="/careers"
+            className="mx-auto w-64 rounded-xl bg-blue-600 px-6 py-2 text-center font-inter font-semibold text-white hover:bg-white hover:text-blue-600 hover:duration-300"
           >
             JOIN OUR TEAM
-          </button>
+          </Link>
         </div>
         <div className="ml-auto h-full">
           <Image
@@ -562,7 +601,7 @@ const Team = () => {
             quality={90}
             width={400}
             height={600}
-            className="justify-self-end h-full w-auto"
+            className="h-full w-auto justify-self-end"
           />
         </div>
       </div>

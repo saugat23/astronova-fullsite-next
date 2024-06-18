@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { updateWork } from "../../../../../app/services/api";
+import { deleteWork, updateWork } from "../../../../../app/services/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Loader from "../../../Loader/Loader";
@@ -9,6 +9,7 @@ import Loader from "../../../Loader/Loader";
 const Page = ({ data }) => {
   const work = data;
   const id = work.id;
+  const router = useRouter();
 
   const coverImageRef = useRef(null);
   const galleryRefs = useRef([]);
@@ -83,7 +84,7 @@ const Page = ({ data }) => {
 
       toast.success("Work updated successfully!");
       setTimeout(() => {
-        window.history.back();
+        router.push("/coordinator_dashboard/works");
       }, 5000);
     } catch (error) {
       console.error("Error:", error);
@@ -93,22 +94,40 @@ const Page = ({ data }) => {
     }
   };
 
-  const router = useRouter();
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await deleteWork(id);
+      console.log("response: ", response);
+
+      toast.success("Work Deleted Successfully");
+      setTimeout(() => {
+        router.push("/coordinator_dashboard/works");
+      });
+    } catch (error) {
+      console.error("error: ", error);
+      toast.error("Error Deleting Work. Please try again!");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
-      <section className="p-6 h-auto overflow-hidden">
+      <section className="h-auto overflow-hidden p-6">
         <form
           onSubmit={handleSubmit}
-          className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg"
+          className="flex w-full items-start rounded-lg border border-[#e0d8ff99] bg-white p-4 shadow-xl"
         >
-          <div className="w-1/4 justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
+          <div className="flex w-1/4 flex-col items-start justify-center space-y-4 justify-self-start rounded-s-lg border border-[#e0d8ff99] p-3">
             <div>
               <h3 className="font-poppins font-semibold lg:text-xl">
                 Basic Info
               </h3>
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-3 lg:py-4 h-60 relative">
+            <div className="relative flex h-60 w-full flex-col items-start justify-center space-y-3 lg:py-4">
               {formData.cover_img && (
                 <Image
                   src={formData.cover_img}
@@ -117,13 +136,13 @@ const Page = ({ data }) => {
                   height={300}
                   quality={75}
                   priority
-                  className="absolute top-0 left-0 w-full h-full object-cover cursor-pointer"
+                  className="absolute left-0 top-0 h-full w-full cursor-pointer object-cover"
                   onClick={handleCoverImageClick}
                 />
               )}
               <label
                 htmlFor="cover_img"
-                className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer flex justify-center items-center"
+                className="flex h-full w-full cursor-pointer items-center justify-center bg-[url('/assets/inputfile.svg')] bg-cover bg-[top_2rem] bg-no-repeat font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
                 onClick={handleCoverImageClick}
               >
                 Upload Cover Img
@@ -134,11 +153,11 @@ const Page = ({ data }) => {
                 id="cover_img"
                 onChange={handleCoverImageChange}
                 ref={coverImageRef}
-                className="outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                className="invisible w-full rounded-md text-sm text-[#0000008c] outline-none"
                 placeholder=""
               />
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex w-full flex-col items-start justify-center space-y-3">
               <label
                 htmlFor="title"
                 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -150,11 +169,11 @@ const Page = ({ data }) => {
                 id="title"
                 onChange={handleChange}
                 value={formData.title}
-                className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
+                className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                 placeholder="Input Title"
               />
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex w-full flex-col items-start justify-center space-y-3">
               <label
                 htmlFor="sub_description"
                 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -167,11 +186,11 @@ const Page = ({ data }) => {
                 id="sub_description"
                 onChange={handleChange}
                 value={formData.sub_description}
-                className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c] h-20 resize-none"
+                className="h-20 w-full resize-none rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                 placeholder="Short Description"
               />
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex w-full flex-col items-start justify-center space-y-3">
               <label
                 htmlFor="news_title"
                 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -184,11 +203,11 @@ const Page = ({ data }) => {
                 id="news_title"
                 onChange={handleChange}
                 value={formData.news_title}
-                className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                 placeholder="News Title"
               />
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex w-full flex-col items-start justify-center space-y-3">
               <label
                 htmlFor="news_link"
                 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -201,27 +220,27 @@ const Page = ({ data }) => {
                 id="news_link"
                 onChange={handleChange}
                 value={formData.news_link}
-                className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                 placeholder="News Link"
               />
             </div>
           </div>
-          <div className="grow max-w-[84%] justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-6">
+          <div className="flex max-w-[84%] grow flex-col items-start justify-center justify-self-center p-6 lg:space-y-4">
             <div>
               <h3 className="font-poppins font-semibold lg:text-xl">
                 Add Our Work Section
               </h3>
             </div>
-            <div className="w-full flex flex-col justify-center items-start space-y-4">
-              <div className="w-full flex justify-between items-start">
-                <div className="w-full flex flex-col justify-center items-start space-y-4">
-                  <div className="w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex w-full flex-col items-start justify-center space-y-4">
+              <div className="flex w-full items-start justify-between">
+                <div className="flex w-full flex-col items-start justify-center space-y-4">
+                  <div className="flex w-full flex-col items-start justify-center space-y-3">
                     <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">
                       Event Gallery Image
                     </h4>
-                    <div className="w-full flex justify-evenly items-center space-x-3 border-dashed h-48">
+                    <div className="flex h-48 w-full items-center justify-evenly space-x-3 border-dashed">
                       {formData.gallery.map((img, index) => (
-                        <div className="w-1/4 relative" key={index}>
+                        <div className="relative w-1/4" key={index}>
                           {img && (
                             <Image
                               priority
@@ -230,13 +249,13 @@ const Page = ({ data }) => {
                               height={400}
                               src={img}
                               alt={`Gallery ${index + 1}`}
-                              className="absolute top-0 left-0 w-full h-full object-cover cursor-pointer"
+                              className="absolute left-0 top-0 h-full w-full cursor-pointer object-cover"
                               onClick={() => handleGalleryImageClick(index)}
                             />
                           )}
                           <label
                             htmlFor={`newGalleryImages${index}`}
-                            className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                            className="flex h-32 w-full cursor-pointer items-center justify-center bg-[url('/assets/inputfile.svg')] bg-cover bg-[top_2rem] bg-no-repeat font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
                             onClick={() => handleGalleryImageClick(index)}
                           >
                             Add Image
@@ -245,7 +264,7 @@ const Page = ({ data }) => {
                             type="file"
                             name={`newGalleryImages${index}`}
                             id={`newGalleryImages${index}`}
-                            className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                            className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                             ref={(el) => (galleryRefs.current[index] = el)}
                             onChange={(e) => handleGalleryImageChange(e, index)}
                           />
@@ -255,7 +274,7 @@ const Page = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="py-2 h-auto overflow-hidden w-full flex flex-col justify-center items-start space-y-3">
+              <div className="flex h-auto w-full flex-col items-start justify-center space-y-3 overflow-hidden py-2">
                 <label
                   htmlFor="long_description"
                   className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -268,21 +287,21 @@ const Page = ({ data }) => {
                   id="long_description"
                   onChange={handleChange}
                   value={formData.long_description}
-                  className="max-w-[95%] w-full overflow-hidden mt-10 bg-white outline-none rounded-md text-sm text-[#0000008c] h-20 resize-none border border-[#e0d8ff99] p-2 "
+                  className="mt-10 h-20 w-full max-w-[95%] resize-none overflow-hidden rounded-md border border-[#e0d8ff99] bg-white p-2 text-sm text-[#0000008c] outline-none"
                   placeholder="Long Description"
                 />
               </div>
-              <div className="w-full flex space-x-3">
+              <div className="flex w-full space-x-3">
                 <button
                   type="submit"
-                  className="bg-[#6c63ff] p-2 rounded-md text-sm font-poppins font-semibold tracking-tight text-white hover:bg-[#5a54d7]"
+                  className="rounded-md bg-[#6c63ff] p-2 font-poppins text-sm font-semibold tracking-tight text-white hover:bg-[#5a54d7]"
                 >
                   Update Campaign
                 </button>
                 <button
                   type="button"
-                  className="bg-red-500 p-2 rounded-md text-sm font-poppins font-semibold tracking-tight text-white hover:bg-red-700"
-                  onClick={() => router.back()}
+                  className="rounded-md bg-red-500 p-2 font-poppins text-sm font-semibold tracking-tight text-white hover:bg-red-700"
+                  onClick={handleDelete}
                 >
                   Delete
                 </button>
@@ -290,11 +309,11 @@ const Page = ({ data }) => {
               </div>{" "}
             </div>
           </div>
-          <div className="w-[10%] flex flex-col justify-start items-center justify-self-end">
+          <div className="flex w-[10%] flex-col items-center justify-start justify-self-end">
             <div className="h-40">
               <button
                 type="button"
-                className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
                 onClick={() => router.back()}
               >
                 Go Back

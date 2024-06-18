@@ -16,13 +16,13 @@ const Page = ({ data }) => {
   const [search, setSearch] = useState("");
 
   return (
-    <section className="overflow-visible h-auto p-4">
-      <div className="bg-white py-8 px-4 w-full">
-        <div className="flex justify-between w-full items-center">
-          <div className="flex justify-center items-center">
+    <section className="h-auto overflow-visible p-4">
+      <div className="w-full bg-white px-4 py-8">
+        <div className="flex w-full items-center justify-between">
+          <div className="flex items-center justify-center">
             <button
               type="button"
-              className="py-2 px-4 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans text-xs md:text-sm xl:text-base font-semibold"
+              className="rounded-xl bg-[#5C74FF] px-4 py-2 font-opensans text-xs font-semibold text-white hover:bg-[#2e3a80] md:px-6 md:text-sm xl:text-base"
             >
               <Link href="news_blogs/add_news_blog">Add News Blog</Link>
             </button>
@@ -32,21 +32,25 @@ const Page = ({ data }) => {
               type="text"
               id="campaignSearch"
               name="campaignSearch"
-              className="p-3 bg-transparent w-60 md:w-96 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+              className="w-60 rounded-lg border border-[#E0D8FF] bg-transparent p-3 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none md:w-96"
               placeholder="Search by Campaign name"
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
-        <div className="py-4 w-full">
+        <div className="w-full py-4">
           <Table aria-label="Donor Table">
             <TableHeader>
               <TableColumn className="w-1/5">
                 <FaEye />
               </TableColumn>
               <TableColumn className="w-1/5">Edit</TableColumn>
-              <TableColumn className="w-[30%]">News Title</TableColumn>
-              <TableColumn className="w-[30%]">Blog Link</TableColumn>
+              <TableColumn className="w-[30%] text-center">
+                News Title
+              </TableColumn>
+              <TableColumn className="w-[30%] text-center">
+                Blog Link
+              </TableColumn>
             </TableHeader>
             <TableBody emptyContent={"No rows to display."}>
               {items
@@ -64,7 +68,9 @@ const Page = ({ data }) => {
                         <FaEye className="cursor-pointer" />
                       </TableCell>
                       <TableCell>
-                        <FaPen className="cursor-pointer" />
+                        <Link href={`news_blogs/edit_news_blog/${item.id}`}>
+                          <FaPen className="cursor-pointer" />
+                        </Link>
                       </TableCell>
                       <TableCell>{item.title}</TableCell>
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import NavbarLogo from "../../public/assets/navbarlogo.svg";
 import {
   HoverCard,
   HoverCardContent,
@@ -48,12 +49,12 @@ const Navbar = () => {
         <div className="flex items-center justify-center">
           <Link href="/">
             <Image
-              src="/assets/navbarlogo.svg"
-              alt="Navbar Logo"
-              width={120}
-              height={60}
               priority
-              className="md:w-30 cursor-pointer lg:w-32 xl:w-36 2xl:w-40"
+              quality={90}
+              src={NavbarLogo}
+              alt="Navbar Logo"
+              width={180}
+              height={120}
             />
           </Link>
         </div>
@@ -100,15 +101,24 @@ const Navbar = () => {
                 </HoverCardTrigger>
                 <HoverCardContent className="mt-2 lg:ml-16 xl:ml-20">
                   <nav className="flex w-full flex-col items-start justify-center text-sm font-medium xl:text-base">
-                    <Link href="/short_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <Link
+                      href="/short_term_projects"
+                      className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                    >
                       Short Term Projects
                       <span className="float-right">&gt;</span>
                     </Link>
-                    <Link href="/middle_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <Link
+                      href="/middle_term_projects"
+                      className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                    >
                       Middle Term Projects
                       <span className="float-right">&gt;</span>
                     </Link>
-                    <Link href="/long_term_projects" className="p-2 w-full text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out">
+                    <Link
+                      href="/long_term_projects"
+                      className="w-full p-2 text-left hover:bg-[#F2CE24] hover:text-white hover:duration-300 hover:ease-in-out"
+                    >
                       Long Term Projects
                       <span className="float-right">&gt;</span>
                     </Link>

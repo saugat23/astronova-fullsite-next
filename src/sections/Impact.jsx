@@ -6,6 +6,11 @@ import CountUp from "react-countup";
 import { FiCheckCircle, FiDownload } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import { IoPersonAddOutline } from "react-icons/io5";
+import Workshop from "../../public/assets/workshop.svg";
+import Careers from "../../public/careers.svg";
+import Funding from "../../public/funding.svg";
+import Project from "../../public/project.svg";
+import Resource from "../../public/resource.svg";
 
 const Impact = () => {
   return (
@@ -15,18 +20,18 @@ const Impact = () => {
       className="max-w-screen relative mx-auto h-auto w-full max-w-6xl overflow-hidden px-4 py-4 md:mt-4 lg:py-6 xl:py-8 2xl:py-10"
     >
       <div className="flex flex-col items-center justify-center lg:space-y-6 xl:py-4">
-        <h3 className="relative z-50 font-opensans text-base font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+        <h3 className="relative z-50 font-opensans text-xl font-bold tracking-tight text-[#0B77A5] after:absolute after:-bottom-[2px] after:left-0 after:h-[4px] after:w-0 after:bg-[#0B77A5] after:transition-all after:duration-300 hover:after:w-full lg:text-2xl xl:text-3xl">
           OUR IMPACT
         </h3>
         <div className="flex flex-col items-center justify-center space-x-0 space-y-4 py-4 md:flex-row md:space-x-4 md:space-y-0 lg:space-x-6">
           <div
             data-aos="fade-up"
             data-aos-duration="1300"
-            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#BDB809] px-4 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
+            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#BDB809] px-4 py-12 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
           >
             <div>
               <svg
-                className="lg:[42px] w-[30px] md:w-[36px] xl:w-[50px]"
+                className="w-24 md:w-28 lg:w-32 xl:w-36"
                 viewBox="0 0 58 57"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +42,7 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
+            <h4 className="font-inter text-2xl font-bold text-white lg:text-3xl xl:text-4xl">
               <CountUp
                 start={0}
                 end={100}
@@ -48,10 +53,10 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
-              STUDENT REACHED
+            <h3 className="font-inter text-base font-bold text-white lg:text-lg xl:text-xl">
+              Students Reached
             </h3>
-            <p className="text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
+            <p className="text-center font-inter text-xs font-normal text-white lg:text-sm xl:text-base">
               Through various workshops, seminars, STEAM camps, trainings &
               programs.
             </p>
@@ -59,11 +64,11 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="1100"
-            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#AE0D19] px-4 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
+            className="flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#AE0D19] px-4 py-12 shadow-md hover:scale-105 hover:duration-400 lg:px-8 lg:py-16"
           >
             <div>
               <svg
-                className="lg:[42px] w-[30px] md:w-[36px] xl:w-[50px]"
+                className="w-24 md:w-28 lg:w-32 xl:w-36"
                 viewBox="0 0 54 54"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +79,7 @@ const Impact = () => {
                 />
               </svg>
             </div>
-            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
+            <h4 className="font-inter text-2xl font-bold text-white lg:text-3xl xl:text-4xl">
               <CountUp
                 start={0}
                 end={5}
@@ -85,10 +90,10 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
-              FUND INVESTED
+            <h3 className="font-inter text-base font-bold text-white lg:text-lg xl:text-xl">
+              Fund Invested
             </h3>
-            <p className="text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
+            <p className="text-center font-inter text-xs font-normal text-white lg:text-sm xl:text-base">
               To build IT Lab, Podcast Hall, Resource Allocation, Student
               Grants, Human Resource.
             </p>
@@ -96,20 +101,18 @@ const Impact = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="900"
-            className="z-40 flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#2496D7] px-2 py-4 shadow-md hover:scale-105 hover:duration-400 lg:px-6 lg:py-16"
+            className="z-40 flex cursor-pointer flex-col items-center justify-center space-y-4 bg-[#2496D7] px-2 py-12 shadow-md hover:scale-105 hover:duration-400 lg:px-6 lg:py-16"
           >
             <div>
               <Image
                 priority
                 quality={80}
-                src="/assets/workshop.svg"
+                src={Workshop}
                 alt="Workshop SVG"
-                width={42}
-                height={38}
-                className="lg:[52px] w-[40px] object-cover object-center md:w-[46px] xl:w-[58px]"
+                className="w-24 md:w-28 lg:w-32 xl:w-36"
               />
             </div>
-            <h4 className="font-inter text-base font-bold text-white md:text-lg lg:text-2xl 2xl:text-3xl">
+            <h4 className="font-inter text-2xl font-bold text-white lg:text-3xl xl:text-4xl">
               <CountUp
                 start={0}
                 end={100}
@@ -120,10 +123,10 @@ const Impact = () => {
                 enableScrollSpy="true"
               ></CountUp>
             </h4>
-            <h3 className="font-inter text-sm font-bold tracking-tight text-white md:text-base lg:text-xl 2xl:text-2xl">
-              FREE WORKSHOPS
+            <h3 className="font-inter text-base font-bold tracking-tight text-white lg:text-lg xl:text-xl">
+              Free Workshops
             </h3>
-            <p className="w-full text-center font-inter text-[10px] font-normal text-white md:text-xs lg:text-sm 2xl:text-base">
+            <p className="w-full text-center font-inter text-xs font-normal text-white md:text-xs lg:text-sm xl:text-base">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>
@@ -137,11 +140,10 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                src="/careers.svg"
+                src={Careers}
                 alt="Careers Logo"
-                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
-                width={100}
-                height={100}
+                width={50}
+                height={50}
               />
             </div>
             <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
@@ -163,11 +165,10 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                src="/funding.svg"
+                src={Funding}
                 alt="Funding Logo"
-                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
               />
             </div>
             <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
@@ -189,11 +190,10 @@ const Impact = () => {
               <Image
                 priority
                 quality={80}
-                src="/project.svg"
+                src={Project}
                 alt="Project Logo"
-                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
               />
             </div>
             <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">
@@ -207,17 +207,15 @@ const Impact = () => {
               Learn More <FaArrowRight className="ml-1" />
             </button>
           </div>
-          {/* <div className="w-8 h-[1px] bg-black"></div> */}
           <div className="flex flex-col items-center justify-center space-y-3 p-4 sm:w-1/2 md:w-auto lg:space-y-4 xl:space-y-6">
             <div className="flex items-center justify-center">
               <Image
                 priority
                 quality={80}
-                src="/resource.svg"
+                src={Resource}
                 alt="Resource Logo"
-                className="w-8 object-cover object-center sm:w-10 md:w-12 lg:w-14 xl:w-16"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
               />
             </div>
             <h3 className="font-inter text-base font-extrabold text-black md:text-lg lg:text-2xl 2xl:text-3xl">

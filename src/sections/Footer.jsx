@@ -73,7 +73,7 @@ const Footer = () => {
           />
         </div>
         <div className="flex w-full flex-col items-center justify-between py-6 lg:flex-row">
-          <div className="flex w-full flex-col items-center justify-center space-y-2 border-none px-8 text-white lg:w-3/5 lg:border-r lg:border-r-[#9e9e9e] lg:px-0">
+          <div className="flex w-full flex-col items-center justify-center space-y-2 border-none px-8 text-white lg:w-1/2 lg:border-r lg:border-r-[#9e9e9e] lg:px-0 xl:w-3/5">
             <Image src={Logo} alt="Logo" priority width={80} height={80} />
             <div>
               <p className="text-base font-normal tracking-[0.3em] lg:text-xl xl:text-2xl">
@@ -109,7 +109,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="flex w-full flex-col justify-between px-14 py-8 lg:w-2/5 lg:flex-row lg:px-8 lg:py-0">
+          <div className="flex w-full flex-col justify-between px-14 py-8 lg:w-1/2 lg:flex-row lg:px-8 lg:py-0 xl:w-2/5">
             <div className="flex flex-col items-start justify-center">
               <h4 className="py-3 text-sm font-bold text-[#77AB33] sm:text-base xl:text-lg">
                 About Us
@@ -255,6 +255,10 @@ const Footer = () => {
           </p>
         </div>
         <p>Privacy Policy & Terms and Condition</p>
+
+        <Link href="https://triontechsolution.com">
+          Made by Trion Tech Solution
+        </Link>
       </div>
     </section>
   );

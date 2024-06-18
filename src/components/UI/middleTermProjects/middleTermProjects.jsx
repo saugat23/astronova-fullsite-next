@@ -15,7 +15,7 @@ const middleTermProjects = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mt-16 bg-cover lg:h-[70vh]"
+        className="mt-24 bg-cover lg:h-[70vh]"
       >
         <div className="hero-container-team relative h-full w-full">
           <Image

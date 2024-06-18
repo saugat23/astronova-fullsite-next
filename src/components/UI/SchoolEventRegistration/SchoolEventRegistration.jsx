@@ -82,34 +82,34 @@ function Page() {
 
   return (
     <>
-      <section className="h-screen max-w-screen overflow-hidden bg-[#efeded] z-50">
-        <div className="h-[20vh] bg-[#048FB7] w-full z-20"></div>
-        <div className="max-w-6xl p-4 rounded-lg bg-white -mt-12 mx-auto z-50 flex justify-center items-center space-x-4">
-          <div className="w-1/4 h-full">
+      <section className="max-w-screen z-50 h-screen overflow-hidden bg-[#efeded]">
+        <div className="z-20 mt-16 h-[20vh] w-full bg-[#048FB7]"></div>
+        <div className="z-50 mx-auto -mt-12 flex max-w-6xl items-center justify-center space-x-4 rounded-lg bg-white p-4">
+          <div className="h-full w-1/4">
             <Image
               src={SchoolEventForm}
               alt="School Event Form Image"
               priority
               quality={80}
-              className="object-center object-cover w-full h-auto"
+              className="h-auto w-full object-cover object-center"
             />
           </div>
-          <div className="w-3/4 h-full">
+          <div className="h-full w-3/4">
             <form
               onSubmit={handleSubmit}
-              className="w-full h-full flex flex-col justify-center items-center space-y-5 text-gray-700 font-kumbhsans text-sm font-medium"
+              className="flex h-full w-full flex-col items-center justify-center space-y-5 font-kumbhsans text-sm font-medium text-gray-700"
             >
-              <legend className="font-inter w-full font-bold xl:text-lg md:text-base text-sm text-center text-black">
+              <legend className="w-full text-center font-inter text-sm font-bold text-black md:text-base xl:text-lg">
                 Step {step} - Fill in the Details
               </legend>
               {error && (
-                <div className="self-end text-red-500 font-medium">{error}</div>
+                <div className="self-end font-medium text-red-500">{error}</div>
               )}
-              <div className="form_content w-full h-full flex flex-col justify-center items-center space-y-5">
+              <div className="form_content flex h-full w-full flex-col items-center justify-center space-y-5">
                 {step === 1 && (
                   <>
-                    <div className="w-full flex space-x-3">
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full space-x-3">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="first_name">First Name *</label>
                         <input
                           required
@@ -117,11 +117,11 @@ function Page() {
                           name="first_name"
                           id="first_name"
                           onChange={handleChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                          className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                           placeholder="First Name"
                         />
                       </div>
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="last_name">Last Name *</label>
                         <input
                           required
@@ -129,12 +129,12 @@ function Page() {
                           name="last_name"
                           id="last_name"
                           onChange={handleChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                          className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                           placeholder="Last Name"
                         />
                       </div>
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full flex-col items-start justify-center space-y-2">
                       <label htmlFor="email">Email Address *</label>
                       <input
                         required
@@ -142,12 +142,12 @@ function Page() {
                         name="email"
                         id="email"
                         onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                         placeholder="Email Address"
                       />
                     </div>
-                    <div className="w-full flex space-x-3">
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full space-x-3">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="cellphone_number">
                           CellPhone Number *
                         </label>
@@ -157,11 +157,11 @@ function Page() {
                           name="cellphone_number"
                           id="cellphone_number"
                           onChange={handleChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                          className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                           placeholder="CellPhone Number"
                         />
                       </div>
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="dob">Date of Birth *</label>
                         <input
                           required
@@ -169,20 +169,20 @@ function Page() {
                           name="dob"
                           id="dob"
                           onChange={handleChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                          className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                           placeholder="Date of Birth"
                         />
                       </div>
                     </div>
-                    <div className="w-full flex space-x-3">
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full space-x-3">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="gender">Gender *</label>
                         <select
                           required
                           name="gender"
                           id="gender"
                           onChange={handleChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                          className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                         >
                           <option value=""> </option>
                           <option value="male">Male</option>
@@ -190,7 +190,7 @@ function Page() {
                           <option value="others">Others</option>
                         </select>
                       </div>
-                      <div className="w-1/2 flex flex-col justify-center items-start space-y-2">
+                      <div className="flex w-1/2 flex-col items-start justify-center space-y-2">
                         <label htmlFor="profile" className="w-full">
                           Profile Photo *
                           <div className="w-full border border-gray-300 bg-gray-50 p-2">
@@ -203,7 +203,7 @@ function Page() {
                           name="profile"
                           id="profile"
                           onChange={handleProfileChange}
-                          className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 hidden"
+                          className="hidden rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                           placeholder="Date of Birth"
                         />
                       </div>
@@ -212,7 +212,7 @@ function Page() {
                       <button
                         type="button"
                         onClick={handleStep}
-                        className="bg-[#0052a0] hover:bg-[#003970] w-full rounded-lg text-white p-3"
+                        className="w-full rounded-lg bg-[#0052a0] p-3 text-white hover:bg-[#003970]"
                       >
                         Next
                       </button>
@@ -221,7 +221,7 @@ function Page() {
                 )}
                 {step === 2 && (
                   <>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full flex-col items-start justify-center space-y-2">
                       <label htmlFor="province">
                         From which Province are you from? *
                       </label>
@@ -230,7 +230,7 @@ function Page() {
                         name="province"
                         id="province"
                         onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                       >
                         <option value=""> </option>
                         <option value="koshi">Koshi</option>
@@ -242,7 +242,7 @@ function Page() {
                         <option value="sudurpashchim">Sudur Pashchim</option>
                       </select>
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-2">
+                    <div className="flex w-full flex-col items-start justify-center space-y-2">
                       <label htmlFor="school">School *</label>
                       <input
                         required
@@ -250,14 +250,14 @@ function Page() {
                         name="school"
                         id="school"
                         onChange={handleChange}
-                        className="bg-gray-50 rounded-lg outline-none p-2 border border-gray-300 w-full"
+                        className="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 outline-none"
                         placeholder="Type School Name"
                       />
                     </div>
                     <div className="w-full">
                       <button
                         type="submit"
-                        className="bg-[#0052a0] hover:bg-[#003970] w-full rounded-lg text-white p-3"
+                        className="w-full rounded-lg bg-[#0052a0] p-3 text-white hover:bg-[#003970]"
                       >
                         Register
                       </button>

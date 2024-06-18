@@ -22,22 +22,22 @@ const About = () => {
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
 
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[url('/abouthero.png')] bg-cover lg:h-[70vh] w-full mt-12"
+        className="mt-16 w-full bg-[url('/abouthero.png')] bg-cover lg:h-[70vh]"
       >
-        <div className="hero-container-about h-full w-full flex flex-col justify-end items-center lg:space-y-6 py-16 2xl:px-40 lg:px-32 md:px-24 sm:px-20 px-16">
-          <h4 className="font-opensans font-medium 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-justify text-white">
+        <div className="hero-container-about flex h-full w-full flex-col items-center justify-end px-16 py-16 sm:px-20 md:px-24 lg:space-y-6 lg:px-32 2xl:px-40">
+          <h4 className="text-justify font-opensans text-sm font-medium text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             WHO ARE WE?
           </h4>
-          <h4 className="w-4/5 lg:w-2/5 font-opensans tracking-tighter font-bold 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-center text-[#F28459]">
+          <h4 className="w-4/5 text-center font-opensans text-lg font-bold tracking-tighter text-[#F28459] sm:text-xl md:text-2xl lg:w-2/5 lg:text-3xl xl:text-4xl 2xl:text-5xl">
             A Nonprofit Committed to Education and Innovation
           </h4>
           <div className="">
             <Link href="#abouthome">
-              <FaLongArrowAltDown className="fill-white stroke-2 h-8 cursor-pointer" />
+              <FaLongArrowAltDown className="h-8 cursor-pointer fill-white stroke-2" />
             </Link>
           </div>
         </div>
@@ -45,16 +45,16 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto py-12 bg-[#F0F6FB]"
+        className="h-auto bg-[#F0F6FB] py-12"
       >
         <div className="mx-auto max-w-7xl px-4">
           <h2
-            className="font-opensans text-[#0052A0D4] font-normal text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
+            className="font-opensans text-base font-normal text-[#0052A0D4] md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
             id="abouthome"
           >
             Who <span className="font-bold">Are We?</span>
           </h2>
-          <p className="mt-4 font-light font-inter text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#042038] text-justify">
+          <p className="mt-4 text-justify font-inter text-xs font-light text-[#042038] md:text-sm lg:text-base xl:text-lg 2xl:text-xl">
             Astronova Science Foundation is an officially registered as a
             non-profit organization under the name of &quot;
             <span className="font-normal text-[#F28459]">
@@ -82,15 +82,15 @@ const About = () => {
             various opportunities to explore and unleash students’ potential in
             national and international level.
           </p>
-          <div className="mx-auto w-full flex justify-center items-center space-x-4 mt-4">
+          <div className="mx-auto mt-4 flex w-full items-center justify-center space-x-4">
             <Link href="https://www.facebook.com/astroinf369">
-              <FaFacebook className="fill-black w-6 h-6" />
+              <FaFacebook className="h-6 w-6 fill-black" />
             </Link>
             <Link href="https://www.linkedin.com/company/astro369/">
-              <FaLinkedin className="fill-black w-6 h-6" />
+              <FaLinkedin className="h-6 w-6 fill-black" />
             </Link>
             <Link href="https://www.youtube.com/@AstronovasLearniverse">
-              <FaYoutube className="fill-black w-6 h-6" />
+              <FaYoutube className="h-6 w-6 fill-black" />
             </Link>
           </div>
         </div>
@@ -98,9 +98,9 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto max-w-7xl px-4 h-auto w-full mt-4"
+        className="mx-auto mt-4 h-auto w-full max-w-7xl px-4"
       >
-        <div className="flex w-full justify-between items-center lg:flex-row flex-col space-y-5 lg:space-y-0">
+        <div className="flex w-full flex-col items-center justify-between space-y-5 lg:flex-row lg:space-y-0">
           <div className="">
             <Image
               src={AboutUSImage}
@@ -109,22 +109,22 @@ const About = () => {
               className="hover:scale-105 hover:duration-300"
             />
           </div>
-          <div className="flex flex-col justify-center items-end space-y-6 lg:px-24 px-4">
-            <div className="flex flex-col justify-center items-center space-y-3">
-              <h2 className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <div className="flex flex-col items-end justify-center space-y-6 px-4 lg:px-24">
+            <div className="flex flex-col items-center justify-center space-y-3">
+              <h2 className="font-inter text-base font-bold md:text-lg lg:text-xl 2xl:text-2xl">
                 Our Mission
               </h2>
-              <p className="font-inter font-medium text-[#333333] 2xl:text-lg lg:text-base md:text-sm text-xs">
+              <p className="font-inter text-xs font-medium text-[#333333] md:text-sm lg:text-base 2xl:text-lg">
                 Our mission and goal is to establish a well-equipped
                 laboratories as a ‘junior Research & Innovation Centre’ where
                 students can join various After-School STEAMESIR Workshops.
               </p>
             </div>
-            <div className="flex flex-col justify-center items-center space-y-3">
-              <h2 className="font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+            <div className="flex flex-col items-center justify-center space-y-3">
+              <h2 className="font-inter text-base font-bold md:text-lg lg:text-xl 2xl:text-2xl">
                 Our Vision
               </h2>
-              <p className="font-inter font-medium text-[#333333] 2xl:text-lg lg:text-base md:text-sm text-xs">
+              <p className="font-inter text-xs font-medium text-[#333333] md:text-sm lg:text-base 2xl:text-lg">
                 Astronova Science Foundation is on a mission to revolutionize
                 education by deploying STEAMESIR Science, Technology,
                 Engineering, Arts, Mathematics, Entrepreneurship, Soft-Skills,
@@ -133,7 +133,7 @@ const About = () => {
             <Link
               href="https://forms.gle/3uCVNnSz6MvqeGfn8"
               target="_blank"
-              className="bg-[#0012FF] hover:bg-[#000db3] hover:scale-105 hover:duration-300 text-white font-inter font-semibold xl:text-lg md:text-base text-sm block self-start p-3"
+              className="block self-start bg-[#0012FF] p-3 font-inter text-sm font-semibold text-white hover:scale-105 hover:bg-[#000db3] hover:duration-300 md:text-base xl:text-lg"
             >
               JOIN AS VOLUNTEER
             </Link>
@@ -143,9 +143,9 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="h-auto mx-auto max-w-7xl 2xl:py-12 lg:py-8 md:py-6 py-4 mt-8 bg-[#F0F6FB]"
+        className="mx-auto mt-8 h-auto max-w-7xl bg-[#F0F6FB] py-4 md:py-6 lg:py-8 2xl:py-12"
       >
-        <div className="h-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid h-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <ValuesContainer
             svg="assets/collaboration.svg"
             bgColor="#77AB33"
@@ -175,12 +175,12 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto max-w-7xl px-4 h-auto w-full mt-4"
+        className="mx-auto mt-4 h-auto w-full max-w-7xl px-4"
       >
-        <h3 className="font-inter font-semibold 2xl:text-2xl lg:text-xl md:text-lg text-base text-[#AE0D19] text-center">
+        <h3 className="text-center font-inter text-base font-semibold text-[#AE0D19] md:text-lg lg:text-xl 2xl:text-2xl">
           SHARING SUCCESS TOGETHER
         </h3>
-        <div className="flex w-full justify-between items-center lg:flex-row flex-col py-8 space-y-4 lg:space-y-0">
+        <div className="flex w-full flex-col items-center justify-between space-y-4 py-8 lg:flex-row lg:space-y-0">
           <div className="w-full lg:w-1/2">
             <Image
               src="/aboutusimage2.png"
@@ -190,8 +190,8 @@ const About = () => {
               className="w-full hover:scale-105 hover:duration-300"
             />
           </div>
-          <div className="w-full flex flex-col justify-center items-end space-y-6 lg:px-24 lg:w-1/2">
-            <p className="font-inter font-semibold text-[#616161] 2xl:text-lg lg:text-base md:text-sm text-xs">
+          <div className="flex w-full flex-col items-end justify-center space-y-6 lg:w-1/2 lg:px-24">
+            <p className="font-inter text-xs font-semibold text-[#616161] md:text-sm lg:text-base 2xl:text-lg">
               At Astronova, we believe in the power of collaboration and
               collective achievement. Through our shared commitment to
               excellence, we foster an environment where success is not only
@@ -207,14 +207,14 @@ const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className='max-w-3xl h-auto mx-auto bg-[url("/childrens.png")] bg-black/25 bg-cover rounded-t-xl mt-8 z-50'
+        className='z-50 mx-auto mt-8 h-auto max-w-3xl rounded-t-xl bg-black/25 bg-[url("/childrens.png")] bg-cover'
       >
-        <div className="w-full h-full bg-black/70 lg:py-8 py-6 flex flex-col justify-center items-center space-y-8 lg:rounded-xl">
+        <div className="flex h-full w-full flex-col items-center justify-center space-y-8 bg-black/70 py-6 lg:rounded-xl lg:py-8">
           <div className="flex flex-col space-y-4">
-            <h2 className="text-white font-inter font-semibold 2xl:text-xl lg:text-lg md:text-base text-sm text-center">
+            <h2 className="text-center font-inter text-sm font-semibold text-white md:text-base lg:text-lg 2xl:text-xl">
               JOIN THE JOURNEY
             </h2>
-            <h2 className="text-white font-inter font-semibold 2xl:text-base lg:text-sm text-xs text-center">
+            <h2 className="text-center font-inter text-xs font-semibold text-white lg:text-sm 2xl:text-base">
               Be the Change you want to see.
             </h2>
           </div>
@@ -224,7 +224,7 @@ const About = () => {
               data-aos-duration="900"
               href="https://forms.gle/3uCVNnSz6MvqeGfn8"
               target="_blank"
-              className="hover:scale-105 font-opensans mt-2 font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+              className="mt-2 cursor-pointer font-opensans text-sm font-bold tracking-tighter text-white hover:scale-105 md:text-base lg:text-lg xl:text-xl"
             >
               JOIN AS VOLUNTEER
             </Link>
@@ -232,7 +232,7 @@ const About = () => {
               data-aos="fade-up"
               data-aos-duration="1100"
               href="/mentor_registration"
-              className="hover:scale-105 font-opensans mt-2 font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+              className="mt-2 cursor-pointer font-opensans text-sm font-bold tracking-tighter text-white hover:scale-105 md:text-base lg:text-lg xl:text-xl"
             >
               BECOME A TEAM MEMBER
             </Link>
@@ -241,7 +241,7 @@ const About = () => {
               data-aos-duration="1300"
               type="button"
               onPress={onOpen}
-              className="hover:scale-105 bg-transparent p-0 m-0 font-opensans font-bold tracking-tighter xl:text-xl lg:text-lg md:text-base text-sm cursor-pointer text-white"
+              className="m-0 cursor-pointer bg-transparent p-0 font-opensans text-sm font-bold tracking-tighter text-white hover:scale-105 md:text-base lg:text-lg xl:text-xl"
             >
               MAKE A DONATION
             </Button>
@@ -249,13 +249,13 @@ const About = () => {
           <Link
             href="https://forms.gle/3uCVNnSz6MvqeGfn8"
             target="_blank"
-            className="bg-[#FF9013] hover:bg-white text-white hover:text-blue-700 hover:duration lg:text-base rounded-lg text-sm py-2 px-4 font-semibold"
+            className="hover:duration rounded-lg bg-[#FF9013] px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-blue-700 lg:text-base"
           >
             JOIN AS VOLUNTEEER
           </Link>
         </div>
       </div>
-      <div className="w-full bg-[#291f19] h-20 z-10 -mt-20"></div>
+      <div className="z-10 -mt-20 h-20 w-full bg-[#291f19]"></div>
 
       <Modal
         size="5xl"
@@ -267,12 +267,12 @@ const About = () => {
         <ModalContent>
           {(onClose) => (
             <div>
-              <ModalBody className="flex w-auto h-auto justify-center items-center">
+              <ModalBody className="flex h-auto w-auto items-center justify-center">
                 <Image
                   priority
                   src="/supportmodal.png"
                   alt="Support Modal"
-                  className="w-full h-auto bg-cover object-cover"
+                  className="h-auto w-full bg-cover object-cover"
                   width={2000}
                   height={1200}
                 />

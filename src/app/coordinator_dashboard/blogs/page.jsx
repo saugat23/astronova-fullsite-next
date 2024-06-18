@@ -1,14 +1,18 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from "react";
+import dynamic from "next/dynamic";
+import { getAllBlogs } from "../../services/api";
 
-const Blogs = dynamic(() => import('../../../components/UI/Dashboard/Blogs/Blogs'), {
-     loading: () => <p> </p>,
-});
+const Blogs = dynamic(
+  () => import("../../../components/UI/Dashboard/Blogs/Blogs"),
+  {
+    loading: () => <p> </p>,
+  },
+);
 
-function page() {
-  return (
-    <Blogs />
-  )
-}
+const Page = async () => {
+  const data = await getAllBlogs();
 
-export default page
+  return <Blogs data={data} />;
+};
+
+export default Page;

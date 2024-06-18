@@ -9,28 +9,28 @@ import VolunteerSvg from "../../../../public/careers/volunteer.svg";
 
 const Careers = () => {
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="w-full flex flex-col justify-center items-center space-y-4 2xl:py-28 lg:py-20 md:py-16 py-12 bg-[#2496D7] mt-[4.5rem]"
+        className="mt-[4.5rem] flex w-full flex-col items-center justify-center space-y-4 bg-[#2496D7] py-12 md:py-16 lg:py-20 2xl:py-28"
       >
-        <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-white">
+        <h3 className="font-opensans text-base font-bold tracking-tight text-white sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
           OPPORTUNITIES ARE AT YOUR DOOR
         </h3>
-        <h4 className="font-opensans font-medium tracking-tighter 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-white">
+        <h4 className="font-opensans text-sm font-medium tracking-tighter text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           Find the Best Jobs for you
         </h4>
       </div>
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="w-full flex flex-col justify-center items-center space-y-2 2xl:py-14 lg:py-12 md:py-10 py-6 bg-[#BDB809] px-4"
+        className="flex w-full flex-col items-center justify-center space-y-2 bg-[#BDB809] px-4 py-6 md:py-10 lg:py-12 2xl:py-14"
       >
-        <h3 className="font-opensans font-bold tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-white text-center">
+        <h3 className="text-center font-opensans text-base font-bold tracking-tight text-white sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
           JOIN OUR TEAM AT ASTRONOVA FOUNDATION NEPAL
         </h3>
-        <h4 className="font-opensans font-medium tracking-tighter 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-white text-center">
+        <h4 className="text-center font-opensans text-sm font-medium tracking-tighter text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           Welcome to Trion Tech, where talent meets opportunity!
         </h4>
       </div>
@@ -38,12 +38,12 @@ const Careers = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="mx-auto max-w-6xl flex flex-col justify-center items-start lg:space-y-16 space-y-8 py-12 px-2 md:px-4 lg:px-0"
+        className="mx-auto flex max-w-6xl flex-col items-start justify-center space-y-8 px-2 py-12 md:px-4 lg:space-y-16 lg:px-0"
       >
-        <h3 className="font-opensans font-medium tracking-tight 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base text-black">
-          JOBS BY <span className="text-[#AE0D19] font-bold">CATEGORY</span>
+        <h3 className="font-opensans text-base font-medium tracking-tight text-black sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
+          JOBS BY <span className="font-bold text-[#AE0D19]">CATEGORY</span>
         </h3>
-        <div className="w-full grid md:grid-cols-3 gap-x-16 gap-y-16 sm:grid-cols-2 grid-cols-1">
+        <div className="grid w-full grid-cols-1 gap-x-16 gap-y-16 sm:grid-cols-2 md:grid-cols-3">
           <CategoryContainer
             imgSrc={DesigningSvg}
             title="Designing"
@@ -80,18 +80,18 @@ const Careers = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="bg-[#F4F4F4] mt-16 py-12 px-2 md:px-4 lg:px-0"
+        className="mt-16 bg-[#F4F4F4] px-2 py-12 md:px-4 lg:px-0"
       >
-        <div className="mx-auto max-w-6xl flex flex-col justify-center items-start lg:space-y-16 space-y-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-center space-y-6 lg:space-y-16">
           <div className="w-auto lg:w-1/4">
             <button
               type="button"
-              className="w-full bg-[#3AA0DB] py-4 md:px-8 px-4 lg:px-auto rounded-lg hover:bg-[#1d506e] hover:duration-300 text-white font-inter font-medium xl:text-xl lg:text-lg md:text-base text-sm"
+              className="lg:px-auto w-full rounded-lg bg-[#3AA0DB] px-4 py-4 font-inter text-sm font-medium text-white hover:bg-[#1d506e] hover:duration-300 md:px-8 md:text-base lg:text-lg xl:text-xl"
             >
               Why Work With Us
             </button>
           </div>
-          <div className="grid sm:grid-cols-2 sm:gap-16 grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-16">
             <WorkWithUs
               title="Innovative and Impactful Projects"
               description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
@@ -119,22 +119,22 @@ const Careers = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="xl:mt-10 lg:mt-8 flex flex-col justify-center items-center"
+        className="flex flex-col items-center justify-center lg:mt-8 xl:mt-10"
       >
-        <div className="bg-[url('/joinbg.png')] bg-cover flex flex-col justify-start items-center w-full p-6 h-[75vh]"></div>
+        <div className="flex h-[75vh] w-full flex-col items-center justify-start bg-[url('/joinbg.png')] bg-cover p-6"></div>
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="bg-[#2496D7] w-full xl:py-12 lg:py-10  flex flex-col justify-center items-center space-y-6"
+          className="flex w-full flex-col items-center justify-center space-y-6 bg-[#2496D7] lg:py-10 xl:py-12"
         >
-          <div className="max-w-6xl px-4 mx-auto flex flex-col justify-center items-center space-y-4">
-            <h3 className="font-inter text-white text-center font-bold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-xl">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-center space-y-4 px-4">
+            <h3 className="text-center font-inter text-xl font-bold text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
               JOIN THE JOURNEY
             </h3>
-            <h3 className="font-kumbhsans tracking-wider text-center text-white font-bold xl:text-2xl lg:text-xl md:text-lg text-base">
+            <h3 className="text-center font-kumbhsans text-base font-bold tracking-wider text-white md:text-lg lg:text-xl xl:text-2xl">
               Be the change you want to see
             </h3>
-            <p className="font-opensans font-normal xl:text-lg lg:text-base md:text-sm text-xs text-white text-center py-2">
+            <p className="py-2 text-center font-opensans text-xs font-normal text-white md:text-sm lg:text-base xl:text-lg">
               We are working to create an environment where students can receive
               support, mentorship, guidance and access to tools and facilities
               to explore their curiosity so that they could be able to develop

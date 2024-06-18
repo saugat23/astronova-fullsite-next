@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const Startup = () => {
   return (
-    <section className="h-auto max-w-screen overflow-hidden">
+    <section className="max-w-screen h-auto overflow-hidden">
       <div
         data-aos="fade-down"
         data-aos-duration="400"
-        className='h-[60vh] bg-[url("/working_area/startup.png")] bg-cover flex flex-col space-y-4 justify-center items-center'
+        className='mt-16 flex h-[60vh] flex-col items-center justify-center space-y-4 bg-[url("/working_area/startup.png")] bg-cover'
       >
         <div>
           <Image
@@ -19,20 +19,20 @@ const Startup = () => {
             height={128}
           />
         </div>
-        <h3 className="w-1/2 mx-auto text-white font-poppins font-extrabold 2xl:text-5xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-base text-center leading-loose">
+        <h3 className="mx-auto w-1/2 text-center font-poppins text-base font-extrabold leading-loose text-white sm:text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-5xl">
           STARTUP AND INNOVATION
         </h3>
       </div>
-      <div className="mx-auto max-w-6xl flex flex-col justify-center items-start space-y-8 mt-6 py-4 px-2">
+      <div className="mx-auto mt-6 flex max-w-6xl flex-col items-start justify-center space-y-8 px-2 py-4">
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             Introduction:
           </h4>
-          <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             Our startup and innovation plan is all about nurturing creativity
             and supporting young minds. We want to be the place where great
             ideas get the boost they need to grow into successful invention and
@@ -54,12 +54,12 @@ const Startup = () => {
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             Proto Money:
           </h4>
-          <div className="text-[#091747] flex flex-col justify-center items-start space-y-5 font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <div className="flex flex-col items-start justify-center space-y-5 font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             <div>
               <Image
                 priority
@@ -67,10 +67,10 @@ const Startup = () => {
                 alt="Startup prototype image"
                 width={1152}
                 height={1200}
-                className="w-full h-auto"
+                className="h-auto w-full"
               />
             </div>
-            <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+            <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
               Our startup and innovation plan is all about nurturing creativity
               and supporting young minds. We want to be the place where great
               ideas get the boost they need to grow into successful invention
@@ -93,23 +93,23 @@ const Startup = () => {
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             Curio Money:
           </h4>
-          <div className="flex justify-center items-start space-x-4 text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
-            <div className="w-2/5 h-full">
+          <div className="flex items-start justify-center space-x-4 font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
+            <div className="h-full w-2/5">
               <Image
                 priority
                 src="/working_area/startup-curio.png"
                 alt="Startup Curio Image"
                 width={500}
                 height={500}
-                className="w-full h-auto"
+                className="h-auto w-full"
               />
             </div>
-            <p className="w-3/5 text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+            <p className="w-3/5 font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
               Curio money serves as a unique form of capital designed to fuel
               creativity and exploration. This unconventional resource allows
               entrepreneurs to pursue curiosity-driven projects, experiment with
@@ -123,12 +123,12 @@ const Startup = () => {
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             SEED Money:
           </h4>
-          <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             Seed money represents the initial investment provided to startups to
             kick start their operations and fuel early-stage growth. In addition
             to financial support, we offer strategic guidance, mentorship, and
@@ -141,12 +141,12 @@ const Startup = () => {
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             Additional Resources:
           </h4>
-          <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             In addition to proto money, curio money, and seed money, we offer a
             range of supplementary resources to support startup founders on
             their journey. This includes access to specialized training
@@ -160,12 +160,12 @@ const Startup = () => {
         <div
           data-aos="fade-down"
           data-aos-duration="400"
-          className="flex flex-col justify-center items-start space-y-6"
+          className="flex flex-col items-start justify-center space-y-6"
         >
-          <h4 className="text-[#bdb809] font-inter font-bold 2xl:text-2xl lg:text-xl md:text-lg text-base">
+          <h4 className="font-inter text-base font-bold text-[#bdb809] md:text-lg lg:text-xl 2xl:text-2xl">
             A Vision for Success:
           </h4>
-          <p className="text-[#091747] font-inter font-medium xl:text-lg lg:text-base md:text-sm text-xs">
+          <p className="font-inter text-xs font-medium text-[#091747] md:text-sm lg:text-base xl:text-lg">
             At the core of our startup support ecosystem lays a vision for
             success that extends beyond monetary investment. We believe in
             empowering entrepreneurs with the tools, resources, and

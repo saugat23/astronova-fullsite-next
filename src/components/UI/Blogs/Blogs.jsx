@@ -21,11 +21,11 @@ const Blogs = ({ data }) => {
   const blogs = data.blogs;
   return (
     <section className="max-w-screen h-auto overflow-hidden bg-[#F6F2FF]">
-      <div className="embla">
+      <div className="embla !mt-16">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             <div className="embla__slide">
-              <div className="relative flex h-full w-screen flex-col items-start justify-center space-y-4">
+              <div className="relative flex h-[50vh] w-screen flex-col items-start justify-center space-y-4">
                 <Image
                   layout="fill"
                   priority={true}
