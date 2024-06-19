@@ -5,6 +5,15 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Mail from "../../public/mail.svg";
 import MailBell from "../../public/mailbell.svg";
+import TrionTech from "../../public/triontech.svg";
+import NationalNOC from "../../public/nationalnoc.svg";
+import Neema from "../../public/neema.svg";
+import TheSquad from "../../public/thesquad.svg";
+import BrainyCube from "../../public/brainycube.svg";
+import NEO from "../../public/neo.svg";
+import CreativeCafe from "../../public/creativecafe.svg";
+import MAN from "../../public/man.svg";
+import DUR from "../../public/dur.svg";
 import {
   PrevButton,
   NextButton,
@@ -46,171 +55,128 @@ const Partners = () => {
               <Image
                 priority
                 quality={90}
-                src="/triontech.svg"
+                src={TrionTech}
                 alt="Trion Tech Image"
-                width={40}
-                height={30}
-                className="h-8 w-8 sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/nationalnoc.png"
+                src={NationalNOC}
                 alt="National NIC Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/neema.png"
+                src={Neema}
                 alt="Neema Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/thesquad.png"
+                src={TheSquad}
                 alt="The Squad Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/brainycube.png"
+                src={BrainyCube}
                 alt="Brainy Cube Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/neo.svg"
+                src={NEO}
                 alt="NEO Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/creativecafe.svg"
+                src={CreativeCafe}
                 alt="Creative Cafe Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/man.svg"
+                src={MAN}
                 alt="MAN Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
-              {/* <h2 className="font-inter font-bold text-2xl text-black transform scale-100 hover:scale-110 transition-transform">
-                EduCompass
-              </h2> */}
               <Image
                 priority
                 quality={90}
-                src="/dur.svg"
+                src={DUR}
                 alt="Dursikshya Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
-
               <Image
                 priority
                 quality={90}
-                src="/triontech.svg"
+                src={TrionTech}
                 alt="Trion Tech Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/nationalnoc.png"
+                src={NationalNOC}
                 alt="National NIC Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/neema.png"
+                src={Neema}
                 alt="Neema Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/thesquad.png"
+                src={TheSquad}
                 alt="The Squad Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/brainycube.png"
+                src={BrainyCube}
                 alt="Brainy Cube Image"
-                width={80}
-                height={60}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-28 2xl:w-40"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/neo.svg"
+                src={NEO}
                 alt="NEO Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/creativecafe.svg"
+                src={CreativeCafe}
                 alt="Creative Cafe Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
               <Image
                 priority
                 quality={90}
-                src="/man.svg"
+                src={MAN}
                 alt="MAN Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
-              {/* <h2 className="font-inter font-bold text-2xl text-black transform scale-100 hover:scale-110 transition-transform">
-                EduCompass
-              </h2> */}
               <Image
                 priority
                 quality={90}
-                src="/dur.svg"
+                src={DUR}
                 alt="Dursikshya Image"
-                width={40}
-                height={30}
-                className="sm:w-12 md:w-16 lg:w-20 xl:w-24 2xl:w-32"
+                className="object-cover object-center"
               />
             </div>
           </div>

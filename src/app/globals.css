@@ -109,13 +109,15 @@ html {
 .logos {
   overflow: hidden;
   white-space: nowrap !important;
-  height: 6rem;
 }
 
 .logos-slide {
-  height: 100%;
   padding: 1rem 0;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 2rem;
   animation: 15s slide infinite linear;
 }
 
@@ -125,15 +127,10 @@ html {
   }
 
   .logos-slide img {
-    height: 100%;
-    margin: 0 4rem;
   }
 }
 
 .logos-slide img {
-  height: 100%;
-  width: auto;
-  margin: 0 3rem;
 }
 
 @keyframes slide {
@@ -236,6 +233,7 @@ table > tbody > tr > td {
   --slide-size: 100%;
 }
 
+
 .embla__viewport {
   overflow: hidden;
   height: 100%;
@@ -283,15 +281,15 @@ table > tbody > tr > td {
   padding-left: var(--slide-spacing);
 }
 
-@media (min-width: 768px) {
-  .embla__slide_homepage {
-    flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
-  }
-}
-
 @media (min-width: 1024px) {
   .embla__slide_homepage {
     flex: 0 0 33%; /* Breakpoint SM slide covers 50% of the viewport */
+  }
+}
+
+@media (min-width: 768px) {
+  .embla__slide_homepage {
+    flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
   }
 }
 

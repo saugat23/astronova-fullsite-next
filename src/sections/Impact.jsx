@@ -56,7 +56,7 @@ const Impact = () => {
             <h3 className="font-inter text-base font-bold text-white lg:text-lg xl:text-xl">
               Students Reached
             </h3>
-            <p className="text-center font-inter text-xs font-normal text-white lg:text-sm xl:text-base">
+            <p className="text-center font-opensans text-xs font-semibold text-white lg:text-sm xl:text-base">
               Through various workshops, seminars, STEAM camps, trainings &
               programs.
             </p>
@@ -93,7 +93,7 @@ const Impact = () => {
             <h3 className="font-inter text-base font-bold text-white lg:text-lg xl:text-xl">
               Fund Invested
             </h3>
-            <p className="text-center font-inter text-xs font-normal text-white lg:text-sm xl:text-base">
+            <p className="text-center font-opensans text-xs font-semibold text-white lg:text-sm xl:text-base">
               To build IT Lab, Podcast Hall, Resource Allocation, Student
               Grants, Human Resource.
             </p>
@@ -126,7 +126,7 @@ const Impact = () => {
             <h3 className="font-inter text-base font-bold tracking-tight text-white lg:text-lg xl:text-xl">
               Free Workshops
             </h3>
-            <p className="w-full text-center font-inter text-xs font-normal text-white md:text-xs lg:text-sm xl:text-base">
+            <p className="w-full text-center font-opensans text-xs font-semibold text-white md:text-xs lg:text-sm xl:text-base">
               conducted in various schools and colleges related in more than 20
               subjects.
             </p>

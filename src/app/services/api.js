@@ -68,7 +68,7 @@ export const getCampaignById = async ({ id }) => {
   }
 };
 
-export const deleteCampaign = async (id) => {
+export const deleteCampaign = async ({ id }) => {
   try {
     const response = await axios.delete(`${API_BASE_URL}/v1/campaign/${id}`);
     return response.data;

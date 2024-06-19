@@ -24,6 +24,7 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
+import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
@@ -165,20 +166,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex lg:hidden">
-          <button onClick={handleToggleMenu}>
-            <svg
-              width="19"
-              height="19"
-              viewBox="0 0 19 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.375 4.75H16.625V6.33333H2.375V4.75ZM2.375 8.70833H16.625V10.2917H2.375V8.70833ZM2.375 12.6667H16.625V14.25H2.375V12.6667Z"
-                fill="white"
-              />
-            </svg>
-          </button>
+          <IoMenu
+            className="h-7 w-7 stroke-white stroke-2"
+            onClick={handleToggleMenu}
+          />
         </div>
       </nav>
 

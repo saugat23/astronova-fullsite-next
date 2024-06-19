@@ -53,7 +53,7 @@ const About = () => {
   return (
     <section className='max-w-screen mx-auto h-auto overflow-hidden bg-[url("/aboutsection.png")] bg-cover py-4 md:py-6 lg:py-8 2xl:py-12'>
       <div className="mx-auto mt-4 flex w-full max-w-6xl flex-col items-center justify-center space-x-0 md:mt-8 md:space-x-4 lg:flex-row">
-        <div className="flex h-auto flex-col items-center justify-center border-[#DB8114] lg:w-full xl:border-r-4 xl:pr-8">
+        <div className="flex h-auto flex-col items-center justify-center border-[#DB8114] lg:w-full lg:border-r-4 lg:pr-8">
           <Image
             src="/assets/logo.png"
             alt=""
@@ -65,12 +65,12 @@ const About = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className="flex flex-col items-center justify-center space-y-4"
+          className="flex flex-col items-center justify-center space-y-4 px-3"
         >
-          <h3 className="px-3 text-center font-opensans text-xl font-bold tracking-tight text-[#33A4C6] lg:px-0 lg:text-2xl xl:text-3xl">
+          <h3 className="text-center font-opensans text-xl font-bold tracking-tight text-[#33A4C6] lg:px-0 lg:text-2xl xl:text-3xl">
             About Us
           </h3>
-          <p className="px-3 text-center font-opensans text-sm font-normal md:text-base lg:px-0 lg:text-base xl:text-lg 2xl:text-lg">
+          <p className="text-center font-opensans text-sm font-normal md:text-base lg:px-0 lg:text-base xl:text-lg 2xl:text-lg">
             The{" "}
             <span className="font-bold text-[#BDB809]">
               Astronova Foundation Nepal
@@ -98,7 +98,7 @@ const About = () => {
         className="my-auto mt-4 h-auto bg-[#D9D9D97D] py-3 md:mt-8 md:py-6 xl:py-8"
       >
         <div className="mx-auto flex h-full w-full max-w-6xl flex-col items-center justify-between space-y-3 px-4 lg:flex-row lg:space-y-0">
-          <div className="flex w-full flex-col items-center justify-evenly space-y-6 border-[#DB8114] lg:w-1/3 xl:border-r-5 xl:px-4 xl:py-4">
+          <div className="flex w-full flex-col items-center justify-evenly space-y-6 border-[#DB8114] lg:w-1/3 lg:border-r-5 lg:px-4 lg:py-4">
             <h3 className="font-opensans text-xl font-bold tracking-wider text-[#0B77A5] lg:text-2xl xl:text-3xl">
               OUR MAJOR WORKING AREA
             </h3>
