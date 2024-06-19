@@ -375,7 +375,7 @@ const Partners = () => {
             className="h-full object-cover object-center"
           />
         </div>
-        <div className="flex h-full w-full flex-col items-center justify-around space-y-5 p-4 md:w-1/2 lg:p-6 xl:p-8">
+        <div className="flex h-full w-full flex-col items-center justify-center space-y-12 p-4 md:w-1/2 lg:p-6 xl:p-8">
           <h3 className="text-center font-opensans text-lg font-extrabold tracking-tighter text-white md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
             NURTURING CHILDREN’S CURIOSITY, IGNITING THEIR POTENTIAL
           </h3>
