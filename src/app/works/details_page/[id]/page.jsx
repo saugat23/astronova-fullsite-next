@@ -18,7 +18,7 @@ const Footer = dynamic(() => import("../../../../sections/Footer"), {
 });
 
 const Page = ({ params }) => {
-  const id = params.id;
+  const { id } = params;
   console.log("id :", id);
   return (
     <>

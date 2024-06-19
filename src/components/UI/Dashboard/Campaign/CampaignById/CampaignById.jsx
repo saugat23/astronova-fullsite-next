@@ -39,38 +39,41 @@ const CampaignById = ({ params, data }) => {
   };
 
   return (
-    <section className="h-auto max-w-screen overflow-hidden xl:pt-12 lg:pt-10 pt-8 mx-auto w-[70%]">
+    <section className="max-w-screen mx-auto h-auto w-[90%] overflow-hidden pt-8 lg:w-[70%] lg:pt-10 xl:pt-12">
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="flex flex-col justify-center items-start space-y-4 2xl:py-16 xl:py-14 lg:py-12 md:py-10 sm:py-8 py-6"
+        className="mt-16 flex flex-col items-start justify-center space-y-4 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 2xl:py-16"
       >
-        <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
-          {campaign.title}
+        <h3 className="font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+          {/* {campaign.title} */}
+          test title
         </h3>
-        <p className="font-opensans font-semibold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-[#1e598a]">
-          {campaign.description}
+        <p className="font-opensans text-xs font-semibold text-[#1e598a] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+          {/* {campaign.description} */}
+          test description
         </p>
       </div>
 
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="flex justify-around items-start xl:space-x-12 py-4 mx-auto w-[90%] h-auto"
+        className="mx-auto flex h-auto w-[90%] flex-col items-start justify-around py-4 lg:flex-row xl:space-x-12"
       >
-        <div className="flex flex-col justify-center items-start space-y-6 w-3/4 h-auto">
-          <div className="w-full flex justify-center items-center">
+        <div className="flex h-auto w-full flex-col items-start justify-center space-y-6 lg:w-3/4">
+          <div className="flex w-full items-center justify-center">
             <Image
               src={featuredImage}
+              src="/hfj.j"
               alt="Campaign Featured Image"
               priority
               width={500}
               height={400}
-              className="w-full h-96 object-center object-cover"
+              className="h-96 w-full object-cover object-center"
               quality={75}
             />
           </div>
-          <div className="w-full flex justify-stretch items-center space-x-4">
+          <div className="flex w-full items-center justify-stretch space-x-4">
             {campaign.gallery.map((img, index) => (
               <Image
                 key={index}
@@ -79,18 +82,19 @@ const CampaignById = ({ params, data }) => {
                 priority
                 width={100}
                 height={80}
-                className="w-1/4 h-full cursor-pointer"
+                className="h-full w-1/4 cursor-pointer"
                 onClick={() => handleGalleryClick(img)}
                 quality={75}
               />
             ))}
           </div>
         </div>{" "}
-        <div className="w-1/4 shadow-xl bg-white rounded-lg p-6 flex flex-col justify-center items-center space-y-3">
-          <h3 className="text-[#4a90e2] font-opensans font-semibold 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs">
+        <div className="flex w-full flex-col items-center justify-center space-y-3 rounded-lg bg-white p-6 shadow-xl lg:w-1/4">
+          <h3 className="font-opensans text-xs font-semibold text-[#4a90e2] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
             {campaign.achieved}
+            25000
           </h3>
-          <p className="text-[#8692a2] font-opensans font-semibold 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-xs text-[10px]">
+          <p className="font-opensans text-[10px] font-semibold text-[#8692a2] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl">
             raised of $62,473,88 goal
           </p>
           <Progress
@@ -98,19 +102,20 @@ const CampaignById = ({ params, data }) => {
             aria-label="Loading..."
             color="success"
             value={campaign.percentage}
+            value={25}
             className="w-full"
           />
-          <div className="flex flex-col justify-center items-center w-full pt-6 space-y-4">
+          <div className="flex w-full flex-col items-center justify-center space-y-4 pt-6">
             <Button
               type="button"
               onClick={() => onOpen()}
-              className="w-full bg-[#4a90e2] border border-[#4a90e2] text-white py-4 px-auto xl:text-lg md:text-sm sm:text-xs text-[10px]"
+              className="px-auto w-full border border-[#4a90e2] bg-[#4a90e2] py-4 text-[10px] text-white sm:text-xs md:text-sm xl:text-lg"
             >
               Donate
             </Button>
             <button
               type="button"
-              className="w-full bg-white border border-[#4a90e2] text-[#4a90e2] py-4 px-auto xl:text-lg md:text-sm sm:text-xs text-[10px]"
+              className="px-auto w-full border border-[#4a90e2] bg-white py-4 text-[10px] text-[#4a90e2] sm:text-xs md:text-sm xl:text-lg"
             >
               Share with friends
             </button>
@@ -121,31 +126,33 @@ const CampaignById = ({ params, data }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="xl:py-8 flex flex-col justify-center items-start space-y-8"
+        className="flex flex-col items-start justify-center space-y-8 xl:py-8"
       >
-        <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <h3 className="font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           Why This Campaign?
         </h3>
-        <p className="font-opensans font-semibold xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-[#1e598a]">
+        <p className="font-opensans text-xs font-semibold text-[#1e598a] sm:text-sm md:text-base lg:text-lg xl:text-xl">
           {campaign.description}
+          some description
         </p>
       </div>
 
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+        className="flex flex-col items-center justify-center space-y-8 py-6 xl:py-8"
       >
-        <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <h3 className="font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           Watch this Story
         </h3>
-        <div className="flex justify-center items-center w-full aspect-[5/2]">
+        <div className="flex aspect-square w-full items-center justify-center lg:aspect-[5/2]">
           <ReactPlayer
             controls="true"
-            className="w-full h-full aspect-video"
+            className="aspect-video h-full w-full"
             width={1200}
             height={675}
             url={campaign.video}
+            url={"https://www.youtube.com/watch?v=XwJakw04tKM"}
           />
         </div>
       </div>
@@ -153,13 +160,13 @@ const CampaignById = ({ params, data }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+        className="flex flex-col items-center justify-center space-y-8 xl:py-8"
       >
-        <h3 className="font-opensans font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <h3 className="font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           Donate and get Rewards!
         </h3>
-        <div className="w-full flex justify-stretch items-center space-x-4">
-          <div className="flex flex-col justify-center items-center space-y-6">
+        <div className="flex w-full flex-col items-center justify-stretch space-x-0 space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
+          <div className="flex flex-col items-center justify-center space-y-6">
             <CampaignDonationContainer
               imgSrc={SupportStudentPNG}
               title="Get Swag Collection"
@@ -173,7 +180,7 @@ const CampaignById = ({ params, data }) => {
               amount="2500.00"
             />
           </div>
-          <div className="flex flex-col justify-center items-center space-y-6">
+          <div className="flex flex-col items-center justify-center space-y-6">
             <CampaignDonationContainer
               imgSrc={SupportStudentPNG}
               title="Get 2 Days Night stay in Hetauda"
@@ -193,32 +200,32 @@ const CampaignById = ({ params, data }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="xl:py-8 w-full flex justify-between items-start space-x-4"
+        className="flex w-full flex-col items-start justify-between space-x-0 space-y-4 py-6 lg:flex-row lg:space-x-4 lg:space-y-0 xl:py-8"
       >
-        <div className="w-1/2 flex flex-col justify-center items-center space-y-6">
-          <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <div className="flex w-full flex-col items-center justify-center space-y-6 lg:w-1/2">
+          <h3 className="self-start font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             Organizer
           </h3>
-          <div className="w-full rounded-lg flex justify-start items-center space-x-4 p-4 border border-[#d6d6d6]">
+          <div className="flex w-full items-center justify-start space-x-4 rounded-lg border border-[#d6d6d6] p-4">
             <div className="w-1/5">
               <Image src={Logo} alt="Logo" className="w-full" />
             </div>
-            <div className="flex flex-col justify-center items-start">
-              <h3 className="text-[#2f435a] font-poppins font-semibold 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs">
+            <div className="flex flex-col items-start justify-center">
+              <h3 className="font-poppins text-xs font-semibold text-[#2f435a] md:text-sm lg:text-base xl:text-lg 2xl:text-xl">
                 Astronova Foundation
               </h3>
-              <p className="text-[#5a5f6d] 2xl:text-base lg:text-sm md:text-xs text-[10px]">
+              <p className="text-[10px] text-[#5a5f6d] md:text-xs lg:text-sm 2xl:text-base">
                 Non-Profit Organization
               </p>
-              <button className="text-[#4aa3ef] 2xl:text-base lg:text-sm md:text-xs text-[10px]">
+              <button className="text-[10px] text-[#4aa3ef] md:text-xs lg:text-sm 2xl:text-base">
                 Send a Message
               </button>
             </div>
           </div>
-          <h3 className="font-opensans self-center font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+          <h3 className="self-center font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             DONATE NOW
           </h3>
-          <div className="w-full flex justify-center items-center">
+          <div className="flex w-full items-center justify-center">
             <Image
               src={DonationCampaign}
               alt="Donation Image"
@@ -226,11 +233,11 @@ const CampaignById = ({ params, data }) => {
             />
           </div>
         </div>
-        <div className="w-1/2 flex flex-col justify-start items-start space-y-6">
-          <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <div className="flex w-full flex-col items-start justify-start space-y-6 lg:w-1/2">
+          <h3 className="self-start font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
             Top Donors
           </h3>
-          <div className="w-full flex flex-col justify-center items-center space-y-4">
+          <div className="flex w-full flex-col items-center justify-center space-y-4">
             <CampaignTopDonor
               name="Sam Johnston"
               date="March 20, 2024"
@@ -258,14 +265,14 @@ const CampaignById = ({ params, data }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="xl:py-8 flex flex-col justify-center items-center space-y-8"
+        className="flex flex-col items-center justify-center space-y-8 xl:py-8"
       >
-        <h3 className="font-opensans self-start font-bold 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-[#1e598a]">
+        <h3 className="self-start font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
           What our Donor Says
         </h3>
-        <div className="xl:py-12 w-full flex justify-end items-end">
-          <div className="flex justify-end items-center space-x-8">
-            <div className="flex flex-col justify-center items-center space-y-4">
+        <div className="flex w-full items-end justify-end xl:py-12">
+          <div className="flex items-center justify-end space-x-8">
+            <div className="flex flex-col items-center justify-center space-y-4">
               {/* <img src="" alt="" /> */}
             </div>
           </div>
@@ -276,12 +283,12 @@ const CampaignById = ({ params, data }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="w-full h-full flex flex-col gap-1">
+              <ModalHeader className="flex h-full w-full flex-col gap-1">
                 Payment Method
               </ModalHeader>
-              <ModalBody className="w-full h-full flex flex-row justify-center items-center">
-                <div className="w-1/4 h-full flex flex-col justify-start items-center">
-                  <div className="w-full flex justify-between">
+              <ModalBody className="flex h-full w-full flex-row items-center justify-center">
+                <div className="flex h-full w-1/4 flex-col items-center justify-start">
+                  <div className="flex w-full justify-between">
                     <div>
                       <input
                         type="radio"
@@ -297,7 +304,7 @@ const CampaignById = ({ params, data }) => {
                           alt="khalti svg"
                           width={250}
                           height={80}
-                          className="w-20 inline"
+                          className="inline w-20"
                         />
                       </label>
                     </div>
@@ -316,12 +323,12 @@ const CampaignById = ({ params, data }) => {
                           alt="paypal svg"
                           width={250}
                           height={80}
-                          className="w-20 inline"
+                          className="inline w-20"
                         />
                       </label>
                     </div>
                   </div>
-                  <div className="w-full h-auto">
+                  <div className="h-auto w-full">
                     <Image
                       src="/assets/donationmodalanimation.svg"
                       alt="Donation Animation"
@@ -331,9 +338,9 @@ const CampaignById = ({ params, data }) => {
                     />
                   </div>
                 </div>
-                <div className="w-3/4 h-full border border-gray-200 rounded-xl flex flex-col justify-center items-center space-y-3 p-3">
-                  <div className="w-full flex justify-between items-center space-x-3">
-                    <div className="flex flex-col justify-center space-y-2 w-full">
+                <div className="flex h-full w-3/4 flex-col items-center justify-center space-y-3 rounded-xl border border-gray-200 p-3">
+                  <div className="flex w-full items-center justify-between space-x-3">
+                    <div className="flex w-full flex-col justify-center space-y-2">
                       <label
                         htmlFor="first_name"
                         className="font-inter font-semibold"
@@ -345,10 +352,10 @@ const CampaignById = ({ params, data }) => {
                         name="first_name"
                         id="first_name"
                         placeholder="Your First Name"
-                        className="bg-gray-100 border border-gray-200 p-2 outline-none rounded-lg w-full"
+                        className="w-full rounded-lg border border-gray-200 bg-gray-100 p-2 outline-none"
                       />
                     </div>
-                    <div className="flex flex-col justify-center space-y-2 w-full">
+                    <div className="flex w-full flex-col justify-center space-y-2">
                       <label
                         htmlFor="last_name"
                         className="font-inter font-semibold"
@@ -360,12 +367,12 @@ const CampaignById = ({ params, data }) => {
                         name="last_name"
                         id="last_name"
                         placeholder="Your Last Name"
-                        className="bg-gray-100 border border-gray-200 p-2 outline-none rounded-lg w-full"
+                        className="w-full rounded-lg border border-gray-200 bg-gray-100 p-2 outline-none"
                       />
                     </div>
                   </div>
-                  <div className="w-full flex justify-between items-center space-x-3">
-                    <div className="flex flex-col justify-center space-y-2 w-full">
+                  <div className="flex w-full items-center justify-between space-x-3">
+                    <div className="flex w-full flex-col justify-center space-y-2">
                       <label
                         htmlFor="email"
                         className="font-inter font-semibold"
@@ -377,10 +384,10 @@ const CampaignById = ({ params, data }) => {
                         name="email"
                         id="email"
                         placeholder="Your Email"
-                        className="bg-gray-100 border border-gray-200 p-2 outline-none rounded-lg w-full"
+                        className="w-full rounded-lg border border-gray-200 bg-gray-100 p-2 outline-none"
                       />
                     </div>
-                    <div className="flex flex-col justify-center space-y-2 w-full">
+                    <div className="flex w-full flex-col justify-center space-y-2">
                       <label
                         htmlFor="phone"
                         className="font-inter font-semibold"
@@ -392,18 +399,18 @@ const CampaignById = ({ params, data }) => {
                         name="phone"
                         id="phone"
                         placeholder="Your Phone"
-                        className="bg-gray-100 border border-gray-200 p-2 outline-none rounded-lg w-full"
+                        className="w-full rounded-lg border border-gray-200 bg-gray-100 p-2 outline-none"
                       />
                     </div>
                   </div>
-                  <div className="flex flex-col justify-center space-y-2 w-full">
+                  <div className="flex w-full flex-col justify-center space-y-2">
                     <label
                       htmlFor="type_donation"
                       className="font-inter font-semibold"
                     >
                       Type Of Donation
                     </label>
-                    <div className="w-full flex justify-start space-x-4 p-2">
+                    <div className="flex w-full justify-start space-x-4 p-2">
                       <input
                         type="radio"
                         name="type_donation"
@@ -424,7 +431,7 @@ const CampaignById = ({ params, data }) => {
                       </label>
                     </div>
                   </div>
-                  <div className="w-full flex flex-col justify-center space-y-2">
+                  <div className="flex w-full flex-col justify-center space-y-2">
                     <label
                       htmlFor="amount"
                       className="font-inter font-semibold"
@@ -437,16 +444,16 @@ const CampaignById = ({ params, data }) => {
                       id="amount"
                       value={amount}
                       placeholder={selectedPayment === "khalti" ? "Rs 0" : "$0"}
-                      className="bg-gray-100 border border-gray-200 p-2 outline-none rounded-lg w-full"
+                      className="w-full rounded-lg border border-gray-200 bg-gray-100 p-2 outline-none"
                     />
                   </div>
-                  <div className="w-full flex justify-start items-center space-x-5">
+                  <div className="flex w-full items-center justify-start space-x-5">
                     <button
                       type="button"
-                      className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
+                      className="rounded-full p-2 text-blue-500 hover:bg-blue-500 hover:text-white"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 1000" : "$1000"
+                          selectedPayment === "khalti" ? "Rs 1000" : "$1000",
                         )
                       }
                     >
@@ -454,10 +461,10 @@ const CampaignById = ({ params, data }) => {
                     </button>
                     <button
                       type="button"
-                      className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
+                      className="rounded-full p-2 text-blue-500 hover:bg-blue-500 hover:text-white"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 2000" : "$2000"
+                          selectedPayment === "khalti" ? "Rs 2000" : "$2000",
                         )
                       }
                     >
@@ -465,10 +472,10 @@ const CampaignById = ({ params, data }) => {
                     </button>
                     <button
                       type="button"
-                      className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
+                      className="rounded-full p-2 text-blue-500 hover:bg-blue-500 hover:text-white"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 3000" : "$3000"
+                          selectedPayment === "khalti" ? "Rs 3000" : "$3000",
                         )
                       }
                     >
@@ -476,10 +483,10 @@ const CampaignById = ({ params, data }) => {
                     </button>
                     <button
                       type="button"
-                      className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
+                      className="rounded-full p-2 text-blue-500 hover:bg-blue-500 hover:text-white"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 4000" : "$4000"
+                          selectedPayment === "khalti" ? "Rs 4000" : "$4000",
                         )
                       }
                     >
@@ -487,26 +494,26 @@ const CampaignById = ({ params, data }) => {
                     </button>
                     <button
                       type="button"
-                      className="text-blue-500 hover:text-white hover:bg-blue-500 rounded-full p-2"
+                      className="rounded-full p-2 text-blue-500 hover:bg-blue-500 hover:text-white"
                       onClick={() =>
                         handleAmountClick(
-                          selectedPayment === "khalti" ? "Rs 5000" : "$5000"
+                          selectedPayment === "khalti" ? "Rs 5000" : "$5000",
                         )
                       }
                     >
                       {selectedPayment === "khalti" ? "Rs " : "$"}5000
                     </button>
                   </div>
-                  <div className="w-full flex justify-start items-center space-x-3">
+                  <div className="flex w-full items-center justify-start space-x-3">
                     <input type="checkbox" name="terms" id="terms" />
                     <label htmlFor="terms">
                       I agree with Terms of User and Privacy Policy
                     </label>
                   </div>
-                  <div className="w-full flex justify-end items-center">
+                  <div className="flex w-full items-center justify-end">
                     <button
                       type="submit"
-                      className="py-2 px-6 rounded-lg bg-blue-500 hover:bg-blue-700 text-white font-inter"
+                      className="rounded-lg bg-blue-500 px-6 py-2 font-inter text-white hover:bg-blue-700"
                     >
                       Donate Now
                     </button>
