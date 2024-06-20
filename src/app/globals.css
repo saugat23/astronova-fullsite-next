@@ -224,6 +224,22 @@ table > tbody > tr > td {
   font-size: 0.875rem;
 }
 
+@media screen and (min-width: 768px) {
+  .heroslider2 {
+    background-image: url("/slide2hero.webp");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heroslider3 {
+    background-image: url("/slide3hero.webp");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .embla {
   max-width: 100%;
   margin: auto;
