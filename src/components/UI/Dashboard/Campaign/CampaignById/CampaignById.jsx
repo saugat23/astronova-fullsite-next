@@ -99,7 +99,6 @@ const CampaignById = ({ data }) => {
             aria-label="Loading..."
             color="success"
             value={campaign.percentage}
-            value={25}
             className="w-full"
           />
           <div className="flex w-full flex-col items-center justify-center space-y-4 pt-6">
