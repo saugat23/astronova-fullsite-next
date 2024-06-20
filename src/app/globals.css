@@ -224,6 +224,18 @@ table > tbody > tr > td {
   font-size: 0.875rem;
 }
 
+.heroslider2 {
+  background-image: url("/slide2heromobile.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.heroslider3 {
+  background-image: url("/slide3heromobile.webp");
+  background-position: center;
+  background-size: cover;
+}
+
 @media screen and (min-width: 768px) {
   .heroslider2 {
     background-image: url("/slide2hero.webp");

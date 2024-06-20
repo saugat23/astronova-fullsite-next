@@ -35,7 +35,7 @@ const Hero = () => {
                   priority
                   fill
                   className="heroslider2 relative h-full w-full object-cover object-center"
-                  src={Slide2heroMobile}
+                  src=""
                   alt="Slide 2 Hero BG"
                 />
               </div>
@@ -44,7 +44,7 @@ const Hero = () => {
                   priority
                   fill
                   className="heroslider3 relative h-full w-full object-cover object-center"
-                  src={Slide3heroMoblie}
+                  src=""
                   alt="Slide 3 Hero BG"
                 />
               </div>
@@ -64,7 +64,7 @@ const Hero = () => {
                   priority
                   fill
                   className="heroslider2 relative h-full w-full object-cover object-center"
-                  src={Slide2hero}
+                  src=""
                   alt="Slide 2 Hero BG"
                 />
               </div>
@@ -73,7 +73,7 @@ const Hero = () => {
                   priority
                   fill
                   className="heroslider3 relative h-full w-full object-cover object-center"
-                  src={Slide3hero}
+                  src=""
                   alt="Slide 3 Hero BG"
                 />
               </div>

@@ -46,12 +46,10 @@ const CampaignById = ({ data }) => {
         className="mt-16 flex flex-col items-start justify-center space-y-4 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14 2xl:py-16"
       >
         <h3 className="font-opensans text-sm font-bold text-[#1e598a] sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-          {/* {campaign.title} */}
-          test title
+          {campaign.title}
         </h3>
         <p className="font-opensans text-xs font-semibold text-[#1e598a] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
-          {/* {campaign.description} */}
-          test description
+          {campaign.description}
         </p>
       </div>
 
@@ -64,7 +62,6 @@ const CampaignById = ({ data }) => {
           <div className="flex w-full items-center justify-center">
             <Image
               src={featuredImage}
-              src="/hfj.j"
               alt="Campaign Featured Image"
               priority
               width={500}
@@ -133,7 +130,6 @@ const CampaignById = ({ data }) => {
         </h3>
         <p className="font-opensans text-xs font-semibold text-[#1e598a] sm:text-sm md:text-base lg:text-lg xl:text-xl">
           {campaign.description}
-          some description
         </p>
       </div>
 
@@ -152,7 +148,6 @@ const CampaignById = ({ data }) => {
             width={1200}
             height={675}
             url={campaign.video}
-            url={"https://www.youtube.com/watch?v=XwJakw04tKM"}
           />
         </div>
       </div>
