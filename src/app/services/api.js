@@ -59,7 +59,7 @@ export const updateCampaign = async (id, campaignData) => {
   }
 };
 
-export const getCampaignById = async (id) => {
+export const getCampaignById = async ({ id }) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/v1/campaign/${id}`);
     return response.data;

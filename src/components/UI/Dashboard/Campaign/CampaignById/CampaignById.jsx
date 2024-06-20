@@ -17,7 +17,7 @@ import SupportStudentPNG from "../../../../../../public/supportstudents.png";
 import Logo from "../../../../../../public/assets/logo.png";
 import DonationCampaign from "../../../../../../public/assets/donation-campaign-donation.svg";
 
-const CampaignById = ({ params, data }) => {
+const CampaignById = ({ data }) => {
   const campaign = data;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedPayment, setSelectedPayment] = useState("khalti");
