@@ -347,7 +347,8 @@ const Partners = () => {
           </h3>
           <div>
             <Link
-              href="mailto:info@astronovafoundation@gmail.com"
+              href="mailto:info@astronovafoundation.com"
+              target="_blank"
               className="relative h-full w-full"
             >
               <Image

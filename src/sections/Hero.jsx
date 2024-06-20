@@ -24,6 +24,7 @@ const Hero = () => {
               <div className="embla__slide">
                 <Image
                   priority
+                  fill
                   className="heroslider1 relative h-full w-full object-cover object-center"
                   src={Slide1hero}
                   alt="Slide 1 Hero BG"
@@ -32,7 +33,7 @@ const Hero = () => {
               <div className="embla__slide">
                 <Image
                   priority
-                  layout="responsive"
+                  fill
                   className="heroslider2 relative h-full w-full object-cover object-center"
                   src={Slide2heroMobile}
                   alt="Slide 2 Hero BG"
@@ -41,7 +42,7 @@ const Hero = () => {
               <div className="embla__slide">
                 <Image
                   priority
-                  layout="responsive"
+                  fill
                   className="heroslider3 relative h-full w-full object-cover object-center"
                   src={Slide3heroMoblie}
                   alt="Slide 3 Hero BG"
