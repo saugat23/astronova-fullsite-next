@@ -9,7 +9,13 @@ import { toast } from "sonner";
 import Loader from "../../../Loader/Loader";
 
 const Page = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [previewUrls, setPreviewUrls] = useState({
+    featured_img: "",
+    gallery: [],
+  });
+
   const [formData, setFormData] = useState({
     title: "",
     sub_title: "",
@@ -37,6 +43,10 @@ const Page = () => {
       ...prevData,
       featured_img: file,
     }));
+    setPreviewUrls((prevUrls) => ({
+      ...prevUrls,
+      featured_img: URL.createObjectURL(file),
+    }));
   };
 
   const handleGalleryImageChange = (e, index) => {
@@ -45,6 +55,11 @@ const Page = () => {
       const newGalleryImages = [...prevData.gallery];
       newGalleryImages[index] = file; // Update the specific index with the new file
       return { ...prevData, gallery: newGalleryImages };
+    });
+    setPreviewUrls((prevUrls) => {
+      const newGalleryUrls = [...prevUrls.gallery];
+      newGalleryUrls[index] = URL.createObjectURL(file);
+      return { ...prevUrls, gallery: newGalleryUrls };
     });
   };
 
@@ -99,22 +114,21 @@ const Page = () => {
     }
   };
 
-  const router = useRouter();
   return (
     <>
-      <section className="p-6 h-auto">
+      <section className="h-auto p-6">
         <div>
           <form
             onSubmit={handleSubmit}
-            className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg"
+            className="flex w-full items-start rounded-lg border border-[#e0d8ff99] bg-white p-4 shadow-xl"
           >
-            <div className="w-[30%] justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
+            <div className="flex w-[30%] flex-col items-start justify-center space-y-4 justify-self-start rounded-s-lg border border-[#e0d8ff99] p-3">
               <div>
                 <h3 className="font-poppins font-semibold lg:text-xl">
                   Basic Information
                 </h3>
               </div>
-              <div className="w-full flex flex-col justify-center items-start space-y-3 lg:py-4">
+              <div className="flex w-full flex-col items-start justify-center space-y-3 lg:py-4">
                 <label
                   htmlFor="title"
                   className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -125,13 +139,13 @@ const Page = () => {
                   type="text"
                   name="title"
                   id="title"
-                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
+                  className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                   placeholder="Campaign's Title"
                   onChange={handleChange}
                   value={formData.title}
                 />
               </div>
-              <div className="w-full flex flex-col justify-center items-start space-y-3">
+              <div className="flex w-full flex-col items-start justify-center space-y-3">
                 <label
                   htmlFor="sub_title"
                   className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -141,13 +155,13 @@ const Page = () => {
                 <textarea
                   name="sub_title"
                   id="sub_title"
-                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full resize-none h-20"
+                  className="h-20 w-full resize-none rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                   placeholder="Campaign's Sub Title"
                   onChange={handleChange}
                   value={formData.sub_title}
                 />
               </div>
-              <div className="w-full flex flex-col justify-center items-start space-y-3">
+              <div className="flex w-full flex-col items-start justify-center space-y-3">
                 <label
                   htmlFor="video"
                   className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -158,13 +172,13 @@ const Page = () => {
                   type="text"
                   name="video"
                   id="video"
-                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                  className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                   placeholder="Youtube URL"
                   onChange={handleChange}
                   value={formData.video}
                 />
               </div>
-              <div className="w-full flex flex-col justify-center items-start space-y-3">
+              <div className="flex w-full flex-col items-start justify-center space-y-3">
                 <label
                   htmlFor="department"
                   className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -174,7 +188,7 @@ const Page = () => {
                 <select
                   name="department"
                   id="department"
-                  className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+                  className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
                   placeholder="URL"
                   onChange={handleChange}
                   value={formData.department}
@@ -185,17 +199,22 @@ const Page = () => {
                 </select>
               </div>
             </div>
-            <div className="grow justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-6">
+            <div className="flex grow flex-col items-start justify-center justify-self-center p-6 lg:space-y-4">
               <div>
                 <h3 className="font-poppins font-semibold lg:text-xl">
                   Funding Information
                 </h3>
               </div>
-              <div className="w-[80%] flex flex-col justify-center items-start space-y-4">
-                <div className="border-dashed border-[#e0d8ff99] w-full h-60 py-6">
+              <div className="flex w-[80%] flex-col items-start justify-center space-y-4">
+                <div className="h-60 w-full border-dashed border-[#e0d8ff99] py-6">
                   <label
                     htmlFor="featured_img"
-                    className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                    className="flex h-full w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                    style={{
+                      backgroundImage: `url(${previewUrls.featured_img || "/assets/inputfile.svg"})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
                   >
                     Add Featured Image
                   </label>
@@ -203,16 +222,24 @@ const Page = () => {
                     type="file"
                     name="featured_img"
                     id="featured_img"
-                    className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible "
+                    className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                     placeholder=""
                     onChange={handleFeaturedImageChange}
                   />
                 </div>
-                <div className="w-full flex justify-center items-center space-x-6 border-dashed border-[#e0d8ff99]">
+                <div className="flex w-full items-center justify-center space-x-6 border-dashed border-[#e0d8ff99]">
                   <div className="w-1/4">
                     <label
                       htmlFor="newGalleryImages0"
-                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                      className="flex h-32 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      style={{
+                        backgroundImage: `url(${previewUrls.gallery[0] || "/assets/inputfile.svg"})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
                       Image 1
                     </label>
@@ -220,7 +247,7 @@ const Page = () => {
                       type="file"
                       name="newGalleryImages0"
                       id="newGalleryImages0"
-                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                       placeholder=""
                       onChange={(e) => handleGalleryImageChange(e, 0)}
                     />
@@ -228,7 +255,15 @@ const Page = () => {
                   <div className="w-1/4">
                     <label
                       htmlFor="newGalleryImages1"
-                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                      className="flex h-32 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      style={{
+                        backgroundImage: `url(${previewUrls.gallery[1] || "/assets/inputfile.svg"})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
                       Image 2
                     </label>
@@ -236,7 +271,7 @@ const Page = () => {
                       type="file"
                       name="newGalleryImages1"
                       id="newGalleryImages1"
-                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                       placeholder=""
                       onChange={(e) => handleGalleryImageChange(e, 1)}
                     />
@@ -244,7 +279,15 @@ const Page = () => {
                   <div className="w-1/4">
                     <label
                       htmlFor="newGalleryImages2"
-                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                      className="flex h-32 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      style={{
+                        backgroundImage: `url(${previewUrls.gallery[2] || "/assets/inputfile.svg"})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
                       Image 3
                     </label>
@@ -252,7 +295,7 @@ const Page = () => {
                       type="file"
                       name="newGalleryImages2"
                       id="newGalleryImages2"
-                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                       placeholder=""
                       onChange={(e) => handleGalleryImageChange(e, 2)}
                     />
@@ -260,7 +303,15 @@ const Page = () => {
                   <div className="w-1/4">
                     <label
                       htmlFor="newGalleryImages3"
-                      className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-32 bg-cover bg-[top_2rem] bg-no-repeat flex justify-center items-center cursor-pointer"
+                      className="flex h-32 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                      style={{
+                        backgroundImage: `url(${previewUrls.gallery[3] || "/assets/inputfile.svg"})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
                       Image 4
                     </label>
@@ -268,15 +319,15 @@ const Page = () => {
                       type="file"
                       name="newGalleryImages3"
                       id="newGalleryImages3"
-                      className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+                      className="invisible w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
                       placeholder=""
                       onChange={(e) => handleGalleryImageChange(e, 3)}
                     />
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-start">
-                  <div className="flex flex-col justify-center items-start space-y-4">
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                <div className="flex w-full items-start justify-between">
+                  <div className="flex flex-col items-start justify-center space-y-4">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="international_fund"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -296,7 +347,7 @@ const Page = () => {
                         value={formData.international_fund}
                       />
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="achieved"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -309,12 +360,12 @@ const Page = () => {
                         name="achieved"
                         variant="faded"
                         placeholder="5,000,00"
-                        className="text-[#0000008c] w-full"
+                        className="w-full text-[#0000008c]"
                         onChange={handleChange}
                         value={formData.achieved}
                       />
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="start_date"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -326,14 +377,14 @@ const Page = () => {
                         id="start_date"
                         name="start_date"
                         variant="faded"
-                        className="text-[#0000008c] w-full"
+                        className="w-full text-[#0000008c]"
                         onChange={handleChange}
                         value={formData.start_date}
                       />
                     </div>
                   </div>
-                  <div className="flex flex-col justify-center items-start space-y-4">
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                  <div className="flex flex-col items-start justify-center space-y-4">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="national_fund"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -353,7 +404,7 @@ const Page = () => {
                         value={formData.national_fund}
                       />
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="percentage"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -371,7 +422,7 @@ const Page = () => {
                         value={formData.percentage}
                       />
                     </div>
-                    <div className="w-full flex flex-col justify-center items-start space-y-3">
+                    <div className="flex w-full flex-col items-start justify-center space-y-3">
                       <label
                         htmlFor="end_date"
                         className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -390,7 +441,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[80%] flex flex-col justify-center items-start space-y-3">
+                <div className="flex w-[80%] flex-col items-start justify-center space-y-3">
                   <label
                     htmlFor="description"
                     className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -401,18 +452,18 @@ const Page = () => {
                     name="description"
                     id="description"
                     placeholder="Enter your description"
-                    className="max-w-md w-full my-4"
+                    className="my-4 w-full max-w-md"
                     onChange={handleChange}
                     value={formData.description}
                   />
                 </div>
-                <div className="flex justify-start items-center">
+                <div className="flex items-center justify-start">
                   <button
                     type="submit"
-                    className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                    className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
                   >
                     {loading ? (
-                      <div className="w-1/2 mx-auto flex gap-4 items-center justify-center">
+                      <div className="mx-auto flex w-1/2 items-center justify-center gap-4">
                         <p>Submitting...</p> <Loader />
                       </div>
                     ) : (
@@ -422,11 +473,11 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[20%] flex flex-col justify-start items-end justify-self-end">
+            <div className="flex w-[20%] flex-col items-end justify-start justify-self-end">
               <div className="h-40">
                 <button
                   type="button"
-                  className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                  className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
                   onClick={() => router.back()}
                 >
                   Go Back

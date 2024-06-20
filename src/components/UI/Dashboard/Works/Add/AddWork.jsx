@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import Loader from "../../../Loader/Loader";
 
 const Page = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -15,6 +16,10 @@ const Page = () => {
     cover_img: "",
     gallery: [],
     news_link: "",
+  });
+  const [previewUrls, setPreviewUrls] = useState({
+    cover_img: "",
+    gallery: [],
   });
 
   const handleChange = (e) => {
@@ -28,6 +33,10 @@ const Page = () => {
       ...prevData,
       cover_img: file,
     }));
+    setPreviewUrls((prevUrls) => ({
+      ...prevUrls,
+      cover_img: URL.createObjectURL(file),
+    }));
   };
 
   const handleGalleryImageChange = (e, index) => {
@@ -36,6 +45,11 @@ const Page = () => {
       const newGalleryImages = [...prevData.gallery];
       newGalleryImages[index] = file; // Update the specific index with the new file
       return { ...prevData, gallery: newGalleryImages };
+    });
+    setPreviewUrls((prevUrls) => {
+      const newGalleryUrls = [...prevUrls.gallery];
+      newGalleryUrls[index] = URL.createObjectURL(file);
+      return { ...prevUrls, gallery: newGalleryUrls };
     });
   };
 
@@ -84,23 +98,27 @@ const Page = () => {
     }
   };
 
-  const router = useRouter();
   return (
-    <section className="p-6 h-auto overflow-hidden">
+    <section className="h-auto overflow-hidden p-6">
       <form
         onSubmit={handleSubmit}
-        className="bg-white w-full flex items-start shadow-xl p-4 border border-[#e0d8ff99] rounded-lg"
+        className="flex w-full items-start rounded-lg border border-[#e0d8ff99] bg-white p-4 shadow-xl"
       >
-        <div className="w-1/4 justify-self-start border border-[#e0d8ff99] rounded-s-lg flex flex-col justify-center items-start space-y-4 p-3">
+        <div className="flex w-1/4 flex-col items-start justify-center space-y-4 justify-self-start rounded-s-lg border border-[#e0d8ff99] p-3">
           <div>
             <h3 className="font-poppins font-semibold lg:text-xl">
               Basic Info
             </h3>
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3 lg:py-4 h-60">
+          <div className="flex h-60 w-full flex-col items-start justify-center space-y-3 lg:py-4">
             <label
               htmlFor="cover_img"
-              className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer flex justify-center items-center"
+              className="flex h-full w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+              style={{
+                backgroundImage: `url(${previewUrls.cover_img || "/assets/inputfile.svg"})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               Upload Cover Img
             </label>
@@ -109,11 +127,11 @@ const Page = () => {
               name="cover_img"
               id="cover_img"
               onChange={handleCoverImageChange}
-              className="outline-none rounded-md text-[#0000008c] text-sm w-full invisible"
+              className="invisible w-full rounded-md text-sm text-[#0000008c] outline-none"
               placeholder=""
             />
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
+          <div className="flex w-full flex-col items-start justify-center space-y-3">
             <label
               htmlFor="title"
               className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -125,11 +143,11 @@ const Page = () => {
               id="title"
               onChange={handleChange}
               value={formData.title}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-full"
+              className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
               placeholder="Input Title"
             />
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
+          <div className="flex w-full flex-col items-start justify-center space-y-3">
             <label
               htmlFor="sub_description"
               className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -142,11 +160,11 @@ const Page = () => {
               id="sub_description"
               onChange={handleChange}
               value={formData.sub_description}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c] h-20 resize-none"
+              className="h-20 w-full resize-none rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
               placeholder="Short Description"
             />
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
+          <div className="flex w-full flex-col items-start justify-center space-y-3">
             <label
               htmlFor="news_title"
               className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -159,11 +177,11 @@ const Page = () => {
               id="news_title"
               onChange={handleChange}
               value={formData.news_title}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+              className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
               placeholder="News Title"
             />
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-3">
+          <div className="flex w-full flex-col items-start justify-center space-y-3">
             <label
               htmlFor="news_link"
               className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -176,29 +194,37 @@ const Page = () => {
               id="news_link"
               onChange={handleChange}
               value={formData.news_link}
-              className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-sm w-full text-[#0000008c]"
+              className="w-full rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
               placeholder="News Link"
             />
           </div>
         </div>
-        <div className="grow max-w-[84%] justify-self-center flex flex-col justify-center items-start lg:space-y-4 p-6">
+        <div className="flex max-w-[84%] grow flex-col items-start justify-center justify-self-center p-6 lg:space-y-4">
           <div>
             <h3 className="font-poppins font-semibold lg:text-xl">
               Add Our Work Section
             </h3>
           </div>
-          <div className="w-full flex flex-col justify-center items-start space-y-4">
-            <div className="w-full flex justify-between items-start">
-              <div className="w-full flex flex-col justify-center items-start space-y-4">
-                <div className="w-full flex flex-col justify-center items-start space-y-3">
+          <div className="flex w-full flex-col items-start justify-center space-y-4">
+            <div className="flex w-full items-start justify-between">
+              <div className="flex w-full flex-col items-start justify-center space-y-4">
+                <div className="flex w-full flex-col items-start justify-center space-y-3">
                   <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">
                     Event Gallery Image
                   </h4>
-                  <div className="w-full flex justify-evenly items-center space-x-3 border-dashed h-48">
+                  <div className="flex h-48 w-full items-center justify-evenly space-x-3 border-dashed">
                     <div>
                       <label
                         htmlFor="newGalleryImages0"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer flex justify-center items-center p-4"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[0] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 1
                       </label>
@@ -206,7 +232,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages0"
                         id="newGalleryImages0"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 0)}
                       />
@@ -214,7 +240,15 @@ const Page = () => {
                     <div>
                       <label
                         htmlFor="newGalleryImages1"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer p-4 flex justify-center items-center"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[1] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 2
                       </label>
@@ -222,7 +256,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages1"
                         id="newGalleryImages1"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 1)}
                       />
@@ -230,7 +264,15 @@ const Page = () => {
                     <div>
                       <label
                         htmlFor="newGalleryImages2"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer p-4 flex justify-center items-center"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[2] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 3
                       </label>
@@ -238,7 +280,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages2"
                         id="newGalleryImages2"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 2)}
                       />
@@ -246,7 +288,15 @@ const Page = () => {
                     <div>
                       <label
                         htmlFor="newGalleryImages3"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer p-4 flex justify-center items-center"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[3] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 4
                       </label>
@@ -254,7 +304,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages3"
                         id="newGalleryImages3"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 3)}
                       />
@@ -262,7 +312,15 @@ const Page = () => {
                     <div>
                       <label
                         htmlFor="newGalleryImages4"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer p-4 flex justify-center items-center"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[4] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 5
                       </label>
@@ -270,7 +328,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages4"
                         id="newGalleryImages4"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 4)}
                       />
@@ -278,7 +336,15 @@ const Page = () => {
                     <div>
                       <label
                         htmlFor="newGalleryImages5"
-                        className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-full bg-cover bg-[top_2rem] bg-no-repeat cursor-pointer p-4 flex justify-center items-center"
+                        className="flex h-full w-full cursor-pointer items-center justify-center p-4 font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                        style={{
+                          backgroundImage: `url(${previewUrls.gallery[5] || "/assets/inputfile.svg"})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                       >
                         Gallery Image 6
                       </label>
@@ -286,7 +352,7 @@ const Page = () => {
                         type="file"
                         name="newGalleryImages5"
                         id="newGalleryImages5"
-                        className="outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+                        className="hidden w-full rounded-md text-sm text-[#0000008c] outline-none"
                         placeholder=""
                         onChange={(e) => handleGalleryImageChange(e, 5)}
                       />
@@ -295,7 +361,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="py-2 h-auto overflow-hidden w-full flex flex-col justify-center items-start space-y-3">
+            <div className="flex h-auto w-full flex-col items-start justify-center space-y-3 overflow-hidden py-2">
               <label
                 htmlFor="long_description"
                 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -308,17 +374,17 @@ const Page = () => {
                 id="long_description"
                 onChange={handleChange}
                 value={formData.long_description}
-                className="max-w-[95%] w-full overflow-hidden mt-10 bg-white outline-none rounded-md text-sm text-[#0000008c] h-20 resize-none border border-[#e0d8ff99] p-2 "
+                className="mt-10 h-20 w-full max-w-[95%] resize-none overflow-hidden rounded-md border border-[#e0d8ff99] bg-white p-2 text-sm text-[#0000008c] outline-none"
                 placeholder="Long Description"
               />
             </div>
-            <div className="flex justify-start items-center lg:space-x-4">
+            <div className="flex items-center justify-start lg:space-x-4">
               <button
                 type="submit"
-                className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+                className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
               >
                 {loading ? (
-                  <div className="w-1/2 mx-auto flex gap-4 items-center justify-center">
+                  <div className="mx-auto flex w-1/2 items-center justify-center gap-4">
                     <p>Submitting...</p> <Loader />
                   </div>
                 ) : (
@@ -328,11 +394,11 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="w-[10%] flex flex-col justify-start items-center justify-self-end">
+        <div className="flex w-[10%] flex-col items-center justify-start justify-self-end">
           <div className="h-40">
             <button
               type="button"
-              className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+              className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
               onClick={() => router.back()}
             >
               Go Back

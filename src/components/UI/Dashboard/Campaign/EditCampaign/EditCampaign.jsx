@@ -23,6 +23,7 @@ const formatDate = (dateString) => {
 const Page = ({ data }) => {
   const campaign = data;
   const id = campaign.id;
+  console.log(id);
   const router = useRouter();
 
   const featuredImageRef = useRef(null);
@@ -124,7 +125,7 @@ const Page = ({ data }) => {
 
       toast.success("Campaign Deleted Successfully");
       setTimeout(() => {
-        router.back();
+        router.push("/coordinator_dashboard/campaign");
       }, 5000);
     } catch (error) {
       console.error("error: ", error);
