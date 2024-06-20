@@ -35,6 +35,9 @@ const Campaign = ({ data }) => {
     description: "",
     img: "",
   });
+  const [previewUrl, setPreviewUrl] = useState({
+    img: "",
+  });
 
   const handleTestimonialChange = (e) => {
     e.preventDefault();
@@ -49,6 +52,10 @@ const Campaign = ({ data }) => {
     setTestimonialData((prevData) => ({
       ...prevData,
       img: file,
+    }));
+    setPreviewUrl((prevUrls) => ({
+      ...prevUrls,
+      img: URL.createObjectURL(file),
     }));
   };
 
@@ -83,23 +90,25 @@ const Campaign = ({ data }) => {
   };
 
   const filteredCampaign = campaign.filter((camp) =>
-    camp.title.toLowerCase().includes(search.toLowerCase())
+    camp.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
-    <section className="overflow-hidden h-auto p-4">
-      <div className="bg-white py-8 px-4 w-full">
-        <div className="flex flex-col md:flex-row justify-start md:justify-between w-full items-start md:items-center space-y-3 md:space-y-0">
-          <div className="flex justify-center items-center space-x-6">
+    <section className="h-auto overflow-hidden p-4">
+      <div className="w-full bg-white px-4 py-8">
+        <div className="flex w-full flex-col items-start justify-start space-y-3 md:flex-row md:items-center md:justify-between md:space-y-0">
+          <div className="flex items-center justify-center space-x-6">
+            <Link href="campaign/add_campaign">
+              <Button
+                type="button"
+                className="rounded-xl bg-[#5C74FF] px-6 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
+              >
+                Add Campaign
+              </Button>
+            </Link>
             <Button
               type="button"
-              className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-            >
-              <Link href="campaign/add_campaign">Add Campaign</Link>
-            </Button>
-            <Button
-              type="button"
-              className="py-2 px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+              className="rounded-xl bg-[#5C74FF] px-6 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
               onPress={onOpen}
             >
               Add Testimonial
@@ -122,11 +131,14 @@ const Campaign = ({ data }) => {
                       >
                         <label
                           htmlFor="img"
-                          className="w-full h-32 bg-[url('/assets/inputfile.svg')] bg-no-repeat bg-cover mx-auto cursor-pointer flex flex-col justify-center items-center"
+                          className="mx-auto flex h-32 w-full cursor-pointer flex-col items-center justify-center"
+                          style={{
+                            backgroundImage: `url(${previewUrl.img || "/assets/inputfile.svg"})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                          }}
                         >
-                          <span className="bg-white p-2 rounded-lg">
-                            Choose Image.
-                          </span>
+                          Add Image
                         </label>
                         <input
                           type="file"
@@ -141,14 +153,14 @@ const Campaign = ({ data }) => {
                           name="name"
                           id="name"
                           placeholder="Enter your Full Name"
-                          className="font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100"
+                          className="rounded-lg border border-gray-300 bg-gray-100 p-2 font-poppins font-normal outline-none"
                           onChange={handleTestimonialChange}
                           value={testimonialData.name}
                         />
                         <label htmlFor="campaign_id">Campaign Name</label>
                         <select
                           placeholder="Choose an Option"
-                          className="font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100 "
+                          className="rounded-lg border border-gray-300 bg-gray-100 p-2 font-poppins font-normal outline-none"
                           name="campaign_id"
                           id="campaign_id"
                           onChange={handleTestimonialChange}
@@ -159,7 +171,7 @@ const Campaign = ({ data }) => {
                               <option
                                 key={item.id}
                                 value={item.id}
-                                className="p-2 bg-white hover:bg-gray-100"
+                                className="bg-white p-2 hover:bg-gray-100"
                               >
                                 {item.title}
                               </option>
@@ -173,15 +185,15 @@ const Campaign = ({ data }) => {
                           onChange={handleTestimonialChange}
                           value={testimonialData.description}
                           placeholder="Enter your description"
-                          className="w-full h-48 resize-none font-poppins p-2 rounded-lg font-normal border border-gray-300 outline-none bg-gray-100"
+                          className="h-48 w-full resize-none rounded-lg border border-gray-300 bg-gray-100 p-2 font-poppins font-normal outline-none"
                         />
 
                         <button
                           type="submit"
-                          className="bg-[#5C74FF] hover:bg-[#2e3a80] py-3 px-auto w-full rounded-lg font-inter font-semibold xl:text-lg md:text-base text-sm text-white"
+                          className="px-auto w-full rounded-lg bg-[#5C74FF] py-3 font-inter text-sm font-semibold text-white hover:bg-[#2e3a80] md:text-base xl:text-lg"
                         >
                           {loading ? (
-                            <div className="flex gap-4 items-center justify-center w-1/2 mx-auto">
+                            <div className="mx-auto flex w-1/2 items-center justify-center gap-4">
                               <p>Submitting...</p> <Loader />
                             </div>
                           ) : (
@@ -200,14 +212,14 @@ const Campaign = ({ data }) => {
               type="text"
               id="campaignSearch"
               name="campaignSearch"
-              className="p-3 bg-transparent w-80 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg block md:inline-block"
+              className="block w-80 rounded-lg border border-[#E0D8FF] bg-transparent p-3 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none md:inline-block"
               placeholder="Search by Campaign name"
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
-        <div className="py-4 w-full">
-          <table aria-label="Campaign Table" className="w-full campaign_table">
+        <div className="w-full py-4">
+          <table aria-label="Campaign Table" className="campaign_table w-full">
             <thead className="bg-[#f4f4f5]">
               <tr className="text-sm text-gray-500">
                 <th>
@@ -237,22 +249,22 @@ const Campaign = ({ data }) => {
                           <SheetContent>
                             <SheetHeader>
                               <SheetTitle>Campaign Details</SheetTitle>
-                              <SheetDescription className="flex flex-col justify-center items-start space-y-3 mt-6">
-                                <div className="w-full h-auto">
+                              <SheetDescription className="mt-6 flex flex-col items-start justify-center space-y-3">
+                                <div className="h-auto w-full">
                                   <Image
                                     priority
                                     src={item.featured_img}
                                     alt="Campaign Featured Photo"
                                     width={800}
                                     height={600}
-                                    className="w-full h-auto rounded-lg object-center object-cover"
+                                    className="h-auto w-full rounded-lg object-cover object-center"
                                     quality={75}
                                   />
                                 </div>
-                                <h1 className="text-base font-semibold font-inter">
+                                <h1 className="font-inter text-base font-semibold">
                                   {item.title}
                                 </h1>
-                                <p className="text-sm font-semibold font-inter text-gray-700">
+                                <p className="font-inter text-sm font-semibold text-gray-700">
                                   Description{" "}
                                   <span className="block">
                                     {item.description}
@@ -267,15 +279,15 @@ const Campaign = ({ data }) => {
                         <Link
                           href={`/coordinator_dashboard/campaign/edit_campaign/${item.id}`}
                         >
-                          <FaPen className="cursor-pointer text-center ml-10" />
+                          <FaPen className="ml-10 cursor-pointer text-center" />
                         </Link>
                       </td>
                       <td>{item.title}</td>
-                      <td className="flex justify-start items-center space-x-2 w-full">
+                      <td className="flex w-full items-center justify-start space-x-2">
                         <div>
                           <FaRunning />
                         </div>
-                        <div className="flex flex-col justify-center items-start w-full">
+                        <div className="flex w-full flex-col items-start justify-center">
                           <h4>Running</h4>
                           <h4 className="w-3/4">
                             <Progress

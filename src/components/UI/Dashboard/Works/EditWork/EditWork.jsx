@@ -105,7 +105,7 @@ const Page = ({ data }) => {
       toast.success("Work Deleted Successfully");
       setTimeout(() => {
         router.push("/coordinator_dashboard/works");
-      });
+      }, 3000);
     } catch (error) {
       console.error("error: ", error);
       toast.error("Error Deleting Work. Please try again!");

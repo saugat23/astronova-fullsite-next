@@ -93,6 +93,9 @@ const Page = () => {
     featured_img: null,
   });
   const [loading, setLoading] = useState(false);
+  const [previewUrls, setPreviewUrls] = useState({
+    featured_img: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -102,6 +105,10 @@ const Page = () => {
   const handleFeaturedImageChange = (e) => {
     const { name, files } = e.target;
     setFormData({ ...formData, [name]: files[0] });
+    setPreviewUrls((prevUrls) => ({
+      ...prevUrls,
+      featured_img: URL.createObjectURL(files[0]),
+    }));
   };
 
   const editor = useEditor({
@@ -251,7 +258,12 @@ const Page = () => {
                   </h4>
                   <label
                     htmlFor="featured_img"
-                    className="flex h-48 w-full cursor-pointer items-center justify-center bg-[url('/assets/inputfile.svg')] bg-cover bg-[top_50%] bg-no-repeat font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                    className="flex h-48 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+                    style={{
+                      backgroundImage: `url(${previewUrls.featured_img || "/assets/inputfile.svg"})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
                   >
                     Add Image
                   </label>

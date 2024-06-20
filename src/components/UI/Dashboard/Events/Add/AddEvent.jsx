@@ -13,6 +13,9 @@ const Page = () => {
     link: "",
     img: "",
   });
+  const [previewUrls, setPreviewUrls] = useState({
+    img: "",
+  });
 
   function handleChange(e) {
     e.preventDefault();
@@ -24,6 +27,10 @@ const Page = () => {
     setFormData((prevData) => ({
       ...prevData,
       img: file,
+    }));
+    setPreviewUrls((prevUrls) => ({
+      ...prevUrls,
+      img: URL.createObjectURL(file),
     }));
   }
 
@@ -62,28 +69,28 @@ const Page = () => {
     }
   }
   return (
-    <section className="overflow-visible h-auto p-4">
+    <section className="h-auto overflow-visible p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white py-8 px-4 w-full flex flex-col justify-center items-start space-y-4"
+        className="flex w-full flex-col items-start justify-center space-y-4 bg-white px-4 py-8"
       >
-        <div className="w-full flex justify-between items-center">
-          <div className="flex justify-center items-start">
+        <div className="flex w-full items-center justify-between">
+          <div className="flex items-start justify-center">
             <h3 className="font-poppins font-semibold lg:text-xl">
               Upcoming Event Basic Info
             </h3>
           </div>
-          <div className="flex justify-start items-center">
+          <div className="flex items-center justify-start">
             <button
               type="button"
-              className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+              className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
               onClick={() => router.back()}
             >
               Go Back
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-start space-y-3 mt-2">
+        <div className="mt-2 flex w-full flex-col items-start justify-center space-y-3">
           <label
             htmlFor="title"
             className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -94,17 +101,22 @@ const Page = () => {
             name="title"
             id="title"
             onChange={handleChange}
-            className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-1/2"
+            className="w-1/2 rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
             placeholder="Input Event Title"
           />
         </div>
-        <div className="w-full flex flex-col justify-center items-start space-y-3 mt-2">
+        <div className="mt-2 flex w-full flex-col items-start justify-center space-y-3">
           <h4 className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base">
             Add Featured Image
           </h4>
           <label
             htmlFor="img"
-            className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base bg-[url('/assets/inputfile.svg')] w-full h-48 bg-cover bg-[top_50%] bg-no-repeat flex justify-center items-center cursor-pointer"
+            className="flex h-48 w-full cursor-pointer items-center justify-center font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
+            style={{
+              backgroundImage: `url(${previewUrls.img || "/assets/inputfile.svg"})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
             Add Image
           </label>
@@ -113,11 +125,11 @@ const Page = () => {
             name="img"
             id="img"
             onChange={handleImageChange}
-            className="p-2 outline-none rounded-md text-[#0000008c] text-sm w-full hidden"
+            className="hidden w-full rounded-md p-2 text-sm text-[#0000008c] outline-none"
             placeholder=""
           />
         </div>
-        <div className="w-full flex flex-col justify-center items-start space-y-3 mt-2">
+        <div className="mt-2 flex w-full flex-col items-start justify-center space-y-3">
           <label
             htmlFor="link"
             className="font-poppins font-semibold tracking-tight text-[#0000008c] lg:text-base"
@@ -128,17 +140,17 @@ const Page = () => {
             name="link"
             id="link"
             onChange={handleChange}
-            className="bg-transparent border border-[#e0d8ff99] p-2 outline-none rounded-md text-[#0000008c] text-sm w-1/2"
+            className="w-1/2 rounded-md border border-[#e0d8ff99] bg-transparent p-2 text-sm text-[#0000008c] outline-none"
             placeholder="Event Link"
           />
         </div>
-        <div className="flex justify-start items-center lg:mt-8">
+        <div className="flex items-center justify-start lg:mt-8">
           <button
             type="submit"
-            className="py-2 px-8 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
+            className="rounded-xl bg-[#5C74FF] px-8 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
           >
             {loading ? (
-              <div className="w-1/2 mx-auto flex gap-4 items-center justify-center">
+              <div className="mx-auto flex w-1/2 items-center justify-center gap-4">
                 <p>Submitting...</p> <Loader />
               </div>
             ) : (

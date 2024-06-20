@@ -17,33 +17,35 @@ const Works = ({ data }) => {
   const [search, setSearch] = useState("");
 
   const filteredWorks = works.filter((work) =>
-    work.title.toLowerCase().includes(search.toLowerCase())
+    work.title.toLowerCase().includes(search.toLowerCase()),
   );
   return (
     <>
-      <section className="overflow-visible h-auto p-4">
-        <div className="bg-white py-8 px-4 w-full">
-          <div className="flex justify-between w-full items-center">
-            <div className="font-kumbhsans tracking-wider font-semibold md:text-sm lg:text-base cursor-pointer flex justify-center items-center">
-              <button
-                type="button"
-                className="py-2 px-2 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans font-semibold"
-              >
-                <Link href="works/add_work">Add New Works</Link>
-              </button>
+      <section className="h-auto overflow-visible p-4">
+        <div className="w-full bg-white px-4 py-8">
+          <div className="flex w-full items-center justify-between">
+            <div className="flex cursor-pointer items-center justify-center font-kumbhsans font-semibold tracking-wider md:text-sm lg:text-base">
+              <Link href="works/add_work">
+                <button
+                  type="button"
+                  className="rounded-xl bg-[#5C74FF] px-2 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80] md:px-6"
+                >
+                  Add New Works
+                </button>
+              </Link>
             </div>
             <div>
               <input
                 type="text"
                 id="workSearch"
                 name="workSearch"
-                className="p-2 md:p-3 bg-transparent w-60 md:w-96 font-kumbhsans md:text-xs lg:text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+                className="w-60 rounded-lg border border-[#E0D8FF] bg-transparent p-2 font-kumbhsans font-medium text-[#1f1f1f] outline-none md:w-96 md:p-3 md:text-xs lg:text-sm"
                 placeholder="Search by Work Title"
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
           </div>
-          <div className="py-4 w-full">
+          <div className="w-full py-4">
             <table aria-label="Work Table">
               <thead>
                 <tr>
@@ -67,22 +69,22 @@ const Works = ({ data }) => {
                           <SheetContent>
                             <SheetHeader>
                               <SheetTitle>Work Details</SheetTitle>
-                              <SheetDescription className="flex flex-col justify-center items-start space-y-3 mt-6">
-                                <div className="w-full h-auto">
+                              <SheetDescription className="mt-6 flex flex-col items-start justify-center space-y-3">
+                                <div className="h-auto w-full">
                                   <Image
                                     priority
                                     src={work.cover_img}
                                     alt="Work Cover Photo"
                                     width={800}
                                     height={600}
-                                    className="w-full h-auto rounded-lg object-center object-cover"
+                                    className="h-auto w-full rounded-lg object-cover object-center"
                                     quality={75}
                                   />
                                 </div>
-                                <h1 className="text-base font-semibold font-inter">
+                                <h1 className="font-inter text-base font-semibold">
                                   {work.title}
                                 </h1>
-                                <p className="text-sm font-semibold font-inter text-gray-700">
+                                <p className="font-inter text-sm font-semibold text-gray-700">
                                   Description{" "}
                                   <span className="block">
                                     {work.long_description}

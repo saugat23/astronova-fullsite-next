@@ -20,12 +20,14 @@ const Page = ({ data }) => {
       <div className="w-full bg-white px-4 py-8">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center justify-center">
-            <button
-              type="button"
-              className="rounded-xl bg-[#5C74FF] px-4 py-2 font-opensans text-xs font-semibold text-white hover:bg-[#2e3a80] md:px-6 md:text-sm xl:text-base"
-            >
-              <Link href="news_blogs/add_news_blog">Add News Blog</Link>
-            </button>
+            <Link href="news_blogs/add_news_blog">
+              <button
+                type="button"
+                className="rounded-xl bg-[#5C74FF] px-4 py-2 font-opensans text-xs font-semibold text-white hover:bg-[#2e3a80] md:px-6 md:text-sm xl:text-base"
+              >
+                Add News Blog
+              </button>
+            </Link>
           </div>
           <div>
             <input

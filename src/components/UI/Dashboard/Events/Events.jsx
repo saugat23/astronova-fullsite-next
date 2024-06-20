@@ -18,37 +18,39 @@ const Page = ({ data }) => {
 
   return (
     <>
-      <section className="overflow-visible h-auto p-4">
-        <div className="bg-white py-8 px-4 w-full">
-          <div className="flex justify-between w-full items-center">
-            <h3 className="font-kumbhsans tracking-wider font-semibold text-base cursor-pointer">
-              <button
-                type="button"
-                className="py-4 px-2 md:px-6 bg-[#5C74FF] text-white rounded-xl hover:bg-[#2e3a80] font-opensans text-xs md:text-sm xl:text-base font-semibold"
-              >
-                <Link href="events/add_event">Add Upcoming Event</Link>
-              </button>
+      <section className="h-auto overflow-visible p-4">
+        <div className="w-full bg-white px-4 py-8">
+          <div className="flex w-full items-center justify-between">
+            <h3 className="cursor-pointer font-kumbhsans text-base font-semibold tracking-wider">
+              <Link href="events/add_event">
+                <button
+                  type="button"
+                  className="rounded-xl bg-[#5C74FF] px-4 py-2 font-opensans text-xs font-semibold text-white hover:bg-[#2e3a80] md:px-6 md:text-sm xl:text-base"
+                >
+                  Add Upcoming Event
+                </button>
+              </Link>
             </h3>
             <div>
               <input
                 type="text"
                 id="eventSearch"
                 name="eventSearch"
-                className="p-3 bg-transparent w-60 md:w-96 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none border border-[#E0D8FF] rounded-lg"
+                className="w-60 rounded-lg border border-[#E0D8FF] bg-transparent p-3 font-kumbhsans text-sm font-medium text-[#1f1f1f] outline-none md:w-96"
                 placeholder="Search by Upcoming events"
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
           </div>
-          <div className="py-4 w-full">
+          <div className="w-full py-4">
             <Table aria-label="Donor Table">
               <TableHeader>
                 <TableColumn className="w-[10%]">
                   <FaEye />
                 </TableColumn>
                 <TableColumn className="w-[20%]">Edit</TableColumn>
-                <TableColumn>Event Title</TableColumn>
-                <TableColumn>Event Link</TableColumn>
+                <TableColumn className="text-center">Event Title</TableColumn>
+                <TableColumn className="text-center">Event Link</TableColumn>
               </TableHeader>
               <TableBody>
                 {items

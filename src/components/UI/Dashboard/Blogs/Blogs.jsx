@@ -25,12 +25,14 @@ const Blogs = ({ data }) => {
       <div className="w-full bg-white px-4 py-8">
         <div className="flex w-full flex-col items-start justify-start space-y-3 md:flex-row md:items-center md:justify-between md:space-y-0">
           <div className="flex items-center justify-center space-x-6">
-            <button
-              type="button"
-              className="rounded-xl bg-[#5C74FF] px-6 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
-            >
-              <Link href="blogs/add_blog">Add Blog</Link>
-            </button>
+            <Link href="blogs/add_blog">
+              <button
+                type="button"
+                className="rounded-xl bg-[#5C74FF] px-6 py-2 font-opensans font-semibold text-white hover:bg-[#2e3a80]"
+              >
+                Add Blog
+              </button>
+            </Link>
           </div>
           <div className="block md:inline">
             <input

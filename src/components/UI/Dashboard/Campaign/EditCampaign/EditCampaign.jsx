@@ -126,7 +126,7 @@ const Page = ({ data }) => {
       toast.success("Campaign Deleted Successfully");
       setTimeout(() => {
         router.push("/coordinator_dashboard/campaign");
-      }, 5000);
+      }, 3000);
     } catch (error) {
       console.error("error: ", error);
       toast.error("Error deleting the campaign. Please try again!");
